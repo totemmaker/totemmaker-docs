@@ -1,0 +1,34 @@
+/* totem yellow: #ffd129; */
+/* totem green: #40b073; */
+/* totem blue: #0d91bf; */
+/* totem darkblue: #2e4d73; */
+:root {
+
+  /* Primary color shades */
+  --md-primary-fg-color: #40b073;
+  --md-primary-fg-color--light: #30bb6e;
+  --md-primary-fg-color--dark: #328d5b;
+  --md-primary-bg-color: hsla(0, 0%, 100%, 1);
+  --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7);
+  --md-text-link-color: hsla(231, 48%, 48%, 1);
+
+  /* Accent color shades */
+  --md-accent-fg-color: #ffd129;
+  --md-accent-fg-color--transparent: hsla(189, 100%, 37%, 0.1);
+  --md-accent-bg-color: hsla(0, 0%, 100%, 1);
+  --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7);
+}
+
+:root > * {
+
+  /* Code block color shades */
+  --md-code-bg-color: hsla(0, 0%, 96%, 1);
+  --md-code-fg-color: hsla(200, 18%, 26%, 1);
+
+  /* Footer */
+  --md-footer-bg-color: #0593bd;
+  --md-footer-bg-color--dark: #2e4d73a1;
+  --md-footer-fg-color: hsla(0, 0%, 100%, 1);
+  --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
+  --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
+}

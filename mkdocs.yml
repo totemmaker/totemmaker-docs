@@ -1,0 +1,32 @@
+site_name: Totem Programming
+repo_url: https://github.com/totemmaker/TotemArduino
+repo_name: TotemArduino
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/images/totem-logo.png
+  favicon: assets/favicon.png
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    scheme: default
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - admonition
+  - def_list
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.keys
+  - pymdownx.tabbed
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde

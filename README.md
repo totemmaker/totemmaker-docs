@@ -1,0 +1,1 @@
+Visit documentation on [http://docs.totemmaker.net](http://docs.totemmaker.net)
