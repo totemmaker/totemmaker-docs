@@ -5,6 +5,7 @@
 This section contains documentation for Totem Library API. It's a set of functions allowing to control Totem Modules connected to TotemBUS network.  
 
 - [ModuleData](/API/ModuleData) - Object containing data received from module.  
+- [MotorDriver](/API/MotorDriver) - Object helping to control DC and Servo motors.  
 - [TotemModule](/API/TotemModule) - Instance of Totem module, allowing to send and receive commands.  
 - [TotemRobot](/API/TotemRobot) - Instance of connection to a wireless or remote access capable Totem module.  
 
