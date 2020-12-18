@@ -94,7 +94,7 @@ void setup() {
 > ### `int` getNumber()  { data-toc-label='getNumber()' }
 
 **Description:** Get robot controller board module number.  
-To identify if connecting to X4 or X3-FBI.  
+To identify if connecting to X4 or X3.  
 **Result:** module number.
 
 ```arduino
@@ -154,8 +154,8 @@ All initialized modules are automatically attached to active connection. This is
 TotemModule module(03);
 void function() {
   TotemRobot robot = Totem.BLE.getConnectedLast(); // Get last connected robot
-  robot.attach(module); // Assign module X3-FBI object to selected robot connection.
-                        // "module" now will only control X3-FBI modules that are available in provided "robot" connection.
+  robot.attach(module); // Assign module X3 object to selected robot connection.
+                        // "module" now will only control X3 modules that are available in provided "robot" connection.
 }
 ```
 
@@ -167,7 +167,7 @@ void function() {
 TotemModule module(03);
 void function() {
   TotemRobot robot = Totem.BLE.getConnectedLast(); // Get last connected robot
-  robot.detach(module); // Detach module X3-FBI object from selected robot connection. 
+  robot.detach(module); // Detach module X3 object from selected robot connection. 
                         // "module"' will no longer respond to commands
 }
 ```

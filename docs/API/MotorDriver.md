@@ -109,8 +109,8 @@ By providing settings for each motor, MotorDriver will adjust output power to ma
 `inverted` used to change motor spin direction by providing _true/false_.  
 **Parameter:**  
 `command` - command of the motor channel (e.g. `motorA`).  
-`minPower` - minimum percentage of power required to spin a motor [0:100].  
-`maxPower` - maximum allowed power for the motor [0:100].  
+`minPower` - minimum percentage of power required to spin a motor 0-100.  
+`maxPower` - maximum allowed power for the motor 0-100.  
 `inverted` - invert motor pins [false:true]. If not provided - defaults to _false_;  
 
 ```arduino
@@ -189,7 +189,7 @@ If `move()` and `brake()` functions parameters are non-zero, driver will cut pow
 Only configured wheels are affected (with wheel add functions).  
 Value is percentage of braking. 0% - none braking, 100% - full braking power.  
 **Parameter:**  
-`power` - power of braking [0:100].  
+`power` - power of braking 0-100.  
 
 ```arduino
 driver.brake(100, 0, 0, 0); // Brake front left wheel at 100%
@@ -206,7 +206,7 @@ driver.brake(60, 60, 60, 60); // Will slow down wheels spin by applying 60% of b
 Apply same electronic brake power to all wheels of robot. Alias for function `brake()`.  
 Value is in percentage of braking. 0 - none braking, 100 - full braking power.  
 **Parameter:**  
-`power` - power of braking [0:100].  
+`power` - power of braking 0-100.  
 
 ```arduino
 driver.brakeAll(100); // Brake all wheels at 100%
@@ -218,7 +218,7 @@ driver.brakeAll(100); // Brake all wheels at 100%
 Apply same electronic brake power to rear wheels of robot. Alias for function `brake()`.  
 Value is in percentage of braking. 0 - none braking, 100 - full braking power.  
 **Parameter:**  
-`power` - power of braking [0:100].  
+`power` - power of braking 0-100.  
 
 ```arduino
 driver.brakeRear(100); // Brake only rear wheels at 100% (handbrake)
@@ -230,7 +230,7 @@ driver.brakeRear(100); // Brake only rear wheels at 100% (handbrake)
 Apply same electronic brake power to front wheels of robot. Alias for function `brake()`.  
 Value is in percentage of braking. 0 - none braking, 100 - full braking power.  
 **Parameter:**  
-`power` - power of braking [0:100].  
+`power` - power of braking 0-100.  
 
 ```arduino
 driver.brakeFront(100); // Brake only front wheels at 100%
