@@ -32,3 +32,15 @@
   --md-footer-fg-color--light: hsla(0, 0%, 100%, 0.7);
   --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
 }
+
+@media screen and (max-width: 543px) {
+  ul.md-tabs__list > li.md-tabs__item.item-secondary {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 377px) {
+  ul.md-tabs__list > li.md-tabs__item.item-primary {
+      display: none;
+  }
+}
