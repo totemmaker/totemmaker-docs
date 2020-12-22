@@ -29,7 +29,7 @@ void onModuleData(ModuleData data) {
   }
   else if (data.is("version")) { // version received
     Serial.print("'version' is");
-    Serial.println(data.get()); // Prints: 'version' is 10
+    Serial.println(data.get()); // Prints: 'version' is 100
   }
 }
 // Arduino initialization function
@@ -101,7 +101,7 @@ ModuleData data;
 // Read firmware version. Read result will be stored to "data".
 if (module.readWait("version", data)) {
   Serial.print("Value of 'version': ");
-  Serial.println(data.getInt()); // Prints: Value of 'version': 10
+  Serial.println(data.getInt()); // Prints: Value of 'version': 100
 }
 ```
 
