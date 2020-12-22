@@ -22,10 +22,15 @@ Various examples are provided to start a project easily. Each one is documented 
 
 * [Use example projects](/tutorials/03.UseExamples)
 
-## Learn more about Totem programming
+## Learn Totem coding
 
-These topics will explain more detail about how to control each Totem module.
+These topics contains information how to interact with [Totem modules](/modules/00.info/) using [Totem Library](https://github.com/totemmaker/TotemArduino){target=_blank}.  
 
 * [TotemBUS](/TotemBUS/)
 * [Totem API](API/About/)
 * [Totem modules](/modules/00.info/)
+
+## Support
+
+Feel free to join our community forum: [https://forum.totemmaker.net](https://forum.totemmaker.net){target=_blank}.  
+You can post any question or share your experiences with Totem products.

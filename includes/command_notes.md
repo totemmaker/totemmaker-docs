@@ -1,5 +1,6 @@
-!!! tip "Programming tools"
-    To install programming environment read [Arduino setup](/tutorials/01.ArduinoSetup/).  
+!!! tip "Before start"
+    • Install programming environment by following tutorial on [Arduino setup](/tutorials/01.ArduinoSetup/).  
+    • Join our community forum for any questions: [https://forum.totemmaker.net](https://forum.totemmaker.net){target=_blank}.  
 !!! info "Command naming convention"  
     Some commands controls various channels (A, B, C, ...). There is a logic behind command naming for flexibility:  
     • `#!arduino write("commandA", 10)` - will set value `10` for individual channel A.  
