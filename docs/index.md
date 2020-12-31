@@ -8,7 +8,7 @@ Follow further topics to learn all about it.
 
 ## Introduction
 
-TotemBUS is a unique modular system that can have any configuration of functionality. Multiple modules with different capabilities (motor control, sensors, etc.) can be combined to build a sophisticated robots with a lot of programmable functionality. This is possible by using [Totem modules](/modules/00.info/), communicating over [TotemBUS](/TotemBUS/) protocol and controlling via [Totem API](API/About/).
+TotemBUS is a unique modular system that can have any configuration of functionality. Multiple modules with different capabilities (motor control, sensors, etc.) can be combined to build a sophisticated robots with a lot of programmable functionality. This is possible by using [Totem modules](/modules/), communicating over [TotemBUS](/TotemBUS/) protocol and controlling via [Totem API](API/).
 
 ## Setting-up environment
 
@@ -24,11 +24,11 @@ Various examples are provided to start a project easily. Each one is documented 
 
 ## Learn Totem coding
 
-These topics contains information how to interact with [Totem modules](/modules/00.info/) using [Totem Library](https://github.com/totemmaker/TotemArduino){target=_blank}.  
+These topics contains information how to interact with [Totem modules](/modules/) using [Totem Library](https://github.com/totemmaker/TotemArduino){target=_blank}.  
 
 * [TotemBUS](/TotemBUS/)
-* [Totem API](API/About/)
-* [Totem modules](/modules/00.info/)
+* [Totem API](API/)
+* [Totem modules](/modules/)
 
 ## Support
 

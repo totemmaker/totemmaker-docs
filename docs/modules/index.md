@@ -19,7 +19,7 @@ Modules are daisy-chain connectable with a 6 pin connector. It provides power an
 
 ## Controlling modules
 
-Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). This list is available in documentation page for specific module. These commands can be sent using [Totem API](/API/About).
+Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). This list is available in documentation page for specific module. These commands can be sent using [Totem API](/API).
 
 ## General module commands
 

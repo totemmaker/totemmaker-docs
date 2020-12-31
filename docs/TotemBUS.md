@@ -37,5 +37,5 @@ void function() {
 
 Modules accept a string based command (for example "indicate") and optional data. All command strings are encoded to 32-bit integer and packet with provided data. So most messages can fit to a single CAN bus packet. This saves a lot of bandwidth and increases response time, allowing to use any format of string command. The full list of commands can be found in Modules section.
 
-For more information about API functionality of [TotemModule](/API/TotemModule) read [API information](/API/About/).  
-For more information about specific modules read [Modules information](/modules/00.info/).  
+For more information about API functionality of [TotemModule](/API/TotemModule) read [API information](/API/).  
+For more information about specific modules read [Modules information](/modules/).  

@@ -30,4 +30,3 @@ void loop() {
   delay(1000); // Wait 1 second
 }
 ```
-
