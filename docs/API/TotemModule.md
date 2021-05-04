@@ -23,6 +23,9 @@ Module instance object, providing to send and receive data from module.
 | `bool` | [attachOnData(`DataReceiver`)](#attachondatadatareceiver) | Register data receive function |
 | _none_ | [setNumber(`number`)](#setnumbernumber) | Change number of TotemModule object |
 | _none_ | [setSerial(`serial`)](#setserialserial) | Change serial of TotemModule object |
+| `int`  | [getNumber()](#int-getnumber) | Read number of TotemModule object |
+| `int`  | [getSerial()](#int-getserial) | Read serial of TotemModule object |
+| _none_ | [ping()](#ping) | Send ping request to module |
 | `int`  | [hashCmd(`command`)](#int-hashcmdstring) | Encode command to integer |
 | `int`  | [hashModel(`model`)](#int-hashmodelstring) | Encode robot model (type) to integer |
 
@@ -277,6 +280,32 @@ void setup() {
 TotemModule module(0); // All modules
 module.setNumber(04); // Reconfigure to 04 modules only.
 module.setSerial(5468); // Reconfigure to module with 5468 serial only.
+```
+
+> ### `int` getNumber() { data-toc-label='getNumber()' }
+
+> ### `int` getSerial() { data-toc-label='getSerial()' }
+
+**Description:** Get stored number or serial of defined module.  
+**Result:** Module number or serial.  
+
+```arduino
+TotemModule module(11, 2657); // Distance sensor
+int number = module.getNumber(); // Get module number "11"
+int serial = module.getSerial(); // Get module serial "2657"
+```
+
+> ### ping()
+
+**Description:** Send ping request to module.  
+Sends a request for module to respond. If TotemModule object is initialized with number `0`, all modules will receive ping request.  
+All responses will be received in function registered with [`attachOnModuleConnected()`](/interfaces/X4/#module-monitor).  
+This can be used to discover modules connected to TotemBUS system.  
+**Result:** Module number or serial.  
+
+```arduino
+TotemModule module(0); // All modules
+module.ping(); // Request module to respond
 ```
 
 > ### `int` hashCmd(`command`) { data-toc-label='hashCmd(command)' }
