@@ -26,7 +26,7 @@ void loop() {
   delay(1000); // Wait 1 second
   Totem.X4.write("rgbAll", 0xFF00FF00); // Set GREEN color
   delay(1000); // Wait 1 second
-  Totem.X4.write("rgbAll", 0xFF0000FF); // Set RED color
+  Totem.X4.write("rgbAll", 0xFF0000FF); // Set BLUE color
   delay(1000); // Wait 1 second
 }
 ```

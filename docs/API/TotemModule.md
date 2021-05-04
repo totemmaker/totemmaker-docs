@@ -154,7 +154,7 @@ Used only for certain commands.
 ```arduino
 module.write("motorABCD", 50, 0, -60, 20); // Write all 4 motor channels at once
 module.write("servoABC", -100, 0, 100); // Write all 3 servo motor channels at once
-module.write("rgbA", 255, 0, 255, 0); // Set rgbA led to RED color with max brightness
+module.write("rgbA", 255, 0, 255, 0); // Set rgbA led to GREEN color with max brightness
 // module.write("rgbA", 0xFF00FF00); // Equivalent to previous command
 ```
 
