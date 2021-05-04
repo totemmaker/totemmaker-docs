@@ -47,7 +47,7 @@ module.write("restart"); // Restart module
 **Value:** Encoded decimal value. 100 translates to v1.00 (150 -> v1.50).
 
 ```arduino
-int version = module.readWait("version").get(); // Read module firmware version
+int version = module.readWait("version").getInt(); // Read module firmware version
 Serial.print("Module firmware version: v");
 Serial.print(version/100); // Get first digit of value
 Serial.print(".");
