@@ -1,0 +1,2078 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation site for Totemmaker Totem products programming">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>[04] RoboBoard X4 - Totem Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-92600507-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#04-roboboard-x4" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Header -->
+<header class="md-header" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="Totem Programming"
+      class="md-header__button md-logo"
+      aria-label="Totem Programming"
+      data-md-component="logo"
+    >
+      
+  <img src="../../assets/images/totem-logo.png" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Totem Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              [04] RoboBoard X4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="md-tabs__list">
+        <li class="md-tabs__item item-primary">
+            <a href="https://forum.totemmaker.net" class="md-tabs__link"  target="_blank">
+                Forum
+            </a>
+        </li>
+        <li class="md-tabs__item item-secondary">
+            <a href="https://totemmaker.net/wiki/" class="md-tabs__link"  target="_blank">
+                Wiki
+            </a>
+        </li>
+        <li class="md-tabs__item item-secondary">
+            <a href="https://totemmaker.net/blog/" class="md-tabs__link"  target="_blank">
+                Blog
+            </a>
+        </li>
+        <li class="md-tabs__item item-secondary">
+            <a href="https://totemmaker.net/shop/" class="md-tabs__link"  target="_blank">
+                Shop
+            </a>
+        </li>
+    </ul>
+
+    <!-- Header options -->
+    <div class="md-header__options">
+
+      <!-- Switch to toggle language -->
+      
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/totemmaker/TotemArduino" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TotemArduino
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Totem Programming" class="md-nav__button md-logo" aria-label="Totem Programming" data-md-component="logo">
+      
+  <img src="../../assets/images/totem-logo.png" alt="logo">
+
+    </a>
+    Totem Programming
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/totemmaker/TotemArduino" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TotemArduino
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TotemBUS/" class="md-nav__link">
+        TotemBUS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/" class="md-nav__link">
+        API information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/ModuleData/" class="md-nav__link">
+        ModuleData
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/MotorDriver/" class="md-nav__link">
+        MotorDriver
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/TotemModule/" class="md-nav__link">
+        TotemModule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../API/TotemRobot/" class="md-nav__link">
+        TotemRobot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Interfaces
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interfaces" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Interfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/" class="md-nav__link">
+        Interfaces information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/BLE/" class="md-nav__link">
+        BLE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/X4/" class="md-nav__link">
+        X4
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      <label class="md-nav__link" for="__nav_5">
+        Modules
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Modules information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/" class="md-nav__link">
+        [03] Mini Board X3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          [04] RoboBoard X4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        [04] RoboBoard X4
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-commands" class="md-nav__link">
+    Module commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Module commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cfgrobotname-string" class="md-nav__link">
+    cfg/robot/name&nbsp;( string )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgrobotmodel-int" class="md-nav__link">
+    cfg/robot/model&nbsp;( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgrobotcolor-int" class="md-nav__link">
+    cfg/robot/color&nbsp;( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgmotorabcdinvertintintintint" class="md-nav__link">
+    cfg/motorABCD/invert&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgmotorabcdautobrakeintintintint" class="md-nav__link">
+    cfg/motorABCD/autobrake&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgreset" class="md-nav__link">
+    cfg/reset ( )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc-motor-control" class="md-nav__link">
+    DC motor control
+  </a>
+  
+    <nav class="md-nav" aria-label="DC motor control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motora-int" class="md-nav__link">
+    motorA ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorb-int" class="md-nav__link">
+    motorB ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorc-int" class="md-nav__link">
+    motorC ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motord-int" class="md-nav__link">
+    motorD ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorabcdintintintint" class="md-nav__link">
+    motorABCD&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorabrake-int" class="md-nav__link">
+    motorA/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorbbrake-int" class="md-nav__link">
+    motorB/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorcbrake-int" class="md-nav__link">
+    motorC/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motordbrake-int" class="md-nav__link">
+    motorD/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorabcdbrakeintintintint" class="md-nav__link">
+    motorABCD/brake&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servo-motor-control" class="md-nav__link">
+    Servo motor control
+  </a>
+  
+    <nav class="md-nav" aria-label="Servo motor control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servoabcintintint" class="md-nav__link">
+    servoABC&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servoa-int" class="md-nav__link">
+    servoA ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servob-int" class="md-nav__link">
+    servoB ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servoc-int" class="md-nav__link">
+    servoC ( int )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-board-features" class="md-nav__link">
+    On-board features
+  </a>
+  
+    <nav class="md-nav" aria-label="On-board features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#led-int" class="md-nav__link">
+    led ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    button ( )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery" class="md-nav__link">
+    battery ( )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-leds" class="md-nav__link">
+    RGB leds
+  </a>
+  
+    <nav class="md-nav" aria-label="RGB leds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rgballtotem" class="md-nav__link">
+    rgbAll/totem ( )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgballreset" class="md-nav__link">
+    rgbAll/reset ( )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgballintintintint" class="md-nav__link">
+    rgbAll&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbaintintintint" class="md-nav__link">
+    rgbA&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbbintintintint" class="md-nav__link">
+    rgbB&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbcintintintint" class="md-nav__link">
+    rgbC&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbdintintintint" class="md-nav__link">
+    rgbD&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpio" class="md-nav__link">
+    GPIO
+  </a>
+  
+    <nav class="md-nav" aria-label="GPIO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin-change-event" class="md-nav__link">
+    Pin change event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioa-int" class="md-nav__link">
+    gpioA ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiob-int" class="md-nav__link">
+    gpioB ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioc-int" class="md-nav__link">
+    gpioC ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiod-int" class="md-nav__link">
+    gpioD ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioaanalog-int" class="md-nav__link">
+    gpioA/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiobanalog-int" class="md-nav__link">
+    gpioB/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiocanalog-int" class="md-nav__link">
+    gpioC/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiodanalog-int" class="md-nav__link">
+    gpioD/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioapull-int" class="md-nav__link">
+    gpioA/pull ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiobpull-int" class="md-nav__link">
+    gpioB/pull ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiocpull-int" class="md-nav__link">
+    gpioC/pull ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiodpull-int" class="md-nav__link">
+    gpioD/pull ( int )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxiliary-functions" class="md-nav__link">
+    Auxiliary functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Auxiliary functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functiona-any" class="md-nav__link">
+    functionA ( any )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functionb-any" class="md-nav__link">
+    functionB ( any )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functionc-any" class="md-nav__link">
+    functionC ( any )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functiond-any" class="md-nav__link">
+    functionD ( any )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11/" class="md-nav__link">
+        [11] Distance board
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/01.ArduinoSetup/" class="md-nav__link">
+        Arduino setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/02.UseThirdParty/" class="md-nav__link">
+        Use third-party boards
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/03.UseExamples/" class="md-nav__link">
+        Use example projects
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/04.SetupController/" class="md-nav__link">
+        Using PS3/PS4 controller
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/CustomAppButtons/" class="md-nav__link">
+        Custom App buttons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/GettingStartedX4/" class="md-nav__link">
+        Getting Started with X4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/X4/" class="md-nav__link">
+        X4 features
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#module-commands" class="md-nav__link">
+    Module commands
+  </a>
+  
+    <nav class="md-nav" aria-label="Module commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cfgrobotname-string" class="md-nav__link">
+    cfg/robot/name&nbsp;( string )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgrobotmodel-int" class="md-nav__link">
+    cfg/robot/model&nbsp;( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgrobotcolor-int" class="md-nav__link">
+    cfg/robot/color&nbsp;( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgmotorabcdinvertintintintint" class="md-nav__link">
+    cfg/motorABCD/invert&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgmotorabcdautobrakeintintintint" class="md-nav__link">
+    cfg/motorABCD/autobrake&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cfgreset" class="md-nav__link">
+    cfg/reset ( )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dc-motor-control" class="md-nav__link">
+    DC motor control
+  </a>
+  
+    <nav class="md-nav" aria-label="DC motor control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motora-int" class="md-nav__link">
+    motorA ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorb-int" class="md-nav__link">
+    motorB ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorc-int" class="md-nav__link">
+    motorC ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motord-int" class="md-nav__link">
+    motorD ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorabcdintintintint" class="md-nav__link">
+    motorABCD&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorabrake-int" class="md-nav__link">
+    motorA/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorbbrake-int" class="md-nav__link">
+    motorB/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorcbrake-int" class="md-nav__link">
+    motorC/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motordbrake-int" class="md-nav__link">
+    motorD/brake ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motorabcdbrakeintintintint" class="md-nav__link">
+    motorABCD/brake&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servo-motor-control" class="md-nav__link">
+    Servo motor control
+  </a>
+  
+    <nav class="md-nav" aria-label="Servo motor control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#servoabcintintint" class="md-nav__link">
+    servoABC&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servoa-int" class="md-nav__link">
+    servoA ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servob-int" class="md-nav__link">
+    servoB ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#servoc-int" class="md-nav__link">
+    servoC ( int )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#on-board-features" class="md-nav__link">
+    On-board features
+  </a>
+  
+    <nav class="md-nav" aria-label="On-board features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#led-int" class="md-nav__link">
+    led ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#button" class="md-nav__link">
+    button ( )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#battery" class="md-nav__link">
+    battery ( )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgb-leds" class="md-nav__link">
+    RGB leds
+  </a>
+  
+    <nav class="md-nav" aria-label="RGB leds">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rgballtotem" class="md-nav__link">
+    rgbAll/totem ( )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgballreset" class="md-nav__link">
+    rgbAll/reset ( )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgballintintintint" class="md-nav__link">
+    rgbAll&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbaintintintint" class="md-nav__link">
+    rgbA&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbbintintintint" class="md-nav__link">
+    rgbB&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbcintintintint" class="md-nav__link">
+    rgbC&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rgbdintintintint" class="md-nav__link">
+    rgbD&nbsp;(&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;,&nbsp;int&nbsp;)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpio" class="md-nav__link">
+    GPIO
+  </a>
+  
+    <nav class="md-nav" aria-label="GPIO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pin-change-event" class="md-nav__link">
+    Pin change event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioa-int" class="md-nav__link">
+    gpioA ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiob-int" class="md-nav__link">
+    gpioB ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioc-int" class="md-nav__link">
+    gpioC ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiod-int" class="md-nav__link">
+    gpioD ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioaanalog-int" class="md-nav__link">
+    gpioA/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiobanalog-int" class="md-nav__link">
+    gpioB/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiocanalog-int" class="md-nav__link">
+    gpioC/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiodanalog-int" class="md-nav__link">
+    gpioD/analog ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpioapull-int" class="md-nav__link">
+    gpioA/pull ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiobpull-int" class="md-nav__link">
+    gpioB/pull ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiocpull-int" class="md-nav__link">
+    gpioC/pull ( int )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpiodpull-int" class="md-nav__link">
+    gpioD/pull ( int )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auxiliary-functions" class="md-nav__link">
+    Auxiliary functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Auxiliary functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#functiona-any" class="md-nav__link">
+    functionA ( any )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functionb-any" class="md-nav__link">
+    functionB ( any )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functionc-any" class="md-nav__link">
+    functionC ( any )
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#functiond-any" class="md-nav__link">
+    functionD ( any )
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="04-roboboard-x4">[04] RoboBoard X4</h1>
+<blockquote>
+<p>Programmable robotics controller with Bluetooth connectivity, motor drivers and sensors input. For full feature description read <a href="/tutorials/X4">X4 features</a>.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="n">TotemModule</span> <span class="nf">module</span><span class="p">(</span><span class="mo">04</span><span class="p">);</span>
+</code></pre></div>
+<p><img alt="Module image" src="/assets/images/module_04_1.jpg" style="display: block;margin-left: auto;margin-right: auto;width: 100%;" /></p>
+<h2 id="module-commands">Module commands</h2>
+<div class="admonition tip">
+<p class="admonition-title">Before start</p>
+<p>• Install programming environment by following tutorial on <a href="/tutorials/01.ArduinoSetup/">Arduino setup</a>.<br />
+• Join our community forum for any questions: <a href="https://forum.totemmaker.net" target="_blank">https://forum.totemmaker.net</a>.  </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Command naming convention</p>
+<p>Some commands controls various channels (A, B, C, ...). There is a logic behind command naming for flexibility:<br />
+• <code class="highlight"><span class="nf">write</span><span class="p">(</span><span class="s">&quot;commandA&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span></code> - will set value <code>10</code> for individual channel A.<br />
+• <code class="highlight"><span class="nf">write</span><span class="p">(</span><span class="s">&quot;commandAll&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span></code> - will set value <code>100</code> for all existing channels.<br />
+• <code class="highlight"><span class="nf">write</span><span class="p">(</span><span class="s">&quot;commandABCD&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span></code> - will set individual values for A, B, C, D channels.<br />
+• <code class="highlight"><span class="nf">write</span><span class="p">(</span><span class="s">&quot;commandABC&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span></code> - will set individual values for A, B, C channels.<br />
+Only commands listed in "Module commands" will be accepted. Other variations will be discarded.<br />
+All commands are case sensitive! Calls like <code>CommandA</code>, <code>COMMANDa</code>, <code>motorA/BRAKE</code> will be ignored.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Alternate function call</p>
+<p>Code running inside X4 can be called directly with <code class="highlight"><span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;command&quot;</span><span class="p">)</span></code> instead of generic module object <code class="highlight"><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;command&quot;</span><span class="p">)</span></code>.  </p>
+</div>
+<h3 id="configuration">Configuration</h3>
+<p>Commands starting with "cfg" retains it's value after module power off. Used as module configuration parameters.</p>
+<h4 id="cfgrobotname-string"><code>cfg/robot/name</code>&nbsp;( <code>string</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Configure robot name visible during connection.<br />
+<strong>Value:</strong> Any string value up to 30 bytes max. Default is "Totem X4".</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;cfg/robot/name&quot;</span><span class="p">,</span> <span class="s">&quot;My robot&quot;</span><span class="p">);</span> <span class="c1">// Set robot name</span>
+</code></pre></div>
+<h4 id="cfgrobotmodel-int"><code>cfg/robot/model</code>&nbsp;( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Configure Totem robot model (MiniTrooper, Truck, ...).<br />
+Used to identify type of the robot. Can be configured to any value by user. Also received with <a href="/API/TotemRobot/#int-getmodel">getModel()</a>.<br />
+Value can be generated with command: <code class="highlight"><span class="n">TotemModule</span><span class="o">::</span><span class="n">hashModel</span><span class="p">(</span><span class="s">&quot;model&quot;</span><span class="p">)</span></code>.<br />
+<strong>Value:</strong> 16bit hash of robot model name. Default is 0.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="c1">// Set robot model to Truck</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;cfg/robot/model&quot;</span><span class="p">,</span> <span class="n">TotemModule</span><span class="o">::</span><span class="n">hashModel</span><span class="p">(</span><span class="s">&quot;Truck&quot;</span><span class="p">));</span>
+<span class="c1">// Check if robot is Truck</span>
+<span class="n">ModuleData</span> <span class="n">data</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span><span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;cfg/robot/model&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span> <span class="o">&amp;&amp;</span>
+    <span class="n">data</span><span class="p">.</span><span class="n">getInt</span><span class="p">()</span> <span class="o">==</span> <span class="n">TotemModule</span><span class="o">::</span><span class="n">hashModel</span><span class="p">(</span><span class="s">&quot;Truck&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="p">}</span>
+</code></pre></div>
+<h4 id="cfgrobotcolor-int"><code>cfg/robot/color</code>&nbsp;( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Configure robot color.<br />
+Used to recognize robot appearance by it's color. It may be displayed inside mobile application or on-board RGB LED.<br />
+<strong>Value:</strong> 24bit RGB color value (without brightness). Default is 0.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;cfg/robot/color&quot;</span><span class="p">,</span> <span class="mh">0x0000FF</span><span class="p">);</span> <span class="c1">// Set robot color to BLUE</span>
+<span class="c1">// Alternative to set individual RGB colors:</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;cfg/robot/color&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">);</span> <span class="c1">// Set robot color to BLUE</span>
+</code></pre></div>
+<h4 id="cfgmotorabcdinvertintintintint"><code>cfg/motorABCD/invert</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<dl>
+<dd><strong>Description:</strong> Configure motor output polarity.<br />
+Individual motors can be configured to invert it's spinning direction. Allows to fix reversed motor wiring without reconfiguring robot controls.<br />
+<strong>Value:</strong> 0 or 1 per each channel. Default is 0.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="c1">// Invert channels A and B. C, B - not inverted (default).</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;cfg/motorABCD/invert&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="cfgmotorabcdautobrakeintintintint"><code>cfg/motorABCD/autobrake</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<dl>
+<dd><strong>Description:</strong> Configure motor outputs autobraking feature.<br />
+When channel power is set to 0, an electronic motor brake will be applied.<br />
+Can be configured with different percentage of braking power per each channel.<br />
+<strong>Value:</strong> 0 to 100 per each channel. Default is 0.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="c1">// Set channels A, B to 100% brake power, C to 50%, D - no braking.</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;cfg/motorABCD/autobrake&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div>
+<h4 id="cfgreset"><code>cfg/reset</code> ( )</h4>
+<dl>
+<dd><strong>Description:</strong> Reset all module configuration to factory default.  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;cfg/reset&quot;</span><span class="p">);</span> <span class="c1">// Reset all module settings to default</span>
+</code></pre></div>
+<hr />
+<h3 id="dc-motor-control">DC motor control</h3>
+<h4 id="motora-int"><code>motorA</code> ( <code>int</code> )</h4>
+<h4 id="motorb-int"><code>motorB</code> ( <code>int</code> )</h4>
+<h4 id="motorc-int"><code>motorC</code> ( <code>int</code> )</h4>
+<h4 id="motord-int"><code>motorD</code> ( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Set individual DC motor A, B, C, D channel power.<br />
+<strong>Value:</strong> Percentage of power 0-100%. Negative value will spin backwards.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;motorA&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// Write channel A</span>
+</code></pre></div>
+<h4 id="motorabcdintintintint"><code>motorABCD</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<dl>
+<dd><strong>Description:</strong> Set all motor channels with one command call.<br />
+<strong>Value:</strong> Percentage of power 0-100%. Negative value will spin backwards.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;motorABCD&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">-100</span><span class="p">);</span> <span class="c1">// Write channels A, B, C, D</span>
+</code></pre></div>
+<h4 id="motorabrake-int"><code>motorA/brake</code> ( <code>int</code> )</h4>
+<h4 id="motorbbrake-int"><code>motorB/brake</code> ( <code>int</code> )</h4>
+<h4 id="motorcbrake-int"><code>motorC/brake</code> ( <code>int</code> )</h4>
+<h4 id="motordbrake-int"><code>motorD/brake</code> ( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Apply individual DC motor A, B, C, D channel brake power.<br />
+<strong>Value:</strong> Percentage of brake power 0-100%. Only positive value is accepted.  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;motorA/brake&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span> <span class="c1">// Set channel A brake power to 100%</span>
+</code></pre></div>
+<h4 id="motorabcdbrakeintintintint"><code>motorABCD/brake</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<dl>
+<dd><strong>Description:</strong> Apply brake to all DC motor channels with one command at the same moment.<br />
+<strong>Value:</strong> Percentage of brake power 0-100%. Only positive value is accepted.  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;motorABCD/brake&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Brake channels : A - 100%; B - 50%; C, D - no brake</span>
+</code></pre></div>
+<hr />
+<h3 id="servo-motor-control">Servo motor control</h3>
+<h4 id="servoabcintintint"><code>servoABC</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<dl>
+<dd><strong>Description:</strong> Set individual servo motor channels A, B, C with one command at the same moment.<br />
+<strong>Value:</strong> Position of servo angle. Value from -100 to 100. It maps to 0° to 180°. 0 equals 90°.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;servoABC&quot;</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">-100</span><span class="p">);</span> <span class="c1">// Write channels A, B, C</span>
+</code></pre></div>
+<h4 id="servoa-int"><code>servoA</code> ( <code>int</code> )</h4>
+<h4 id="servob-int"><code>servoB</code> ( <code>int</code> )</h4>
+<h4 id="servoc-int"><code>servoC</code> ( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Set servo A, B, C channel position.<br />
+<strong>Value:</strong> Position of servo angle. Value from -100 to 100. It maps to 0° to 180°. 0 equals 90°.</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;servoA&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Set servo channel A to 90° angle</span>
+</code></pre></div>
+<hr />
+<h3 id="on-board-features">On-board features</h3>
+<h4 id="led-int"><code>led</code> ( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Set on-board indication led state.<br />
+<strong>Value:</strong> Turn led on (true or 1) or off (false or 0).</dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;led&quot;</span><span class="p">,</span> <span class="kr">true</span><span class="p">);</span> <span class="c1">// Turn on-board indication led on</span>
+</code></pre></div>
+<h4 id="button"><code>button</code> ( )</h4>
+<dl>
+<dd><strong>Description:</strong> Get state of on-board button. Read it once or subscribe to receive an event when button is pressed. This command is read-only.<br />
+<strong>Result:</strong> Button is pressed (true or 1) or released (false or 0).</dd>
+</dl>
+<div class="tabbed-set" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">Inline</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="kr">bool</span> <span class="n">buttonIsPressed</span> <span class="o">=</span> <span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;button&quot;</span><span class="p">);</span> <span class="c1">// Read button state</span>
+<span class="c1">// &#39;readWait&#39; will delay code execution until result is received from the module.</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">Inline ModuleData</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">ModuleData</span> <span class="n">data</span><span class="p">;</span> <span class="c1">// Prepare variable to store read result</span>
+<span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;button&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span> <span class="c1">// Perform read with wait until result is received</span>
+<span class="kr">bool</span> <span class="n">buttonIsPressed</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Get button state from result</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><label for="__tabbed_1_3">Event</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Function that will receive all subscribed commands of X4 module</span>
+<span class="kr">void</span> <span class="nf">onModuleData</span><span class="p">(</span><span class="n">ModuleData</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">is</span><span class="p">(</span><span class="s">&quot;button&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Check if received command is &quot;button&quot;</span>
+        <span class="kr">bool</span> <span class="n">buttonIsPressed</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Get button state</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Button state = &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">buttonIsPressed</span><span class="o">?</span><span class="s">&quot;PRESS&quot;</span><span class="o">:</span><span class="s">&quot;RELEASE&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">module</span><span class="p">.</span><span class="n">attachOnData</span><span class="p">(</span><span class="n">onModuleData</span><span class="p">);</span> <span class="c1">// Register onModuleData function</span>
+    <span class="k">module</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;button&quot;</span><span class="p">);</span> <span class="c1">// Subscribe to receive any state change of button</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<h4 id="battery"><code>battery</code> ( )</h4>
+<dl>
+<dd><strong>Description:</strong> Get connected battery voltage. This command is read-only.<br />
+If returned value is 0 - battery is not connected.<br />
+<strong>Result:</strong> Voltage in millivolts. Divide by 1000 to get volts.</dd>
+</dl>
+<div class="tabbed-set" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><label for="__tabbed_2_1">Inline</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Read battery voltage</span>
+<span class="kr">int</span> <span class="n">voltage</span> <span class="o">=</span> <span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;battery&quot;</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Result: 11350 -&gt; 11.350V</span>
+<span class="c1">// &#39;readWait&#39; will delay code execution until result is received from the module.</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><label for="__tabbed_2_2">Inline ModuleData</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="n">ModuleData</span> <span class="n">data</span><span class="p">;</span> <span class="c1">// Prepare variable to store read result</span>
+<span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;battery&quot;</span><span class="p">,</span> <span class="n">data</span><span class="p">);</span> <span class="c1">// Perform read with wait until result is received</span>
+<span class="kr">bool</span> <span class="n">voltage</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Get battery value from result. 11350 -&gt; 11.350V</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><label for="__tabbed_2_3">Event</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="c1">// Function that will receive all subscribed commands of module</span>
+<span class="kr">void</span> <span class="nf">onModuleData</span><span class="p">(</span><span class="n">ModuleData</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">is</span><span class="p">(</span><span class="s">&quot;battery&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Check if received command is &quot;battery&quot;</span>
+        <span class="kr">bool</span> <span class="n">voltage</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Get battery value from result. 11350 -&gt; 11.350V</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Battery voltage = &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">voltage</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">module</span><span class="p">.</span><span class="n">attachOnData</span><span class="p">(</span><span class="n">onModuleData</span><span class="p">);</span> <span class="c1">// Register onModuleData function</span>
+    <span class="k">module</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;battery&quot;</span><span class="p">);</span> <span class="c1">// Subscribe to receive any state change of battery</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+<hr />
+<h3 id="rgb-leds">RGB leds</h3>
+<h4 id="rgballtotem"><code>rgbAll/totem</code> ( )</h4>
+<dl>
+<dd><strong>Description:</strong> Set all RGB leds to Totem colors.  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbAll/totem&quot;</span><span class="p">);</span> <span class="c1">// Light all RGB leds to Totem colors</span>
+</code></pre></div>
+<h4 id="rgballreset"><code>rgbAll/reset</code> ( )</h4>
+<dl>
+<dd><strong>Description:</strong> Reset all RGB leds to default color.<br />
+Sets to color configured in <code>cfg/robot/color</code> command. If color is not configured, defaults to Totem colors.  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbAll/reset&quot;</span><span class="p">);</span> <span class="c1">// Light all RGB leds to default color</span>
+</code></pre></div>
+<h4 id="rgballintintintint"><code>rgbAll</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<dl>
+<dd><strong>Description:</strong> Set all RGB leds color.<br />
+<strong>Value:</strong> Parameters:<br />
+1. Brightness - Value [0:255] indicates how bright led will shine.<br />
+2. Red - Value [0:255] indicates amount of red color.<br />
+3. Green - Value [0:255] indicates amount of green color.<br />
+4. Blue - Value [0:255] indicates amount of blue color.  </dd>
+</dl>
+<div class="tabbed-set" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><label for="__tabbed_3_1">Decimal</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbAll&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Set all leds to GREEN color</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><label for="__tabbed_3_2">Hexdecimal</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbAll&quot;</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Set all leds to GREEN color</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><label for="__tabbed_3_3">HEX color code</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbAll&quot;</span><span class="p">,</span> <span class="mh">0xFF00FF00</span><span class="p">);</span> <span class="c1">// Set all leds to GREEN color</span>
+</code></pre></div>
+</div>
+</div>
+<h4 id="rgbaintintintint"><code>rgbA</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<h4 id="rgbbintintintint"><code>rgbB</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<h4 id="rgbcintintintint"><code>rgbC</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<h4 id="rgbdintintintint"><code>rgbD</code>&nbsp;(&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;,&nbsp;<code>int</code>&nbsp;)</h4>
+<dl>
+<dd><strong>Description:</strong> Set individual RGB channels A, B, C, D led color.<br />
+<strong>Value:</strong> Parameters:<br />
+1. Brightness - Value [0:255] indicates how bright led will shine.<br />
+2. Red - Value [0:255] indicates amount of red color.<br />
+3. Green - Value [0:255] indicates amount of green color.<br />
+4. Blue - Value [0:255] indicates amount of blue color.  </dd>
+</dl>
+<div class="tabbed-set" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><label for="__tabbed_4_1">Decimal</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbA&quot;</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Set RGB A led to GREEN color</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><label for="__tabbed_4_2">Hexdecimal</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbA&quot;</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xFF</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Set RGB A led to GREEN color</span>
+</code></pre></div>
+</div>
+<input id="__tabbed_4_3" name="__tabbed_4" type="radio" /><label for="__tabbed_4_3">Inline HEX</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code><span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;rgbA&quot;</span><span class="p">,</span> <span class="mh">0xFF00FF00</span><span class="p">);</span> <span class="c1">// Set RGB A led to GREEN color</span>
+</code></pre></div>
+</div>
+</div>
+<h3 id="gpio">GPIO</h3>
+<h4 id="pin-change-event">Pin change event</h4>
+<p>GPIO pins can be set to detect pin state changes. This is done using subscribe command:  </p>
+<div class="highlight"><pre><span></span><code><span class="kr">void</span> <span class="nf">onModuleData</span><span class="p">(</span><span class="n">ModuleData</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">is</span><span class="p">(</span><span class="s">&quot;gpioA&quot;</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">getInt</span><span class="p">()</span> <span class="o">==</span> <span class="kr">HIGH</span><span class="p">)</span>
+            <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;gpioA: HIGH&quot;</span><span class="p">);</span>
+        <span class="k">else</span>
+            <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="s">&quot;gpioA: LOW&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Enable serial print</span>
+    <span class="nf">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+    <span class="c1">// Initialize X4 module</span>
+    <span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+    <span class="c1">// Register onModuleData function to receive events</span>
+    <span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="n">attachOnData</span><span class="p">(</span><span class="n">onModuleData</span><span class="p">);</span>
+    <span class="c1">// Subscribe to receive gpioA pin changes</span>
+    <span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;gpioA&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="gpioa-int"><code>gpioA</code> ( <code>int</code> )</h4>
+<h4 id="gpiob-int"><code>gpioB</code> ( <code>int</code> )</h4>
+<h4 id="gpioc-int"><code>gpioC</code> ( <code>int</code> )</h4>
+<h4 id="gpiod-int"><code>gpioD</code> ( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Write or read GPIO pin A, B, C, D. Works similar like <a href="https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/" target="_blank"><code>digitalWrite()</code></a> and <a href="https://www.arduino.cc/reference/en/language/functions/digital-io/digitalread/" target="_blank"><code>digitalRead()</code></a> functions in Arduino.<br />
+Calling write or read will reconfigure pin to input or output automatically.<br />
+<strong>Value:</strong> [LOW:HIGH] - digital output between GND (0V) and VCC (3.3V).  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="c1">// Configure GPIO pin A to output and set to HIGH</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;gpioA&quot;</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+<span class="c1">// Configure GPIO pin A to input and read it&#39;s digital state (HIGH or LOW)</span>
+<span class="kr">int</span> <span class="n">gpioAState</span> <span class="o">=</span> <span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;gpioA&quot;</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="gpioaanalog-int"><code>gpioA/analog</code> ( <code>int</code> )</h4>
+<h4 id="gpiobanalog-int"><code>gpioB/analog</code> ( <code>int</code> )</h4>
+<h4 id="gpiocanalog-int"><code>gpioC/analog</code> ( <code>int</code> )</h4>
+<h4 id="gpiodanalog-int"><code>gpioD/analog</code> ( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Write or read analog value of GPIO pin A, B, C, D. Works similar like <a href="https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/" target="_blank"><code>analogWrite()</code></a> and <a href="https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/" target="_blank"><code>analogRead()</code></a> functions in Arduino.<br />
+Calling write or read will reconfigure pin to analog input or output automatically.<br />
+<strong>Value read:</strong> [0:1024] - value representing voltage. 0 - 0V; 1024 - 3.3V.<br />
+<strong>Value write:</strong> [0:20] - value representing voltage. 0 - 0V; 20 - 3.3V.  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="c1">// Configure GPIO pin A to analog output and set voltage to 1.6V</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;gpioA/analog&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+<span class="c1">// Configure GPIO pin A to analog input and read analog value</span>
+<span class="kr">int</span> <span class="n">gpioAValue</span> <span class="o">=</span> <span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;gpioA/analog&quot;</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span>
+</code></pre></div>
+<h4 id="gpioapull-int"><code>gpioA/pull</code> ( <code>int</code> )</h4>
+<h4 id="gpiobpull-int"><code>gpioB/pull</code> ( <code>int</code> )</h4>
+<h4 id="gpiocpull-int"><code>gpioC/pull</code> ( <code>int</code> )</h4>
+<h4 id="gpiodpull-int"><code>gpioD/pull</code> ( <code>int</code> )</h4>
+<dl>
+<dd><strong>Description:</strong> Set pullup or pulldown resistor for GPIO pin A, B, C, D. Works similar like <a href="https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/" target="_blank"><code>pinMode(pin, INPUT_PULLUP)</code></a> function in Arduino.<br />
+<strong>Value write:</strong> [LOW:HIGH] - LOW - pull to GND (0V); HIGH - pull to VCC (3.3V).  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="c1">// Read GPIO A</span>
+<span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;gpioA&quot;</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Will return LOW</span>
+<span class="c1">// Set GPIO pin A pull to VCC (3.3V).</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;gpioA/pull&quot;</span><span class="p">,</span> <span class="kr">HIGH</span><span class="p">);</span>
+<span class="c1">// Read GPIO A</span>
+<span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;gpioA&quot;</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Will return HIGH</span>
+<span class="c1">// Set GPIO pin A pull to GND (0V).</span>
+<span class="k">module</span><span class="p">.</span><span class="nf">write</span><span class="p">(</span><span class="s">&quot;gpioA/pull&quot;</span><span class="p">,</span> <span class="kr">LOW</span><span class="p">);</span>
+<span class="c1">// Read GPIO A</span>
+<span class="k">module</span><span class="p">.</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;gpioA&quot;</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Will return LOW</span>
+</code></pre></div>
+<h3 id="auxiliary-functions">Auxiliary functions</h3>
+<h4 id="functiona-any"><code>functionA</code> ( <em><code>any</code></em> )</h4>
+<h4 id="functionb-any"><code>functionB</code> ( <em><code>any</code></em> )</h4>
+<h4 id="functionc-any"><code>functionC</code> ( <em><code>any</code></em> )</h4>
+<h4 id="functiond-any"><code>functionD</code> ( <em><code>any</code></em> )</h4>
+<dl>
+<dd><strong>Description:</strong> Auxiliary commands for custom implementations.<br />
+Mainly used to execute some programmed action from a smartphone. Device calls this command with any value and X4 board intercepts it using subscription mechanism.  </dd>
+</dl>
+<div class="highlight"><pre><span></span><code><span class="kr">void</span> <span class="nf">onModuleData</span><span class="p">(</span><span class="n">ModuleData</span> <span class="n">data</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">is</span><span class="p">(</span><span class="s">&quot;functionA&quot;</span><span class="p">))</span> <span class="p">{</span> <span class="c1">// Check if received &quot;functionA&quot; event.</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">print</span><span class="p">(</span><span class="s">&quot;Command &#39;functionA&#39; called with value: &quot;</span><span class="p">);</span>
+        <span class="nf">Serial</span><span class="p">.</span><span class="nf">println</span><span class="p">(</span><span class="n">data</span><span class="p">.</span><span class="n">getInt</span><span class="p">());</span> <span class="c1">// Print value passed with command.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span> <span class="c1">// Initialize X4 module</span>
+    <span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="n">attachOnData</span><span class="p">(</span><span class="n">onModuleData</span><span class="p">);</span> <span class="c1">// Register event function &quot;onModuleData&quot;</span>
+    <span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s">&quot;functionA&quot;</span><span class="p">);</span> <span class="c1">// Subscribe to command &quot;functionA&quot; events.</span>
+<span class="p">}</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../03/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              [03] Mini Board X3
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../11/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              [11] Distance board
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/totemmaker" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/totemmaker/" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/totem_maker/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/Totemmaker" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.youtube.com/channel/UCRnZOXe1bYzW8WgE3NQojFA" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+  </body>
+</html>

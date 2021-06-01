@@ -1,0 +1,1415 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation site for Totemmaker Totem products programming">
+      
+      
+      
+      
+      <link rel="icon" href="../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
+    
+    
+      
+        <title>MotorDriver - Totem Programming</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-92600507-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#motordriver" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <!--
+  Copyright (c) 2016-2021 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
+
+<!-- Header -->
+<header class="md-header" data-md-component="header">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label="Header"
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../.."
+      title="Totem Programming"
+      class="md-header__button md-logo"
+      aria-label="Totem Programming"
+      data-md-component="logo"
+    >
+      
+  <img src="../../assets/images/totem-logo.png" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Totem Programming
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              MotorDriver
+            
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <ul class="md-tabs__list">
+        <li class="md-tabs__item item-primary">
+            <a href="https://forum.totemmaker.net" class="md-tabs__link"  target="_blank">
+                Forum
+            </a>
+        </li>
+        <li class="md-tabs__item item-secondary">
+            <a href="https://totemmaker.net/wiki/" class="md-tabs__link"  target="_blank">
+                Wiki
+            </a>
+        </li>
+        <li class="md-tabs__item item-secondary">
+            <a href="https://totemmaker.net/blog/" class="md-tabs__link"  target="_blank">
+                Blog
+            </a>
+        </li>
+        <li class="md-tabs__item item-secondary">
+            <a href="https://totemmaker.net/shop/" class="md-tabs__link"  target="_blank">
+                Shop
+            </a>
+        </li>
+    </ul>
+
+    <!-- Header options -->
+    <div class="md-header__options">
+
+      <!-- Switch to toggle language -->
+      
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    <!-- Repository information -->
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/totemmaker/TotemArduino" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TotemArduino
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Totem Programming" class="md-nav__button md-logo" aria-label="Totem Programming" data-md-component="logo">
+      
+  <img src="../../assets/images/totem-logo.png" alt="logo">
+
+    </a>
+    Totem Programming
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/totemmaker/TotemArduino" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    TotemArduino
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../TotemBUS/" class="md-nav__link">
+        TotemBUS
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        API
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="API" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        API information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ModuleData/" class="md-nav__link">
+        ModuleData
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MotorDriver
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        MotorDriver
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions-list" class="md-nav__link">
+    Functions list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motordriver_1" class="md-nav__link">
+    MotorDriver()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motordriversinglecommand" class="md-nav__link">
+    MotorDriver(singleCmd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setturnintensityintensity" class="md-nav__link">
+    setTurnIntensity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addfrontleftcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addFrontLeft()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addfrontrightcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addFrontRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addrearleftcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addRearLeft()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addrearrightcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addRearRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addservochannel-command-minpos-centerpos-maxpos-inverted" class="md-nav__link">
+    addServo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveservochannel-position" class="md-nav__link">
+    moveServo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movedrive-turn" class="md-nav__link">
+    move()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakefrontleft-frontright-rearleft-rearright" class="md-nav__link">
+    brake()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakeallpower" class="md-nav__link">
+    brakeAll()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakerearpower" class="md-nav__link">
+    brakeRear()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakefrontpower" class="md-nav__link">
+    brakeFront()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmodulenumber-serial" class="md-nav__link">
+    setModule()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totemmodule-getmodule" class="md-nav__link">
+    getModule()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TotemModule/" class="md-nav__link">
+        TotemModule
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../TotemRobot/" class="md-nav__link">
+        TotemRobot
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Interfaces
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Interfaces" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Interfaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/" class="md-nav__link">
+        Interfaces information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/BLE/" class="md-nav__link">
+        BLE
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/X4/" class="md-nav__link">
+        X4
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Modules
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Modules" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Modules
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/" class="md-nav__link">
+        Modules information
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/03/" class="md-nav__link">
+        [03] Mini Board X3
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/04/" class="md-nav__link">
+        [04] RoboBoard X4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modules/11/" class="md-nav__link">
+        [11] Distance board
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/01.ArduinoSetup/" class="md-nav__link">
+        Arduino setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/02.UseThirdParty/" class="md-nav__link">
+        Use third-party boards
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/03.UseExamples/" class="md-nav__link">
+        Use example projects
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/04.SetupController/" class="md-nav__link">
+        Using PS3/PS4 controller
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/CustomAppButtons/" class="md-nav__link">
+        Custom App buttons
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/GettingStartedX4/" class="md-nav__link">
+        Getting Started with X4
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/X4/" class="md-nav__link">
+        X4 features
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions-list" class="md-nav__link">
+    Functions list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#motordriver_1" class="md-nav__link">
+    MotorDriver()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#motordriversinglecommand" class="md-nav__link">
+    MotorDriver(singleCmd)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setturnintensityintensity" class="md-nav__link">
+    setTurnIntensity()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addfrontleftcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addFrontLeft()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addfrontrightcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addFrontRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addrearleftcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addRearLeft()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addrearrightcommand-minpower-maxpower-inverted" class="md-nav__link">
+    addRearRight()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#addservochannel-command-minpos-centerpos-maxpos-inverted" class="md-nav__link">
+    addServo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#moveservochannel-position" class="md-nav__link">
+    moveServo()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movedrive-turn" class="md-nav__link">
+    move()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakefrontleft-frontright-rearleft-rearright" class="md-nav__link">
+    brake()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakeallpower" class="md-nav__link">
+    brakeAll()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakerearpower" class="md-nav__link">
+    brakeRear()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brakefrontpower" class="md-nav__link">
+    brakeFront()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setmodulenumber-serial" class="md-nav__link">
+    setModule()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totemmodule-getmodule" class="md-nav__link">
+    getModule()
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="motordriver">MotorDriver</h1>
+<p>This class allows to define robot wheel configuration and make required calculations in order to move or turn to a certain direction. It makes robot driving more predictable and hides inconveniences of controlling raw motor channels.<br />
+Each robot has a different wheel configuration and motors specifications. Driver should be configured with these parameters before use.<br />
+Supports up to 4 DC motors and 3 servo motors.</p>
+<h2 id="functions-list">Functions list</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Result</th>
+<th align="left">Function</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"></td>
+<td align="left"><a href="#motordriver_1">MotorDriver()</a></td>
+<td align="left">Create object</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><a href="#motordriversinglecommand">MotorDriver(<code>singleCmd</code>)</a></td>
+<td align="left">Create object with settings</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#setturnintensityintensity">setTurnIntensity(<code>intensity</code>)</a></td>
+<td align="left">Set turn intensity</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#addfrontleftcommand-minpower-maxpower-inverted">addFrontLeft(<code>command</code>, <code>min</code>, <code>max</code>, <code>inv</code>)</a></td>
+<td align="left">Configure front left wheel</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#addfrontrightcommand-minpower-maxpower-inverted">addFrontRight(<code>command</code>, <code>min</code>, <code>max</code>, <code>inv</code>)</a></td>
+<td align="left">Configure front right wheel</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#addrearleftcommand-minpower-maxpower-inverted">addRearLeft(<code>command</code>, <code>min</code>, <code>max</code>, <code>inv</code>)</a></td>
+<td align="left">Configure rear left wheel</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#addrearrightcommand-minpower-maxpower-inverted">addRearRight(<code>command</code>, <code>min</code>, <code>max</code>, <code>inv</code>)</a></td>
+<td align="left">Configure rear right wheel</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#addservochannel-command-minpos-centerpos-maxpos-inverted">addServo(<code>channel</code>, <code>cmd</code>, <code>min</code>, <code>center</code>, <code>max</code>, <code>inv</code>)</a></td>
+<td align="left">Configure servo motor</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#moveservochannel-position">moveServo(<code>channel</code>, <code>position</code>)</a></td>
+<td align="left">Move servo arm to position</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#movedrive-turn">move(<code>drive</code>, <code>turn</code>)</a></td>
+<td align="left">Set drive and turn power to wheels</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#brakefrontleft-frontright-rearleft-rearright">brake(<code>fl</code>, <code>fr</code>, <code>rl</code>, <code>rr</code>)</a></td>
+<td align="left">Set braking power to certain wheels</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#brakeallpower">brakeAll(<code>power</code>)</a></td>
+<td align="left">Set braking power to all wheels</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#brakerearpower">brakeRear(<code>power</code>)</a></td>
+<td align="left">Set braking power to rear wheels</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#brakefrontpower">brakeFront(<code>power</code>)</a></td>
+<td align="left">Set braking power to front wheels</td>
+</tr>
+<tr>
+<td align="left"><em>none</em></td>
+<td align="left"><a href="#setmodulenumber-serial">setModule(<code>number</code>, <code>serial</code>)</a></td>
+<td align="left">Set module number and serial</td>
+</tr>
+<tr>
+<td align="left"><a href="/API/TotemModule"><code>TotemModule</code></a></td>
+<td align="left"><a href="#totemmodule-getmodule">getModule()</a></td>
+<td align="left">Get TotemModule object</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example">Example</h2>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span> <span class="cpf">&lt;Totem.h&gt;</span><span class="cp"></span>
+<span class="c1">// Define use of class</span>
+<span class="n">MotorDriver</span> <span class="n">driver</span><span class="p">;</span>
+<span class="c1">// Arduino setup</span>
+<span class="kr">void</span> <span class="nb">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">Totem</span><span class="p">.</span><span class="n">X4</span><span class="p">.</span><span class="nf">begin</span><span class="p">();</span>
+  <span class="c1">// Configure 4 wheel robot</span>
+  <span class="c1">// Configure Front Left wheel to motorA with starting power of 10%</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">addFrontLeft</span><span class="p">(</span><span class="s">&quot;motorA&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kr">true</span><span class="p">);</span>
+  <span class="c1">// Configure Front Right wheel to motorB with starting power of 10%</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">addFrontRight</span><span class="p">(</span><span class="s">&quot;motorB&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+  <span class="c1">// Configure Rear Left wheel to motorC with starting power of 10%</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">addRearLeft</span><span class="p">(</span><span class="s">&quot;motorC&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kr">true</span><span class="p">);</span>
+  <span class="c1">// Configure Rear Right wheel to motorD with starting power of 10%</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">addRearRight</span><span class="p">(</span><span class="s">&quot;motorD&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+  <span class="c1">// Configure servo motor channel 0 to &quot;servoA&quot; command with limits [-90:90]</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">addServo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;servoA&quot;</span><span class="p">,</span> <span class="mi">-90</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">90</span><span class="p">);</span>
+  <span class="c1">// Set turning intensity to 80%</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">setTurnIntensity</span><span class="p">(</span><span class="mi">80</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// Arduino loop</span>
+<span class="kr">void</span> <span class="nb">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// Drive forward at 60% power while turning right at 20% power</span>
+  <span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">moveServo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">-60</span><span class="p">);</span> <span class="c1">// Set servo to -60 position</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span> <span class="c1">// Wait 2 seconds</span>
+  <span class="c1">// Drive forward at 20% power while turning left at 70% power</span>
+  <span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">-70</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span> <span class="c1">// Wait 2 seconds</span>
+  <span class="c1">// Drive backwards at 50% power withour turning</span>
+  <span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">-50</span><span class="p">);</span>
+  <span class="n">driver</span><span class="p">.</span><span class="n">moveServo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span> <span class="c1">// Set servo to 60 position</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span> <span class="c1">// Wait 2 seconds</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="description">Description</h2>
+<blockquote>
+<h3 id="motordriver_1">MotorDriver()</h3>
+<h3 id="motordriversinglecommand">MotorDriver(<code>singleCommand</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Create driver object.<br />
+MotorDriver internally writes <code>motorABCD</code> command. If individual motor updates are required (<code>motorA</code>), pass parameter <em>false</em> <code class="highlight"><span class="n">MotorDriver</span><span class="p">(</span><span class="kr">false</span><span class="p">)</span></code> to disable single command mode.<br />
+Disabling single command mode would be required if using one of DC motor channel for other purposes than robot wheels.<br />
+<strong>Parameter:</strong> Write command mode.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">MotorDriver</span> <span class="n">driver</span><span class="p">;</span> <span class="c1">// Create driver object</span>
+<span class="n">MotorDriver</span> <span class="nf">driver</span><span class="p">(</span><span class="kr">false</span><span class="p">);</span> <span class="c1">// Create driver with individual command mode</span>
+</code></pre></div>
+<blockquote>
+<h3 id="setturnintensityintensity">setTurnIntensity(<code>intensity</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Configure turn intensity.<br />
+Limit turn sensitivity if it's too high. This can be configured when turning (steering) affects driving too much.<br />
+It modifies internal computation and does not change parameters of <code>move()</code> function.<br />
+It only affects turning with 2 or 4 static wheels. <strong>Does not affect servo motors</strong>.<br />
+<strong>Parameter:</strong> Percentage of turn sensitivity [0 - lowest; 100 - highest]  </p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="n">turnIntensity</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span> <span class="c1">// Set to 50%</span>
+</code></pre></div>
+<blockquote>
+<h3 id="addfrontleftcommand-minpower-maxpower-inverted">addFrontLeft(<code>command</code>, <code>minPower</code>, <code>maxPower</code>, <code>inverted</code>)</h3>
+<h3 id="addfrontrightcommand-minpower-maxpower-inverted">addFrontRight(<code>command</code>, <code>minPower</code>, <code>maxPower</code>, <code>inverted</code>)</h3>
+<h3 id="addrearleftcommand-minpower-maxpower-inverted">addRearLeft(<code>command</code>, <code>minPower</code>, <code>maxPower</code>, <code>inverted</code>)</h3>
+<h3 id="addrearrightcommand-minpower-maxpower-inverted">addRearRight(<code>command</code>, <code>minPower</code>, <code>maxPower</code>, <code>inverted</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Configure robot wheels.<br />
+By providing settings for each motor, MotorDriver will adjust output power to make predictable movements. Functions can be called multiple times to reconfigure parameters during runtime (e.g. limiting max power).<br />
+<code>minPower</code> indicates minimum amount of power required to spin a wheel. This is used to compensate motor <abbr title="A range of power too small to spin a motor">dead-zone</abbr>.<br />
+<code>maxPower</code> by default should be set to <em>100</em>. It may be lowered if there is a need to limit power of the robot or using lower voltage motors.<br />
+<code>inverted</code> used to change motor spin direction by providing <em>true/false</em>.<br />
+<strong>Parameter:</strong><br />
+<code>command</code> - command of the motor channel (e.g. <code>motorA</code>).<br />
+<code>minPower</code> - minimum percentage of power required to spin a motor 0-100.<br />
+<code>maxPower</code> - maximum allowed power for the motor 0-100.<br />
+<code>inverted</code> - invert motor pins [false:true]. If not provided - defaults to <em>false</em>;  </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Set front left motor to use with channel motorA and start with power from 20%</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">addFrontLeft</span><span class="p">(</span><span class="s">&quot;motorA&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+<span class="c1">// Set front left right to use with channel motorB and start with power from 20% + invert direction</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">addFrontRight</span><span class="p">(</span><span class="s">&quot;motorB&quot;</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="kr">true</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<h3 id="addservochannel-command-minpos-centerpos-maxpos-inverted">addServo(<code>channel</code>, <code>command</code>, <code>minPos</code>, <code>centerPos</code>, <code>maxPos</code>, <code>inverted</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Configure servo motor.<br />
+Define parameters for servo motor, to use with this driver. Parameters are saved to specified <code>channel</code>. Same number must be used when calling <code>moveServo()</code>. It can be any digit from 0 to 2.<br />
+Function can be called multiple times to reconfigure parameters during runtime (e.g. changing motor limits).<br />
+Position [-100:100] set by <code>moveServo()</code> will be mapped to minimum, maximum values configured by this function.<br />
+<strong>Parameter:</strong><br />
+<code>channel</code> - number of servo channel [0:2].<br />
+<code>command</code> - command of the motor channel (e.g. <code>servoA</code>).<br />
+<code>minPos</code> - minimum allowed position for servo motor to spin (limit) [-100:100].<br />
+<code>centerPos</code> - center position for servo motor when 0 is set [-100:100].<br />
+<code>maxPower</code> - maximum allowed position for servo motor to spin (limit) [-100:100].<br />
+<code>inverted</code> - invert servo motor spin direction [false:true]. If not provided - defaults to <em>false</em>;  </p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Configure servo motor to channel 0</span>
+<span class="c1">// With command &quot;servoA&quot;</span>
+<span class="c1">// Min pos: 10, center pos: 55, max pos: 94</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">addServo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&quot;servoA&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">94</span><span class="p">);</span>
+<span class="c1">// Configure servo motor to channel 1</span>
+<span class="c1">// With command &quot;servoB&quot;</span>
+<span class="c1">// Min pos: -70, center pos: 50, max pos: 90</span>
+<span class="c1">// Invert spin direction</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">addServo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;servoB&quot;</span><span class="p">,</span> <span class="mi">-70</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="kr">true</span><span class="p">);</span>
+<span class="c1">// Spin motor 0 to position -100. Motor internally is set to value 10</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">moveServo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">-100</span><span class="p">);</span>
+<span class="c1">// Spin motor 1 to position -100. Motor internally is set to value 90</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">moveServo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">-100</span><span class="p">);</span>
+</code></pre></div>
+<blockquote>
+<h3 id="moveservochannel-position">moveServo(<code>channel</code>, <code>position</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Move servo to desired position.<br />
+Move configured servo motor to position.<br />
+<strong>Parameter:</strong><br />
+<code>channel</code> - number of configured servo channel [0:2].<br />
+<code>position</code> - motor position [-100:100]. [0] - center.</p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="n">moveServo</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Spin motor 0 to position 50</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">moveServo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">-6</span><span class="p">);</span> <span class="c1">// Spin motor 1 to position -6</span>
+</code></pre></div>
+<blockquote>
+<h3 id="movedrive-turn">move(<code>drive</code>, <code>turn</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Set movement of the robot.<br />
+Set robot move parameters that will be converted to motor output.<br />
+This will write motors to configured channels.<br />
+<strong>Parameter:</strong><br />
+<code>drive</code> - power of forward/backward direction [-100:100].<br />
+<code>turn</code> - power of turning left/right [-100:100]. If not provided defaults to 0.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span> <span class="c1">// Drive forward at 50% power</span>
+<span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">-20</span><span class="p">);</span> <span class="c1">// Drive backward at 20% power</span>
+<span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span> <span class="c1">// Turn right at 50% power</span>
+<span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">-30</span><span class="p">);</span> <span class="c1">// Turn left at 30% power</span>
+<span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">-30</span><span class="p">);</span> <span class="c1">// Drive forward at 100% power while turning left at 30% power</span>
+<span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">-80</span><span class="p">,</span> <span class="mi">90</span><span class="p">);</span> <span class="c1">// Drive backward at 80% power while turning right at 90% power</span>
+</code></pre></div>
+<blockquote>
+<h3 id="brakefrontleft-frontright-rearleft-rearright">brake(<code>frontLeft</code>, <code>frontRight</code>, <code>rearLeft</code>, <code>rearRight</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Brake individual wheels of robot.<br />
+This will apply electronic brake for modules supporting this feature. Braking power can be set per each wheel.<br />
+If <code>move()</code> and <code>brake()</code> functions parameters are non-zero, driver will cut power to motors only if braking power is higher than motor spin power. Otherwise - motor spin power is lowered as if real brake pads are pressing spinning wheel. Setting full braking power will always stops motor completely.<br />
+Only configured wheels are affected (with wheel add functions).<br />
+Value is percentage of braking. 0% - none braking, 100% - full braking power.<br />
+<strong>Parameter:</strong><br />
+<code>power</code> - power of braking 0-100.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="n">brake</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Brake front left wheel at 100%</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">brake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">);</span> <span class="c1">// Brake rear wheels at 80%</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">brake</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// None of wheels are braking</span>
+<span class="c1">// Can be used with motor spinning power</span>
+<span class="n">driver</span><span class="p">.</span><span class="nf">move</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// Set wheels spin at 100% power</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">brake</span><span class="p">(</span><span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">60</span><span class="p">);</span> <span class="c1">// Will slow down wheels spin by applying 60% of brake power</span>
+</code></pre></div>
+<blockquote>
+<h3 id="brakeallpower">brakeAll(<code>power</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Brake all wheels of robot.<br />
+Apply same electronic brake power to all wheels of robot. Alias for function <code>brake()</code>.<br />
+Value is in percentage of braking. 0 - none braking, 100 - full braking power.<br />
+<strong>Parameter:</strong><br />
+<code>power</code> - power of braking 0-100.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="n">brakeAll</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// Brake all wheels at 100%</span>
+</code></pre></div>
+<blockquote>
+<h3 id="brakerearpower">brakeRear(<code>power</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Brake rear wheels of robot.<br />
+Apply same electronic brake power to rear wheels of robot. Alias for function <code>brake()</code>.<br />
+Value is in percentage of braking. 0 - none braking, 100 - full braking power.<br />
+<strong>Parameter:</strong><br />
+<code>power</code> - power of braking 0-100.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="n">brakeRear</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// Brake only rear wheels at 100% (handbrake)</span>
+</code></pre></div>
+<blockquote>
+<h3 id="brakefrontpower">brakeFront(<code>power</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Brake front wheels of robot.<br />
+Apply same electronic brake power to front wheels of robot. Alias for function <code>brake()</code>.<br />
+Value is in percentage of braking. 0 - none braking, 100 - full braking power.<br />
+<strong>Parameter:</strong><br />
+<code>power</code> - power of braking 0-100.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="n">brakeFront</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span> <span class="c1">// Brake only front wheels at 100%</span>
+</code></pre></div>
+<blockquote>
+<h3 id="setmodulenumber-serial">setModule(<code>number</code>, <code>serial</code>)</h3>
+</blockquote>
+<p><strong>Description:</strong> Configure module to communicate with.<br />
+MotorDriver contains <a href="/API/TotemModule">TotemModule</a> to write motor output values. This function allows to configure exact module to communicate with. By default it's set to 00 (all modules). Same as <a href="/API/TotemModule/#setnumbernumber">setNumber(<code>number</code>)</a> and <a href="/API/TotemModule/#setserialserial">setSerial(<code>serial</code>)</a>.<br />
+<strong>Parameter:</strong> Set module to send commands to.  </p>
+<div class="highlight"><pre><span></span><code><span class="n">driver</span><span class="p">.</span><span class="n">setModule</span><span class="p">(</span><span class="mo">04</span><span class="p">);</span> <span class="c1">// Send move() updates to 04 modules only</span>
+<span class="n">driver</span><span class="p">.</span><span class="n">setModule</span><span class="p">(</span><span class="mo">04</span><span class="p">,</span> <span class="mi">21015</span><span class="p">);</span> <span class="c1">// Send move() updates to 04 module with serial 21015 only</span>
+</code></pre></div>
+<blockquote>
+<h3 id="totemmodule-getmodule"><a href="/API/TotemModule"><code>TotemModule</code></a> getModule()</h3>
+</blockquote>
+<p><strong>Description:</strong> Get <a href="/API/TotemModule">TotemModule</a> object.<br />
+MotorDriver contains <a href="/API/TotemModule">TotemModule</a> to write motor output values. This function returns it to use for other purposes. Allows to reuse already existing TotemModule instance without creating a new one.  </p>
+<div class="highlight"><pre><span></span><code><span class="kr">int</span> <span class="n">voltage</span> <span class="o">=</span> <span class="n">driver</span><span class="p">.</span><span class="n">getModule</span><span class="p">().</span><span class="n">readWait</span><span class="p">(</span><span class="s">&quot;battery&quot;</span><span class="p">).</span><span class="n">getInt</span><span class="p">();</span> <span class="c1">// Read battery using returned TotemModule</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../ModuleData/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ModuleData
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../TotemModule/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              TotemModule
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/totemmaker" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.facebook.com/totemmaker/" target="_blank" rel="noopener" title="www.facebook.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.instagram.com/totem_maker/" target="_blank" rel="noopener" title="www.instagram.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/Totemmaker" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.youtube.com/channel/UCRnZOXe1bYzW8WgE3NQojFA" target="_blank" rel="noopener" title="www.youtube.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
+      
+    
+  </body>
+</html>
