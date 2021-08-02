@@ -25,7 +25,7 @@ Each module accepts a set of commands to control their specific capabilities (li
 
 Each Totem module implements this default set of commands:
 
-> ### `indicate` ( )
+#### `indicate` ( )
 
 **Description:** Blink on-board led. Used to indicate which module received a command.
 
@@ -33,7 +33,7 @@ Each Totem module implements this default set of commands:
 module.write("indicate"); // Blink on-board led
 ```
 
-> ### `restart` ( )
+#### `restart` ( )
 
 **Description:** Perform software restart of the module itself.
 
@@ -41,7 +41,7 @@ module.write("indicate"); // Blink on-board led
 module.write("restart"); // Restart module
 ```
 
-> ### `version` ( )
+#### `version` ( )
 
 **Description:** Get firmware version of the module. This command is read-only.  
 **Value:** Encoded decimal value. 100 translates to v1.00 (150 -> v1.50).

@@ -66,7 +66,7 @@ void loop() {
 ```
 ## Description
 ***
-> #### begin()
+#### begin()
 
 **Description:** Initialize Bluetooth Low Energy interface. Must be executed inside setup() function before using library.  
 ```arduino
@@ -75,8 +75,8 @@ void setup() {
 }
 ```
 ***
-> #### [`TotemRobot`](/API/TotemRobot) findRobot() { data-toc-label='findRobot()' }
-> #### [`TotemRobot`](/API/TotemRobot) findRobot(`RobotReceiver`) { data-toc-label='findRobot(result)' }
+#### [`TotemRobot`](/API/TotemRobot) findRobot() { data-toc-label='findRobot()' }
+#### [`TotemRobot`](/API/TotemRobot) findRobot(`RobotReceiver`) { data-toc-label='findRobot(result)' }
 
 **Description:** Start searching for available Totem robots over Bluetooth Low Energy. This function will block until connection to any robot is established.  
 On successful connection find process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopFind).  
@@ -95,8 +95,8 @@ void function() {
 }
 ```
 ***
-> #### findRobotNoBlock() 
-> #### findRobotNoBlock(`RobotReceiver`)  { data-toc-label='findRobotNoBlock(result)' }
+#### findRobotNoBlock() 
+#### findRobotNoBlock(`RobotReceiver`)  { data-toc-label='findRobotNoBlock(result)' }
 
 **Description:** Start searching for available Totem robots over Bluetooth Low Energy. This function does not block main program execution. All connection process will be done in background.  
 After connection is established, this process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopFind).  
@@ -115,7 +115,7 @@ void function() {
 }
 ```
 ***
-> #### `bool` isFinding() { data-toc-label='isFinding()' }
+#### `bool` isFinding() { data-toc-label='isFinding()' }
 
 **Description:** Tells if [findRobot()](#totemrobot-findrobot--totemrobot-findrobotrobotreceiver) or [findRobotNoBlock()](#findrobotnoblock--findrobotnoblockrobotreceiver) was called and process is active.  
 **Result:** true if process is active
@@ -128,7 +128,7 @@ void function() {
 }
 ```
 ***
-> #### stopFind()
+#### stopFind()
 
 **Description:** Stop searching for robot and unblock [findRobot()](#totemrobot-findrobot--totemrobot-findrobotrobotreceiver). Only used when required to stop this process manually. After connection, the search process is stopped automatically and calling this function is not required.  
 ```arduino
@@ -137,7 +137,7 @@ void function() {
 }
 ```
 ***
-> #### attachOnConnect(`RobotReceiver`) { data-toc-label='attachOnConnect(result)' }
+#### attachOnConnect(`RobotReceiver`) { data-toc-label='attachOnConnect(result)' }
 
 **Description:** Register function that will be called when [findRobot()](#totemrobot-findrobot--totemrobot-findrobotrobotreceiver) process connects to a robot. This is handy when using non-blocking find process and we don't know when connection is established.  
 `RobotReceiver` is a user defined function with any name, but must have [`TotemRobot`](/API/TotemRobot) as a parameter.  
@@ -155,7 +155,7 @@ void function() {
 }
 ```
 ***
-> #### `int` getConnectedCount() { data-toc-label='getConnectedCount()' }
+#### `int` getConnectedCount() { data-toc-label='getConnectedCount()' }
 
 **Description:** Returns count of currently connected Totem Robots.
 ```arduino
@@ -165,7 +165,7 @@ void function() {
 }
 ```
 ***
-> #### [`TotemRobot`](/API/TotemRobot) getConnectedLast() { data-toc-label='getConnectedLast()' }
+#### [`TotemRobot`](/API/TotemRobot) getConnectedLast() { data-toc-label='getConnectedLast()' }
 
 **Description:** Returns last connected [`TotemRobot`](/API/TotemRobot) object.  
 If no connection was made before, this function returns a dummy device that isn't connected.  
@@ -177,7 +177,7 @@ void function() {
 }
 ```
 ***
-> #### [`TotemRobot[]`](/API/TotemRobot) getConnectedList() { data-toc-label='getConnectedList()' }
+#### [`TotemRobot[]`](/API/TotemRobot) getConnectedList() { data-toc-label='getConnectedList()' }
 
 **Description:** Returns list of connected [`TotemRobot`](/API/TotemRobot) objects.
 ```arduino
