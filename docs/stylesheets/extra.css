@@ -33,6 +33,18 @@
   --md-footer-fg-color--lighter: hsla(0, 0%, 100%, 0.3);
 }
 
+h4 {
+  display: table;
+  margin: 6px 0;
+  font-size: 90%;
+  line-height: normal;
+  background: #e7f2fa;
+  color: #2980B9;
+  border-top: solid 3px #6ab0de;
+  padding: 6px;
+  position: relative;
+}
+
 @media screen and (max-width: 543px) {
   ul.md-tabs__list > li.md-tabs__item.item-secondary {
       display: none;
