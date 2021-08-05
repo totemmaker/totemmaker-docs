@@ -45,6 +45,10 @@ h4 {
   position: relative;
 }
 
+h4:target {
+  scroll-margin-top: 70px !important;
+}
+
 @media screen and (max-width: 543px) {
   ul.md-tabs__list > li.md-tabs__item.item-secondary {
       display: none;
