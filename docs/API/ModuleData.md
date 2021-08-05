@@ -6,14 +6,14 @@ Object containing data received from module.
 
 | Result | Function | Description |
 | :----- | :------- | :---------- |
-| `bool` | [is(`command`)](#bool-iscommand) | Check if data came of specified command |
-| `bool` | [isInt()](#bool-isint) | Check if there is valid integer data |
-| `bool` | [isString()](#bool-isstring) | Check if there is valid string data |
-| `int`  | [getInt()](#int-getint) | Read integer from data |
-|`string`| [getString()](#string-getstring) | Read string from data |
-| `bool` | [getData(`array`)](#bool-getdataarray) | Read array pointer of data |
-| `bool` | [getData(`array`, `length`)](#bool-getdataarray-length) | Read array pointer and data length |
-| `int`  | [getCmdHash()](#int-getcmdhash) | Get hash of received command string |
+| `bool` | [is(`command`)](#iscommand) | Check if data came of specified command |
+| `bool` | [isInt()](#isint) | Check if there is valid integer data |
+| `bool` | [isString()](#isstring) | Check if there is valid string data |
+| `int`  | [getInt()](#getint) | Read integer from data |
+|`string`| [getString()](#getstring) | Read string from data |
+| `bool` | [getData(`array`)](#getdataarray) | Read array pointer of data |
+| `bool` | [getData(`array`, `length`)](#getdataarray-length) | Read array pointer and data length |
+| `int`  | [getCmdHash()](#getcmdhash) | Get hash of received command string |
 
 ## Example
 
@@ -49,12 +49,14 @@ void loop() {
 }
 ```
 
-## Description
+## API
 
-> ### `bool` is(`command`) { data-toc-label='is(command)' }
+### Functions
 
-**Description:** Check if received data is from specified `command`.  
-**Result:** True if `command` and result command match.
+#### is(`command`)
+
+: Check if received data is from specified `command`.  
+_Returns:_ [`true`:`false`]  
 
 ```arduino
 void onModuleData(ModuleData data) {
@@ -65,10 +67,10 @@ void onModuleData(ModuleData data) {
 }
 ```
 
-> ### `bool` isInt() { data-toc-label='isInt()' }
+#### isInt()
 
-**Description:** Check if received data contains integer value.  
-**Result:** True if valid data can be received with [`getInt()`](#int-getint)
+: Check if data can be read with [`getInt()`](#getint).  
+_Returns:_ [`true`:`false`]  
 
 ```arduino
 ModuleData data;
@@ -78,10 +80,10 @@ module.readWait("version", data);
 data.isInt(); // returns true. "version" data contains integer value
 ```
 
-> ### `bool` isString() { data-toc-label='isString()' }
+#### isString()
 
-**Description:** Check if received data contains string value.  
-**Result:** True if valid data can be received with [`getString()`](#string-getstring)
+: Check if data can be read with [`getString()`](#getstring).  
+_Returns:_ [`true`:`false`]  
 
 ```arduino
 ModuleData data;
@@ -91,10 +93,10 @@ module.readWait("version", data);
 data.isString(); // returns false. "version" data contains integer value
 ```
 
-> ### `int` getInt() { data-toc-label='getInt()' }
+#### getInt()
 
-**Description:** Read integer value from received data.  
-**Result:** Up to 32-bit signed value.
+: Read integer value from received data.  
+_Returns:_ signed 32bit `int` [`-2147483648`:`2147483647`]  
 
 ```arduino
 ModuleData data;
@@ -105,10 +107,10 @@ if (module.readWait("version", data)) {
 }
 ```
 
-> ### `string` getString() { data-toc-label='getString()' }
+#### getString()
 
-**Description:** Read string value from received data.  
-**Result:** Pointer to first string character with NULL terminator.
+: Read string value from received data.  
+_Returns:_ string array.  
 
 ```arduino
 ModuleData data;
@@ -119,11 +121,12 @@ if (module.readWait("cfg/robot/name", data)) {
 }
 ```
 
-> ### `bool` getData(`array`) { data-toc-label='getData(array)' }
+#### getData(`array`)
 
-**Description:** Get pointer to data array.  
-In case of printing received data, TotemBUS protocol always adds null terminator at the end of the data, so it's safe not to check the total length.  
-**Result:** Pointer to data array.
+: Get pointer to data array.  
+Value is stored in passed parameter `array`.  
+_In case of printing received data, TotemBUS protocol always adds NULL terminator at the end of the data, so it's safe to use print and string manipulation functions._  
+_Returns:_ data stored in `array` [`true`:`false`]  
 
 ```arduino
 ModuleData data;
@@ -135,11 +138,12 @@ if (module.readWait("cfg/robot/name", data)) { // Read robot name
 }
 ```
 
-> ### `bool` getData(`array`, `length`) { data-toc-label='getData(array, len)' }
+#### getData(`array`, `length`)
 
-**Description:** Get pointer to data array and it's length.  
-In case of printing received data, TotemBUS protocol always adds null terminator at the end of the data, so it's safe not to check the total length.  
-**Result:** Pointer to data array and it's length.
+: Get pointer to data array and it's length.  
+Value is stored in passed parameters `array`, `length`.  
+_In case of printing received data, TotemBUS protocol always adds NULL terminator at the end of the data, so it's safe to use print and string manipulation functions._  
+_Returns:_ data stored in `array`, `length` [`true`:`false`]  
 
 ```arduino
 ModuleData data;
@@ -154,11 +158,11 @@ if (module.readWait("cfg/robot/name", data)) {// Read robot name
 }
 ```
 
-> ### `int` getCmdHash()  { data-toc-label='getCmdHash()' }
+#### getCmdHash()
 
-**Description:** Get hash of result command.
+: Get hash of result command.
 Will return command identifier that can be generated with `#!arduino TotemModule::hashCmd("command")`.  
-**Result:** Command hash.
+_Returns:_ unsigned 32bit hash [`0`:`0xFFFFFFFF`]  
 
 ```arduino
 void onModuleData(ModuleData data) {
