@@ -11,14 +11,14 @@ This section contains documentation for Totem Library API. It's a set of functio
 
 ## Example
 
-An example of bare minimum code required to control [Totem X4 module](/modules/04):
+An example of bare minimum code required to control [RoboBoard X4](/modules/04):
 
 ```arduino
 // Include Totem Library
 #include <Totem.h>
 // Arduino initialization function
 void setup() {
-  Totem.X4.begin(); // Initialize X4 module
+  Totem.X4.begin(); // Initialize RoboBoard X4
 }
 // Arduino infinite loop function
 void loop() {

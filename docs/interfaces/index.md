@@ -43,10 +43,10 @@ void loop() {
 ## X4
 
 `Totem.X4.begin()`  
-Used **only** with Totem [X4 module](/modules/04) to enable all functionality and on-board features:
+Used **only** with Totem [RoboBoard X4](/modules/04) to enable all functionality and on-board features:
 
-* Implements all X4 module functionality.
-* Makes X4 module discoverable over Bluetooth.
+* Implements all RoboBoard X4 functionality.
+* Makes RoboBoard X4 discoverable over Bluetooth.
 * Provides direct access to `TotemModule` functions (`Totem.X4.write("indicate")`).
 * Enables passthrough to communicate with external modules connected over TotemBUS.
 

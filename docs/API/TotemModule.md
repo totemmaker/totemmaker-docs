@@ -32,13 +32,13 @@ Module instance object, providing to send and receive data from module.
 ## Example
 
 ```arduino
-// Define use of X4 module
-// This can be any module connected to Totem X4 board
-TotemModule module(04);
+// Define use of Distance sensor [11]
+// This can be any module connected to RoboBoard X4 board
+TotemModule module(11);
 // Arduino setup
 void setup() {
   Serial.begin(115200);
-  // Initialize X4 module
+  // Initialize RoboBoard X4
   Totem.X4.begin();
 }
 // Arduino loop
@@ -46,8 +46,8 @@ void loop() {
   // Blink on-board led
   module.write("indicate");
   delay(500); // Wait 500ms
-  // Read robot (module) name
-  Serial.println(module.readWait("cfg/robot/name").getString());
+  // Read distance
+  Serial.println(module.readWait("distance").getInt());
   delay(500); // Wait 500ms
 }
 ```

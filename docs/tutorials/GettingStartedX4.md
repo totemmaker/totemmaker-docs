@@ -49,7 +49,7 @@ Lets write a simple program to jump LEDs between red, green, blue colors. The co
 #include <Totem.h>
 // Arduino setup function.
 void setup() {
-    // Initialize X4 module
+    // Initialize RoboBoard X4
     Totem.X4.begin();
 }
 // Arduino loop function
@@ -85,7 +85,7 @@ Arduino processing function. It executes code inside this block infinitely until
 
 Function to set value of RGB LED.  
 `Totem.X4.write` - function to send a command to X4 board.  
-`"rgbAll"` - command to change color of all 4 RGB LED. For the list of all available commands look X4 module reference.  
+`"rgbAll"` - command to change color of all 4 RGB LED. For the list of all available commands see [RoboBoard X4 reference](/modules/04).  
 `255, 255, 0, 0` - parameters setting LED brightness and color. Values 0-255 corresponds to 0-100%. The meaning is in order: Brightness, Amount of Red color, Amount of Green color, Amount of Blue color.  
 
 > 10 | `#!arduino delay(700);`

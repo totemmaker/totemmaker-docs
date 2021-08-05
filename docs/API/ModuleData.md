@@ -19,7 +19,7 @@ Object containing data received from module.
 
 ```arduino
 #include <Totem.h>
-// Declare that we are willing to communicate with X4 module
+// Declare that we are willing to communicate with RoboBoard X4
 TotemModule module(04);
 // Receiver function for result of read() function
 void onModuleData(ModuleData data) {
@@ -35,7 +35,7 @@ void onModuleData(ModuleData data) {
 // Arduino initialization function
 void setup() {
   // put your setup code here, to run once:
-  Totem.X4.begin(); // Initialize X4 module
+  Totem.X4.begin(); // Initialize RoboBoard X4
   // Register module read() data receiver function
   module.attachOnData(onModuleData);
   // Read cfg/robot/name from module X4. Result will be passed to onModuleData

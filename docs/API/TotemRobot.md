@@ -155,7 +155,7 @@ TotemModule module(03);
 void function() {
   TotemRobot robot = Totem.BLE.getConnectedLast(); // Get last connected robot
   robot.attach(module); // Assign module X3 object to selected robot connection.
-                        // "module" now will only control X3 modules that are available in provided "robot" connection.
+                        // "module" now will only control Mini Control Board X3 that are available in provided "robot" connection.
 }
 ```
 
