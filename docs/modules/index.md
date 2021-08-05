@@ -14,21 +14,23 @@ Version tag (v1.0) indicates board revision. Some boards may have hardware chang
 
 ## Connecting modules
 
-![Totem modules daisy-chain](/assets/images/module_15_connected.jpg)
+![Totem module 15 connected](/assets/images/module_15_connected.jpg)
 
 Modules are daisy-chain connectable with a 6 pin connector. It provides power and communication. Some modules (like 03 and 04) has BLE interface and can connect to TotemBUS network wirelessly instead of a physical cable. This is mostly used to control modules from a smartphone. Module is operational the second it's physically connected to TotemBUS network and powered on.
 
 ## Controlling modules
 
-Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). This list is available in documentation page for specific module. These commands can be sent using [Totem API](/API).
+![Totem module 14 car](/assets/images/module_14_car.jpg)
+
+Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). Controller can also subscribe to data in order for module to start broadcasting it. The list of available commands can be found in documentation page for specific module. Modules can be interfaced using [Totem API](/API).
 
 ## General module commands
 
-Each Totem module implements this default set of commands:
+Each Totem module implements default set of commands:
 
 #### `indicate` ( )
 
-**Description:** Blink on-board led. Used to indicate which module received a command.
+: Blink on-board led. Used to indicate which module received a command.
 
 ```arduino
 module.write("indicate"); // Blink on-board led
@@ -36,7 +38,7 @@ module.write("indicate"); // Blink on-board led
 
 #### `restart` ( )
 
-**Description:** Perform software restart of the module itself.
+: Perform module software restart.
 
 ```arduino
 module.write("restart"); // Restart module
@@ -44,14 +46,24 @@ module.write("restart"); // Restart module
 
 #### `version` ( )
 
-**Description:** Get firmware version of the module. This command is read-only.  
-**Value:** Encoded decimal value. 100 translates to v1.00 (150 -> v1.50).
+: Get module firmware version. This command is read-only.  
+Version format is [Semantic Versioning](https://semver.org) split for each byte.  
 
 ```arduino
-int version = module.readWait("version").getInt(); // Read module firmware version
-Serial.print("Module firmware version: v");
-Serial.print(version/100); // Get first digit of value
-Serial.print(".");
-Serial.println(version%100); // Get last digit of value
-// Will print: "Module firmware version: v1.0"
+int version = module.readWait("version").getInt();
+Serial.printf("Firmware version: v%d.%d.%d\n", 
+    (version >> 16) & 0xFF, (version >> 8) & 0xFF, (version >> 0) & 0xFF);
+// Will print: "Firmware version: v1.0.0"
+```
+
+#### `revision` ( )
+
+: Get module hardware revision. This command is read-only.  
+Version format is [Semantic Versioning](https://semver.org) split for each byte.  
+
+```arduino
+int revision = module.readWait("revision").getInt();
+Serial.printf("Hardware revision: v%d.%d\n", 
+    (revision >> 16) & 0xFF, (revision >> 8) & 0xFF);
+// Will print: "Hardware revision: v1.0"
 ```
