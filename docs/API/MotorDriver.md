@@ -66,52 +66,57 @@ void loop() {
 }
 ```
 
-## Description
+## API
 
-> ### MotorDriver()
+### Constructor
 
-> ### MotorDriver(`singleCommand`) { data-toc-label='MotorDriver(singleCmd)' }
+#### MotorDriver()
 
-**Description:** Create driver object.  
+#### MotorDriver(`singleCommand`) { data-toc-label='MotorDriver(singleCmd)' }
+
+: Create driver object.  
 MotorDriver internally writes `motorABCD` command. If individual motor updates are required (`motorA`), pass parameter _false_ `#!arduino MotorDriver(false)` to disable single command mode.  
-Disabling single command mode would be required if using one of DC motor channel for other purposes than robot wheels.  
-**Parameter:** Write command mode.  
+Disabling single command mode would be required if using one of DC motor channel for other purposes rather than robot wheels.  
+_Parameter:_ Write command mode [`true`:`false`].  
 
 ```arduino
 MotorDriver driver; // Create driver object
 MotorDriver driver(false); // Create driver with individual command mode
 ```
 
-> ### setTurnIntensity(`intensity`) { data-toc-label='setTurnIntensity()' }
+***
 
-**Description:** Configure turn intensity.  
-Limit turn sensitivity if it's too high. This can be configured when turning (steering) affects driving too much.  
+### Functions
+
+#### setTurnIntensity(`intensity`) { data-toc-label='setTurnIntensity()' }
+
+: Limit turn sensitivity if it's too high. This can be useful when turning (steering) affects driving too much.  
 It modifies internal computation and does not change parameters of `move()` function.  
 It only affects turning with 2 or 4 static wheels. **Does not affect servo motors**.  
-**Parameter:** Percentage of turn sensitivity [0 - lowest; 100 - highest]  
+_Parameter:_ Turn sensitivity [`0`:`100`]%. _Default:_ 100.  
 
 ```arduino
 driver.turnIntensity(50); // Set to 50%
 ```
 
-> ### addFrontLeft(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addFrontLeft()' }
+#### addFrontLeft(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addFrontLeft()' }
 
-> ### addFrontRight(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addFrontRight()' }
+#### addFrontRight(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addFrontRight()' }
 
-> ### addRearLeft(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addRearLeft()' }
+#### addRearLeft(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addRearLeft()' }
 
-> ### addRearRight(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addRearRight()' }
+#### addRearRight(`command`, `minPower`, `maxPower`, `inverted`) { data-toc-label='addRearRight()' }
 
-**Description:** Configure robot wheels.  
+: Configure robot wheel motors.  
 By providing settings for each motor, MotorDriver will adjust output power to make predictable movements. Functions can be called multiple times to reconfigure parameters during runtime (e.g. limiting max power).  
 `minPower` indicates minimum amount of power required to spin a wheel. This is used to compensate motor dead-zone.  
 `maxPower` by default should be set to _100_. It may be lowered if there is a need to limit power of the robot or using lower voltage motors.  
-`inverted` used to change motor spin direction by providing _true/false_.  
-**Parameter:**  
+`inverted` used to change motor spin direction by providing [`true`:`false`].  
+_Parameter:_  
 `command` - command of the motor channel (e.g. `motorA`).  
-`minPower` - minimum percentage of power required to spin a motor 0-100.  
-`maxPower` - maximum allowed power for the motor 0-100.  
-`inverted` - invert motor pins [false:true]. If not provided - defaults to _false_;  
+`minPower` - minimum power required to spin a motor [`0`:`100`]%.  
+`maxPower` - maximum allowed power for a motor [`0`:`100`]%.  
+`inverted` - invert motor pins [`true`:`false`]. _Default:_ `false`.  
 
 ```arduino
 // Set front left motor to use with channel motorA and start with power from 20%
@@ -120,19 +125,19 @@ driver.addFrontLeft("motorA", 20, 100);
 driver.addFrontRight("motorB", 20, 100, true);
 ```
 
-> ### addServo(`channel`, `command`, `minPos`, `centerPos`, `maxPos`, `inverted`) { data-toc-label='addServo()' }
+#### addServo(`channel`, `command`, `minPos`, `centerPos`, `maxPos`, `inverted`) { data-toc-label='addServo()' }
 
-**Description:** Configure servo motor.  
-Define parameters for servo motor, to use with this driver. Parameters are saved to specified `channel`. Same number must be used when calling `moveServo()`. It can be any digit from 0 to 2.  
+: Configure servo motor.  
+Define parameters for servo motor, to use with this driver. Parameters are saved to specified `channel`. Same number must be used when calling `moveServo()`. It can be any digit in range [`0`:`2`].  
 Function can be called multiple times to reconfigure parameters during runtime (e.g. changing motor limits).  
-Position [-100:100] set by `moveServo()` will be mapped to minimum, maximum values configured by this function.  
-**Parameter:**  
-`channel` - number of servo channel [0:2].  
+Position [`-100`:`100`]% set by `moveServo()` will be mapped to `minPos`, `maxPos` values.  
+_Parameter:_  
+`channel` - number of servo channel [`0`:`2`].  
 `command` - command of the motor channel (e.g. `servoA`).  
-`minPos` - minimum allowed position for servo motor to spin (limit) [-100:100].  
-`centerPos` - center position for servo motor when 0 is set [-100:100].  
-`maxPower` - maximum allowed position for servo motor to spin (limit) [-100:100].  
-`inverted` - invert servo motor spin direction [false:true]. If not provided - defaults to _false_;  
+`minPos` - minimum allowed position for servo motor to spin (limit) [`-100`:`100`]%.  
+`centerPos` - center position offset for servo motor on value `0` [`-100`:`100`]%.  
+`maxPower` - maximum allowed position for servo motor to spin (limit) [`-100`:`100`]%.  
+`inverted` - invert servo motor spin direction [`true`:`false`]. _Default:_ `false`.  
 
 ```arduino
 // Configure servo motor to channel 0
@@ -150,27 +155,26 @@ driver.moveServo(0, -100);
 driver.moveServo(1, -100);
 ```
 
-> ### moveServo(`channel`, `position`) { data-toc-label='moveServo()' }
+#### moveServo(`channel`, `position`) { data-toc-label='moveServo()' }
 
-**Description:** Move servo to desired position.  
-Move configured servo motor to position.  
-**Parameter:**  
-`channel` - number of configured servo channel [0:2].  
-`position` - motor position [-100:100]. [0] - center.
+: Move servo motor to desired position.  
+_Parameter:_  
+`channel` - number of configured servo channel [`0`:`2`].  
+`position` - motor position [`-100`:`100`]%. `0` - center.
 
 ```arduino
 driver.moveServo(0, 50); // Spin motor 0 to position 50
 driver.moveServo(1, -6); // Spin motor 1 to position -6
 ```
 
-> ### move(`drive`, `turn`) { data-toc-label='move()' }
+#### move(`drive`, `turn`) { data-toc-label='move()' }
 
-**Description:** Set movement of the robot.  
-Set robot move parameters that will be converted to motor output.  
-This will write motors to configured channels.  
-**Parameter:**  
-`drive` - power of forward/backward direction [-100:100].  
-`turn` - power of turning left/right [-100:100]. If not provided defaults to 0.  
+: Set robot move parameters that will be converted to motor output.  
+This function call will write configured motor channels.  
+`turn` parameter will spin wheels in opposite direction.  
+_Parameter:_  
+`drive` - power of forward/backward direction [`-100`:`100`]%.  
+`turn` - power of turning left/right [`-100`:`100`]%. _Default:_ `0`.  
 
 ```arduino
 driver.move(50); // Drive forward at 50% power
@@ -181,15 +185,12 @@ driver.move(100, -30); // Drive forward at 100% power while turning left at 30% 
 driver.move(-80, 90); // Drive backward at 80% power while turning right at 90% power
 ```
 
-> ### brake(`frontLeft`, `frontRight`, `rearLeft`, `rearRight`) { data-toc-label='brake()' }
+#### brake(`frontLeft`, `frontRight`, `rearLeft`, `rearRight`) { data-toc-label='brake()' }
 
-**Description:** Brake individual wheels of robot.  
-This will apply electronic brake for modules supporting this feature. Braking power can be set per each wheel.  
-If `move()` and `brake()` functions parameters are non-zero, driver will cut power to motors only if braking power is higher than motor spin power. Otherwise - motor spin power is lowered as if real brake pads are pressing spinning wheel. Setting full braking power will always stops motor completely.  
-Only configured wheels are affected (with wheel add functions).  
-Value is percentage of braking. 0% - none braking, 100% - full braking power.  
-**Parameter:**  
-`power` - power of braking 0-100.  
+: This will apply electronic brake for modules supporting this feature. Braking power can be set per each wheel.  
+If `move()` and `brake()` functions parameters are non-zero, driver will cut power to motors only if braking power is higher than motor spin power. Otherwise - motor spin power is lowered as if real brake pads are pressing spinning wheel. Setting full braking power will always stop motor completely.  
+_Parameter:_  
+`power` - braking power [`0`:`100`]%.  
 
 ```arduino
 driver.brake(100, 0, 0, 0); // Brake front left wheel at 100%
@@ -200,57 +201,52 @@ driver.move(100); // Set wheels spin at 100% power
 driver.brake(60, 60, 60, 60); // Will slow down wheels spin by applying 60% of brake power
 ```
 
-> ### brakeAll(`power`) { data-toc-label='brakeAll()' }
+#### brakeAll(`power`) { data-toc-label='brakeAll()' }
 
-**Description:** Brake all wheels of robot.  
-Apply same electronic brake power to all wheels of robot. Alias for function `brake()`.  
-Value is in percentage of braking. 0 - none braking, 100 - full braking power.  
-**Parameter:**  
-`power` - power of braking 0-100.  
+: Apply electronic brake `power` to all wheels.  
+_Parameter:_  
+`power` - braking power [`0`:`100`]%.  
 
 ```arduino
 driver.brakeAll(100); // Brake all wheels at 100%
 ```
 
-> ### brakeRear(`power`) { data-toc-label='brakeRear()' }
+#### brakeRear(`power`) { data-toc-label='brakeRear()' }
 
-**Description:** Brake rear wheels of robot.  
-Apply same electronic brake power to rear wheels of robot. Alias for function `brake()`.  
-Value is in percentage of braking. 0 - none braking, 100 - full braking power.  
-**Parameter:**  
-`power` - power of braking 0-100.  
+: Apply electronic brake `power` to rear wheels.  
+_Parameter:_  
+`power` - braking power [`0`:`100`]%.  
 
 ```arduino
 driver.brakeRear(100); // Brake only rear wheels at 100% (handbrake)
 ```
 
-> ### brakeFront(`power`) { data-toc-label='brakeFront()' }
+#### brakeFront(`power`) { data-toc-label='brakeFront()' }
 
-**Description:** Brake front wheels of robot.  
-Apply same electronic brake power to front wheels of robot. Alias for function `brake()`.  
-Value is in percentage of braking. 0 - none braking, 100 - full braking power.  
-**Parameter:**  
-`power` - power of braking 0-100.  
+: Apply electronic brake `power` to front wheels.  
+_Parameter:_  
+`power` - braking power [`0`:`100`]%.  
 
 ```arduino
 driver.brakeFront(100); // Brake only front wheels at 100%
 ```
 
-> ### setModule(`number`, `serial`) { data-toc-label='setModule()' }
+#### setModule(`number`, `serial`) { data-toc-label='setModule()' }
 
-**Description:** Configure module to communicate with.  
-MotorDriver contains [TotemModule](/API/TotemModule) to write motor output values. This function allows to configure exact module to communicate with. By default it's set to 00 (all modules). Same as [setNumber(`number`)](/API/TotemModule/#setnumbernumber) and [setSerial(`serial`)](/API/TotemModule/#setserialserial).  
-**Parameter:** Set module to send commands to.  
+: MotorDriver contains [TotemModule](/API/TotemModule) to write motor output values. This function allows to configure exact module to communicate with. By default it's set to 00 (all modules). Same as [setNumber(`number`)](/API/TotemModule/#setnumbernumber) and [setSerial(`serial`)](/API/TotemModule/#setserialserial).  
+_Parameter:_  
+`number` - module number [`0`:`255`]. `0` - all modules.  
+`serial` - module serial [`0`:`32767`]. `0` - ignore serial.  
 
 ```arduino
 driver.setModule(04); // Send move() updates to 04 modules only
 driver.setModule(04, 21015); // Send move() updates to 04 module with serial 21015 only
 ```
 
-> ### [`TotemModule`](/API/TotemModule) getModule() { data-toc-label='getModule()' }
+#### [`TotemModule`](/API/TotemModule) getModule() { data-toc-label='getModule()' }
 
-**Description:** Get [TotemModule](/API/TotemModule) object.  
-MotorDriver contains [TotemModule](/API/TotemModule) to write motor output values. This function returns it to use for other purposes. Allows to reuse already existing TotemModule instance without creating a new one.  
+: MotorDriver contains [TotemModule](/API/TotemModule) to write motor output values. This function returns it to use for other purposes. Allows to reuse already existing TotemModule instance without creating a new one.  
+_Returns:_ [TotemModule](/API/TotemModule).  
 
 ```arduino
 int voltage = driver.getModule().readWait("battery").getInt(); // Read battery using returned TotemModule
