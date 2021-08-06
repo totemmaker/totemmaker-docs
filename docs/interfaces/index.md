@@ -3,12 +3,12 @@
 *[BLE]: Bluetooth Low Energy
 
 [Totem Library](https://github.com/totemmaker/TotemArduino){target=_blank} is designed to support multiple ways to connect TotemBUS network. Each one has different capabilities and may be build for multiple development platforms. The main goal - passthrough for Totem messages.  
-Each required interface should be initialized at `setup()` function. Once `begin()` function is called, all `TotemModule` objects are assigned to initialized interface and can communicate with Totem modules.
+Each required interface should be initialized at `setup()` function. Once `begin()` function is called, all [TotemModule](/API/TotemModule) objects are assigned to initialized interface and can communicate with Totem modules.
 
 ## BLE
 
 `Totem.BLE.begin()`  
-Provides remote communication with BLE capable Totem modules. This interface can be used whit any ESP32 development board to control Totem modules, even from multiple connections. Interface provides all required functionality to discover Totem robots and connect them.  
+Provides wireless communication with Totem modules. This interface can be used whit any BLE capable ESP32 development board to control Totem modules, even from multiple connections. Interface provides all required functionality to discover Totem robots and connect them.  
 Modules are able to represent themselves as "robot", providing name, color, model (type of robot). This information is available before BLE connection is established. Same information is visible when connecting with mobile Totem app.  
 For full interface documentation read [BLE Interface](/interfaces/BLE/).
 
@@ -47,7 +47,7 @@ Used **only** with Totem [RoboBoard X4](/modules/04) to enable all functionality
 
 * Implements all RoboBoard X4 functionality.
 * Makes RoboBoard X4 discoverable over Bluetooth.
-* Provides direct access to `TotemModule` functions (`Totem.X4.write("indicate")`).
+* Provides direct access to [TotemModule](/API/TotemModule) functions (`Totem.X4.write("indicate")`).
 * Enables passthrough to communicate with external modules connected over TotemBUS.
 
 Can be used concurrently with `Totem.BLE.begin()`.  
@@ -64,11 +64,11 @@ void setup() {
 // Arduino infinite loop function
 void loop() {
   // Blink RGB leds
-  Totem.X4.write("rgbAll", 0xFF, 0xFF, 0, 0); // Set RGB leds to RED
+  Totem.X4.write("rgbAll", 255, 255, 0, 0); // Set RGB leds to RED
   delay(500); // Wait 500 milliseconds
-  Totem.X4.write("rgbAll", 0xFF, 0, 0xFF, 0); // Set RGB leds to GREEN
+  Totem.X4.write("rgbAll", 255, 0, 255, 0); // Set RGB leds to GREEN
   delay(500); // Wait 500 milliseconds
-  Totem.X4.write("rgbAll", 0xFF, 0, 0, 0xFF); // Set RGB leds to BLUE
+  Totem.X4.write("rgbAll", 255, 0, 0, 255); // Set RGB leds to BLUE
   delay(500); // Wait 500 milliseconds
 }
 ```
