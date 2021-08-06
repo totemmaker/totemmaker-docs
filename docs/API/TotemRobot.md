@@ -2,19 +2,19 @@
 
 *[BLE]: Bluetooth Low Energy
 
-Object representing remote Totem robot connection over BLE
+Object representing remote Totem robot connection over BLE. Received from [BLE interface](/interfaces/BLE/).
 
 ## Functions list
 
 | Result | Function | Description |
 | :----- | :------- | :---------- |
-| [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} | [getName()](#string-getname) | Get robot name |
-| [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} | [getAddress()](#string-getaddress) | Get robot MAC address |
-| `int` | [getModel()](#int-getmodel) | Get robot model (type) hash |
-| `int` | [getColor()](#int-getcolor) | Get robot appearance color |
-| `int` | [getNumber()](#int-getcolor) | Get robot module number |
-| `bool` | [isConnected()](#bool-isconnected) | Check if connection is active |
-| `bool` | [connect()](#bool-connect) | Connect to robot |
+| [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} | [getName()](#getname) | Get robot name |
+| [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} | [getAddress()](#getaddress) | Get robot MAC address |
+| `int` | [getModel()](#getmodel) | Get robot model (type) hash |
+| `int` | [getColor()](#getcolor) | Get robot appearance color |
+| `int` | [getNumber()](#getNumber) | Get robot module number |
+| `bool` | [isConnected()](#isconnected) | Check if connection is active |
+| `bool` | [connect()](#connect) | Connect to robot |
 | _none_ | [disconnect()](#disconnect) | Disconnect from robot |
 | _none_ | [attach](#attachtotemmodule)([`TotemModule`](/API/TotemModule)) | Attach module to connection |
 | _none_ | [detach](#detachtotemmodule)([`TotemModule`](/API/TotemModule)) | Detach module from connection |
@@ -35,13 +35,14 @@ void setup() {
 }
 ```
 
-## Description
+## API
 
-> ### [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} getName() { data-toc-label='getName()' }
+### Functions
 
-**Description:** Get robot Bluetooth name.  
-Same as configured in `cfg/robot/name` command.  
-**Result:** [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} containing robot Bluetooth name.
+#### getName() { data-toc-label='getName()' }
+
+: Get robot Bluetooth name.  Same as configured in `cfg/robot/name` command.  
+_Returns:_ [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} containing robot Bluetooth name.
 
 ```arduino
 TotemRobot robot = Totem.BLE.findRobot(); // Find and connect a robot
@@ -49,10 +50,10 @@ Serial.print("Connected to: ");
 Serial.println(robot.getName());
 ```
 
-> ### [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} getAddress() { data-toc-label='getAddress()' }
+#### getAddress() { data-toc-label='getAddress()' }
 
-**Description:** Get robot Bluetooth MAC (example: "00:11:22:33:44:55"). Each robot has unique address.  
-**Result:** [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} containing robot Bluetooth address.
+: Get robot Bluetooth MAC (e.g. "00:11:22:33:44:55"). Each robot has unique address.  
+_Returns:_ [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} containing robot Bluetooth address.
 
 ```arduino
 TotemRobot robot = Totem.BLE.findRobot(); // Find and connect a robot
@@ -60,12 +61,12 @@ Serial.print("Connected robot MAC address: ");
 Serial.println(robot.getAddress());
 ```
 
-> ### `int` getModel()  { data-toc-label='getModel()' }
+#### getModel()  { data-toc-label='getModel()' }
 
-**Description:** Get robot Totem model hash.  
-Each one can have assigned hashed module string to tell apart what Totem product is used with particular controller. This hash can be generated with `#!arduino TotemModule::hashModel("MiniTrooper")`.  
+: Get robot Totem model hash.  
+Each one can have assigned hashed string to tell apart what Totem product is used with particular controller. This hash can be generated with `#!arduino TotemModule::hashModel("MiniTrooper")`.  
 Can be configured with `cfg/robot/model` command.  
-**Result:** Totem robot model number.
+_Returns:_ Totem robot model hash [`0`:`0xFFFF`].
 
 ```arduino
 void setup() {
@@ -78,10 +79,10 @@ void setup() {
 }
 ```
 
-> ### `int` getColor()  { data-toc-label='getColor()' }
+#### getColor()  { data-toc-label='getColor()' }
 
-**Description:** Get robot appearance color. Each robot can have different color to tell them apart easier. Also this color can be used for on board RGB LEDs.  
-**Result:** 16bit High color encoding.
+: Get robot appearance color. Each robot can have different color to tell them apart easier. Also this color can be used for on board RGB LEDs.  
+_Returns:_ 24bit color code [`0x000000`:`0xFFFFFF`].
 
 ```arduino
 void setup() {
@@ -91,11 +92,11 @@ void setup() {
 }
 ```
 
-> ### `int` getNumber()  { data-toc-label='getNumber()' }
+#### getNumber()  { data-toc-label='getNumber()' }
 
-**Description:** Get robot controller board module number.  
+: Get robot controller board module number.  
 To identify if connecting to X4 or X3.  
-**Result:** module number.
+_Returns:_ module number [`0`:`255`].
 
 ```arduino
 void setup() {
@@ -105,10 +106,10 @@ void setup() {
 }
 ```
 
-> ### `bool` isConnected()  { data-toc-label='isConnected()' }
+#### isConnected()  { data-toc-label='isConnected()' }
 
-**Description:** Check if robot is connected over BLE.  
-**Result:** true if robot is connected, false otherwise.
+: Check if robot is connected over BLE.  
+_Returns:_ is robot connected [`true`:`false`].
 
 ```arduino
 void function() {
@@ -120,10 +121,10 @@ void function() {
 }
 ```
 
-> ### `bool` connect()  { data-toc-label='connect()' }
+#### connect()  { data-toc-label='connect()' }
 
-**Description:** Connect to Totem robot over BLE.  
-**Result:** true if connected, false on failure.
+: Connect to Totem robot over BLE.  
+_Returns:_ connection is successful [`true`:`false`].
 
 ```arduino
 void onFoundRobot(TotemRobot robot) { // findRobot event listing each discovered device
@@ -134,9 +135,9 @@ void onFoundRobot(TotemRobot robot) { // findRobot event listing each discovered
 }
 ```
 
-> ### disconnect()
+#### disconnect()
 
-**Description:** Manually disconnect from robot connected over BLE.  
+: Manually disconnect from robot connected over BLE.  
 
 ```arduino
 void function() {
@@ -145,9 +146,9 @@ void function() {
 }
 ```
 
-> ### attach([`TotemModule`](/API/TotemModule))
+#### attach([`TotemModule`](/API/TotemModule))
 
-**Description:** Attach selected [`TotemModule`](/API/TotemModule) to active BLE connection.  
+: Attach selected [`TotemModule`](/API/TotemModule) to active BLE connection.  
 All initialized modules are automatically attached to active connection. This is required if connecting to more than one robot at the same time and to use separate [`TotemModule`](/API/TotemModule) objects in multiple connections.
 
 ```arduino
@@ -159,9 +160,9 @@ void function() {
 }
 ```
 
-> ### detach([`TotemModule`](/API/TotemModule))
+#### detach([`TotemModule`](/API/TotemModule))
 
-**Description:** Detach selected [`TotemModule`](/API/TotemModule) from active BLE connection.  
+: Detach selected [`TotemModule`](/API/TotemModule) from active BLE connection.  
 
 ```arduino
 TotemModule module(03);
