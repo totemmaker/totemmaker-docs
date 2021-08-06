@@ -2,7 +2,7 @@
 
 *[BLE]: Bluetooth Low Energy
 
-Provides remote communication with BLE capable Totem modules. This interface can be used whit any ESP32 development board to control Totem modules, even from multiple connections. Interface provides all required functionality to discover Totem robots and connect them.
+Provides wireless communication with Totem modules. This interface can be used whit any BLE capable ESP32 development board to control Totem modules, even from multiple connections. Interface provides all required functionality to discover Totem robots and connect them.
 Modules are able to represent themselves as "robot", providing name, color, model (type of robot). This information is available before BLE connection is established.
 
 ```arduino
@@ -16,14 +16,14 @@ void setup() {
 | Result | Function | Description |
 | :----- | :------- | :---------- |
 | _none_ | [begin()](#begin) | Initialize interface |
-| [`TotemRobot`](/API/TotemRobot) | [findRobot()](#totemrobot-findrobot) | Blocking find and connect |
+| [`TotemRobot`](/API/TotemRobot) | [findRobot()](#findrobot) | Blocking find and connect |
 | _none_ | [findRobotNoBlock()](#findrobotnoblock) | Non-blocking find and connect |
-| `bool` | [isFinding()](#bool-isfinding) | Check if find process is active |
-| _none_ | [stopFind()](#stopFind) | Stop find process |
+| `bool` | [isFinding()](#isfinding) | Check if find process is active |
+| _none_ | [stopFind()](#stopfind) | Stop find process |
 | _none_ | [attachOnConnect(`RobotReceiver`)](#attachonconnectrobotreceiver) | Register on robot connected function |
-| `int` | [getConnectedCount()](#int-getconnectedcount) | Get active connections count |
-| [`TotemRobot`](/API/TotemRobot) | [getConnectedLast()](#totemrobot-getconnectedlast) | Get last connected robot |
-| [`TotemRobot[]`](/API/TotemRobot) | [getConnectedList()](#totemrobot-getconnectedlist) | Get active connections list |
+| `int` | [getConnectedCount()](#getconnectedcount) | Get active connections count |
+| [`TotemRobot`](/API/TotemRobot) | [getConnectedLast()](#getconnectedlast) | Get last connected robot |
+| [`TotemRobot[]`](/API/TotemRobot) | [getConnectedList()](#getconnectedlist) | Get active connections list |
 
 ## Example
 
@@ -64,26 +64,35 @@ void loop() {
   delay(1000);
 }
 ```
-## Description
-***
+
+## API
+
+### Functions
+
 #### begin()
 
-**Description:** Initialize Bluetooth Low Energy interface. Must be executed inside setup() function before using library.  
+: Initialize Bluetooth Low Energy interface. Must be executed inside [setup()](https://www.arduino.cc/reference/en/language/structure/sketch/setup/){target=_blank} function before using library.  
+
 ```arduino
 void setup() {
   Totem.BLE.begin(); // Initialize Bluetooth Low Energy interface
 }
 ```
-***
-#### [`TotemRobot`](/API/TotemRobot) findRobot() { data-toc-label='findRobot()' }
-#### [`TotemRobot`](/API/TotemRobot) findRobot(`RobotReceiver`) { data-toc-label='findRobot(result)' }
 
-**Description:** Start searching for available Totem robots over Bluetooth Low Energy. This function will block until connection to any robot is established.  
-On successful connection find process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopFind).  
-`RobotReceiver` is a user defined function with any name, but must have [`TotemRobot`](/API/TotemRobot) as a parameter. It will receive all found Totem robots and by calling [connect()](/API/TotemRobot#bool-connect) user can decide which robot to select.   
-**Parameters:**  
-`no parameter` - automatically connect to first discovered Totem robot.  
-`RobotReceiver` - all discovered result will be passed to specified function. After calling [connect()](/API/TotemRobot#bool-connect) on received result - this function will be unblocked.  
+#### findRobot() { data-toc-label='findRobot()' }
+
+#### findRobot(`RobotReceiver`) { data-toc-label='findRobot(result)' }
+
+: Start searching for available Totem robots over Bluetooth Low Energy. This function will block until connection to any robot is established.  
+On successful connection find process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopfind).  
+`RobotReceiver` is a user defined function to get all discovered robots.  
+Format: `#!arduino void onFoundRobot(TotemRobot robot)`. Robot information can be accessed trough [`TotemRobot`](/API/TotemRobot) parameter.
+By calling `robot .`[`connect()`](/API/TotemRobot#connect) user can decide which robot to select.  
+_Parameter:_  
+`()` - automatically connect to first discovered Totem robot.  
+`RobotReceiver` - discovered robot connect function `onFoundRobot`.  
+_Returns:_  [`TotemRobot`](/API/TotemRobot).
+
 ```arduino
 void onFoundRobot(TotemRobot robot) {
   // Totem robot discovered
@@ -94,16 +103,20 @@ void function() {
   Totem.BLE.findRobot(onFoundRobot); // List result in onFoundRobot before connecting to Totem robot
 }
 ```
-***
-#### findRobotNoBlock() 
+
+#### findRobotNoBlock()
+
 #### findRobotNoBlock(`RobotReceiver`)  { data-toc-label='findRobotNoBlock(result)' }
 
-**Description:** Start searching for available Totem robots over Bluetooth Low Energy. This function does not block main program execution. All connection process will be done in background.  
-After connection is established, this process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopFind).  
-`RobotReceiver` is a user defined function with any name, but must have [`TotemRobot`](/API/TotemRobot) as a parameter. It will receive all found Totem robots and by calling [connect()](/API/TotemRobot#bool-connect) user can decide which robot to select.   
-**Parameters:**  
-`no parameter` - automatically connect to first discovered Totem robot.  
-`RobotReceiver` - all discovered result will be passed to specified function. After calling [connect()](/API/TotemRobot#bool-connect) on received result - this function will be unblocked.  
+: Start searching for available Totem robots over Bluetooth Low Energy. This function does not block main program execution. All connection process will be done in background.  
+After connection is established, this process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopfind).  
+`RobotReceiver` is a user defined function to get all discovered robots.  
+Format: `#!arduino void onFoundRobot(TotemRobot robot)`. Robot information can be accessed trough [`TotemRobot`](/API/TotemRobot) parameter.
+By calling `robot .`[`connect()`](/API/TotemRobot#connect) user can decide which robot to select.  
+_Parameter:_  
+`()` - automatically connect to first discovered Totem robot.  
+`RobotReceiver` - discovered robot connect function `onFoundRobot`.  
+
 ```arduino
 void onFoundRobot(TotemRobot robot) {
   // Totem robot discovered
@@ -111,14 +124,15 @@ void onFoundRobot(TotemRobot robot) {
 }
 void function() {
   Totem.BLE.findRobotNoBlock(); // Automatically connect to first discovered Totem robot
-  Totem.BLE.findRobotNoBlock(onFoundRobot); // List resultin onFoundRobot before connecting to Totem robot
+  Totem.BLE.findRobotNoBlock(onFoundRobot); // List result in onFoundRobot before connecting to Totem robot
 }
 ```
-***
-#### `bool` isFinding() { data-toc-label='isFinding()' }
 
-**Description:** Tells if [findRobot()](#totemrobot-findrobot--totemrobot-findrobotrobotreceiver) or [findRobotNoBlock()](#findrobotnoblock--findrobotnoblockrobotreceiver) was called and process is active.  
-**Result:** true if process is active
+#### isFinding() { data-toc-label='isFinding()' }
+
+: Check if [findRobot()](#findrobot) or [findRobotNoBlock()](#findrobotnoblock) was called and process is active.  
+_Returns:_ discovery process is active [`true`:`false`].
+
 ```arduino
 void function() {
   if (Totem.BLE.isFinding())
@@ -127,22 +141,25 @@ void function() {
     Serial.println("Robot find is inactive);
 }
 ```
-***
+
 #### stopFind()
 
-**Description:** Stop searching for robot and unblock [findRobot()](#totemrobot-findrobot--totemrobot-findrobotrobotreceiver). Only used when required to stop this process manually. After connection, the search process is stopped automatically and calling this function is not required.  
+: Stop searching for robot and unblock [findRobot()](#findrobot). Only used when required to stop this process manually. After connection, the search process is stopped automatically and calling this function is not required.  
+
 ```arduino
 void function() {
   Totem.BLE.stopFind(); // Stop searching for robot over Bluetooth Low Energy
 }
 ```
-***
+
 #### attachOnConnect(`RobotReceiver`) { data-toc-label='attachOnConnect(result)' }
 
-**Description:** Register function that will be called when [findRobot()](#totemrobot-findrobot--totemrobot-findrobotrobotreceiver) process connects to a robot. This is handy when using non-blocking find process and we don't know when connection is established.  
-`RobotReceiver` is a user defined function with any name, but must have [`TotemRobot`](/API/TotemRobot) as a parameter.  
-**Parameters:**  
-`RobotReceiver` - Will be called on robot connect.  
+: Register function that will be called when [findRobot()](#findrobot) process connects to a robot. This is handy when using non-blocking find process and we don't know when connection is established.  
+`RobotReceiver` is a user defined function to connected robot event.  
+Format: `#!arduino void onConnectedRobot(TotemRobot robot)`. Robot information can be accessed trough [`TotemRobot`](/API/TotemRobot) parameter.  
+_Parameter:_
+`RobotReceiver` - connected robot event function `onConnectedRobot`.  
+
 ```arduino
 void onConnectedRobot(TotemRobot robot) {
   // findRobotNoBlock connected to robot in background and ended find procedure
@@ -154,21 +171,25 @@ void function() {
                                 // Code execution continues with active find procedure
 }
 ```
-***
-#### `int` getConnectedCount() { data-toc-label='getConnectedCount()' }
 
-**Description:** Returns count of currently connected Totem Robots.
+#### getConnectedCount() { data-toc-label='getConnectedCount()' }
+
+: Count of currently connected Totem robots.  
+_Returns:_ connected robots count [`0`:`20`]
+
 ```arduino
 void function() {
   Serial.print("Currently connected robots count: ");
   Serial.println(Totem.BLE.getConnectedCount());
 }
 ```
-***
-#### [`TotemRobot`](/API/TotemRobot) getConnectedLast() { data-toc-label='getConnectedLast()' }
 
-**Description:** Returns last connected [`TotemRobot`](/API/TotemRobot) object.  
-If no connection was made before, this function returns a dummy device that isn't connected.  
+#### getConnectedLast() { data-toc-label='getConnectedLast()' }
+
+: Get last connected robot.  
+If no connection was made before, this function returns a dummy object that isn't connected.  
+_Returns:_  [`TotemRobot`](/API/TotemRobot).
+
 ```arduino
 void function() {
   TotemRobot robot = Totem.BLE.getConnectedLast();
@@ -176,10 +197,12 @@ void function() {
   Serial.println(robot.isConnected() ? "Yes" : "No");
 }
 ```
-***
-#### [`TotemRobot[]`](/API/TotemRobot) getConnectedList() { data-toc-label='getConnectedList()' }
 
-**Description:** Returns list of connected [`TotemRobot`](/API/TotemRobot) objects.
+#### getConnectedList() { data-toc-label='getConnectedList()' }
+
+: Get list of connected robots.  
+_Returns:_ [`TotemRobot[]`](/API/TotemRobot).
+
 ```arduino
 void function() {
   for (auto robot : getConnectedList()) {
