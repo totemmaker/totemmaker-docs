@@ -30,9 +30,10 @@ extra:
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UCRnZOXe1bYzW8WgE3NQojFA
 
-google_analytics:
-  - UA-92600507-1
-  - auto
+extra:
+  analytics:
+    provider: google
+    property: UA-92600507-1
 
 markdown_extensions:
   - abbr
