@@ -77,7 +77,8 @@ void loop() {
 : Create driver object.  
 MotorDriver internally writes `motorABCD` command. If individual motor updates are required (`motorA`), pass parameter _false_ `#!arduino MotorDriver(false)` to disable single command mode.  
 Disabling single command mode would be required if using one of DC motor channel for other purposes rather than robot wheels.  
-_Parameter:_ Write command mode [`true`:`false`].  
+_Parameter:_  
+`singleCommand` - write command mode [`true`:`false`].  
 
 ```arduino
 MotorDriver driver; // Create driver object
@@ -93,7 +94,8 @@ MotorDriver driver(false); // Create driver with individual command mode
 : Limit turn sensitivity if it's too high. This can be useful when turning (steering) affects driving too much.  
 It modifies internal computation and does not change parameters of `move()` function.  
 It only affects turning with 2 or 4 static wheels. **Does not affect servo motors**.  
-_Parameter:_ Turn sensitivity [`0`:`100`]%. _Default:_ 100.  
+_Parameter:_  
+`turn` - turn sensitivity [`0`:`100`]%. _Default:_ 100.  
 
 ```arduino
 driver.turnIntensity(50); // Set to 50%
