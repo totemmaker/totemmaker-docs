@@ -13,6 +13,8 @@ theme:
     repo: fontawesome/brands/github
   palette:
     scheme: default
+  features:
+    - navigation.indexes
 
 extra_css:
   - stylesheets/extra.css
@@ -50,3 +52,5 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
+  - pymdownx.tasklist:
+      custom_checkbox: true
