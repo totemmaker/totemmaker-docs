@@ -65,6 +65,19 @@ nav:
     - Setup:
         - 'setup/index.md'
         - 'Arduino IDE' : 'setup/arduino-ide.md'
+    - 'RoboBoard X4':
+        - 'roboboard-x4/index.md'
+        - 'Board info' : 'roboboard-x4/board.md'
+        - 'MEMS' : 'roboboard-x4/mems.md'
+        - 'GPIO' : 'roboboard-x4/gpio.md'
+        - 'X4.config' : 'roboboard-x4/config.md'
+        - 'X4.button' : 'roboboard-x4/button.md'
+        - 'X4.led' : 'roboboard-x4/led.md'
+        - 'X4.rgb' : 'roboboard-x4/rgb.md'
+        - 'X4.dc' : 'roboboard-x4/dc.md'
+        - 'X4.servo' : 'roboboard-x4/servo.md'
+        - 'X4.module' : 'roboboard-x4/module.md'
+        - 'X4.function' : 'roboboard-x4/function.md'
     - 'TotemBUS.md'
     - 'new-totem-arduino.md'
     - API:
