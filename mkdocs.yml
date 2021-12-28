@@ -1,6 +1,6 @@
 site_name: Totem Programming
-repo_url: https://github.com/totemmaker/TotemArduino
-repo_name: TotemArduino
+repo_url: https://github.com/totemmaker/TotemArduinoBoards
+repo_name: Totem Arduino Boards
 site_description: Documentation site for Totemmaker Totem products programming
 edit_uri: ""
 
