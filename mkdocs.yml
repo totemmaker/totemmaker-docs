@@ -31,8 +31,6 @@ extra:
       link: https://twitter.com/Totemmaker
     - icon: fontawesome/brands/youtube
       link: https://www.youtube.com/channel/UCRnZOXe1bYzW8WgE3NQojFA
-
-extra:
   analytics:
     provider: google
     property: UA-92600507-1
@@ -58,8 +56,15 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
+plugins:
+  - redirects:
+      redirect_maps:
+        tutorials/01.ArduinoSetup.md: setup/index.md
+
 nav:
-    - 'index.md'
+    - Setup:
+        - 'setup/index.md'
+        - 'Arduino IDE' : 'setup/arduino-ide.md'
     - 'TotemBUS.md'
     - 'new-totem-arduino.md'
     - API:
@@ -81,7 +86,6 @@ nav:
         - 'modules/15.md'
         - 'modules/22.md'
     - Tutorials:
-        - 'tutorials/01.ArduinoSetup.md'
         - 'tutorials/02.UseThirdParty.md'
         - 'tutorials/03.UseExamples.md'
         - 'tutorials/04.SetupController.md'
