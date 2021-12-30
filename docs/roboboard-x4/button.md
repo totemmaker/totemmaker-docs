@@ -7,7 +7,52 @@ NOTE: Reset button is dedicated to reload ESP32 and can't be reused.
 
 ***
 
-## Button read
+## Code examples
+
+**Arduino projects:** [RoboBoardX4/BUTTON](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/BUTTON){target=_blank}
+
+??? example "Function usage (click to expand)"
+    ```arduino
+    // Is button currently pressed "false"
+    bool isIn = X4.button.isPressed();
+    // Is button currently released "false"
+    bool isOut = X4.button.isReleased();
+    // Is button pressed and holding for 1000 milliseconds "false"
+    bool isInFor = X4.button.isPressedFor(1000);
+    // Is button released for 1000 milliseconds "false"
+    bool isOutFor = X4.button.isReleasedFor(1000);
+    // Was button pressed before "false"
+    bool wasIn = X4.button.wasPressed();
+    // Was button released before "false"
+    bool wasOut = X4.button.wasReleased();
+    // Was button pressed and holding for 500 milliseconds "false"
+    bool wasInFor = X4.button.wasPressedFor(500);
+    // Was button released for 500 milliseconds "false"
+    bool wasOutFor = X4.button.wasReleasedFor(500);
+    // Was button double clicked "false"
+    bool wasDouble = X4.button.wasDoubleClick();
+    // Last timestamp when button changed it's state "1564661" (millis())
+    int lasTime = X4.button.lastChange();
+    ```
+
+    ```arduino
+    // Function called when button pressed or released
+    void buttonTriggered() {
+      if (X4.button.isPressed()) {
+        // Button was pressed
+      }
+    }
+    void setup() {
+      // Register button state change event 
+      X4.button.addEvent(buttonTriggered);
+    }
+    ```
+
+***
+
+## Functions
+
+### Button read
 
 #### (`status`) X4.button.isPressed() { data-toc-label='isPressed()' }
 : Check if button is pressed.  
@@ -63,43 +108,3 @@ NOTE: Reset button is dedicated to reload ESP32 and can't be reused.
 : Register an event function called on button state change (press, release).  
 **Parameter:**  
 `function` - function name [`buttonCallback`]  
-
-## Example
-
-Arduino examples: [RoboBoardX4/BUTTON](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/BUTTON){target=_blank}
-
-```arduino
-// Is button currently pressed "false"
-bool isIn = X4.button.isPressed();
-// Is button currently released "false"
-bool isOut = X4.button.isReleased();
-// Is button pressed and holding for 1000 milliseconds "false"
-bool isInFor = X4.button.isPressedFor(1000);
-// Is button released for 1000 milliseconds "false"
-bool isOutFor = X4.button.isReleasedFor(1000);
-// Was button pressed before "false"
-bool wasIn = X4.button.wasPressed();
-// Was button released before "false"
-bool wasOut = X4.button.wasReleased();
-// Was button pressed and holding for 500 milliseconds "false"
-bool wasInFor = X4.button.wasPressedFor(500);
-// Was button released for 500 milliseconds "false"
-bool wasOutFor = X4.button.wasReleasedFor(500);
-// Was button double clicked "false"
-bool wasDouble = X4.button.wasDoubleClick();
-// Last timestamp when button changed it's state "1564661" (millis())
-int lasTime = X4.button.lastChange();
-```
-
-```arduino
-// Function called when button pressed or released
-void buttonTriggered() {
-  if (X4.button.isPressed()) {
-    // Button was pressed
-  }
-}
-void setup() {
-  // Register button state change event 
-  X4.button.addEvent(buttonTriggered);
-}
-```

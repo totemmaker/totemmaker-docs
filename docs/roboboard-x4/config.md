@@ -1,10 +1,48 @@
 # Board configuration
 
+## Description
+
 API to change board settings. Any changes saved retain their values after power off.  
 
 ***
 
-## Parameters
+## Code examples
+
+**Arduino projects:** [RoboBoardX4/CONFIG](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/CONFIG){target=_blank}
+
+??? example "Function usage (click to expand)"
+    ```arduino
+    // Set robot name to "My Robot"
+    X4.config.setRobotName("My Robot");
+    // Read robot name "My Robot"
+    char *name = X4.config.getRobotName();
+    // Set robot model
+    X4.config.setRobotModel("MiniTrooper"); // Set string
+    X4.config.setRobotModel(0xe6f1); // Set hash (int)
+    // Read model hash "0xe6f1"
+    int model = X4.config.getRobotModel();
+    // Set robot color "red"
+    X4.config.setRobotColor(0xff0000);
+    X4.config.setRobotColor(255, 0, 0);
+    // Read robot color "0xff0000"
+    int color = X4.config.getRobotColor();
+    // Set DC motor output invert
+    X4.config.setDCInvert(true, true, false, false);
+    // Read DC motor output invert "0x01010000"
+    int dcInvert = X4.config.getDCInvert();
+    // Set DC motor autobrake
+    X4.config.setDCAutobrake(50, 0, 100, 100);
+    // Read DC motor autobrake "0x32006464"
+    int dcAutobrake = X4.config.getDCAutobrake();
+    // Reset stored configuration to default
+    X4.config.reset();
+    ```
+
+***
+
+## Functions
+
+### Settings
 
 #### X4.config.setRobotName(`name`) { data-toc-label='setRobotName()' }
 : Set Robot name. Will be visible during Totem App connection.  
@@ -75,34 +113,3 @@ Different from `X4.dc.setAutobrake()` as this function preserves setting after p
 
 #### X4.config.reset() { data-toc-label='reset()' }
 : Reset all settings to default.  
-
-## Example
-
-Arduino examples: [RoboBoardX4/CONFIG](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/CONFIG){target=_blank}
-
-```arduino
-// Set robot name to "My Robot"
-X4.config.setRobotName("My Robot");
-// Read robot name "My Robot"
-char *name = X4.config.getRobotName();
-// Set robot model
-X4.config.setRobotModel("MiniTrooper"); // Set string
-X4.config.setRobotModel(0xe6f1); // Set hash (int)
-// Read model hash "0xe6f1"
-int model = X4.config.getRobotModel();
-// Set robot color "red"
-X4.config.setRobotColor(0xff0000);
-X4.config.setRobotColor(255, 0, 0);
-// Read robot color "0xff0000"
-int color = X4.config.getRobotColor();
-// Set DC motor output invert
-X4.config.setDCInvert(true, true, false, false);
-// Read DC motor output invert "0x01010000"
-int dcInvert = X4.config.getDCInvert();
-// Set DC motor autobrake
-X4.config.setDCAutobrake(50, 0, 100, 100);
-// Read DC motor autobrake "0x32006464"
-int dcAutobrake = X4.config.getDCAutobrake();
-// Reset stored configuration to default
-X4.config.reset();
-```

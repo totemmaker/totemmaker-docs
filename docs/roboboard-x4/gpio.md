@@ -6,7 +6,35 @@ API to control 4 available GPIO pins. They can be used to custom inputs & output
 
 ***
 
-## Controlling GPIO pins
+## Code examples
+
+**Arduino projects:** [RoboBoardX4/GPIO](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/GPIO){target=_blank}
+
+??? example "Function usage (click to expand)"
+    ```arduino
+    void setup() {
+      pinMode(GPIOA, INPUT);
+      pinMode(GPIOB, OUTPUT);
+    }
+
+    void loop() {
+      // Read state of GPIOA pin
+      if (digitalRead(GPIOA) == HIGH) {
+        // If GPIO pin is pulled HIGH, set GPIOB to HIGH
+        digitalWrite(GPIOB, HIGH);
+      }
+      else {
+        // If GPIO pin is pulled LOW, set GPIOB to LOW
+        digitalWrite(GPIOB, LOW);
+      }
+    }
+    ```
+
+***
+
+## Functions
+
+### Controlling GPIO pins
 
 === "RoboBoard X4 revision v.1.1"
 
@@ -63,26 +91,3 @@ API to control 4 available GPIO pins. They can be used to custom inputs & output
     : Turn on GPIO pin A pulldown or pullup resistor. Works similar like Arduino function `pinMode(pin, INPUT_PULLUP)`.  
     **Parameter:**  
     `mode` - turn on pulldown or pullup [`LOW`:`HIGH`]. (LOW, HIGH) = (GND (0V), VCC (3.3V)).  
-
-## Example
-
-Arduino examples: [RoboBoardX4/GPIO](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/GPIO){target=_blank}
-
-```arduino
-void setup() {
-  pinMode(GPIOA, INPUT);
-  pinMode(GPIOB, OUTPUT);
-}
-
-void loop() {
-  // Read state of GPIOA pin
-    if (digitalRead(GPIOA) == HIGH) {
-    // If GPIO pin is pulled HIGH, set GPIOB to HIGH
-    digitalWrite(GPIOB, HIGH);
-  }
-  else {
-    // If GPIO pin is pulled LOW, set GPIOB to LOW
-    digitalWrite(GPIOB, LOW);
-  }
-}
-```

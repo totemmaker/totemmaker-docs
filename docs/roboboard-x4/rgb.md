@@ -10,12 +10,84 @@ Multiple interfaces available:
 
 ***
 
-## All LED control
+## Code examples
+
+**Arduino projects:** [RoboBoardX4/RGB](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/RGB){target=_blank}
+
+??? example "Function usage (click to expand)"
+    ```arduino
+    /* All LED control */
+    // Set all LED to "Totem" colors
+    X4.rgb.colorTotem();
+    // Set all LED to blue color
+    X4.rgb.color(128, 0, 0, 255); // 50% brightness
+    X4.rgb.color(0, 0, 255);      // 100% brightness
+    X4.rgb.color(128, 0x0000FF);  // 50% brightness
+    X4.rgb.color(0x800000FF);     // 50% brightness
+    // Turn LED on to last used color
+    X4.rgb.on();
+    // Turn LED off
+    X4.rgb.off();
+    // Set LED to on
+    X4.rgb.set(HIGH);
+    X4.rgb.set(true);
+    // Toggle LED between on / off
+    X4.rgb.toggle();
+    // Reset LED to default (startup) color
+    X4.rgb.reset();
+    // Enable LED peripheral
+    X4.rgb.enable();
+    // Disable LED peripheral
+    X4.rgb.disable();
+    ```
+    ```arduino
+    /* All LED fade animations */
+    // Set fade color to "Totem"
+    X4.rgb.fadeColorTotem();
+    // Set fade color to red
+    X4.rgb.fadeColor(128, 255, 0, 0); // 50% brightness
+    X4.rgb.fadeColor(255, 0, 0);      // 100% brightness
+    X4.rgb.fadeColor(128, 0xFF0000);  // 50% brightness
+    X4.rgb.fadeColor(0x80FF0000);     // 50% brightness
+    // Start fade animation with duration of 2s
+    X4.rgb.fadeStart(2000);
+    ```
+    ```arduino
+    /* Single LED control */
+    // Set single LED color
+    X4.rgbA.color(255, 0, 0); // Set LED A to "red"
+    X4.rgbB.color(0, 255, 0); // Set LED B to "green"
+    X4.rgbC.color(0, 0, 255); // Set LED C to "blue"
+    X4.rgbD.color(255, 255, 255); // Set LED D to "white"
+    // Turn LED B to last used color
+    X4.rgbB.on();
+    // Turn LED A off
+    X4.rgbA.off();
+    // Set LED C to on
+    X4.rgbC.set(HIGH);
+    // Toggle LED D between on / off
+    X4.rgbD.toggle();
+    ```
+    ```arduino
+    /* Single LED fade animations */
+    // Set individual LED fade color
+    X4.rgbA.fadeColor(0, 0, 255); // Set LED A fade to blue
+    X4.rgbB.fadeColor(255, 0, 0); // Set LED B fade to red
+    // Start individual LED fade animation
+    X4.rgbA.fadeStart(1000); // Fade LED A in 1 second
+    X4.rgbB.fadeStart(2000); // Fade LED B in 2 seconds
+    ```
+
+***
+
+## Functions
+
+### All LED control
 
 Functions using `X4.rgb` interface will affect all (A, B, C, D) LEDs at once.  
 
 #### X4.rgb.colorTotem() { data-toc-label='colorTotem()' }
-: Set to "Totem" color.  
+: Set to "Totem" colors (blue, yellow, green).  
 
 #### X4.rgb.color(`alpha`, `red`, `green`, `blue`) { data-toc-label='color()' }
 : Set LEDs color. It consists of brightness and amount of red, green, blue colors.  
@@ -56,10 +128,10 @@ HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.
 #### X4.rgb.disable() { data-toc-label='disable()' }
 : Disable RGB peripheral. Turn off power.  
 
-## All LED fade animations
+### All LED fade animations
 
 #### X4.rgb.fadeColorTotem() { data-toc-label='fadeColorTotem()' }
-: Prepare LEDs fade with "Totem" color.  
+: Prepare LEDs fade with "Totem" colors (blue, yellow, green).  
 
 #### X4.rgb.fadeColor(`alpha`, `red`, `green`, `blue`) { data-toc-label='fadeColor()' }
 : Prepare LEDs fade color. It consists of brightness and amount of red, green, blue colors.  
@@ -84,7 +156,7 @@ Will also play animations if color was individually set with `X4.rgbA.fadeColor(
 **Parameter:**  
 `duration` - animation (transition) duration time [`1`:`65535`]ms  
 
-## Single LED control
+### Single LED control
 
 This API is available for each individual LED `X4.rgbA`, `X4.rgbB`, `X4.rgbC`, `X4.rgbD`.  
 
@@ -118,7 +190,7 @@ HEX (hexadecimal) color code is similar to HTML color code.
 #### X4.rgbA.toggle() { data-toc-label='toggle()' }
 : Toggle LED A between on / off states.  
 
-## Single LED fade animations
+### Single LED fade animations
 
 #### X4.rgbA.fadeColor(`alpha`, `red`, `green`, `blue`) { data-toc-label='fadeColor()' }
 : Prepare LED A fade color. It consists of brightness and amount of red, green, blue colors.  
@@ -141,70 +213,3 @@ HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.
 : Start individual LED A fading animation. Will gradually transit to color set with `fadeColor()` function. Each LED can fade have separate fade animation concurrently.  
 **Parameter:**  
 `duration` - animation duration time [`1`:`65535`]ms  
-
-## Example
-
-Arduino examples: [RoboBoardX4/RGB](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/RGB){target=_blank}
-
-```arduino
-/* All LED control */
-// Set all LED to "Totem" colors
-X4.rgb.colorTotem();
-// Set all LED to blue color
-X4.rgb.color(128, 0, 0, 255); // 50% brightness
-X4.rgb.color(0, 0, 255);      // 100% brightness
-X4.rgb.color(128, 0x0000FF);  // 50% brightness
-X4.rgb.color(0x800000FF);     // 50% brightness
-// Turn LED on to last used color
-X4.rgb.on();
-// Turn LED off
-X4.rgb.off();
-// Set LED to on
-X4.rgb.set(HIGH);
-X4.rgb.set(true);
-// Toggle LED between on / off
-X4.rgb.toggle();
-// Reset LED to default (startup) color
-X4.rgb.reset();
-// Enable LED peripheral
-X4.rgb.enable();
-// Disable LED peripheral
-X4.rgb.disable();
-```
-```arduino
-/* All LED fade animations */
-// Set fade color to "Totem"
-X4.rgb.fadeColorTotem();
-// Set fade color to red
-X4.rgb.fadeColor(128, 255, 0, 0); // 50% brightness
-X4.rgb.fadeColor(255, 0, 0);      // 100% brightness
-X4.rgb.fadeColor(128, 0xFF0000);  // 50% brightness
-X4.rgb.fadeColor(0x80FF0000);     // 50% brightness
-// Start fade animation with duration of 2s
-X4.rgb.fadeStart(2000);
-```
-```arduino
-/* Single LED control */
-// Set single LED color
-X4.rgbA.color(255, 0, 0); // Set LED A to "red"
-X4.rgbB.color(0, 255, 0); // Set LED B to "green"
-X4.rgbC.color(0, 0, 255); // Set LED C to "blue"
-X4.rgbD.color(255, 255, 255); // Set LED D to "white"
-// Turn LED B to last used color
-X4.rgbB.on();
-// Turn LED A off
-X4.rgbA.off();
-// Set LED C to on
-X4.rgbC.set(HIGH);
-// Toggle LED D between on / off
-X4.rgbD.toggle();
-```
-```arduino
-/* Single LED fade animations */
-// Set individual LED fade color
-X4.rgbA.fadeColor(0, 0, 255); // Set LED A fade to blue
-X4.rgbB.fadeColor(255, 0, 0); // Set LED B fade to red
-// Start individual LED fade animation
-X4.rgbA.fadeStart(1000); // Fade LED A in 1 second
-X4.rgbB.fadeStart(2000); // Fade LED B in 2 seconds
-```

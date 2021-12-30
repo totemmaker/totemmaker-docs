@@ -11,7 +11,70 @@ Multiple interfaces available:
 
 ***
 
-## All DC channels control
+## Code examples
+
+**Arduino projects:** [RoboBoardX4/DC](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/DC){target=_blank}
+
+??? example "Function usage (click to expand)"
+    ```arduino
+    /* All DC channels control */
+    // Set all DC outputs to 50% power
+    X4.dc.power(50, 50, 50, 50);
+    // Brake all DC outputs at 100% power
+    X4.dc.brake(100, 100, 100, 100);
+    // Invert all DC outputs spin direction
+    X4.dc.setInvert(true, true, true, true);
+    // Enable automatic braking for all DC outputs
+    X4.dc.setAutobrake(50, 50, 100, 100); // 50% for A,B. 100% for C,D.
+    // Enable DC peripheral
+    X4.dc.enable();
+    // Disable DC peripheral
+    X4.dc.disable();
+    ```
+    ```arduino
+    /* Control DC channel group */
+    // Play 123 Hz tone on A and B DC channels
+    X4.dcAB.tone(123); // Play tone
+    X4.dcAB.tone(123, 1000); // Play tone for 1 second and stop
+    X4.dcAB.tone(0); // Stop tone playing
+    tone(0, 123); // Same as "X4.dcAB.tone(123)"
+    tone(0, 123, 1000); // Same as "X4.dcAB.tone(123, 1000)"
+    // Play 300 Hz tone on C and D DC channels
+    X4.dcCD.tone(300); // Play tone
+    X4.dcCD.tone(300, 500); // Play tone for 500 milliseconds and stop
+    // Set A and B PWM frequency to 200 Hz
+    X4.dcAB.setFreq(200);
+    // Set A and B power range (resolution) to 300
+    X4.dcAB.setPowerRange(300);
+    X4.dcA.power(300); // Now power can be set more precisely in range [-300:300]
+    // Set A and B channels to individually controllable
+    X4.dcAB.setModeIndividual();
+    // Set A and B channels to combined controllable
+    X4.dcAB.setModeCombined();
+    ```
+    ```arduino
+    /* Control single DC channel */
+    // Enable DC A output
+    X4.dcA.enable();
+    // Disable DC D output
+    X4.dcD.disable();
+    // Spin DC C output backwards and 50% power
+    X4.dcC.power(-50);
+    // Brake DC A output at 100% power
+    X4.dcA.brake(100);
+    // Invert DC C spin direction
+    X4.dcC.setInvert(true);
+    // Enable automatic brake for DC B channel
+    X4.dcB.setAutobrake(true); // Enable to 100% power
+    X4.dcB.setAutobrake(70); // To 70% power
+    X4.dcB.setAutobrake(0); // Disable
+    ```
+
+***
+
+## Functions
+
+### All DC channels control
 
 Functions using `X4.dc` interface will affect all (A, B, C, D) DC channels at once.  
 
@@ -58,7 +121,7 @@ Used to prevent motor from free spinning.
 : Disable DC peripheral. Turn off power.  
 
 
-## Control DC channel group
+### Control DC channel group
 
 This API is available for DC channel groups `X4.dcAB` and `X4.dcCD` only. It will affect both combined (A+B or C+D) channels and can't be separated.  
 
@@ -91,7 +154,7 @@ Arduino `tone()` is forward to `X4.dcAB.tone()` for easy use with Buzzer example
 : Switch A and B channel control to combined, for output power up to 2 Amps. Single motor should be wired to both ports.  
 **Warning: Experimental feature. Proper implementation and documentation is still missing. Do not use with rev 1.0 board as it will short DC channel.**  
 
-## Control single DC channel
+### Control single DC channel
 
 This API is available for each DC motor channel `X4.dcA`, `X4.dcB`, `X4.dcC`, `X4.dcD`.  
 
@@ -124,61 +187,3 @@ Will automatically apply specified braking power when `power()` is set to `0`.
 Used to prevent motor from free spinning.  
 **Parameter:**  
 `power` - channel A automatic brake power [`0`:`100`]% or [`false`:`true`].
-
-## Example
-
-Arduino examples: [RoboBoardX4/DC](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/DC){target=_blank}
-
-```arduino
-/* All DC channels control */
-// Set all DC outputs to 50% power
-X4.dc.power(50, 50, 50, 50);
-// Brake all DC outputs at 100% power
-X4.dc.brake(100, 100, 100, 100);
-// Invert all DC outputs spin direction
-X4.dc.setInvert(true, true, true, true);
-// Enable automatic braking for all DC outputs
-X4.dc.setAutobrake(50, 50, 100, 100); // 50% for A,B. 100% for C,D.
-// Enable DC peripheral
-X4.dc.enable();
-// Disable DC peripheral
-X4.dc.disable();
-```
-```arduino
-/* Control DC channel group */
-// Play 123 Hz tone on A and B DC channels
-X4.dcAB.tone(123); // Play tone
-X4.dcAB.tone(123, 1000); // Play tone for 1 second and stop
-X4.dcAB.tone(0); // Stop tone playing
-tone(0, 123); // Same as "X4.dcAB.tone(123)"
-tone(0, 123, 1000); // Same as "X4.dcAB.tone(123, 1000)"
-// Play 300 Hz tone on C and D DC channels
-X4.dcCD.tone(300); // Play tone
-X4.dcCD.tone(300, 500); // Play tone for 500 milliseconds and stop
-// Set A and B PWM frequency to 200 Hz
-X4.dcAB.setFreq(200);
-// Set A and B power range (resolution) to 300
-X4.dcAB.setPowerRange(300);
-X4.dcA.power(300); // Now power can be set more precisely in range [-300:300]
-// Set A and B channels to individually controllable
-X4.dcAB.setModeIndividual();
-// Set A and B channels to combined controllable
-X4.dcAB.setModeCombined();
-```
-```arduino
-/* Control single DC channel */
-// Enable DC A output
-X4.dcA.enable();
-// Disable DC D output
-X4.dcD.disable();
-// Spin DC C output backwards and 50% power
-X4.dcC.power(-50);
-// Brake DC A output at 100% power
-X4.dcA.brake(100);
-// Invert DC C spin direction
-X4.dcC.setInvert(true);
-// Enable automatic brake for DC B channel
-X4.dcB.setAutobrake(true); // Enable to 100% power
-X4.dcB.setAutobrake(70); // To 70% power
-X4.dcB.setAutobrake(0); // Disable
-```

@@ -6,7 +6,51 @@ API to read and control miscellaneous board functionality.
 
 ***
 
-## Battery info
+## Code examples
+
+**Arduino projects:** [RoboBoardX4/X4](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/X4){target=_blank}
+
+??? example "Function usage (click to expand)"
+    ```arduino
+    /* Battery info */
+    // Battery voltage "11.1"
+    float voltage = X4.getBatteryVoltage();
+    // Battery state "false"
+    bool isLow = X4.isBatteryLow();
+    // Battery charging state "false"
+    bool isCharging = X4.isBatteryCharging();
+    // Last battery charging timestamp "1326485" (millis())
+    int lastChTime = X4.getBatteryChargingTime();
+    ```
+    ```arduino
+    /* Board info */
+    // Is DC cable plugged in "false"
+    bool isInDC = X4.isDC();
+    // Is USB cable plugged in "false"
+    bool isInUSB = X4.isUSB();
+    // X4 serial number
+    int serial = X4.getSerial();
+    // Board revision "v1.1"
+    char *revision = X4.getRevision();
+    // Board driver firmware version "v1.52"
+    char *driver = X4.getDriverVersion();
+    // Board software version "v2.00"
+    char *software = X4.getSoftwareVersion();
+    ```
+    ```arduino
+    /* Board control */
+    // Force to enable connectivity to Totem App. Normally should be called inside setup()
+    X4.enableAppControl();
+    // Reboot X4 board
+    X4.restart();
+    X4.reset();
+    ```
+
+***
+
+## Functions
+
+### Battery info
 
 #### (`voltage`) X4.getBatteryVoltage() { data-toc-label='getBatteryVoltage()' }
 : Get connected battery voltage.  
@@ -30,7 +74,7 @@ API to read and control miscellaneous board functionality.
 
 ***
 
-## Board info
+### Board info
 
 #### (`state`) X4.isDC() { data-toc-label='isDC()' }
 : Check if DC power adapter jack is plugged in.  
@@ -64,7 +108,7 @@ API to read and control miscellaneous board functionality.
 
 ***
 
-## Board control
+### Board control
 
 #### (`success`) X4.enableAppControl() { data-toc-label='enableAppControl()' }
 : Force to start App connectivity. Will make RoboBoard X4 discoverable for Totem smartphone app. This will override Tools -> App control setting.  
@@ -74,42 +118,3 @@ API to read and control miscellaneous board functionality.
 #### X4.reset() { data-toc-label='reset()' }
 #### X4.restart() { data-toc-label='restart()' }
 : Reset ESP32 MCU. Will reload running program. Same functionality as physical Reset button.  
-
-## Example
-
-Arduino examples: [RoboBoardX4/X4](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/X4){target=_blank}
-
-```arduino
-/* Battery info */
-// Battery voltage "11.1"
-float voltage = X4.getBatteryVoltage();
-// Battery state "false"
-bool isLow = X4.isBatteryLow();
-// Battery charging state "false"
-bool isCharging = X4.isBatteryCharging();
-// Last battery charging timestamp "1326485" (millis())
-int lastChTime = X4.getBatteryChargingTime();
-```
-```arduino
-/* Board info */
-// Is DC cable plugged in "false"
-bool isInDC = X4.isDC();
-// Is USB cable plugged in "false"
-bool isInUSB = X4.isUSB();
-// X4 serial number
-int serial = X4.getSerial();
-// Board revision "v1.1"
-char *revision = X4.getRevision();
-// Board driver firmware version "v1.52"
-char *driver = X4.getDriverVersion();
-// Board software version "v2.00"
-char *software = X4.getSoftwareVersion();
-```
-```arduino
-/* Board control */
-// Force to enable connectivity to Totem App. Normally should be called inside setup()
-X4.enableAppControl();
-// Reboot X4 board
-X4.restart();
-X4.reset();
-```

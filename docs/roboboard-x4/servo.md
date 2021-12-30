@@ -10,7 +10,57 @@ Multiple interfaces available:
 
 ***
 
-## All channels
+## Code examples
+
+**Arduino projects:** [RoboBoardX4/SERVO](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/SERVO){target=_blank}
+
+??? example "Function usage (click to expand)"
+    ```arduino
+    /* All channels */
+    // Rotate A, B, C servo to left, center, right
+    X4.servo.pos(-100, 0, 100);
+    X4.servo.angle(0, 90, 180);
+    X4.servo.pulse(500, 1500, 2500);
+    // Enable servo peripheral
+    X4.servo.enable();
+    // Disable servo peripheral
+    X4.servo.disable();
+    // Modify servo signal PWM period
+    X4.servo.setPeriod(20000); // Set to default 20000µs
+    ```
+    ```arduino
+    /* Single channel */
+    // Rotate servo A
+    X4.servoA.pos(-65);
+    X4.servoA.angle(65);
+    X4.servoA.pulse(650);
+    // Get current servo position "-65"
+    X4.servoA.getPos();
+    // Get current servo angle "65"
+    X4.servoA.getAngle();
+    // Get current servo position pulse "650"
+    X4.servoA.getPulse();
+    ```
+    ```arduino
+    /* Channel config */
+    // Enable servo A channel
+    X4.servoA.enable();
+    // Disable servo A channel
+    X4.servoA.disable();
+    // Invert servo A channel spin direction
+    X4.servoA.setInvert(true);
+    // Set servo B channel constant rotation speed
+    X4.servoB.setSpeed(30); // 30 RPM
+    X4.servoB.setSpeedRPH(1800); // 1800 RPH -> 30 RPM
+    // Configure min and max servo pulse to adjust position for pos, angle functions
+    X4.servoA.setPulseMinMax(500, 2500); // Set to default
+    ```
+
+***
+
+## Functions
+
+### All channels
 
 #### X4.servo.pos(`A`, `B`, `C`) { data-toc-label='pos()' }
 : Set individual servo position for all channels.  
@@ -35,7 +85,7 @@ For better explanation, check [ControlPosition.ino](https://github.com/totemmake
 
 ***
 
-## Single channel
+### Single channel
 
 This API is available for each servo motor channel `X4.servoA`, `X4.servoB`, `X4.servoC`.
 
@@ -77,7 +127,7 @@ This API is available for each servo motor channel `X4.servoA`, `X4.servoB`, `X4
 
 ***
 
-## Channel config
+### Channel config
 
 Some parameters can be configured to change behavior of motor positioning.
 
@@ -107,48 +157,3 @@ Servo motors typically has maximum speed of 60 RPM, so maximum value is limited 
 : Set channel low & high pulse (microseconds) limits (default `500`, `2500` µs). These values are used when calculating motor position or angle. Can be changed if motor supports different range.  
 **Parameter:**  
 `min`, `max` - pulse time [`0`:`20000`]µs (microseconds)  
-
-## Example
-
-Arduino examples: [RoboBoardX4/SERVO](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemX4/examples/SERVO){target=_blank}
-
-```arduino
-/* All channels */
-// Rotate A, B, C servo to left, center, right
-X4.servo.pos(-100, 0, 100);
-X4.servo.angle(0, 90, 180);
-X4.servo.pulse(500, 1500, 2500);
-// Enable servo peripheral
-X4.servo.enable();
-// Disable servo peripheral
-X4.servo.disable();
-// Modify servo signal PWM period
-X4.servo.setPeriod(20000); // Set to default 20000µs
-```
-```arduino
-/* Single channel */
-// Rotate servo A
-X4.servoA.pos(-65);
-X4.servoA.angle(65);
-X4.servoA.pulse(650);
-// Get current servo position "-65"
-X4.servoA.getPos();
-// Get current servo angle "65"
-X4.servoA.getAngle();
-// Get current servo position pulse "650"
-X4.servoA.getPulse();
-```
-```arduino
-/* Channel config */
-// Enable servo A channel
-X4.servoA.enable();
-// Disable servo A channel
-X4.servoA.disable();
-// Invert servo A channel spin direction
-X4.servoA.setInvert(true);
-// Set servo B channel constant rotation speed
-X4.servoB.setSpeed(30); // 30 RPM
-X4.servoB.setSpeedRPH(1800); // 1800 RPH -> 30 RPM
-// Configure min and max servo pulse to adjust position for pos, angle functions
-X4.servoA.setPulseMinMax(500, 2500); // Set to default
-```
