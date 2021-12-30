@@ -78,6 +78,14 @@ nav:
         - 'X4.servo' : 'roboboard-x4/servo.md'
         - 'X4.module' : 'roboboard-x4/module.md'
         - 'X4.function' : 'roboboard-x4/function.md'
+    - Modules:
+        - 'modules/index.md'
+        - 'modules/03.md'
+        - 'modules/04.md'
+        - 'modules/11.md'
+        - 'modules/14.md'
+        - 'modules/15.md'
+        - 'modules/22.md'
     - 'TotemBUS.md'
     - 'new-totem-arduino.md'
     - API:
@@ -90,14 +98,6 @@ nav:
         - 'interfaces/index.md'
         - 'interfaces/BLE.md'
         - 'interfaces/X4.md'
-    - Modules:
-        - 'modules/index.md'
-        - 'modules/03.md'
-        - 'modules/04.md'
-        - 'modules/11.md'
-        - 'modules/14.md'
-        - 'modules/15.md'
-        - 'modules/22.md'
     - Tutorials:
         - 'tutorials/02.UseThirdParty.md'
         - 'tutorials/03.UseExamples.md'
