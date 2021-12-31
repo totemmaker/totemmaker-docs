@@ -96,8 +96,8 @@ Functions using `X4.rgb` interface will affect all (A, B, C, D) LEDs at once.
 `color(alpha, hex)` - use 24-bit HEX color code.  
 `color(hex)` - use 32-bit HEX color code  
 HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.  
-24-bit: `0xAABBCC` -> `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
-32-bit: `0xFFAABBCC` -> `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+24-bit: `0xAABBCC` → `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+32-bit: `0xFFAABBCC` → `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
 **Parameter:**  
 `alpha` - brightness [`0`:`255`]  
 `red` - amount of red color [`0`:`255`]  
@@ -141,8 +141,8 @@ Will gradually transit to this color when `fadeStart()` is called.
 `fadeColor(alpha, hex)` - use 24-bit HEX color code.  
 `fadeColor(hex)` - use 32-bit HEX color code  
 HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.  
-24-bit: `0xAABBCC` -> `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
-32-bit: `0xFFAABBCC` -> `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+24-bit: `0xAABBCC` → `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+32-bit: `0xFFAABBCC` → `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
 **Parameter:**  
 `alpha` - brightness [`0`:`255`]  
 `red` - amount of red color [`0`:`255`]  
@@ -167,8 +167,8 @@ This API is available for each individual LED `X4.rgbA`, `X4.rgbB`, `X4.rgbC`, `
 `color(alpha, hex)` - use 24-bit HEX color code.  
 `color(hex)` - use 32-bit HEX color code  
 HEX (hexadecimal) color code is similar to HTML color code.  
-24-bit: `0xAABBCC` -> `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
-32-bit: `0xFFAABBCC` -> `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+24-bit: `0xAABBCC` → `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+32-bit: `0xFFAABBCC` → `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
 **Parameter:**  
 `alpha` - brightness [`0`:`255`]  
 `red` - amount of red color [`0`:`255`]  
@@ -200,8 +200,8 @@ Will gradually transit to this color when `fadeStart()` is called.
 `fadeColor(alpha, hex)` - use 24-bit HEX color code.  
 `fadeColor(hex)` - use 32-bit HEX color code  
 HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.  
-24-bit: `0xAABBCC` -> `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
-32-bit: `0xFFAABBCC` -> `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+24-bit: `0xAABBCC` → `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+32-bit: `0xFFAABBCC` → `0xFF` (255 alpha), `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
 **Parameter:**  
 `alpha` - brightness [`0`:`255`]  
 `red` - amount of red color [`0`:`255`]  

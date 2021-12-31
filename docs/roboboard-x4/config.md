@@ -73,7 +73,7 @@ This description is internally converted to 16-bit hash value.
 **Alternatives:**  
 `setRobotColor(hex)` - use 24-bit HEX color code  
 HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.  
-24-bit: `0xAABBCC` -> `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
+24-bit: `0xAABBCC` → `0xAA` (170 red), `0xBB` (187 green), `0xCC` (204 blue).  
 **Parameter:**  
 `red` - amount of red color [`0`:`255`]  
 `green` - amount of green color [`0`:`255`]  

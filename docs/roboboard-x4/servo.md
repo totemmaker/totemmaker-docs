@@ -51,7 +51,7 @@ Multiple interfaces available:
     X4.servoA.setInvert(true);
     // Set servo B channel constant rotation speed
     X4.servoB.setSpeed(30); // 30 RPM
-    X4.servoB.setSpeedRPH(1800); // 1800 RPH -> 30 RPM
+    X4.servoB.setSpeedRPH(1800); // 1800 RPH → 30 RPM
     // Configure min and max servo pulse to adjust position for pos, angle functions
     X4.servoA.setPulseMinMax(500, 2500); // Set to default
     ```

@@ -111,7 +111,8 @@ API to read and control miscellaneous board functionality.
 ### Board control
 
 #### (`success`) X4.enableAppControl() { data-toc-label='enableAppControl()' }
-: Force to start App connectivity. Will make RoboBoard X4 discoverable for Totem smartphone app. This will override Tools -> App control setting.  
+: Force to start App connectivity. Will make RoboBoard X4 discoverable for Totem smartphone app. This will override `Tools` → `App control` setting.  
+_Enabling this option will include Bluetooth functionality, which increases flash memory usage and takes longer to compile a project and upload a code._  
 **Returns:**  
 `success` - returns `false` if internal error occurred during initialization  
 
