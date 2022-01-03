@@ -60,6 +60,15 @@ plugins:
   - redirects:
       redirect_maps:
         tutorials/01.ArduinoSetup.md: setup/index.md
+        tutorials/02.UseThirdParty.md: remote-control/arduino/index.md
+        tutorials/CustomAppButtons.md: remote-control/app/custom-function.md
+        API/index.md: remote-control/index.md
+        API/ModuleData.md: remote-control/arduino/ModuleData.md
+        API/MotorDriver.md: remote-control/arduino/MotorDriver.md
+        API/TotemModule.md: remote-control/arduino/TotemModule.md
+        API/TotemRobot.md: remote-control/arduino/TotemRobot.md
+        interfaces/index.md: remote-control/arduino/index.md
+        interfaces/BLE.md: remote-control/arduino/index.md
 
 nav:
     - Setup:
@@ -86,22 +95,22 @@ nav:
         - 'modules/14.md'
         - 'modules/15.md'
         - 'modules/22.md'
+    - "Remote control":
+        - 'remote-control/index.md'
+        - "Arduino":
+            - 'remote-control/arduino/index.md'
+            - 'remote-control/arduino/ModuleData.md'
+            - 'remote-control/arduino/MotorDriver.md'
+            - 'remote-control/arduino/TotemModule.md'
+            - 'remote-control/arduino/TotemRobot.md'
+        - "Totem App":
+            - 'remote-control/app/index.md'
+            - 'remote-control/app/control-robot.md'
+            - 'remote-control/app/custom-function.md'
     - 'TotemBUS.md'
     - 'new-totem-arduino.md'
-    - API:
-        - 'API/index.md'
-        - 'API/ModuleData.md'
-        - 'API/MotorDriver.md'
-        - 'API/TotemModule.md'
-        - 'API/TotemRobot.md'
-    - Interfaces:
-        - 'interfaces/index.md'
-        - 'interfaces/BLE.md'
-        - 'interfaces/X4.md'
     - Tutorials:
-        - 'tutorials/02.UseThirdParty.md'
         - 'tutorials/03.UseExamples.md'
         - 'tutorials/04.SetupController.md'
-        - 'tutorials/CustomAppButtons.md'
         - 'tutorials/GettingStartedX4.md'
         - 'tutorials/X4.md'
