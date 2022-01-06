@@ -16,8 +16,8 @@ Object representing remote Totem robot connection over BLE. Received from [BLE i
 | `bool` | [isConnected()](#isconnected) | Check if connection is active |
 | `bool` | [connect()](#connect) | Connect to robot |
 | _none_ | [disconnect()](#disconnect) | Disconnect from robot |
-| _none_ | [attach](#attachtotemmodule)([`TotemModule`](/API/TotemModule)) | Attach module to connection |
-| _none_ | [detach](#detachtotemmodule)([`TotemModule`](/API/TotemModule)) | Detach module from connection |
+| _none_ | [attach](#attachtotemmodule)([`TotemModule`](/remote-control/arduino/TotemModule)) | Attach module to connection |
+| _none_ | [detach](#detachtotemmodule)([`TotemModule`](/remote-control/arduino/TotemModule)) | Detach module from connection |
 
 ## Example
 
@@ -146,10 +146,10 @@ void function() {
 }
 ```
 
-#### attach([`TotemModule`](/API/TotemModule))
+#### attach([`TotemModule`](/remote-control/arduino/TotemModule))
 
-: Attach selected [`TotemModule`](/API/TotemModule) to active BLE connection.  
-All initialized modules are automatically attached to active connection. This is required if connecting to more than one robot at the same time and to use separate [`TotemModule`](/API/TotemModule) objects in multiple connections.
+: Attach selected [`TotemModule`](/remote-control/arduino/TotemModule) to active BLE connection.  
+All initialized modules are automatically attached to active connection. This is required if connecting to more than one robot at the same time and to use separate [`TotemModule`](/remote-control/arduino/TotemModule) objects in multiple connections.
 
 ```arduino
 TotemModule module(03);
@@ -160,9 +160,9 @@ void function() {
 }
 ```
 
-#### detach([`TotemModule`](/API/TotemModule))
+#### detach([`TotemModule`](/remote-control/arduino/TotemModule))
 
-: Detach selected [`TotemModule`](/API/TotemModule) from active BLE connection.  
+: Detach selected [`TotemModule`](/remote-control/arduino/TotemModule) from active BLE connection.  
 
 ```arduino
 TotemModule module(03);

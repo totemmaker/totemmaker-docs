@@ -16,7 +16,7 @@ Module instance object, providing to send and receive data from module.
 | `bool` | [write(`command`, `array`, `length`)](#writecommand-array-length) | Send command with data |
 | `bool` | [write(`command`, `int`, `int`, `int`, `int`)](#writecommand-int-int-int-int) | Send command with multiple values |
 | `bool` | [read(`command`)](#readcommand) | Non-blocking read from module |
-| [ModuleData](/API/ModuleData) | [readWait(`command`)](#readwaitcommand) | Blocking inline read from module |
+| [ModuleData](/remote-control/arduino/ModuleData) | [readWait(`command`)](#readwaitcommand) | Blocking inline read from module |
 | `bool` | [readWait(`command`, `ModuleData`)](#readwaitcommand-moduledata) | Blocking read from module |
 | `bool` | [subscribe(`command`, `interval`)](#subscribecommand-interval) | Subscribe command read |
 | `bool` | [unsubscribe(`command`)](#unsubscribecommand) | Unsubscribe command read |
@@ -73,7 +73,7 @@ TotemModule module(04); // Create object for module 04
 
 : Create object by specifying number and data receiver function.  
 `DataReceiver` is a user defined function to get all incoming data from the module.  
-Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](/API/ModuleData) parameter. Also can be registered with function [attachOnData()](#attachondatadatareceiver).  
+Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](/remote-control/arduino/ModuleData) parameter. Also can be registered with function [attachOnData()](#attachondatadatareceiver).  
 _Parameter:_  
 `number` - module number [`0`:`255`]. `0` - all modules.  
 `DataReceiver` - data receiver function name `onModuleData`.  
@@ -221,11 +221,11 @@ void setup() {
 #### readWait(`command`) { data-toc-label='readWait(command)' }
 
 : Read command from module. This function sends a read request and waits for the result. It will block program execution until result is received or timeouts (100 milliseconds).  
-This function returns [`ModuleData`](/API/ModuleData) to make inline read request.  
+This function returns [`ModuleData`](/remote-control/arduino/ModuleData) to make inline read request.  
 If read is failed, values will be set to NULL and 0.  
  _Parameter:_  
 `command` - module command string or hash.  
-_Returns:_  [`ModuleData`](/API/ModuleData).
+_Returns:_  [`ModuleData`](/remote-control/arduino/ModuleData).
 
 ```arduino
 // Print robot name
@@ -238,13 +238,13 @@ Serial.print("Robot battery: ");
 Serial.println(voltage);
 ```
 
-#### readWait(`command`, [`ModuleData`](/API/ModuleData)) { data-toc-label='readWait(command, data)' }
+#### readWait(`command`, [`ModuleData`](/remote-control/arduino/ModuleData)) { data-toc-label='readWait(command, data)' }
 
 : Read command from module. This function sends a read request and waits for the result. It will block program execution until result is received or timeouts (100 milliseconds).  
-If returned true - read operation was successful and [`ModuleData`](/API/ModuleData) contains received data.  
+If returned true - read operation was successful and [`ModuleData`](/remote-control/arduino/ModuleData) contains received data.  
  _Parameter:_  
 `command` - module command string or hash.  
-[`ModuleData`](/API/ModuleData) - received data.  
+[`ModuleData`](/remote-control/arduino/ModuleData) - received data.  
 _Returns:_  is requested data received [`true`:`false`].  
 
 ```arduino
@@ -304,7 +304,7 @@ module.unsubscribe("battery"); // Stop receiving "battery" on value change
 
 : Register module data receiver function.  
 `DataReceiver` is a user defined function to get all incoming data from the module.  
-Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](/API/ModuleData) parameter.  
+Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](/remote-control/arduino/ModuleData) parameter.  
 _Note:_ A command has to be [subscribed](#bool-subscribecommand-interval) or [read](#bool-readcommand) to appear in receiver function.  
 _Parameter:_  
 `DataReceiver` - data receiver function name `onModuleData`.  
@@ -380,7 +380,7 @@ module.write(commandHash);
 #### hashModel(`model`) { data-toc-label='hashModel(model)' }
 
 : Encode Totem robot model name to 16bit integer value.  
-Used with [`cfg/robot/model`](/modules/04/#cfgrobotmodel-int) and [getModel()](/API/TotemRobot/#int-getmodel).  
+Used with [`cfg/robot/model`](/modules/04/#cfgrobotmodel-int) and [getModel()](/remote-control/arduino/TotemRobot/#getmodel).  
 _Note:_ This command is `static`, so requires to be called trough a class name.  
 _Parameter:_  
 `command` - model name string.  

@@ -54,7 +54,7 @@ Take a look at each line:
 
 > 1 | `#!arduino #include <Totem.h>`
 
-Including Totem Library into code. By doing this, we tell compiler what to to with `Totem.X4` functions. For all available functions read [TotemModule](/API/TotemModule/) reference.
+Including Totem Library into code. By doing this, we tell compiler what to to with `Totem.X4` functions. For all available functions read [TotemModule](/remote-control/arduino/TotemModule/) reference.
 
 > 3 | `#!arduino void setup() {`
 

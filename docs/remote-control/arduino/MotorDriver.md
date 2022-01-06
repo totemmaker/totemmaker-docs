@@ -25,7 +25,7 @@ Supports up to 4 DC motors and 3 servo motors.
 | _none_ | [brakeRear(`power`)](#brakerearpower) | Set braking power to rear wheels |
 | _none_ | [brakeFront(`power`)](#brakefrontpower) | Set braking power to front wheels |
 | _none_ | [setModule(`number`, `serial`)](#setmodulenumber-serial) | Set module number and serial |
-| [`TotemModule`](/API/TotemModule) | [getModule()](#totemmodule-getmodule) | Get TotemModule object |
+| [`TotemModule`](/remote-control/arduino/TotemModule) | [getModule()](#totemmodule-getmodule) | Get TotemModule object |
 
 ## Example
 
@@ -235,7 +235,7 @@ driver.brakeFront(100); // Brake only front wheels at 100%
 
 #### setModule(`number`, `serial`) { data-toc-label='setModule()' }
 
-: MotorDriver contains [TotemModule](/API/TotemModule) to write motor output values. This function allows to configure exact module to communicate with. By default it's set to 00 (all modules). Same as [setNumber(`number`)](/API/TotemModule/#setnumbernumber) and [setSerial(`serial`)](/API/TotemModule/#setserialserial).  
+: MotorDriver contains [TotemModule](/remote-control/arduino/TotemModule) to write motor output values. This function allows to configure exact module to communicate with. By default it's set to 00 (all modules). Same as [setNumber(`number`)](/remote-control/arduino/TotemModule/#setnumbernumber) and [setSerial(`serial`)](/remote-control/arduino/TotemModule/#setserialserial).  
 _Parameter:_  
 `number` - module number [`0`:`255`]. `0` - all modules.  
 `serial` - module serial [`0`:`32767`]. `0` - ignore serial.  
@@ -245,10 +245,10 @@ driver.setModule(04); // Send move() updates to 04 modules only
 driver.setModule(04, 21015); // Send move() updates to 04 module with serial 21015 only
 ```
 
-#### [`TotemModule`](/API/TotemModule) getModule() { data-toc-label='getModule()' }
+#### [`TotemModule`](/remote-control/arduino/TotemModule) getModule() { data-toc-label='getModule()' }
 
-: MotorDriver contains [TotemModule](/API/TotemModule) to write motor output values. This function returns it to use for other purposes. Allows to reuse already existing TotemModule instance without creating a new one.  
-_Returns:_ [TotemModule](/API/TotemModule).  
+: MotorDriver contains [TotemModule](/remote-control/arduino/TotemModule) to write motor output values. This function returns it to use for other purposes. Allows to reuse already existing TotemModule instance without creating a new one.  
+_Returns:_ [TotemModule](/remote-control/arduino/TotemModule).  
 
 ```arduino
 int voltage = driver.getModule().readWait("battery").getInt(); // Read battery using returned TotemModule

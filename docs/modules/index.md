@@ -22,7 +22,7 @@ Modules are daisy-chain connectable with a 6 pin connector. It provides power an
 
 ![Totem module 14 car](/assets/images/module_14_car.jpg)
 
-Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). Controller can also subscribe to data in order for module to start broadcasting it. The list of available commands can be found in documentation page for specific module. Modules can be interfaced using [Totem API](/API).
+Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). Controller can also subscribe to data in order for module to start broadcasting it. The list of available commands can be found in documentation page for specific module. Modules can be interfaced using [Totem API](/remote-control).
 
 ## General module commands
 
