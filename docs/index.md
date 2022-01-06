@@ -1,34 +1,40 @@
-# Getting started
+# Totem programming
 
 Welcome to the TotemMaker documentation website.  
-This site contains all required information for Totem products programming.  
+This site contains all required information for Totem product programming.  
 Follow further topics to learn all about it.
 
-![TotemBUS](/assets/images/totembus2.png)
+## Getting started
 
-## Introduction
+### Install Arduino
 
-TotemBUS is a unique modular system that can have any configuration of functionality. Multiple modules with different capabilities (motor control, sensors, etc.) can be combined to build a sophisticated robots with a lot of programmable functionality. This is possible by using [Totem modules](/modules/), communicating over [TotemBUS](/TotemBUS/) protocol and controlling via [Totem API](API/).
+[![Arduino IDE](/assets/images/arduino-ide-image1.png){style="width: 562px; height: 90px; object-fit: cover; object-position: 0% 15%;"}](/setup)
 
-## Setting-up environment
+Follow [Setup tutorial](/setup) on how to install required tools for programming.  
 
-Totem programming requires [Arduino](https://www.arduino.cc/en/guide/introduction){target=_blank} and [Totem Library](https://github.com/totemmaker/TotemArduino){target=_blank} to be installed.
+### Program RoboBoard X4
 
-* [Arduino setup](/tutorials/01.ArduinoSetup/)
+[![Module image](/assets/images/x4-v1.1-front.jpg){style="width: 562px; height: 202px; object-fit: cover; object-position: 0% 4%;"}](/roboboard-x4)
 
-## Run example project
+Check [RoboBoard X4 programming](/roboboard-x4) and documentation to control all its features.  
 
-Various examples are provided to start a project easily. Each one is documented with explaining every step of code.
+### Use Totem App
 
-* [Use example projects](/tutorials/03.UseExamples)
+[![iOS/Android app image](https://totemmaker.net/wp-content/uploads/2021/11/app_connect_0.jpg){style="width: 562px; height: 300px; object-fit: cover; object-position: 0% 0%;"}](/remote-control/app)
 
-## Learn Totem coding
+Control Totem robots remotely using [Totem App](remote-control/app). Also check for [other ways to interact with RoboBoard X4](/remote-control).
 
-These topics contains information how to interact with [Totem modules](/modules/) using [Totem Library](https://github.com/totemmaker/TotemArduino){target=_blank}.  
+### Use TotemBUS modules
 
-* [TotemBUS](/TotemBUS/)
-* [Totem API](API/)
-* [Totem modules](/modules/)
+[![Module image](/assets/images/x4-line-follower.jpg){style="width: 562px; height: 180px; object-fit: cover; object-position: 0% 90%;"}](/modules)
+
+RoboBoard X4 allows to expand it's functionality by attaching TotemBUS supported modules. Read [Modules documentation](/modules) to find all about it.
+
+### Use Qwiic modules
+
+[![X4 qwiic](/assets/images/x4-qwiic.jpg){style="width: 562px; height: 100px; object-fit: cover; object-position: 0% 55%;"}](roboboard-x4/qwiic)
+
+RoboBoard X4 has a [Qwiic®](roboboard-x4/qwiic/) connector to plug in third-party modules. This allows to greatly expand things you can do with it, not limiting to Totem ecosystem.
 
 ## Support
 
