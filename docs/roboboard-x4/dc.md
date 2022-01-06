@@ -78,7 +78,7 @@ Multiple interfaces available:
 
 Functions using `X4.dc` interface will affect all (A, B, C, D) DC channels at once.  
 
-#### X4.dc.power(`powerA`, `powerB`, `powerC`, `powerD`) { data-toc-label='power()' }
+#### X4.dc.power(`powerA`, `powerB`, `powerC`, `powerD`) { #dc.power data-toc-label='power()' }
 : Set individual output power for all DC channels at once.  
 Positive - spin forward, negative - spin backward, `0` - no power.  
 **Parameter:**  
@@ -87,7 +87,7 @@ Positive - spin forward, negative - spin backward, `0` - no power.
 `powerC` - channel C output power [`-100`:`100`]%.  
 `powerD` - channel D output power [`-100`:`100`]%.  
 
-#### X4.dc.brake(`powerA`, `powerB`, `powerC`, `powerD`) { data-toc-label='brake()' }
+#### X4.dc.brake(`powerA`, `powerB`, `powerC`, `powerD`) { #dc.brake data-toc-label='brake()' }
 : Set individual brake for all DC channels at once.  
 If `power()` function was called, brake is automatically removed (set to `0`).  
 **Parameter:**  
@@ -96,7 +96,7 @@ If `power()` function was called, brake is automatically removed (set to `0`).
 `powerC` - channel C brake power [`0`:`100`]%.  
 `powerD` - channel D brake power [`0`:`100`]%.  
 
-#### X4.dc.setInvert(`invertA`, `invertB`, `invertC`, `invertD`) { data-toc-label='setInvert()' }
+#### X4.dc.setInvert(`invertA`, `invertB`, `invertC`, `invertD`) { #dc.setInvert data-toc-label='setInvert()' }
 : Invert individual DC motor spin direction for all channels at once.  
 **Parameter:**  
 `invertA` - channel A inverted spin direction [`true`:`false`]  
@@ -104,7 +104,7 @@ If `power()` function was called, brake is automatically removed (set to `0`).
 `invertC` - channel C inverted spin direction [`true`:`false`]  
 `invertD` - channel D inverted spin direction [`true`:`false`]  
 
-#### X4.dc.setAutobrake(`powerA`, `powerB`, `powerC`, `powerD`) { data-toc-label='setAutobrake()' }
+#### X4.dc.setAutobrake(`powerA`, `powerB`, `powerC`, `powerD`) { #dc.setAutobrake data-toc-label='setAutobrake()' }
 : Set automatic individual brake for all DC channels at once.  
 Will automatically apply specified braking power when `power()` is set to `0`.  
 Used to prevent motor from free spinning.  
@@ -114,10 +114,10 @@ Used to prevent motor from free spinning.
 `powerC` - channel C automatic brake power [`0`:`100`]%.  
 `powerD` - channel D automatic brake power [`0`:`100`]%.  
 
-#### X4.dc.enable() { data-toc-label='enable()' }
+#### X4.dc.enable() { #dc.enable data-toc-label='enable()' }
 : Enable DC peripheral. Turn on power.  
 
-#### X4.dc.disable() { data-toc-label='disable()' }
+#### X4.dc.disable() { #dc.disable data-toc-label='disable()' }
 : Disable DC peripheral. Turn off power.  
 
 
@@ -125,7 +125,7 @@ Used to prevent motor from free spinning.
 
 This API is available for DC channel groups `X4.dcAB` and `X4.dcCD` only. It will affect both combined (A+B or C+D) channels and can't be separated.  
 
-#### X4.dcAB.tone(`frequency`, `duration`) { data-toc-label='tone()' }
+#### X4.dcAB.tone(`frequency`, `duration`) { #dcxx.tone data-toc-label='tone()' }
 : Play tone (sound) by vibrating DC motor. Same as Arduino [`tone()`](https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/){target=_blank} function, but with motors. By setting tone, both motor channels (A and B) will start to output specified frequency. If you want only single channel, disable other one `X4.dcB.disable()`. Function `X4.dcCD.tone()` for channels C and D can be used independently to channels A and B.  
 **Alternatives:**  
 `X4.dcAB.tone(frequency)` - duration default to `0` (indefinitely)  
@@ -137,20 +137,20 @@ Arduino `tone()` is forward to `X4.dcAB.tone()` for easy use with Buzzer example
 `duration` - tone output duration [`0`:`65535`]ms. `0` - indefinitely.  
 `pin` - ignored. Any value.  
 
-#### X4.dcAB.setFreq(`frequency`) { data-toc-label='setFreq()' }
+#### X4.dcAB.setFreq(`frequency`) { #dcxx.setFreq data-toc-label='setFreq()' }
 : Set motor group (A and B channels) PWM frequency. By default it's 50Hz. Can be changed if certain applications or motors requires so.  
 **Parameter:**  
 `frequency` - PWM frequency [`1`:`65535`]Hz.  
 
-#### X4.dcAB.setPowerRange(`power`) { data-toc-label='setPowerRange()' }
+#### X4.dcAB.setPowerRange(`power`) { #dcxx.setPowerRange data-toc-label='setPowerRange()' }
 : Set motor group maximum power range. By default `power()` function accepts range between `0`% and `100`%. This range can be increased if more precise control if required for a certain application. Values larger than `100` will be accepted by `power()` function.  
 **Parameter:**  
 `power` - max percentage of power [`0`:`32767`]%.
 
-#### X4.dcAB.setModeIndividual() { data-toc-label='setModeIndividual()' }
+#### X4.dcAB.setModeIndividual() { #dcxx.setModeIndividual data-toc-label='setModeIndividual()' }
 : Switch A and B channel control to individual (default).  
 
-#### X4.dcAB.setModeCombined() { data-toc-label='setModeCombined()' }
+#### X4.dcAB.setModeCombined() { #dcxx.setModeCombined data-toc-label='setModeCombined()' }
 : Switch A and B channel control to combined, for output power up to 2 Amps. Single motor should be wired to both ports.  
 **Warning: Experimental feature. Proper implementation and documentation is still missing. Do not use with rev 1.0 board as it will short DC channel.**  
 
@@ -158,30 +158,30 @@ Arduino `tone()` is forward to `X4.dcAB.tone()` for easy use with Buzzer example
 
 This API is available for each DC motor channel `X4.dcA`, `X4.dcB`, `X4.dcC`, `X4.dcD`.  
 
-#### X4.dcA.enable() { data-toc-label='enable()' }
+#### X4.dcA.enable() { #dcx.enable data-toc-label='enable()' }
 : Enable DC A channel.  
 
-#### X4.dcA.disable() { data-toc-label='disable()' }
+#### X4.dcA.disable() { #dcx.disable data-toc-label='disable()' }
 : Disable DC A channel. Won't be affected by any functions.  
 
-#### X4.dcA.power(`power`) { data-toc-label='power()' }
+#### X4.dcA.power(`power`) { #dcx.power data-toc-label='power()' }
 : Set output power for DC channel A.  
 Positive - spin forward, negative - spin backward, `0` - no power.
 **Parameter:**  
 `power` - channel A output power [`-100`:`100`]%.
 
-#### X4.dcA.brake(`power`) { data-toc-label='brake()' }
+#### X4.dcA.brake(`power`) { #dcx.brake data-toc-label='brake()' }
 : Set brake for DC channel A.  
 If `power()` function was called, brake is automatically removed (set to `0`).  
 **Parameter:**  
 `power` - channel A brake power [`0`:`100`]%.
 
-#### X4.dcA.setInvert(`invert`) { data-toc-label='setInvert()' }
+#### X4.dcA.setInvert(`invert`) { #dcx.setInvert data-toc-label='setInvert()' }
 : Invert DC motor spin direction for channel A.  
 **Parameter:**  
 `invert` - channel A inverted spin direction [`true`:`false`]  
 
-#### X4.dcA.setAutobrake(`power`) { data-toc-label='setAutobrake()' }
+#### X4.dcA.setAutobrake(`power`) { #dcx.setAutobrake data-toc-label='setAutobrake()' }
 : Set automatic brake for DC channel A.  
 Will automatically apply specified braking power when `power()` is set to `0`.  
 Used to prevent motor from free spinning.  

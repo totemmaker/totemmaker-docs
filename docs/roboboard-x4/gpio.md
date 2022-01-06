@@ -2,7 +2,10 @@
 
 ## Description
 
-API to control 4 available GPIO pins. They can be used to custom inputs & outputs or event UART, I2C or other communications.
+4 GPIO pins are available to hook up simple input, output or communication (UART, I2C, SPI, ...). This can be used to control some custom external electronics or receive input signal. Pins can be controlled using standard Arduino code, similar as with TotemDuino.  
+
+!!! info "Note"
+    Board revision v1.1 and v1.0 has different GPIO wiring, so follow instructions accordingly
 
 ***
 
@@ -32,12 +35,10 @@ API to control 4 available GPIO pins. They can be used to custom inputs & output
 
 ***
 
-## Functions
+## Controlling GPIO pins
 
-### Controlling GPIO pins
-
-=== "RoboBoard X4 revision v.1.1"
-
+=== "Board v1.1"
+    ### Revision v1.1
     Pins can be controlled using standard [Arduino framework functions](https://www.arduino.cc/reference/en/){target=_blank}.  
     For pin numbers use `GPIOA`, `GPIOB`, `GPIOC`, `GPIOD` definitions.
 
@@ -58,9 +59,10 @@ API to control 4 available GPIO pins. They can be used to custom inputs & output
     *Using `analogWrite()` is unavailable at the moment. Will be added in future.*  
 
 
-=== "RoboBoard X4 revision v.1.0"
-
-    This API is available for each GPIO pin `X4.gpioA`, `X4.gpioB`, `X4.gpioC`, `X4.gpioD`.  
+=== "Board v1.0"
+    ### Revision v1.0
+    GPIO pins are connected to internal driver chip, so functionality is limited.  
+    API is available for each GPIO pin `X4.gpioA`, `X4.gpioB`, `X4.gpioC`, `X4.gpioD`.  
 
     #### X4.gpioA.digitalWrite(`state`) { data-toc-label='digitalWrite()' }
     : Set GPIO pin A state. Works similar like Arduino function `digitalWrite()`.  
@@ -79,8 +81,7 @@ API to control 4 available GPIO pins. They can be used to custom inputs & output
     Calling this function will reconfigure pin to output.  
     **Parameter:**  
     `value` - analog value [`0`:`20`]. (0, 10, 20) = (0V, 1.65V, 3.3V).
-
-    // Read analog input [0:1023]
+    
     #### (`value`) X4.gpioA.analogRead() { data-toc-label='analogRead()' }
     : Read GPIO pin A analog value. Works similar like Arduino function `analogRead()`.
     Calling this function will reconfigure pin to output.  

@@ -86,10 +86,10 @@ Multiple interfaces available:
 
 Functions using `X4.rgb` interface will affect all (A, B, C, D) LEDs at once.  
 
-#### X4.rgb.colorTotem() { data-toc-label='colorTotem()' }
+#### X4.rgb.colorTotem() { #rgb.colorTotem data-toc-label='colorTotem()' }
 : Set to "Totem" colors (blue, yellow, green).  
 
-#### X4.rgb.color(`alpha`, `red`, `green`, `blue`) { data-toc-label='color()' }
+#### X4.rgb.color(`alpha`, `red`, `green`, `blue`) { #rgb.color data-toc-label='color()' }
 : Set LEDs color. It consists of brightness and amount of red, green, blue colors.  
 **Alternatives:**  
 `color(red, green, blue)` - alpha default to `255` (max)  
@@ -105,35 +105,35 @@ HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.
 `blue` - amount of blue color [`0`:`255`]  
 `hex` - hexadecimal color code [`0x00000000`:`0xFFFFFFFF`]  
 
-#### X4.rgb.on() { data-toc-label='on()' }
+#### X4.rgb.on() { #rgb.on data-toc-label='on()' }
 : Turn LEDs on to last used color.  
 
-#### X4.rgb.off() { data-toc-label='off()' }
+#### X4.rgb.off() { #rgb.off data-toc-label='off()' }
 : Turn LEDs off.  
 
-#### X4.rgb.set(`state`) { data-toc-label='set()' }
+#### X4.rgb.set(`state`) { #rgb.set data-toc-label='set()' }
 : Set LEDs to specific state (on / off).  
 **Parameter:**  
 `state` - state on / off [`HIGH`:`LOW`] or [`true`:`false`]  
 
-#### X4.rgb.toggle() { data-toc-label='toggle()' }
+#### X4.rgb.toggle() { #rgb.toggle data-toc-label='toggle()' }
 : Toggle LEDs between on / off states.  
 
-#### X4.rgb.reset() { data-toc-label='reset()' }
+#### X4.rgb.reset() { #rgb.reset data-toc-label='reset()' }
 : Reset to default color ("Totem" or custom startup color configured with `X4.config.setRobotColor()`).  
 
-#### X4.rgb.enable() { data-toc-label='enable()' }
+#### X4.rgb.enable() { #rgb.enable data-toc-label='enable()' }
 : Enable RGB peripheral. Turn on power.  
 
-#### X4.rgb.disable() { data-toc-label='disable()' }
+#### X4.rgb.disable() { #rgb.disable data-toc-label='disable()' }
 : Disable RGB peripheral. Turn off power.  
 
 ### All LED fade animations
 
-#### X4.rgb.fadeColorTotem() { data-toc-label='fadeColorTotem()' }
+#### X4.rgb.fadeColorTotem() { #rgb.fadeColorTotem data-toc-label='fadeColorTotem()' }
 : Prepare LEDs fade with "Totem" colors (blue, yellow, green).  
 
-#### X4.rgb.fadeColor(`alpha`, `red`, `green`, `blue`) { data-toc-label='fadeColor()' }
+#### X4.rgb.fadeColor(`alpha`, `red`, `green`, `blue`) { #rgb.fadeColor data-toc-label='fadeColor()' }
 : Prepare LEDs fade color. It consists of brightness and amount of red, green, blue colors.  
 Will gradually transit to this color when `fadeStart()` is called.  
 **Alternatives:**  
@@ -150,7 +150,7 @@ HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.
 `blue` - amount of blue color [`0`:`255`]  
 `hex` - hexadecimal color code [`0x00000000`:`0xFFFFFFFF`]  
 
-#### X4.rgb.fadeStart(`duration`) { data-toc-label='fadeStart()' }
+#### X4.rgb.fadeStart(`duration`) { #rgb.fadeStart data-toc-label='fadeStart()' }
 : Start fading animation for all LEDs at once. Will gradually transit to color set with `fadeColor()` function.  
 Will also play animations if color was individually set with `X4.rgbA.fadeColor()`.  
 **Parameter:**  
@@ -160,7 +160,7 @@ Will also play animations if color was individually set with `X4.rgbA.fadeColor(
 
 This API is available for each individual LED `X4.rgbA`, `X4.rgbB`, `X4.rgbC`, `X4.rgbD`.  
 
-#### X4.rgbA.color(`alpha`, `red`, `green`, `blue`) { data-toc-label='color()' }
+#### X4.rgbA.color(`alpha`, `red`, `green`, `blue`) { #rgbx.color data-toc-label='color()' }
 : Set LED A color. It consists of brightness and amount of red, green, blue colors.  
 **Alternatives:**  
 `color(red, green, blue)` - alpha default to `255` (max)  
@@ -176,23 +176,23 @@ HEX (hexadecimal) color code is similar to HTML color code.
 `blue` - amount of blue color [`0`:`255`]  
 `hex` - hexadecimal color code [`0x00000000`:`0xFFFFFFFF`]  
 
-#### X4.rgbA.on() { data-toc-label='on()' }
+#### X4.rgbA.on() { #rgbx.on data-toc-label='on()' }
 : Turn LED A on to last used color.  
 
-#### X4.rgbA.off() { data-toc-label='off()' }
+#### X4.rgbA.off() { #rgbx.off data-toc-label='off()' }
 : Turn LED A off.  
 
-#### X4.rgbA.set(`state`) { data-toc-label='set()' }
+#### X4.rgbA.set(`state`) { #rgbx.set data-toc-label='set()' }
 : Set LED A to specific state (on / off).  
 **Parameter:**  
 `state` - state on / off [`HIGH`:`LOW`] or [`true`:`false`]  
 
-#### X4.rgbA.toggle() { data-toc-label='toggle()' }
+#### X4.rgbA.toggle() { #rgbx.toggle data-toc-label='toggle()' }
 : Toggle LED A between on / off states.  
 
 ### Single LED fade animations
 
-#### X4.rgbA.fadeColor(`alpha`, `red`, `green`, `blue`) { data-toc-label='fadeColor()' }
+#### X4.rgbA.fadeColor(`alpha`, `red`, `green`, `blue`) { #rgbx.fadeColor data-toc-label='fadeColor()' }
 : Prepare LED A fade color. It consists of brightness and amount of red, green, blue colors.  
 Will gradually transit to this color when `fadeStart()` is called.  
 **Alternatives:**  
@@ -209,7 +209,7 @@ HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.
 `blue` - amount of blue color [`0`:`255`]  
 `hex` - hexadecimal color code [`0x00000000`:`0xFFFFFFFF`]  
 
-#### X4.rgbA.fadeStart(`duration`) { data-toc-label='fadeStart()' }
+#### X4.rgbA.fadeStart(`duration`) { #rgbx.fadeStart data-toc-label='fadeStart()' }
 : Start individual LED A fading animation. Will gradually transit to color set with `fadeColor()` function. Each LED can fade have separate fade animation concurrently.  
 **Parameter:**  
 `duration` - animation duration time [`1`:`65535`]ms  

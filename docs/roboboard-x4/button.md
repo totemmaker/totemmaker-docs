@@ -54,57 +54,57 @@ NOTE: Reset button is dedicated to reload ESP32 and can't be reused.
 
 ### Button read
 
-#### (`status`) X4.button.isPressed() { data-toc-label='isPressed()' }
+#### (`status`) X4.button.isPressed() { #button.isPressed data-toc-label='isPressed()' }
 : Check if button is pressed.  
 **Returns:**  
 `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.isReleased() { data-toc-label='isReleased()' }
+#### (`status`) X4.button.isReleased() { #button.isReleased data-toc-label='isReleased()' }
 : Check if button is released.  
 **Returns:**  
 `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.isPressedFor(`time`) { data-toc-label='isPressedFor()' }
+#### (`status`) X4.button.isPressedFor(`time`) { #button.isPressedFor data-toc-label='isPressedFor()' }
 : Check if button is pressed in for a certain amount of `time`.  
 **Parameter:** `time` - amount of milliseconds button is pressed [`0`:`65535`]ms  
 **Returns:** `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.isReleasedFor(`time`) { data-toc-label='isReleasedFor()' }
+#### (`status`) X4.button.isReleasedFor(`time`) { #button.isReleasedFor data-toc-label='isReleasedFor()' }
 : Check if button is released in for a certain amount of `time`.  
 **Parameter:** `time` - amount of milliseconds button is released [`0`:`65535`]ms  
 **Returns:** `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.wasPressed() { data-toc-label='wasPressed()' }
+#### (`status`) X4.button.wasPressed() { #button.wasPressed data-toc-label='wasPressed()' }
 : Check if button was pressed earlier. Will reset if `true` is returned, until next press.  
 **Returns:**  
 `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.wasReleased() { data-toc-label='wasReleased()' }
+#### (`status`) X4.button.wasReleased() { #button.wasReleased data-toc-label='wasReleased()' }
 : Check if button was released earlier. Will reset if `true` is returned, until next release.  
 **Returns:**  
 `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.wasPressedFor(`time`) { data-toc-label='wasPressedFor()' }
+#### (`status`) X4.button.wasPressedFor(`time`) { #button.wasPressedFor data-toc-label='wasPressedFor()' }
 : Check if button was held for a certain amount of `time`.  
 **Parameter:** `time` - amount of milliseconds button was held [`0`:`65535`]ms  
 **Returns:** `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.wasReleasedFor(`time`) { data-toc-label='wasReleasedFor()' }
+#### (`status`) X4.button.wasReleasedFor(`time`) { #button.wasReleasedFor data-toc-label='wasReleasedFor()' }
 : Check if button was released for a certain amount of `time`.  
 **Parameter:** `time` - amount of milliseconds button was released [`0`:`65535`]ms  
 **Returns:** `status` - yes / no [`true`:`false`]  
 
-#### (`status`) X4.button.wasDoubleClick() { data-toc-label='wasDoubleClick()' }
+#### (`status`) X4.button.wasDoubleClick() { #button.wasDoubleClick data-toc-label='wasDoubleClick()' }
 : Check if button was was double clicked earlier. Will reset if `true` was returned, until next double click.  
 **Returns:**  
 `status` - yes / no [`true`:`false`]  
 
-#### (`timestamp`) X4.button.lastChange() { data-toc-label='lastChange()' }
+#### (`timestamp`) X4.button.lastChange() { #button.lastChange data-toc-label='lastChange()' }
 : Get time of last button state change.  
 **Returns:**  
 `timestamp` - last button state change (millis()) [`0`:`4294967295`]ms  
 
-#### X4.button.addEvent(`function`) { data-toc-label='addEvent()' }
+#### X4.button.addEvent(`function`) { #button.addEvent data-toc-label='addEvent()' }
 : Register an event function called on button state change (press, release).  
 **Parameter:**  
 `function` - function name [`buttonCallback`]  

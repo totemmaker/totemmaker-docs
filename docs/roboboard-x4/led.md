@@ -42,36 +42,36 @@ When X4 is started this LED can be used for any custom scenario.
 
 ### LED control
 
-#### X4.led.on() { data-toc-label='on()' }
+#### X4.led.on() { #led.on data-toc-label='on()' }
 : Turn LED on
 
-#### X4.led.off() { data-toc-label='off()' }
+#### X4.led.off() { #led.off data-toc-label='off()' }
 : Turn LED off
 
-#### X4.led.toggle() { data-toc-label='toggle()' }
+#### X4.led.toggle() { #led.toggle data-toc-label='toggle()' }
 : Toggle LED on / off
 
-#### X4.led.set(`state`) { data-toc-label='set()' }
+#### X4.led.set(`state`) { #led.set data-toc-label='set()' }
 : Set LED state.  
 **Parameter:**  
 `state` - state on / off [`HIGH`:`LOW`] or [`true`:`false`]  
 
-#### (`state`) X4.led.isOn() { data-toc-label='isOn()' }
+#### (`state`) X4.led.isOn() { #led.isOn data-toc-label='isOn()' }
 : Get current LED state.  
 **Returns:**  
 `state` - state on / off [`HIGH`:`LOW`] or [`true`:`false`]  
 
-#### X4.led.blink() { data-toc-label='blink()' }
+#### X4.led.blink() { #led.blink data-toc-label='blink()' }
 : Blink LED few times.  
 
-#### X4.led.blinkTimes(`count`) { data-toc-label='blinkTimes()' }
+#### X4.led.blinkTimes(`count`) { #led.blinkTimes data-toc-label='blinkTimes()' }
 : Blink LED number of times.  
 `blinkTimes(count, blinkDuration)` - blink with custom delay between blinks.  
 **Parameter:**  
 `count` - number of times to blink LED [`1`, `2`, `3`, ...]  
 `blinkDuration` - delay time between blinks [`0`, `1000`]ms. Default `200`ms  
 
-#### X4.led.blinkFor(`duration`) { data-toc-label='blinkFor()' }
+#### X4.led.blinkFor(`duration`) { #led.blinkFor data-toc-label='blinkFor()' }
 : Blink LED for specified amount of time.  
 `blinkFor(count, blinkDuration)` - blink with custom delay between blinks.  
 **Parameter:**  

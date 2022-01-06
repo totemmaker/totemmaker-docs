@@ -37,7 +37,7 @@ API to scan for TotemBUS modules. Can be used to get list of connected TotemBUS 
 
 ### Discover modules
 
-#### X4.module.ping(`number`, `serial`) { data-toc-label='ping()' }
+#### X4.module.ping(`number`, `serial`) { #module.ping data-toc-label='ping()' }
 : Request modules to send a response. All connected modules will be listed in function registered with `addEvent()`.  
 Available request types:  
 • all modules  
@@ -50,13 +50,13 @@ Available request types:
 `number` - module number [`0`:`255`]. `0` - all modules  
 `serial` - module serial [`0`:`32767`]. `0` - ignore serial  
 
-#### X4.module.addEvent(`function`) { data-toc-label='addEvent()' }
+#### X4.module.addEvent(`function`) { #module.addEvent data-toc-label='addEvent()' }
 : Register module discovery event function. It will be called on each module ping response. Functions `getLastNumber()` and `getLastSerial()` can be used inside registered function to get module information.  
 **Parameter:**  
 `function` - function name [`moduleCallback`]  
 
-#### (`number`) X4.module.getLastNumber() { data-toc-label='getLastNumber()' }
+#### (`number`) X4.module.getLastNumber() { #module.getLastNumber data-toc-label='getLastNumber()' }
 : Get last received module number (from ping response).  
 
-#### (`serial`) X4.module.getLastSerial() { data-toc-label='getLastSerial()' }
+#### (`serial`) X4.module.getLastSerial() { #module.getLastSerial data-toc-label='getLastSerial()' }
 : Get last received module serial (from ping response).  

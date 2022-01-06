@@ -62,23 +62,23 @@ Multiple interfaces available:
 
 ### All channels
 
-#### X4.servo.pos(`A`, `B`, `C`) { data-toc-label='pos()' }
+#### X4.servo.pos(`A`, `B`, `C`) { #servo.pos data-toc-label='pos()' }
 : Set individual servo position for all channels.  
 **Parameter:** `A`, `B`, `C` - servo position [`-100`:`100`]%  
 
-#### X4.servo.angle(`A`, `B`, `C`) { data-toc-label='angle()' }
+#### X4.servo.angle(`A`, `B`, `C`) { #servo.angle data-toc-label='angle()' }
 : Set individual servo angle for all channels.  
 **Parameter:** `A`, `B`, `C` - servo angle [`0`:`180`]°  
 
-#### X4.servo.pulse(`A`, `B`, `C`) { data-toc-label='pulse()' }
+#### X4.servo.pulse(`A`, `B`, `C`) { #servo.pulse data-toc-label='pulse()' }
 : Set exact pulse time for each channel. Out of range values can be used if using custom servo motors, supporting different ranges.  
 **Parameter:** `A`, `B`, `C` - pulse time [`500`:`2500`]µs (microseconds)  
 
-#### X4.servo.enable() { data-toc-label='enable()' }
-#### X4.servo.disable() { data-toc-label='disable()' }
+#### X4.servo.enable() { #servo.enable data-toc-label='enable()' }
+#### X4.servo.disable() { #servo.disable data-toc-label='disable()' }
 : Enable or disable all servo output channels. If disabled will stop signal generation.  
 
-#### X4.servo.setPeriod(`period`) { data-toc-label='setPeriod()' }
+#### X4.servo.setPeriod(`period`) { #servo.setPeriod data-toc-label='setPeriod()' }
 : Set custom servo signal period (default 20000µs (20ms))  
 For better explanation, check [ControlPosition.ino](https://github.com/totemmaker/TotemArduinoBoards/blob/master/libraries/TotemX4/examples/SERVO/ControlPosition/ControlPosition.ino){target=_blank} example.  
 **Parameter:** `period` - signal window time [`0`:`65535`]µs (microseconds)  
@@ -89,38 +89,38 @@ For better explanation, check [ControlPosition.ino](https://github.com/totemmake
 
 This API is available for each servo motor channel `X4.servoA`, `X4.servoB`, `X4.servoC`.
 
-#### X4.servoA.pos(`position`) { data-toc-label='pos()' }
+#### X4.servoA.pos(`position`) { #servox.pos data-toc-label='pos()' }
 : Set servo position.  
 `pos(position, duration)` - slow down position change.  
 **Parameter:**  
 `position` - servo position [`-100`:`100`]%  
 `duration` - time duration for position to change [`0`:`65535`]ms  
 
-#### X4.servoA.angle(`angle`) { data-toc-label='angle()' }
+#### X4.servoA.angle(`angle`) { #servox.angle data-toc-label='angle()' }
 : Set servo angle.  
 `angle(angle, duration)` - slow down position change.  
 **Parameter:**  
 `angle` - servo angle [`0`:`180`]°  
 `duration` - time duration for position to change [`0`:`65535`]ms  
 
-#### X4.servoA.pulse(`pulse`) { data-toc-label='pulse()' }
+#### X4.servoA.pulse(`pulse`) { #servox.pulse data-toc-label='pulse()' }
 : Set exact pulse time for servo. Out of range values can be used if using custom servo motor, supporting different ranges.  
 `pulse(pulse, duration)` - slow down position change.  
 **Parameter:**  
 `pulse` - pulse time [`500`:`2500`]µs (microseconds)  
 `duration` - time duration for position to change [`0`:`65535`]ms  
 
-#### (`position`) X4.servoA.getPos() { data-toc-label='getPos()' }
+#### (`position`) X4.servoA.getPos() { #servox.getPos data-toc-label='getPos()' }
 : Get current servo position. Will return value in real time if `setSpeed` is set or `duration` parameter was used.  
 **Returns:**  
 `position` - servo position [`-100`:`100`]%  
 
-#### (`angle`) X4.servoA.getAngle() { data-toc-label='getAngle()' }
+#### (`angle`) X4.servoA.getAngle() { #servox.getAngle data-toc-label='getAngle()' }
 : Get current servo angle. Will return value in real time if `setSpeed` is set or `duration` parameter was used.  
 **Returns:**  
 `angle` - servo angle [`0`:`180`]°  
 
-#### (`pulse`) X4.servoA.getPulse() { data-toc-label='getPulse()' }
+#### (`pulse`) X4.servoA.getPulse() { #servox.getPulse data-toc-label='getPulse()' }
 : Get current servo pulse time. Will return value in real time if `setSpeed` is set or `duration` parameter was used.  
 **Returns:**  
 `pulse` - pulse time [`500`:`2500`]µs (microseconds)  
@@ -131,29 +131,29 @@ This API is available for each servo motor channel `X4.servoA`, `X4.servoB`, `X4
 
 Some parameters can be configured to change behavior of motor positioning.
 
-#### X4.servoA.enable() { data-toc-label='enable()' }
+#### X4.servoA.enable() { #servox.enable data-toc-label='enable()' }
 : Enable servo output channel.  
 
-#### X4.servoA.disable() { data-toc-label='disable()' }
+#### X4.servoA.disable() { #servox.disable data-toc-label='disable()' }
 : Disable servo output channel. Will stop signal generation.  
 
-#### X4.servoA.setInvert(`invert`) { data-toc-label='setInvert()' }
+#### X4.servoA.setInvert(`invert`) { #servox.setInvert data-toc-label='setInvert()' }
 : Invert servo spin direction.  
 **Parameter:**  
 `invert` - invert spin direction [`false`:`true`]  
 
-#### X4.servoA.setSpeed(`rpm`) { data-toc-label='setSpeed()' }
+#### X4.servoA.setSpeed(`rpm`) { #servox.setSpeed data-toc-label='setSpeed()' }
 : Set constant servo speed RPM (Rounds-Per-Minute).  
 Servo motors typically has maximum speed of 60 RPM, so maximum value is limited by motor capabilities. Setting value `0` will use maximum motor speed.  
 **Parameter:**  
 `rpm` - motor speed [`0`:`65535`] RPM.  
 
-#### X4.servoA.setSpeedRPH(`rph`) { data-toc-label='setSpeedRPH()' }
+#### X4.servoA.setSpeedRPH(`rph`) { #servox.setSpeedRPH data-toc-label='setSpeedRPH()' }
 : Set constant Servo motor speed RPH (Rounds-Per-Hour). Use when less than 1 RPM speed is required. Servo motors typically has maximum speed of 60 RPM (3600 RPH), so maximum value is limited by motor capabilities. Setting value `0` will use maximum motor speed.  
 **Parameter:**  
 `rph` - motor speed [`0`:`65535`] PRH  
 
-#### X4.servoA.setPulseMinMax(`min`, `max`) { data-toc-label='setPulseMinMax()' }
+#### X4.servoA.setPulseMinMax(`min`, `max`) { #servox.setPulseMinMax data-toc-label='setPulseMinMax()' }
 : Set channel low & high pulse (microseconds) limits (default `500`, `2500` µs). These values are used when calculating motor position or angle. Can be changed if motor supports different range.  
 **Parameter:**  
 `min`, `max` - pulse time [`0`:`20000`]µs (microseconds)  

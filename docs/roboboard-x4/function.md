@@ -33,12 +33,12 @@ API to receive custom commands from smartphone using Totem App. There are 4 chan
 
 This API is available for each auxiliary channel `X4.functionA`, `X4.functionB`, `X4.functionC`, `X4.functionD`.  
 
-#### X4.functionA.addEvent(`function`) { data-toc-label='addEvent()' }
+#### X4.functionA.addEvent(`function`) { #functionx.addEvent data-toc-label='addEvent()' }
 : Register Totem App event function. It will be called on each message sent. Value is received using `get()` function.  
 **Parameter:**  
 `function` - function name [`appCallback`]  
 
-#### (`value`) X4.functionA.get() { data-toc-label='get()' }
+#### (`value`) X4.functionA.get() { #functionx.get data-toc-label='get()' }
 : Get widget value sent from App.  
 **Returns:**  
 `value` - 32-bit value [`-2147483648`:`2147483647`]  

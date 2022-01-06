@@ -44,31 +44,31 @@ API to change board settings. Any changes saved retain their values after power 
 
 ### Settings
 
-#### X4.config.setRobotName(`name`) { data-toc-label='setRobotName()' }
+#### X4.config.setRobotName(`name`) { #config.setRobotName data-toc-label='setRobotName()' }
 : Set Robot name. Will be visible during Totem App connection.  
 **Parameter:**  
 `name` - string (text) up to 30 characters.  
 
-#### (`name`) X4.config.getRobotName() { data-toc-label='getRobotName()' }
+#### (`name`) X4.config.getRobotName() { #config.getRobotName data-toc-label='getRobotName()' }
 : Get Robot name, configured with `setRobotName()` or inside Totem App.  
 **Returns:**  
 `name` - string (text) up to 30 characters.  
 
-#### X4.config.setRobotModel(`description`) { data-toc-label='setRobotModel()' }
+#### X4.config.setRobotModel(`description`) { #config.setRobotModel data-toc-label='setRobotModel()' }
 : Set Robot model description. Used to describe robot type `MiniTrooper`, etc.  
 This description is internally converted to 16-bit hash value.  
 `description` - string (text) of any length.  
 
-#### X4.config.setRobotModel(`hash`) { data-toc-label='setRobotModel(hash)' }
+#### X4.config.setRobotModel(`hash`) { #config.setRobotModel-hash data-toc-label='setRobotModel(hash)' }
 : Set Robot model description hash. Can be acquired with `TotemModule::hashModel("description")`.  
 `hash` - 16-bit value hash of model description string (text) [`0x0000`:`0xFFFF`]  
 
-#### (`hash`) X4.config.getRobotModel() { data-toc-label='getRobotModel()' }
+#### (`hash`) X4.config.getRobotModel() { #config.getRobotModel data-toc-label='getRobotModel()' }
 : Get Robot model description hash, configured with `setRobotModel()` function.  
 **Returns:**  
 `hash` - 16-bit value hash of model description string (text) [`0x0000`:`0xFFFF`]  
 
-#### X4.config.setRobotColor(`red`, `green`, `blue`) { data-toc-label='setRobotColor()' }
+#### X4.config.setRobotColor(`red`, `green`, `blue`) { #config.setRobotColor data-toc-label='setRobotColor()' }
 : Set the Robot appearance color. Used for easier robot identification. Will be displayed during RoboBoard X4 power-on and Totem App connection. No alpha (brightness) is used here. Value `0` sets to default (disabled).  
 **Alternatives:**  
 `setRobotColor(hex)` - use 24-bit HEX color code  
@@ -80,11 +80,11 @@ HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.
 `blue` - amount of blue color [`0`:`255`]  
 `hex` - 24-bit hexadecimal color code [`0x000000`:`0xFFFFFF`]  
 
-#### (`color`) X4.config.getRobotColor() { data-toc-label='getRobotColor()' }
+#### (`color`) X4.config.getRobotColor() { #config.getRobotColor data-toc-label='getRobotColor()' }
 : Get the Robot appearance color, configured with `setRobotColor()` function or inside Totem App.  
 `color` - 24-bit hexadecimal color code [`0x000000`:`0xFFFFFF`].  
 
-#### X4.config.setDCInvert(`invertA`, `invertB`, `invertC`, `invertD`) { data-toc-label='setDCInvert()' }
+#### X4.config.setDCInvert(`invertA`, `invertB`, `invertC`, `invertD`) { #config.setDCInvert data-toc-label='setDCInvert()' }
 : Set invert of individual DC motor spin direction. Different from `X4.dc.setInvert()` as this function preserves setting after power-off.  
 **Parameter:**  
 `invertA` - channel A inverted spin direction [`true`:`false`]  
@@ -92,11 +92,11 @@ HEX (hexadecimal) color code `0xFFFFFF` is similar to HTML color code `#FFFFFF`.
 `invertC` - channel C inverted spin direction [`true`:`false`]  
 `invertD` - channel D inverted spin direction [`true`:`false`]  
 
-#### (`invert`) X4.config.getDCInvert() { data-toc-label='getDCInvert()' }
+#### (`invert`) X4.config.getDCInvert() { #config.getDCInvert data-toc-label='getDCInvert()' }
 : Get invert setting of individual DC channels, configured with `setDCInvert()`.  
 `invert` - encoded 32-bit value [A | B | C | D] (8-bit per channel)  
 
-#### X4.config.setDCAutobrake(`powerA`, `powerB`, `powerC`, `powerD`) { data-toc-label='setDCAutobrake()' }
+#### X4.config.setDCAutobrake(`powerA`, `powerB`, `powerC`, `powerD`) { #config.setDCAutobrake data-toc-label='setDCAutobrake()' }
 : Set automatic brake of individual DC channel.  
 Will automatically apply specified braking power when `power()` is set to `0`.  
 Used to prevent motor from free spinning.  
@@ -107,9 +107,9 @@ Different from `X4.dc.setAutobrake()` as this function preserves setting after p
 `powerC` - channel C automatic brake power [`0`:`100`]%.  
 `powerD` - channel D automatic brake power [`0`:`100`]%.  
 
-#### (`autobrake`) X4.config.getDCAutobrake() { data-toc-label='getDCAutobrake()' }
+#### (`autobrake`) X4.config.getDCAutobrake() { #config.getDCAutobrake data-toc-label='getDCAutobrake()' }
 : Get autobrake setting of individual DC channels, configured with `setDCAutobrake()`.  
 `autobrake` - encoded 32-bit value [A | B | C | D] (8-bit per channel)  
 
-#### X4.config.reset() { data-toc-label='reset()' }
+#### X4.config.reset() { #config.reset data-toc-label='reset()' }
 : Reset all settings to default.  
