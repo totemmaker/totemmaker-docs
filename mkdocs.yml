@@ -62,6 +62,8 @@ plugins:
         tutorials/01.ArduinoSetup.md: setup/index.md
         tutorials/02.UseThirdParty.md: remote-control/arduino/index.md
         tutorials/CustomAppButtons.md: remote-control/app/custom-function.md
+        tutorials/GettingStartedX4.md: roboboard-x4/getting-started.md
+        tutorials/X4.md: roboboard-x4/index.md
         API/index.md: remote-control/index.md
         API/ModuleData.md: remote-control/arduino/ModuleData.md
         API/MotorDriver.md: remote-control/arduino/MotorDriver.md
@@ -76,9 +78,12 @@ nav:
         - 'Arduino IDE' : 'setup/arduino-ide.md'
     - 'RoboBoard X4':
         - 'roboboard-x4/index.md'
-        - 'Board info' : 'roboboard-x4/board.md'
+        - 'Getting started' : 'roboboard-x4/getting-started.md'
+        - 'Arduino API' : 'roboboard-x4/arduino-api.md'
+        - 'Qwiic' : 'roboboard-x4/qwiic.md'
         - 'MEMS' : 'roboboard-x4/mems.md'
         - 'GPIO' : 'roboboard-x4/gpio.md'
+        - 'Board' : 'roboboard-x4/board.md'
         - 'X4.config' : 'roboboard-x4/config.md'
         - 'X4.button' : 'roboboard-x4/button.md'
         - 'X4.led' : 'roboboard-x4/led.md'
@@ -112,5 +117,3 @@ nav:
     - Tutorials:
         - 'tutorials/03.UseExamples.md'
         - 'tutorials/04.SetupController.md'
-        - 'tutorials/GettingStartedX4.md'
-        - 'tutorials/X4.md'

@@ -1,25 +1,12 @@
 # Getting Started with X4
 
-In this tutorial will guide how to start programming with RoboBoard X4. Aside from simply controlling with a smartphone, you can write a code to tell the robot what to do. It can be programmed to interact with sensors or do certain tasks when button is pressed in the App.
+RoboBoard X4 is a versatile product and can be used in multiple ways:  
 
-## About RoboBoard X4
-
-It's our latest control board containing powerful processor and motor drivers. Just plug in battery, motors and everything will work without any soldering or customization. Look bellow for a brief list of available functionality. For more information on each subject read [X4 features](/tutorials/X4/){target=_blank} reference.
-
-• ESP32 240Mhz processor  
-• 3 Servo channels  
-• 4 DC channels  
-• 4 GPIO channels  
-• 4 RGB LED  
-• Totem BUS expansion  
-• MEMS sensor  
-• USB port  
-• Wireless connectivity  
-• User LED & button  
-• On/off switch  
-• DC & battery input  
-
-![Module image](/assets/images/module_04_1.jpg){style="display: block;margin-left: auto;margin-right: auto;width: 80%;"}
+* Remote Bluetooth controller using Totem App  
+* Program custom operations using Arduino  
+* Extend functionality with Totem modules  
+* Extend functionality with Qwiic® modules
+* Control X4 from external devices
 
 ## Connecting with smartphone
 
