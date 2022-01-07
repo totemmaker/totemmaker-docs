@@ -11,3 +11,4 @@ Different ways to connect to X3 and X4 boards. Click on selected interface for m
 
 * [Arduino](arduino) - Control X3 and X4 from any ESP32 (BLE capable) product using Arduino.  
 * [Totem App](app) - Control X3, X4 and robots using mobile Totem App.  
+* [PS3/PS4 controller](ps-controller) - Control X4 using PS3 or PS4 remote controller.  

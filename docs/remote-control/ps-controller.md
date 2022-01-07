@@ -1,5 +1,8 @@
 # Using PS3/PS4 controller
 
+!!! warning
+    This guide is outdated and some steps may not work. Will be updated later
+
 *[ESP32]: Espressif ESP32 microcontroller
 
 ![PS3 Controller](/assets/images/ps3.png){style="width:48%;padding:20px;"}
