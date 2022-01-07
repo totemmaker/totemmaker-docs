@@ -115,7 +115,6 @@ nav:
             - 'remote-control/app/index.md'
             - 'remote-control/app/control-robot.md'
             - 'remote-control/app/custom-function.md'
-    - 'new-totem-arduino.md'
     - Tutorials:
         - 'tutorials/03.UseExamples.md'
         - 'tutorials/04.SetupController.md'
