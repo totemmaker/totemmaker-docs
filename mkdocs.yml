@@ -63,6 +63,7 @@ plugins:
       redirect_maps:
         tutorials/01.ArduinoSetup.md: setup/index.md
         tutorials/02.UseThirdParty.md: remote-control/arduino/index.md
+        tutorials/03.UseExamples.md: roboboard-x4/index.md
         tutorials/CustomAppButtons.md: remote-control/app/custom-function.md
         tutorials/GettingStartedX4.md: roboboard-x4/getting-started.md
         tutorials/X4.md: roboboard-x4/index.md
@@ -116,5 +117,4 @@ nav:
             - 'remote-control/app/control-robot.md'
             - 'remote-control/app/custom-function.md'
     - Tutorials:
-        - 'tutorials/03.UseExamples.md'
         - 'tutorials/04.SetupController.md'
