@@ -205,9 +205,9 @@ Documentation and examples of WiFi DIY solutions can be found in [TotemArduinoBo
 ### :material-led-on: LED indications
 
 Red LED next to DC jack - indicated battery charging status:  
-:material-white-balance-sunny:{ style="color: red" } Blinking - battery not detected.  
-:octicons-dot-fill-24:{ style="color: red" } On - battery is charging.  
-:octicons-dot-24: Off - battery is charged.  
+:material-white-balance-sunny:{ style="color: red" } Blinking - battery not detected :material-battery-off-outline:.  
+:octicons-dot-fill-24:{ style="color: red" } On - battery is charging :material-battery-charging-low:.  
+:octicons-dot-24: Off - battery is charged :material-battery-high:.  
 _NOTE: sometimes LED can start blinking when battery is charged._  
 
 Red LED next to user button for indicating board state:  

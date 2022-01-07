@@ -5,7 +5,7 @@
 [Qwiic®](https://www.sparkfun.com/qwiic){target=_blank} is a connection system introduced by SparkFun. It is designed to simply plug and use multiple modules from different manufacturers. With over 100 third-party modules available, you can easily extend RoboBoard X4 functionality without any soldering or jumper wires. With daisy-chain feature - multiple modules can be connected just trough single port.  
 
 !!! info "Note"
-    Feature is available only in board revision v1.1
+    Feature is only available in board revision v1.1
 
 ## Connector
 
@@ -52,10 +52,10 @@ MicroOLED oled(PIN_RESET); // I2C declaration
 void setup() {
   Wire.begin(); // Initialize I2C
   
-  oled.begin(0x3D, Wire);    // Initialize the OLED
+  oled.begin(0x3D, Wire); // Initialize OLED
   
-  oled.clear(ALL); // Clear the display's internal memory
-  oled.clear(PAGE); // Clear the buffer.
+  oled.clear(ALL); // Clear display internal memory
+  oled.clear(PAGE); // Clear buffer
 
   oled.setFontType(1); // Change font for bigger letters
     
