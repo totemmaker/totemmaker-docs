@@ -83,3 +83,37 @@ Example: setting `event(100)` will call registered event function every 100ms.
 
 #### module.<feature\>.eventOnce() { #feature.eventOnce data-toc-label='feature.eventOnce()' }
 : Call event handler only once. Won't start broadcasting.  
+
+## Multiple modules example
+
+Simple code example to show usage of Line Follower + Potentiometer modules and interaction between them.  
+• Knob A - controls LED position on Line Follower  
+• Knob B - controls RGB brightness  
+• Knob C - controls RGB color  
+```arduino
+// Declare modules
+Module14 line; // Line follower module
+Module15 pot;  // Potentiometer module
+// Start program
+void setup() {
+  // Empty
+}
+// Loop program
+void loop() {
+  // Read Potentiometer module knob positions
+  int knobA = pot.knobA.get();
+  int knobB = pot.knobB.get();
+  int knobC = pot.knobC.get();
+  // Display Knob A position on Line Follower module
+  line.led.off();
+  line.led.onX(
+    map(knobA, 0, 255, 0, 7) // map [0:255] -> [0:7]
+  );
+  // Change RoboBoard X4 RGB color depending on Knob B, C positions
+  X4.rgb.color(
+    knobB, knobC, 255-knobC, 0 // alpha, reg, green, blue
+  );
+  // Delay 20 milliseconds
+  delay(20);
+}
+```
