@@ -22,7 +22,7 @@ Now, you can control your robot right away. If you bought one of the kits, you w
 
 ![Arduino IDE](/assets/images/arduino_ide_2.png)
 
-To start programming, you need to install Arduino environment on your PC. It will help to write a code, compile it and upload to X4 board. Follow tutorial [Arduino setup](/tutorials/01.ArduinoSetup) to do so. In this guide we will use Arduino IDE as example.
+To start programming, you need to install Arduino environment on your PC. It will help to write a code, compile it and upload to X4 board. Follow tutorial [Arduino setup](/setup) to do so. In this guide we will use Arduino IDE as example.
 
 By following setup tutorial, you should have working X4 board with blinking LEDs. If something doesn't work, create a topic at [forum.totemmaker.net](https://forum.totemmaker.net){target=_blank} and we will help you to resolve the issue.
 

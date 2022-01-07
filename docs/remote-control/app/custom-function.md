@@ -27,8 +27,6 @@ Now, when we click this button, a value `100` will be sent to command `functionA
 
 ## Moving servo motor
 
-To get started with X4 programming, read [Getting started with RoboBoard X4](/tutorials/GettingStartedX4/){target=_blank} first.
-
 We will write a code to wave servo arm. The motor itself is connected to servo channel A. Arm can move 180 degrees, and parameter values corresponds in range from `-100` to `100`. Look at the image below to see how it's related:
 
 ![Servo arm angles](/assets/images/servo_arm_angles.png)
