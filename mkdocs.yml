@@ -80,6 +80,15 @@ nav:
     - Setup:
         - 'setup/index.md'
         - 'Arduino IDE' : 'setup/arduino-ide.md'
+    - Modules:
+        - 'modules/index.md'
+        - 'Programming' : 'modules/programming.md'
+        - 'modules/03.md'
+        - 'modules/04.md'
+        - 'modules/11.md'
+        - 'modules/14.md'
+        - 'modules/15.md'
+        - 'modules/22.md'
     - 'RoboBoard X4':
         - 'roboboard-x4/index.md'
         - 'Getting started' : 'roboboard-x4/getting-started.md'
@@ -96,15 +105,6 @@ nav:
         - 'X4.servo' : 'roboboard-x4/servo.md'
         - 'X4.module' : 'roboboard-x4/module.md'
         - 'X4.function' : 'roboboard-x4/function.md'
-    - Modules:
-        - 'modules/index.md'
-        - 'Programming' : 'modules/programming.md'
-        - 'modules/03.md'
-        - 'modules/04.md'
-        - 'modules/11.md'
-        - 'modules/14.md'
-        - 'modules/15.md'
-        - 'modules/22.md'
     - "Remote control":
         - 'remote-control/index.md'
         - "Arduino":
