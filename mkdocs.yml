@@ -96,6 +96,7 @@ nav:
         - 'X4.function' : 'roboboard-x4/function.md'
     - Modules:
         - 'modules/index.md'
+        - 'Programming' : 'modules/programming.md'
         - 'modules/03.md'
         - 'modules/04.md'
         - 'modules/11.md'
@@ -114,7 +115,6 @@ nav:
             - 'remote-control/app/index.md'
             - 'remote-control/app/control-robot.md'
             - 'remote-control/app/custom-function.md'
-    - 'TotemBUS.md'
     - 'new-totem-arduino.md'
     - Tutorials:
         - 'tutorials/03.UseExamples.md'
