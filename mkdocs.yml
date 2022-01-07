@@ -80,6 +80,7 @@ nav:
     - Setup:
         - 'setup/index.md'
         - 'Arduino IDE' : 'setup/arduino-ide.md'
+        - 'PlatformIO' : 'setup/platformio.md'
     - Modules:
         - 'modules/index.md'
         - 'Programming' : 'modules/programming.md'
