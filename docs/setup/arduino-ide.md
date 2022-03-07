@@ -45,18 +45,22 @@ Load example code and upload it to RoboBoard X4.
 1. Select `Sketch` → `Upload` and wait till it completes (can take a few minutes first time).  
 1. RoboBoard X4 RGB will start to blink in different colors. There is an example for each functionality, including a simple description.  
 
-## Step 4. Update RoboBoard X4
+## Step 4. Update internal driver
+!!!bug "Burn Bootloader (Driver update)"
+    **Do not use this functionality at the moment!**  
+    **It will brick revision v1.1 boards!** *Only safe to use with (older) revision v1.0.*  
+    We have fixed this issue but measures are taken to prevent damaging already sold units. If you have non-functioning board - please contact support.
 
-Update internal driver to the latest version. **Only required once!**  
-Function `#!arduino Serial.println(X4.getDriverVersion())` should output `1.52`.  
+~~Update internal driver to the latest version. **Only required once!**~~  
+~~Function `#!arduino Serial.println(X4.getDriverVersion())` should output `1.52`.~~  
 
-1. Select `Tools` → `Board` → `Totem Boards` → `RoboBoard X4`.  
-1. Select `Tools` → `Port` and click on the port displayed there.  
-1. Select `Programmer` → `ESPTool`.  
-1. Click `Tools` → `Burn Bootloader`.  
-_Wait till board is flashed and RGB turns on <span style="color:green">green</span>. It means driver is updated._  
-_If RGB turned on <span style="color:red">red</span> - contact our forum or support._  
-1. Now upload any other code as in **Step 3**.  
+1. ~~Select `Tools` → `Board` → `Totem Boards` → `RoboBoard X4`.~~  
+1. ~~Select `Tools` → `Port` and click on the port displayed there.~~  
+1. ~~Select `Programmer` → `ESPTool`~~.  
+1. ~~Click `Tools` → `Burn Bootloader`~~.  
+~~_Wait till board is flashed and RGB turns on <span style="color:green">green</span>. It means driver is updated._~~  
+~~_If RGB turned on <span style="color:red">red</span> - contact our forum or support._~~  
+1. ~~Now upload any other code as in **Step 3**.~~  
 
 ## Step 5. Using Arduino IDE
 
