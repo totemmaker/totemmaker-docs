@@ -14,7 +14,7 @@ theme:
   palette:
     scheme: default
   features:
-    - navigation.indexes
+    - navigation.indexes # Allow to specify index file for sections
 
 extra_css:
   - stylesheets/extra.css
@@ -36,24 +36,24 @@ extra:
     property: UA-92600507-1
 
 markdown_extensions:
-  - abbr
-  - attr_list
-  - admonition
-  - def_list
-  - pymdownx.snippets
-  - pymdownx.details
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-  - pymdownx.keys
-  - pymdownx.tabbed:
+  - abbr       # Place tooltips on phrases
+  - attr_list  # Inject CSS attributes into elements
+  - admonition # Info / Warning text boxes
+  - def_list   # Add tabbed definitions after :
+  - pymdownx.snippets     # Include other files
+  - pymdownx.details      # admonition collapse / expand
+  - pymdownx.highlight    # Code blocks with syntax highlighting
+  - pymdownx.inlinehilite # Inline code syntax highlighting
+  - pymdownx.superfences  # Nest blocks inside each other
+  - pymdownx.keys         # Show keyboard keys
+  - pymdownx.tabbed:      # Group content into tabs
       alternate_style: true 
-  - pymdownx.caret
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.tasklist:
+  - pymdownx.caret        # Add superscript with ^^text^^
+  - pymdownx.mark         # Highlight text with ==text==
+  - pymdownx.tilde        # Delete and subscript ~~text~~
+  - pymdownx.tasklist:    # Generate task list with checkboxes
       custom_checkbox: true
-  - pymdownx.emoji:
+  - pymdownx.emoji:       # Add emoji
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
