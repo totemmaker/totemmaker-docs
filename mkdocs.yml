@@ -84,6 +84,9 @@ nav:
         - 'setup/index.md'
         - 'Arduino IDE' : 'setup/arduino-ide.md'
         - 'PlatformIO' : 'setup/platformio.md'
+    - "Mini Control Board X3":
+        - 'mini-control-board-x3/index.md'
+        - 'mini-control-board-x3/revisions.md'
     - "RoboBoard X4":
         - 'roboboard-x4/index.md'
         - 'Getting started' : 'roboboard-x4/getting-started.md'
