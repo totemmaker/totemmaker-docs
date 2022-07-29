@@ -31,7 +31,7 @@ For more information click on specific feature:
 * :material-tire: | [DC](dc) - DC motor to spin wheels.  
 * :material-angle-acute: | [Servo](servo) - Servo motor for positioning or steering.  
 * :material-puzzle: | [Module](module) - Connected TotemBUS modules information.  
-* :fontawesome-solid-mobile-alt: | [Function](function) - Events sent from mobile Totem App.  
+* :fontawesome-solid-mobile-screen: | [Function](function) - Events sent from mobile Totem App.  
 
 ## Feature details
 

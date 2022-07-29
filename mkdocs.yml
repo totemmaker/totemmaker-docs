@@ -43,6 +43,7 @@ markdown_extensions:
   - attr_list  # Inject CSS attributes into elements
   - admonition # Info / Warning text boxes
   - def_list   # Add tabbed definitions after :
+  - md_in_html # Write Markdown inside of HTML
   - pymdownx.snippets     # Include other files
   - pymdownx.details      # admonition collapse / expand
   - pymdownx.highlight    # Code blocks with syntax highlighting
@@ -80,10 +81,41 @@ plugins:
         interfaces/BLE.md: remote-control/arduino/index.md
 
 nav:
+    - "Product list" : index.md
     - "Setup":
         - 'setup/index.md'
         - 'Arduino IDE' : 'setup/arduino-ide.md'
         - 'PlatformIO' : 'setup/platformio.md'
+    - "Mini Lab":
+        - 'mini-lab/index.md'
+        - 'mini-lab/getting-started.md'
+        - 'mini-lab/power.md'
+        - "TotemDuino":
+            - 'totemduino/index.md'
+            - 'totemduino/driver-install.md'
+            - 'totemduino/setup.md'
+            - 'totemduino/schematics.md'
+            - 'totemduino/micro-lab.md'
+        - "LabBoard":
+            - 'labboard/index.md'
+            - 'labboard/main-screen.md'
+            - "Features":
+                - 'labboard/features/index.md'
+                - 'labboard/features/setup.md'
+                - 'labboard/features/pulse-counter.md'
+                - 'labboard/features/frequency-counter.md'
+                - 'labboard/features/pulse-generator.md'
+                - 'labboard/features/serial-monitor.md'
+                - 'labboard/features/i2c-scanner.md'
+                - 'labboard/features/dht11-monitor.md'
+            - 'labboard/schematics.md'
+            - 'labboard/firmware-update.md'
+            - 'labboard/revisions.md'
+        - "Side panels":
+            - 'side-panels/index.md'
+            - 'side-panels/io-panel.md'
+            - 'side-panels/sensor-panel.md'
+            - 'side-panels/audio-panel.md'
     - "Mini Control Board X3":
         - 'mini-control-board-x3/index.md'
         - 'mini-control-board-x3/revisions.md'
