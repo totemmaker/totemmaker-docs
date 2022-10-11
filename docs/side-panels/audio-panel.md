@@ -31,9 +31,22 @@ Input signal level sensitivity can be adjusted by potentiometer U$3. We suggest 
 
 ### Function generator
 
+Side panels has different function generator circuitry, depending on revision version.
+
+**Panel ver 3.5:**
+
+This module can generate either sine or square wave signals in up to 1MHz frequency. Module shares the same 12 V power supply line as the audio amplifier, described above. Frequency range can be changed by sliding switches S1 and further adjusted either in coarse or fine detail with two potentiometer. Sine wave amplitude can be adjusted with a separate potentiometer.
+
+Output sine wave can be selected to be output either with a DC offset, when output is from 0 to VCC with a bias of VCC/ 2, or shifted to AC when the jumper is not connected on the JP4.
+
+[version 3.5 datasheet](https://totemmaker.net/wp-content/uploads/2018/08/side-panel-3-Optimized.pdf)
+
+**Panel ver 3.7:**
+
 This module consists of a digitally controlled function generator AD9833 chip. It is capable to generate sine, triangle and square wave output signal in up to 12.5 MHz frequency. Generated signal is buffered with an operation amplifier, giving user the ability to control output signal amplitude.
 
-Arduino [AD9833 library](https://github.com/Billwilliams1952/AD9833-Library-Arduino) can be used to control this chip.
+Arduino [AD9833 library](https://github.com/Billwilliams1952/AD9833-Library-Arduino) can be used to control this chip from TotemDuino.  
+LabBoard [AD9833 mode](/labboard/features/ad9833-control/) can be used to wire and control this chip directly.
 
 Output of the function generator can be wired to the input of audio amplifier, allowing you to hear the output of if with no extra parts. Additionally, filter bench module can be placed between those modules to also experiment with pi-filters, and its effect to the signal.
 

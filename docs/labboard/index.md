@@ -1,5 +1,8 @@
 # Overview
 
+!!! info "Check firmware version"
+    Documentation is written for the latest firmware version. Read [Firmware update](/labboard/firmware-update/) section to perform this procedure.
+
 ![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-v2.2-photo.jpg)
 
 This board has a dual use - firstly it can be used as an expansion board to the TotemDuino system, offering easily accessible input and output connections, and secondly
@@ -7,20 +10,33 @@ This board has a dual use - firstly it can be used as an expansion board to the 
 
 LabBoard is designed to be mounted onto Totem beams and boards, as well as to the third part surfaces, with a help of a few bolts and brackets.
 
-If you’re just starting tinkering with electronics and microcontroller programming, LabBoard is perfect for you! It comes with many crucial instruments that will give you a boost and be helpful for someone who is either just starting, or is an advanced DIY enthusiast.
-
 ## Features
 
-- **Digital to Analog converter** - converter outputting a pre-set voltage:
+- [**Digital to Analog converter**](/labboard/main-screen/#middle-display) - converter outputting a pre-set voltage:
     - 3 channels in the 0..3.25 Volt range (DAC1, DAC2, DAC3)
     - 1 channel in the 3..14 Volt range (VREG)
-- **Voltage measure** - three inputs in the ±0.5 V, ±5V and ±50V range.
-- **Current measure** - sensing current up to 800 mA.
-- **Frequency meter** - digital signal frequency measurement module for signals up to 23 MHz.
-- **Pulse counter** - digital signal pulse counter, counting up to 999999999 pulses.
-- **Pulse generator** - unit capable of generating finite or infinite series of pulses, with programmable pulse width and period.
-- **Serial monitor** - View serial data output from Arduino and interact with LED and buttons.
-- **I2C scanner** - detect HEX address of connected I2C device.
-- **DHT11 monitor** - display connected DHT11 sensor measurements.
+- [**Voltage measure**](/labboard/main-screen/#voltage-measurement) - three inputs in the ±0.5V, ±5V and ±50V range.
+- [**Current measure**](/labboard/main-screen/#current-measurement) - sensing current up to 800 mA.
+- [**Frequency meter**](/labboard/features/frequency-counter/) - digital signal frequency measurement module for signals up to 23 MHz.
+- [**Pulse counter**](/labboard/features/pulse-counter/) - digital signal pulse counter, counting up to 999999999 pulses.
+- [**Pulse generator**](/labboard/features/pulse-generator/) - unit capable of generating finite or infinite series of pulses, with programmable pulse width and period.
+- [**Serial monitor**](/labboard/features/serial-monitor/) - View serial data output from Arduino and control LabBoard itself.
+- [**I2C scanner**](/labboard/features/i2c-scanner/) - detect HEX address of connected I2C device.
+- [**DHT11 monitor**](/labboard/features/dht11-monitor/) - display connected DHT11 sensor measurements.
+- [**AD9833 control**](/labboard/features/ad9833-control/) - control connected AD9833 chip parameters.
 
-More information can be found in [Features](features/) section.
+## Layout
+
+![LabBoard description](/assets/images/mini-lab/labboard-description.png)
+
+LabBoard works on it's own as a separate device, providing additional functionality and convenience of prototyping. Unmarked headers mirrors TotemDuino pins over connected flat cable and are not used in LabBoard functionality (directly).  
+
+**Description of board items:**  
+
+- <span style="color:#f2d36f;font-weight:bold;background:grey">Control keys</span> - ++"SET\+"++ ++"SET\-"++ used to increment, decrement values and jump between selections. ++"Left SELECT"++ ++"Middle SELECT"++ ++"Right SELECT"++ used to select certain options, depending on mode LabBoard is running.
+- <span style="color:#ea3323;font-weight:bold;background:lightGrey">Display</span> - 7-segment display with 9 digits and individual dots. Displays all information related to currently running mode.
+- <span style="color:#75fb4c;font-weight:bold;background:grey">LED</span> - contains total of 11 LED. Groups of 3 (near buttons) are used to indicate currently selected parameter in [Main screen](/labboard/main-screen/) mode. DIG1 and DIG2 mostly used to show digital state of DIG1 and DIG2 pins.
+- <span style="color:#0000f5;font-weight:bold;background:lightGrey">Input / Output</span> - Header for voltage measure and regulated output. There are 3 channels for voltage measurement, 3 channels (DAC) for variable voltage output and 2 digital pins for various functionality.
+- <span style="color:#ea33f7;font-weight:bold;background:lightGrey">SWD header</span> - initially designed to flash firmware, but repurposed to reuse SCL and SDA pins for additional LabBoard functionality ([I2C scanner](/labboard/features/i2c-scanner/) and [AD9833 control](/labboard/features/ad9833-control/)).
+- <span style="color:#ffff54;font-weight:bold;background:grey">Power out</span> - provides power for breadboard and other circuits. Outputs regulated voltage of: 3.3V, 5V, -5V, VIN - DC input and VREG - variable between 3V and 14V.
+- <span style="color:#75fbfd;font-weight:bold;background:grey">TXD pin</span> - used to generate configurable output signal in [Pulse generator](/labboard/features/pulse-generator/) mode. Also used in [DHT11 monitor](/labboard/features/dht11-monitor/) mode.

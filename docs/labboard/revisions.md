@@ -1,14 +1,17 @@
 # Revision changelog
 
+Version of hardware changes. Visible above Totem logo.  
+
 ![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-v2.2-photo.jpg)
 
 ## v.2.3
 
 Manufactured from 2022-Q2.
 
-- Swapped some components
+- Changed some components to different alternatives
 - Changed wiring of some components
-- Wired TX and RX to processor for simple firmware update and additional features
+- Wired TX and RX to processor for simple firmware update and serial control feature
+- Wired ++"SET\-"++ key to start boot mode in a hardware based manner
 
 ## v.2.2
 

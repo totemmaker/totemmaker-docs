@@ -11,7 +11,7 @@ Menu can be opened and controlled using LabBoard buttons:
 - **Any two key press** - menu open  
 - ++"SET\+"++ - menu scroll up  
 - ++"SET\-"++ - menu scroll down  
-- ++"Left SELECT"++ - menu go back or exit to [main screen](/labboard/main-screen/)  
+- ++"Left SELECT"++ - menu go back or exit to [Main screen](/labboard/main-screen/)  
 - ++"Right SELECT"++ - menu item select  
 - ++"Middle SELECT"++ - _not used_  
 
@@ -25,6 +25,7 @@ Menu can be opened and controlled using LabBoard buttons:
 <li><code>SERIAL</code> - <a href="serial-monitor/">Serial monitor mode</a></li>
 <li><code>I2C</code> - <a href="i2c-scanner/">I2C scanner mode</a></li>
 <li><code>dHt11</code> - <a href="dht11-monitor/">DHT11 monitor mode</a></li>
+<li><code>AD9833</code> - <a href="ad9833-control/">AD9833 control mode</a></li>
 </ol>
 
 ### Setup menu options

@@ -29,7 +29,10 @@ LabBoard has a 3 channel voltage measurement module. Each has a pre-set measurem
 
 Left display is used in the LabBoard for showing currently measured voltage. Active channel can be selected with a ++"Left SELECT"++ button under the display. Corresponding channel LED will light up.
 
-Display shows value in millivolts when using ± 0.5 V channel, otherwise the output is in Volts. **Blinking display indicates that currently measured voltage is negative.** 
+Display shows value in millivolts when using ± 0.5 V channel, otherwise the output is in Volts.  
+`---` is displayed if measured voltage is out of range.  
+**Blinking display indicates that currently measured voltage is negative.**  
+_If measurements are incorrect - perform [Calibration](/labboard/features/setup/#calibration) or fine tune with [ADC manual offset](/labboard/features/setup/#adc-offset)._
 
 **Example:**
 
@@ -47,11 +50,12 @@ Display shows value in millivolts when using ± 0.5 V channel, otherwise the out
 
 Inbuilt 3 channel Digital to Analog Converter (DAC) allows you to output any voltage in the 0..3.25 Volt range, at up to 15 mA current. This is useful for experimenting with comparators or operational amplifiers, as they need various reference or input voltages.
 
-Middle display is used for showing the current output voltage for the active channel, which itself is indicated by the middle column of LED’s. To change DAC output voltage:
+Middle display shows current output voltage for the active channel, which itself is indicated by the middle column of LED’s. To change DAC output voltage:
 
 1. Press ++"Middle SELECT"++ to select active channel.
 1. Hold ++"Middle SELECT"++ until LED starts to blink.
-1. Use ++"SET\+"++ and ++"SET\-"++ buttons to adjust currently selected channel voltage.
+1. Use ++"SET\+"++ and ++"SET\-"++ buttons to adjust currently selected channel voltage.  
+_Hold button down for fast increment. It will stop at 0 and 3.25._
 1. Press ++"Middle SELECT"++ to exit edit mode.
 
 All other inactive channels will still keep the same preset voltage until it’s changed by SET buttons on the side of the board.
@@ -71,7 +75,8 @@ All other inactive channels will still keep the same preset voltage until it’s
 
 ### VIN measurement
 
-When **VIN** mode is selected - it displays current voltage of **VIN** pin. It depends on DC power adapter. Typically it is 15 Volts. Older versions had 12 V power adapter.  
+When **VIN** mode is selected - it displays current voltage of **VIN** pin. It depends on DC power adapter. Typically it is 15 Volts. Older kits had 12 V power adapter.  
+`---` is displayed if DC jack is not connected and **VIN** is not available.  
 This mode is only for observation and does not contain any more features.
 
 ### VREG output
@@ -84,8 +89,11 @@ The selected voltage is shown on the right display when **VREG** mode is activat
 
 1. Press ++"Right SELECT"++ to select **VREG** mode.
 1. Hold ++"Right SELECT"++ until LED starts to blink.
-1. Use ++"SET\+"++ and ++"SET\-"++ buttons to adjust output voltage.
+1. Use ++"SET\+"++ and ++"SET\-"++ buttons to adjust output voltage.  
+_Hold button down for fast increment._
 1. Press ++"Right SELECT"++ to exit edit mode.
+
+`not` is displayed if feature is not available, because DC jack is not connected or below minimum voltage.
 
 **Example:**
 

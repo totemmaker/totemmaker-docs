@@ -10,6 +10,21 @@ Assembly guide can be found in [Mini Lab](/mini-lab/#assembly-guide) section.
 
 Mini Lab can be powered with supplied DC adapter or trough USB. These inputs are located in TotemDuino board. It is suggested to use DC adapter for all available features to work. Both cables can be plugged also (e.g. to power up and program TotemDuino from PC). For more information about power distribution read [Power scheme](/mini-lab/power/) section.
 
+## Layout
+
+![Mini Lab connections colors](/assets/images/mini-lab/mini-lab-connections-color.jpg)
+
+LabBoard is a main central area that provides power, measurement features and extends TotemDuino to make all the pins easy accessible. There are a lot of pin headers, each one with different functionality. Check image and description below for more information. To control LabBoard and it's features read [LabBoard features](/labboard/features/) section.
+
+- <span style="color:crimson">Red area</span> - TotemDuino pins mirrored to LabBoard over flat cable. Both are Arduino UNO form factor (shields compatible), has same markings and can be used interchangeably. Top ones are easier to reach.
+- <span style="color:green">Green area</span> - TotemDuino pins (red ones) mirrored to additional pin header for easier layout.
+- <span style="color:blue">Blue area</span> - LabBoard specific pins (separated from TotemDuino) for measurements and other [features](/labboard/features/#changing-working-mode).
+- <span style="color:gold">Yellow area</span> - Pins for regulated power output. Read [power scheme](/mini-lab/power/) section for more information on how power rails are distributed across Mini Lab.
+
+| TotemDuino detail layout | LabBoard detail layout | 
+| :---: | :---: |
+| [![TotemDuino layout](/assets/images/mini-lab/totemduino-info.png)](/totemduino/#layout) | [![LabBoard description](/assets/images/mini-lab/labboard-description.png)](/labboard/#layout) |
+
 ## Breadboard
 
 ![Breadboard](/assets/images/mini-lab/breadboard.jpg)
@@ -20,25 +35,16 @@ Breadboard has numbers and letters to identify hole location. Make sure to mount
 - **<span style="color:crimson">━</span> Horizontal lines** - mainly used to distribute power (3V,5V,GND) as it covers whole length of the board.
 - **<span style="color:crimson">┃</span> Vertical lines** - mainly used to place components. Lines can be connected together using jumper wires.
 
-## Pin description
-
-![Mini Lab connections colors](/assets/images/mini-lab/mini-lab-connections-color.jpg)
-
-LabBoard is a main central area that provides power, measurement features and extends TotemDuino to make all the pins easy accessible. There are a lot of pin headers, each with different functionality. Check image and description below for more information. To control LabBoard and it's features read [LabBoard features](labboard/features/) section.
-
-- <span style="color:crimson">Red area</span> - TotemDuino pins mirrored to LabBoard over flat cable. Both are Arduino UNO form factor (shields compatible), has same markings and can be used interchangeably. Top ones are easier to reach.
-- <span style="color:green">Green area</span> - TotemDuino pins (red ones) mirrored to additional pin header for easier layout.
-- <span style="color:blue">Blue area</span> - LabBoard specific pins (separated from TotemDuino) for measurements and other [features](/labboard/features/).
-- <span style="color:gold">Yellow area</span> - Pins for regulated power output. Read [power scheme](/mini-lab/power/) section for more information on how power rails are distributed across Mini Lab.
-
+**Example of using breadboard:**
+![Breadboard wiring example](/assets/images/mini-lab/breadboard-example.png)
 
 ## Programming
 
 ![Arduino IDE window](/assets/images/arduino-ide-blink.jpg)
 
-TotemDuino is a programmable development board and can be used to control components during experiments with Mini Lab. It is fully backwards compatible with Arduino UNO platform, so Arduino IDE can be used to write firmware for TotemDuino as well.
+TotemDuino is a programmable development board and can be used to control components during experiments with Mini Lab. It is fully backwards compatible with Arduino UNO platform, so Arduino IDE can be used to upload firmware for TotemDuino as well.
 
-Using a mini USB cable you can upload new firmware sketches into TotemDuino. While you can use different programming environments to write firmware for it, using Arduino is one of the most friendliest and quickest way to start.
+Using mini USB cable you can transfer new firmware sketches into TotemDuino. While you can use different programming environments to write firmware for it, using Arduino is one of the most friendliest and quickest way to start.
 
 ### Setup Arduino
 

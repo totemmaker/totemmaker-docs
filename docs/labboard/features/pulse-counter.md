@@ -32,20 +32,20 @@ Switch between detection edge (does not change pull-up):
 
 Enter mode:
 
-- Select Menu > `COUNt`.
-- In [main screen](/labboard/main-screen/) hold ++"SET\+"++  for 3 seconds.
+- Select Menu > `1. COUNt`.
+- (_deprecated_) In [Main screen](/labboard/main-screen/) hold ++"SET\+"++  for 3 seconds.
 
 Exit mode:
 
 - Open menu and select other mode.
-- Press ++"SET\+"++ to exit to [main screen](/labboard/main-screen/).
+- (_deprecated_) Press ++"SET\+"++ to exit to [Main screen](/labboard/main-screen/).
 
 ## Example
 
 ![Mini Lab LabBoard pulse counter example](/assets/images/mini-lab/labboard-pulse-counter-example.png)
 
 1. Connect **D9** digital pin to **DIG1** pulse counter input.
-1. Enter pulse counter mode by selecting Menu > `COUNt`.
+1. Enter pulse counter mode by selecting Menu > `1. COUNt`.
 1. Load code sketch to TotemDuino:
 ```arduino
 void setup() {

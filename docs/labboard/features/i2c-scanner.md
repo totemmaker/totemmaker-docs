@@ -18,7 +18,7 @@ Find address of connected I2C device.
 
 Enter mode:
 
-- Select Menu > `I2C`.
+- Select Menu > `5. I2C`.
 
 Exit mode:
 
@@ -31,6 +31,6 @@ _Click image to make it larger._
 
 1. Connect I2C device to **3.3V** and **GND**.
 1. Connect I2C device to **SCL** and **SDA** pins.
-1. Enter I2C mode by selecting Menu > `I2C`.
+1. Enter I2C mode by selecting Menu > `5. I2C`.
 1. `SCAn...` will be displayed until any device is found.
 1. Discovered device address will be displayed in the right corner. Represented as hexadecimal value. If multiple found - will scroll between every second.

@@ -11,7 +11,7 @@ Settings are saved when value is changed. No need to press a button for confirma
 1. `dAC` - [DAC output manual adjust](#dac-offset)
 1. `AdC` - [Voltage measure manual adjust](#adc-offset)
 1. `CALIb` - [Auto calibration](#calibration)
-1. `SERIAL` - [Default Serial mode baud rate](setup/#serial)
+1. `SERIAL` - [Default Serial mode baud rate](#serial)
 1. `UERSI` - [Firmware version](#firmware)
 1. `rESEt` - [Factory reset](#reset)
 1. `boot` - [Enter boot mode](#boot)
@@ -22,27 +22,25 @@ Settings are saved when value is changed. No need to press a button for confirma
 
 Change display and LED brightness.  
 
-`diSP    0` will be shown and LED will light up to indicate current brightness level.  
+`diSP 7` will be shown and LED will light up to indicate current brightness level.  
 
-Using ++"SET\+"++ and ++"SET\-"++ increase or decrease brightness level between [`-8`:`7`].  
+Using ++"SET\+"++ and ++"SET\-"++ increase or decrease brightness level between `0` and `15`.  
 
 ### 2. DAC manual offset { #dac-offset }
 
 Manually adjust DAC offset. Can be used to fine tune DAC channel output if value displayed on screen differs from multimeter reading.  
 
-`dAC  0.000` will be shown and selected DAC channel LED will light up.  
+`dAC 0.000` will be shown and selected DAC channel LED will light up.  
 
 Click ++"Middle SELECT"++ to switch active DAC channel to configure.  
 Using ++"SET\+"++ and ++"SET\-"++ increase or decrease offset.  
-
-It is suggested to rerun calibration if changed DAC1 offset.
 
 ### 3. ADC manual offset { #adc-offset }
 
 Manually adjust ADC offset. Can be used to fine tune voltage measurements if value displayed on screen differs from multimeter readings.  
 These values are auto generated during calibration, but can be manually adjusted if required.  
 
-`AdC      0` will be shown and selected voltage channel LED will light up.  
+`AdC 0.000` will be shown and selected voltage channel LED will light up.  
 
 Click ++"Middle SELECT"++ to switch active voltage channel to configure.  
 Using ++"SET\+"++ and ++"SET\-"++ increase or decrease offset.  
@@ -56,20 +54,23 @@ This feature will calibrate ADC channels for more precise voltage measurements.
 `CALIb run` will be shown. It is in  waiting state until "run" button is pressed.
 
 1. Connect wires as specified:
-    - ±50v -> GND
-    - ±5v -> GND
-    - ±0.5v -> DAC1
+    - **±50V** to **GND**
+    - **±5V** to **GND**
+    - **±0.5V** to **DAC1**
 1. Press and hold ++"Right SELECT"++ for 1s until calibration starts
-1. Wait for display `donE`
+1. `888888888` lights up. Wait for display `donE`
 1. Press ++"Left SELECT"++ to exit
 
-### 5. Serial default baud rate { #serial }
+### 5. Serial settings { #serial }
 
-Configure default Serial mode baud rate selection.
+Contains 3 different serial settings:
 
-`baud 9600` will be shown indicating current selected default baud rate.  
+- **Default baud rate:** selected default speed of serial mode `baud 57600`
+- **Communication direction:** selected value of endpoint device `Arduino` or `PC`
+- **Always on (background mode):** enable of disable [Always on serial mode](/labboard/features/serial-monitor/#always-on-background-mode)
 
-Using ++"SET\+"++ and ++"SET\-"++ change selection.  
+Jump between settings by pressing ++"Middle SELECT"++ key.  
+Use ++"SET\+"++ and ++"SET\-"++ to change value.  
 
 ### 6. Firmware version { #firmware }
 
@@ -98,5 +99,3 @@ Enter system bootloader for firmware update.
 1. Press and hold ++"Right SELECT"++ for 1s
 1. `boot   on` will be displayed
 1. Run firmware download. Follow [firmware update section](/labboard/firmware-update/)
-
-_Note: pins `D0` -> `TXD` and `D1` -> `DIG2` has to be connected for revision v.2.1 and v.2.2 boards._

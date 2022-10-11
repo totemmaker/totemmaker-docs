@@ -14,7 +14,9 @@ theme:
   palette:
     scheme: default
   features:
-    - navigation.indexes # Allow to specify index file for sections
+    - content.tabs.link   # Link content tabs by name
+    - navigation.expand   # Always expand navigation list
+    - navigation.indexes  # Allow to specify index file for sections
     - navigation.top      # Add back to top button
     - navigation.tabs     # Render top level sections as tabs
     - navigation.sections # Render top level sections as groups
@@ -105,9 +107,14 @@ nav:
                 - 'labboard/features/pulse-counter.md'
                 - 'labboard/features/frequency-counter.md'
                 - 'labboard/features/pulse-generator.md'
-                - 'labboard/features/serial-monitor.md'
+                - '4. Serial monitor' : 'labboard/features/serial-monitor.md'
                 - 'labboard/features/i2c-scanner.md'
                 - 'labboard/features/dht11-monitor.md'
+                - 'labboard/features/ad9833-control.md'
+            - "Serial control":
+                - 'Serial setup' : 'labboard/features/serial-monitor.md'
+                - 'labboard/serial/protocol.md'
+                - 'labboard/serial/api.md'
             - 'labboard/schematics.md'
             - 'labboard/firmware-update.md'
             - 'labboard/revisions.md'

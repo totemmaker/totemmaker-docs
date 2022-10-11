@@ -23,20 +23,20 @@ _It is not directly tied to input pin. Only for visual representation_.
 
 Enter mode:
 
-- Select Menu > `FREq`.
-- In [main screen](/labboard/main-screen/) hold ++"SET\-"++  for 3 seconds.
+- Select Menu > `2. FREq`.
+- (_deprecated_) In [Main screen](/labboard/main-screen/) hold ++"SET\-"++  for 3 seconds.
 
 Exit mode:
 
 - Open menu and select other mode.
-- Press ++"SET\-"++ to exit to [main screen](/labboard/main-screen/).
+- (_deprecated_) Press ++"SET\-"++ to exit to [Main screen](/labboard/main-screen/).
 
 ## Example
 
 ![Mini Lab LabBoard frequency counter mode example](/assets/images/mini-lab/labboard-frequency-counter-mode-example.png)
 
 1. Connect **D9** digital pin to **DIG1** frequency meter input.
-1. Enter frequency counter mode by selecting Menu > `FREq`.
+1. Enter frequency counter mode by selecting Menu > `2. FREq`.
 1. Load code sketch to TotemDuino. This will output 1kHz frequency on pin **D9**.  
 LabBoard should display `1000 HZ`. Uses [tone()](https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/){target=_blank} function.
 ```arduino
@@ -65,4 +65,4 @@ void loop() {
 
 }
 ```
-*This code snippet directly writes Atmega328p registers to configure timer 1 to output 8Mhz frequency on pin PB1 (D9).*
+*This code snippet directly writes ATmega328P registers to configure timer 1 to output 8Mhz frequency on pin PB1 (D9).*

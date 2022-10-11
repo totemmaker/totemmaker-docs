@@ -1,241 +1,285 @@
 # 4. Serial monitor
 
+*[PC]: Personal Computer
+
 ![Mini Lab LabBoard serial mode](/assets/images/mini-lab/labboard-serial-mode.png)
 
-Serial monitor mode allows to interact with TotemDuino over Serial. It can be used for code debugging or as integral part of application (view and control). Multiple features are available:
+--8<-- "includes/select_labboard_revision.md"
 
-- Print serial output on display.
-- Control LabBoard LED.
-- Read LabBoard key press.
+!!! info "Check firmware version"
+    Documentation is written for the latest firmware version. Read [Firmware update](/labboard/firmware-update/) section to perform this procedure.
 
-## Start
+!!! tip "Exit serial mode"
+    To exit back to menu from serial mode - press both ++"SET\+"++ ++"SET\-"++ keys at the same time (instead of any two keys). This is done to allow freely use of LabBoard keys without interruption.
 
-`bAU 57600` will be displayed when mode is selected.
+Serial mode allows to communicate with LabBoard over serial (UART) and control it's features. This interaction can read or write values using [Serial protocol](/labboard/serial/protocol) commands, enabling external LabBoard control from TotemDuino or PC. This can be used for debugging or as integral part of application (view and control). Multiple features are available:
 
-Using ++"SET\+"++ and ++"SET\-"++ select configured baud rate and press ++"Right SELECT"++.  
-Primary displayed baud rate can be changed in [settings](/labboard/features/setup/#serial).  
-_Note: This number should match the one used in `Serial.begin(baudrate)`. This mode can also work in parallel with Arduino IDE Serial Monitor._
+- Read measurements
+- Set output voltage
+- Control signal generator
+- Interact with keys, LED and display
+- Print serial on display `#!arduino Serial.println("Arduino")`
+- Control LabBoard features over [Serial protocol](/labboard/serial/protocol)
+- Control LabBoard features with [Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"} from Arduino
 
-LabBoard revision **v.2.1** and **v.2.2** will ask to connect jumper cables to required pins. You will see information on display:  
-`d0-t][d` - connect pins `D0` -> `TXD`  
-`d1-dIG2` - connect pins `D1` -> `DIG2`  
+## Main settings
 
-![Mini Lab LabBoard serial mode wire check](/assets/images/mini-lab/labboard-serial-mode-wire-check.png)  
+There are multiple ways to use serial communication. When enabling serial mode, LabBoard will ask to choose required configuration:
 
-After valid connection - baud rate selection will be displayed.
+- **Baud rate:** Communication speed. Must match with one used in `#!arduino Serial.begin(baudrate)` or serial terminal application
+- **Direction:** Selection between `PC` and `Arduino`. Swaps TX, RX pins depending on endpoint device (the one who sends commands to LabBoard)
+- **Background mode:** Enabled in settings ("Always on"). Activates serial in normal LabBoard operation mode to work concurrently
 
-## Display
+## Connect to Arduino
 
-LabBoard is capable of displaying 9 numbers or letters ant the same moment. Serial data stream from TotemDuino is intercepted and displayed with each new line. To be registered - serial data must end with new line character (\n) or `Serial.println()`. If there are more than 9 symbols - text is aligned to the right (start of text is cut off).
+Enables communication with Arduino boards over **D0** and **D1** pins.  
+[Serial protocol](/labboard/serial/protocol) commands can be sent using [Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/){target=_blank"}: `#!arduino Serial.println("LB:OUT:DAC1:500")`.  
+[Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"} provides convenient wrapper functions `#!arduino LB.volt.setDAC1(500)` to use within Arduino environment. Read [Serial API reference](/labboard/serial/api/) for more information.  
+**Arduino examples:** [Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/labboard){target=_blank}
 
-## Control LED grid
+=== "LabBoard v.2.1, v.2.2"
+    Wiring instructions:
 
-LabBoard contains 9 separate LED below display. Their state can be changed by sending serial command to LabBoard:  
-`LabBoard:led<id>:<state>` - **id**: LED number [0:8], **state**: turn LED off/on [0:1].
+    ??? summary "Connect with TotemDuino"
+        **Direction:** Arduino.  
+        **Control:** From sketch running on TotemDuino.  
+        **Power:** From TotemDuino DC jack or USB.  
+        Required wiring:  
 
-- **0** - 50V
-- **1** - 5V
-- **2** - 5.0V
-- **3** - DAC1
-- **4** - DAC2
-- **5** - DAC3
-- **6** - VIN
-- **7** - VREG
-- **8** - mAmp
+        - ^^TotemDuino **D0**^^ to LabBoard **SCL** ([SWD header pinout](/assets/images/mini-lab/labboard-swd-header.png))  
+        - LabBoard **D1** to LabBoard **DIG2**
 
-### Example
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-arduino-r22-totemduino.png)](/assets/images/mini-lab/labboard-serial-arduino-r22-totemduino.png)
+    
+    ??? summary "Connect with Arduino boards"
+        **Direction:** Arduino.  
+        **Control:** From sketch running on Arduino board.  
+        **Power:** From Arduino board DC jack or USB.  
+        **Flat cable is not connected.**  
+        Voltages 3.3V, 5V, VIN are provided by Arduino board. LabBoard does not have voltage regulator ([Power scheme](/mini-lab/power)).  
+        Required wiring:  
 
-Turn DAC1, VREG LED on and 50V, mAmp off:  
+        - **D0** to LabBoard **SCL** ([SWD header pinout](/assets/images/mini-lab/labboard-swd-header.png))  
+        - **D1** to LabBoard **DIG2**
+        - **3V3** to LabBoard **3.3V**
+        - **5V** to LabBoard **5V**
+        - **GND** to LabBoard **GND**
+        - **VIN** to LabBoard **VIN**
+
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-arduino-r22-uno.png)](/assets/images/mini-lab/labboard-serial-arduino-r22-uno.png)
+    
+=== "LabBoard v.2.3"
+    Wiring instructions:
+
+    ??? summary "Connect with TotemDuino"
+        **Direction:** Arduino.  
+        **Control:** From sketch running on TotemDuino.  
+        **Power:** From TotemDuino DC jack or USB.  
+        Required wiring:  
+
+        - ^^TotemDuino **D0**^^ to LabBoard **D0**  
+
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-arduino-r23-totemduino.png)](/assets/images/mini-lab/labboard-serial-arduino-r23-totemduino.png)
+    
+    ??? summary "Connect with  Arduino boards"
+        **Direction:** Arduino.  
+        **Control:** From sketch running on Arduino board.  
+        **Power:** From Arduino board DC jack or USB.  
+        **Flat cable is not connected.**  
+        Voltages 3.3V, 5V, VIN are provided by Arduino board. LabBoard does not have voltage regulator ([Power scheme](/mini-lab/power)).  
+        Required wiring:  
+
+        - **D0** to LabBoard **D0**
+        - **D1** to LabBoard **D1**
+        - **3V3** to LabBoard **3.3V**
+        - **5V** to LabBoard **5V**
+        - **GND** to LabBoard **GND**
+        - **VIN** to LabBoard **VIN**
+
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-arduino-r23-uno.png)](/assets/images/mini-lab/labboard-serial-arduino-r23-uno.png)
+    
+
+1. Select serial mode - `4. SERIAL`.
+1. Change value with ++"SET\+"++, ++"SET\-"++. Confirm with ++"Right SELECT"++.
+1. Select baud rate (speed) - `bAU 57600`.   
+_Must match the one set in `#!arduino Serial.begin(57600)`._
+1. Select direction - `Arduino`.
+1. Mode is active and displays `Serial`.
+
+## Connect to PC
+
+Enables communication with external devices, capable to interpret serial data. This allows to connect data stream to PC over USB or use other device to communicate over TX and RX.  
+LabBoard control can be achieved using [Serial protocol](/labboard/serial/protocol) commands.  
+**Python examples:** [Github](https://github.com/totemmaker/python-examples/tree/master/mini-lab/labboard){target=_blank}
+
+=== "LabBoard v.2.1, v.2.2"
+    Wiring instructions:
+
+    ??? summary "Connect over TotemDuino"
+        **Direction:** PC.  
+        **Control:** From PC over TotemDuino as passthrough.  
+        **Power:** From TotemDuino DC jack or USB.  
+        TotemDuino will be disabled to act as passthrough for direct LabBoard communication with PC.  
+        Required wiring:  
+
+        - ^^TotemDuino **D0**^^ to LabBoard **SCL** ([SWD header pinout](/assets/images/mini-lab/labboard-swd-header.png))  
+        - LabBoard **D1** to LabBoard **DIG2**
+        - **RST** to **GND** (disable TotemDuino)
+        
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-pc-r22-totemduino.png)](/assets/images/mini-lab/labboard-serial-pc-r22-totemduino.png)
+    
+    ??? summary "Connect over USB-Serial converter with TotemDuino"
+        **Direction:** PC.  
+        **Control:** From PC over USB-Serial converter.  
+        **Power:** From TotemDuino DC jack or USB.  
+        Required wiring:  
+
+        - **TX** to LabBoard **SCL** ([SWD header pinout](/assets/images/mini-lab/labboard-swd-header.png))
+        - **RX** to LabBoard **DIG2**
+        - **GND** to LabBoard **GND**
+        
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-pc-r22-ttl_totemduino.png)](/assets/images/mini-lab/labboard-serial-pc-r22-ttl_totemduino.png)
+    
+    ??? summary "Connect over USB-Serial converter without TotemDuino"
+        **Direction:** PC.  
+        **Control:** From PC over USB-Serial converter.  
+        **Power:** From USB-Serial converter.  
+        **Flat cable is not connected.**  
+        **VIN** not available!. Certain LabBoard functionality will not work.  
+        Voltages 3.3V, 5V are provided by USB-Serial converter. LabBoard does not have voltage regulator ([Power scheme](/mini-lab/power)).  
+        Required wiring:  
+
+        - **TX** to LabBoard **SCL** ([SWD header pinout](/assets/images/mini-lab/labboard-swd-header.png))
+        - **RX** to LabBoard **DIG2**
+        - **GND** to LabBoard **GND**
+        - **3v** to LabBoard **3.3V**
+        - **5v** to LabBoard **5V**
+        
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-pc-r22-ttl.png)](/assets/images/mini-lab/labboard-serial-pc-r22-ttl.png)
+
+    ??? summary "Connect over Arduino board"
+        **Direction:** PC.  
+        **Control:** From PC over Arduino board as passthrough.  
+        **Power:** From Arduino board DC jack or USB.  
+        **Flat cable is not connected.**  
+        Voltages 3.3V, 5V, VIN are provided by Arduino board. LabBoard does not have voltage regulator ([Power scheme](/mini-lab/power)).  
+        Arduino board will be disabled to act as passthrough for direct LabBoard communication with PC.  
+        Required wiring:  
+        
+        - **D0** to LabBoard **SCL** ([SWD header pinout](/assets/images/mini-lab/labboard-swd-header.png))
+        - **D1** to LabBoard **DIG2**
+        - **3V3** to LabBoard **3.3V**
+        - **5V** to LabBoard **5V**
+        - **GND** to LabBoard **GND**
+        - **VIN** to LabBoard **VIN**
+        - **RESET** to **GND** (disable Arduino)
+
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-pc-r22-uno.png)](/assets/images/mini-lab/labboard-serial-pc-r22-uno.png)
+    
+=== "LabBoard v.2.3"
+    Wiring instructions:
+
+    ??? summary "Connect over TotemDuino"
+        **Direction:** PC.  
+        **Control:** From PC over TotemDuino as passthrough.  
+        **Power:** From TotemDuino DC jack or USB.  
+        TotemDuino will be disabled to act as passthrough for direct LabBoard communication with PC.  
+        Required wiring:  
+
+        - **RST** to **GND** (disable TotemDuino)
+
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-pc-r23-totemduino.png)](/assets/images/mini-lab/labboard-serial-pc-r23-totemduino.png)
+    
+    ??? summary "Connect over USB-Serial converter"
+        **Direction:** PC.  
+        **Control:** From PC over USB-Serial converter.  
+        **Power:** From USB-Serial converter.  
+        **Flat cable is not connected.**  
+        **VIN** not available!. Certain LabBoard functionality will not work.  
+        Voltages 3.3V, 5V are provided by USB-Serial converter. LabBoard does not have voltage regulator ([Power scheme](/mini-lab/power)).  
+        Required wiring:  
+
+        - **TX** to LabBoard **D0**
+        - **RX** to LabBoard **D1**
+        - **GND** to LabBoard **GND**
+        - **3v** to LabBoard **3.3V**
+        - **5v** to LabBoard **5V**
+
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-pc-r23-ttl.png)](/assets/images/mini-lab/labboard-serial-pc-r23-ttl.png)
+        
+    ??? summary "Connect over Arduino board"
+        **Direction:** PC.  
+        **Control:** From PC over Arduino board as passthrough.  
+        **Power:** From Arduino board DC jack or USB.  
+        **Flat cable is not connected.**  
+        Voltages 3.3V, 5V, VIN are provided by Arduino board. LabBoard does not have voltage regulator ([Power scheme](/mini-lab/power)).  
+        Required wiring:  
+
+        - **D0** to LabBoard **D0**
+        - **D1** to LabBoard **D1**
+        - **3V3** to LabBoard **3.3V**
+        - **5V** to LabBoard **5V**
+        - **GND** to LabBoard **GND**
+        - **VIN** to LabBoard **VIN**
+        - **RESET** to **GND** (disable Arduino)
+
+        [![LabBoard serial with other boards](/assets/images/mini-lab/labboard-serial-pc-r23-uno.png)](/assets/images/mini-lab/labboard-serial-pc-r23-uno.png)
+    
+
+1. Select serial mode - `4. SERIAL`.
+1. Change value with ++"SET\+"++, ++"SET\-"++. Confirm with ++"Right SELECT"++.
+1. Select baud rate (speed) - `bAU 57600`.   
+_Select same speed in terminal application._
+1. Select direction - `PC`.
+1. Mode is active and displays `Serial`.
+
+**Testing communication with PC:**  
+
+1. Open Arduino IDE, select port, open Serial Monitor.
+1. Select `57600 baud`.
+1. Type in `LB:IN:5V:?`, press ++enter++.
+1. Observe received value `LB:IN:5V:0`.
+
+## Serial print display
+
+![LabBoard Serial Mode Monitor](/assets/images/mini-lab/labboard-serial-mode-monitor.png)
+
+In serial mode (except background) - LabBoard will display data sent using `#!arduino Serial.println()` function, acting similar as Arduino IDE Serial Monitor. Because it's limited by showing 9 symbols ant the same moment - it will only display last received line (ending with new line symbol "\n") and aligned to right. Start of longer text will be cut off. It recognizes whole alphabet, but certain letters and symbols are limited by 7 segments.
+
+**Example:**
 
 ```arduino
-Serial.println("LabBoard:led3:1"); // DAC1 on
-Serial.println("LabBoard:led7:1"); // VREG on
-Serial.println("LabBoard:led0:0"); // 50V off
-Serial.println("LabBoard:led8:0"); // mAmp off
+Serial.println("Hi");
+Serial.print("This");
+Serial.print("HELLO.");
+Serial.println(" 123.");
 ```
 
-### Function
-
-A helper function can be added to sketch in order to control LED more easily:
-
-```arduino
-void LabBoard_setLED(int number, int state) {
-  char cmd[] = "LabBoard:led0:0";
-  cmd[12] = number + '0';
-  if (state) cmd[14] = '1';
-  Serial.println(cmd);
-}
+Arduino IDE Serial Monitor would print:
+```
+Hi
+This HELLO. 123.
 ```
 
-To change state of the LED, simply call function:
+LabBoard will display only `HELLO. 123.`, because last new line symbol "\n" was sent by `#!arduino Serial.println(" 123.")`. "This" didn't fit as line of text is aligned to its end. Symbols '.' and ',' are converted to dot segment on display.
 
-```arduino
-LabBoard_setLED(3, 1) // DAC1 on
-LabBoard_setLED(7, 1) // VREG on
-LabBoard_setLED(0, 0) // 50V on
-LabBoard_setLED(8, 0) // mAmp on
-```
+It can be disabled with [LB.display.setMonitor(`false`)](/labboard/serial/api/#display.setMonitor) function or `LB:DISP:MON:0`. Any data stream not recognized by [Serial protocol](/labboard/serial/protocol) will be skipped.
 
-## Control DIGx LED
+## Always on (background) mode
 
-Two additional LED are available in the left corner of LabBoard:  
-`LabBoard:dig<id>:<state>` - **id**: LED number [1:2], **state**: turn LED off/on [0:1].
+In this mode - serial is always enabled to control LabBoard during normal operation (not limited to "4. Serial mode"). This can be used to run LabBoard normally and read measurements externally at the same time.
 
-- **1** - DIG1
-- **2** - DIG2
+**Note: Serial wiring has to be done according selected endpoint device.**  
+_Features "I2C scan" and "AD9833 control" will be disabled on v.2.1, v.2.2 boards if "always on" mode is enabled. SCL pin is occupied with serial communication._  
 
-### Example
+To enable background mode:  
 
-Turn DIG1 on and DIG2 off  
+1. Open menu > `0. SEtUP`
+1. Select `5. SERIAL`
+1. Click ++"Middle SELECT"++ key to switch between settings.  
+Change using ++"SET\+"++  ++"SET\-"++ keys.  
+1. Set default baud rate `bAU 57600`
+1. Set endpoint device - `Arduino` or `PC`
+1. Set `ALVAYS` mode to `On`
 
-```arduino
-Serial.println("LabBoard:dig1:1"); // DIG1 on
-Serial.println("LabBoard:dig2:0"); // DIG2 off
-```
-
-### Function
-
-A helper function can be added to sketch in order to control DIGx LED more easily:
-
-```arduino
-void LabBoard_setDIG(int number, int state) {
-  char cmd[] = "LabBoard:dig1:0";
-  if (number == 2) cmd[12] = '2';
-  if (state) cmd[14] = '1';
-  Serial.println(cmd);
-}
-```
-
-To change state of the LED, simply call function:
-
-```arduino
-LabBoard_setDIG(1, 1) // DIG1 on
-LabBoard_setDIG(2, 0) // DIG2 off
-```
-
-## Read key press
-
-LabBoard contains 5 keys. They state is transmitted over serial and can be intercepted inside TotemDuino. This is represented in command:  
-`LabBoard:<name>:<state>` - **name**: key name, **state**: released/pressed [0:1].
-
-- **key+** -  ++"SET\+"++
-- **key-** -  ++"SET\-"++
-- **keyL** -  ++"Left SELECT"++
-- **keyC** -  ++"Middle SELECT"++
-- **keyR** -  ++"Right SELECT"++
-
-### Example
-
-Serial data received when ++"SET\+"++ was pressed and released:   
-```
-LabBoard:key+:1
-LabBoard:key+:0
-```
-
-It can be intercepted using Arduino [Serial read](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/){target=_blank} functions.
-
-### Function
-
-A helper function can be added to sketch in order to read key state more easily:
-
-```arduino
-bool LabBoard_readKey(String &key, bool &pressed) {
-  if (Serial.available() > 0) {
-    String cmd = Serial.readStringUntil('\n');
-    if (cmd.startsWith("LabBoard:")) {
-      pressed = cmd.charAt(14) == '1';
-      key = cmd.substring(9, 13);
-      return true;
-    }
-  }
-  return false;
-}
-```
-
-Call function to read key state:  
-
-```arduino
-// Prepare variables which is used to store button state
-String key;
-bool pressed;
-if (LabBoard_readKey(key, pressed)) {
-  // Key state changed. "key" holds button name and "pressed" is the state of the button
-  Serial.print("Key name: ");
-  Serial.print(key);
-  Serial.print(", state: ");
-  Serial.println(pressed);
-}
-```
-
-## Example
-
-```arduino
-// Set LabBoard LED state
-void LabBoard_setLED(int number, int state) {
-  char cmd[] = "LabBoard:led0:0";
-  cmd[12] = number + '0';
-  if (state) cmd[14] = '1';
-  Serial.println(cmd);
-}
-// Set LabBoard DIGx LED state
-void LabBoard_setDIG(int number, int state) {
-  char cmd[] = "LabBoard:dig1:0";
-  if (number == 2) cmd[12] = '2';
-  if (state) cmd[14] = '1';
-  Serial.println(cmd);
-}
-// Read LabBoard key action
-bool LabBoard_readKey(String &key, bool &pressed) {
-  if (Serial.available() > 0) {
-    String cmd = Serial.readStringUntil('\n');
-    if (cmd.startsWith("LabBoard:")) {
-      pressed = cmd.charAt(14) == '1';
-      key = cmd.substring(9, 13);
-      return true;
-    }
-  }
-  return false;
-}
-
-float count = 0;
-int ledNumber = 0;
-int ledState = 0;
-uint32_t skipCount = 0;
-
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(57600);
-  pinMode(13, OUTPUT);
-}
-
-void loop() {
-  // Read LabBoard key press
-  String key;
-  bool pressed;
-  if (LabBoard_readKey(key, pressed)) {
-    // Turn ON TotemDuino LED if any LabBoard key was pressed
-    digitalWrite(13, pressed ? HIGH : LOW);
-    // Print key status
-    Serial.print(key);
-    Serial.print(" ");
-    Serial.println(pressed ? 1 : 0);
-    // Ignore printing count value for 1 second
-    skipCount = millis() + 1000;
-  }
-  // Run animation trought all LabBoard LED grid
-  LabBoard_setLED(ledNumber, 0);
-  if (++ledNumber > 8) ledNumber = 0;
-  LabBoard_setLED(ledNumber, 1);
-  // Blink between LabBoard DIGx LED
-  LabBoard_setDIG(1, ledState);
-  LabBoard_setDIG(2, !ledState);
-  ledState = !ledState;
-  // Increment and print floating point value
-  if (skipCount < millis()) {
-    count += 0.133;
-    Serial.println(count);
-  }
-  // Wait 100ms for next print
-  delay(100);
-}
-```
+Serial mode will be active on TX, RX (SCL, DIG2 or D0, D1) pins all the time.
