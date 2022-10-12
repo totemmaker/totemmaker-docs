@@ -20,7 +20,7 @@ Menu can be opened and controlled using LabBoard buttons:
 <ol start=0>
 <li><code>SEtUP</code> - <a href="setup/">Setup menu (settings)</a></li>
 <li><code>COUNt</code> - <a href="pulse-counter/">Pulse counter mode</a></li>
-<li><code>FREq</code> - <a href="frequency-counter/">Frequency counter mode</a></li>
+<li><code>FREq</code> - <a href="frequency-meter/">Frequency meter mode</a></li>
 <li><code>PULSE</code> - <a href="pulse-generator/">Pulse generator mode</a></li>
 <li><code>SERIAL</code> - <a href="serial-monitor/">Serial monitor mode</a></li>
 <li><code>I2C</code> - <a href="i2c-scanner/">I2C scanner mode</a></li>

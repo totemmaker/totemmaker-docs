@@ -17,7 +17,7 @@ LabBoard is designed to be mounted onto Totem beams and boards, as well as to th
     - 1 channel in the 3..14 Volt range (VREG)
 - [**Voltage measure**](/labboard/main-screen/#voltage-measurement) - three inputs in the ±0.5V, ±5V and ±50V range.
 - [**Current measure**](/labboard/main-screen/#current-measurement) - sensing current up to 800 mA.
-- [**Frequency meter**](/labboard/features/frequency-counter/) - digital signal frequency measurement module for signals up to 23 MHz.
+- [**Frequency meter**](/labboard/features/frequency-meter/) - digital signal frequency measurement module for signals up to 23 MHz.
 - [**Pulse counter**](/labboard/features/pulse-counter/) - digital signal pulse counter, counting up to 999999999 pulses.
 - [**Pulse generator**](/labboard/features/pulse-generator/) - unit capable of generating finite or infinite series of pulses, with programmable pulse width and period.
 - [**Serial monitor**](/labboard/features/serial-monitor/) - View serial data output from Arduino and control LabBoard itself.

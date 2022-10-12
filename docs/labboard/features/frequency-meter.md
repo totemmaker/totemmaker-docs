@@ -1,6 +1,6 @@
-# 2. Frequency counter
+# 2. Frequency meter
 
-![Mini Lab LabBoard frequency counter mode](/assets/images/mini-lab/labboard-frequency-counter-mode.png)
+![Mini Lab LabBoard frequency meter mode](/assets/images/mini-lab/labboard-frequency-meter-mode.png)
 
 ## About
 
@@ -33,10 +33,10 @@ Exit mode:
 
 ## Example
 
-![Mini Lab LabBoard frequency counter mode example](/assets/images/mini-lab/labboard-frequency-counter-mode-example.png)
+![Mini Lab LabBoard frequency meter mode example](/assets/images/mini-lab/labboard-frequency-meter-mode-example.png)
 
 1. Connect **D9** digital pin to **DIG1** frequency meter input.
-1. Enter frequency counter mode by selecting Menu > `2. FREq`.
+1. Enter frequency meter mode by selecting Menu > `2. FREq`.
 1. Load code sketch to TotemDuino. This will output 1kHz frequency on pin **D9**.  
 LabBoard should display `1000 HZ`. Uses [tone()](https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/){target=_blank} function.
 ```arduino

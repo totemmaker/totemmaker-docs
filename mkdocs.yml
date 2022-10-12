@@ -105,7 +105,7 @@ nav:
                 - 'labboard/features/index.md'
                 - 'labboard/features/setup.md'
                 - 'labboard/features/pulse-counter.md'
-                - 'labboard/features/frequency-counter.md'
+                - 'labboard/features/frequency-meter.md'
                 - 'labboard/features/pulse-generator.md'
                 - '4. Serial monitor' : 'labboard/features/serial-monitor.md'
                 - 'labboard/features/i2c-scanner.md'
