@@ -6,6 +6,8 @@ hide:
 
 # Product list { style="display: none" }
 
+<blockquote style="float:right;margin-top:-30px;border-left:0">Technical support: <a href="https://forum.totemmaker.net">forum</a> or <a href="mailto:info@totemmaker.net">info@totemmaker.net</a></blockquote>
+
 ## Development kits { style="margin-top: 0px" }
 
 <div class="grid-card-row">
