@@ -1,5 +1,7 @@
 # 3. Pulse generator
 
+*[but works with Arduino 5V logic]: In 5V logic to change from LOW to HIGH only ~2.7 Volt is required. So 3.3V is enough to trigger and safe to use.
+
 ![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-pulse-generator-mode.png)
 
 ## About
@@ -12,7 +14,7 @@ Mode used to generate rectangular waveform with configurable frequency and duty 
 
 - Output configured signal at **TXD** pin.
 - Inactive **TXD** pin state - LOW.
-- Output voltage is **3.3V**.
+- Output voltage is **3.3V** (but works with Arduino 5V logic).
 - Configurable frequency (period) up to 1 MHz.
 - Configurable duty cycle (pulse width).
 - Output continuos signal.
