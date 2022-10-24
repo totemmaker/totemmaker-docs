@@ -120,9 +120,9 @@ nav:
             - 'labboard/revisions.md'
         - "Side panels":
             - 'side-panels/index.md'
-            - 'side-panels/io-panel.md'
-            - 'side-panels/sensor-panel.md'
-            - 'side-panels/audio-panel.md'
+            - '#1 I/O panel' : 'side-panels/io-panel.md'
+            - '#2 Sensor panel' : 'side-panels/sensor-panel.md'
+            - '#3 Audio panel' : 'side-panels/audio-panel.md'
     - "Mini Control Board X3":
         - 'mini-control-board-x3/index.md'
         - 'mini-control-board-x3/revisions.md'
