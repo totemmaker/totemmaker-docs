@@ -84,7 +84,7 @@ Latched switches with LED indication - can be wired to use normally-on or normal
 
 | Schematic | Experiment |
 | --- | --- |
-| [![IO Side panel switch schematic](/assets/images/mini-lab/io-panel-switch_sh.png)](/assets/images/mini-lab/io-panel-switch_sh.png) | [![IO Side panel switch](/assets/images/mini-lab/io-panel-switch_bb.png)](/assets/images/mini-lab/io-panel-switch_bb.png) _Toggle switch A to see RGB color change._ |
+| [![IO Side panel switch schematic](/assets/images/mini-lab/io-panel-switch_sh.png){width=280}](/assets/images/mini-lab/io-panel-switch_sh.png) | [![IO Side panel switch](/assets/images/mini-lab/io-panel-switch_bb.png){width=300}](/assets/images/mini-lab/io-panel-switch_bb.png) <br> _Toggle switch A to see RGB color change._ |
 
 ## Potentiometers
 
@@ -117,7 +117,7 @@ Group of potentiometers to adjust amount of resistance or use as voltage divider
 
 | Schematic | Experiment |
 | --- | --- |
-| [![IO Side panel potentiometer schematic](/assets/images/mini-lab/io-panel-potentiometer_sh.png)](/assets/images/mini-lab/io-panel-potentiometer_sh.png) | [![IO Side panel potentiometer example](/assets/images/mini-lab/io-panel-potentiometer_bb.png)](/assets/images/mini-lab/io-panel-potentiometer_bb.png) _Mix color by turning potentiometers._ |
+| [![IO Side panel potentiometer schematic](/assets/images/mini-lab/io-panel-potentiometer_sh.png){width=250}](/assets/images/mini-lab/io-panel-potentiometer_sh.png) | [![IO Side panel potentiometer example](/assets/images/mini-lab/io-panel-potentiometer_bb.png){width=310}](/assets/images/mini-lab/io-panel-potentiometer_bb.png) <br> _Mix color by turning potentiometers._ |
 
 ## Rotary encoder
 
@@ -143,7 +143,7 @@ Encoder that gives out pulses when rotated. Also includes a pushable button.
 
 | Schematic | Experiment |
 | --- | --- |
-| [![IO Side panel encoder schematic](/assets/images/mini-lab/io-panel-encoder_sh.png)](/assets/images/mini-lab/io-panel-encoder_sh.png) | [![IO Side panel encoder example](/assets/images/mini-lab/io-panel-encoder_bb.png)](/assets/images/mini-lab/io-panel-encoder_bb.png) _Turn knob to view encoder signal output._ |
+| [![IO Side panel encoder schematic](/assets/images/mini-lab/io-panel-encoder_sh.png){width=250}](/assets/images/mini-lab/io-panel-encoder_sh.png) | [![IO Side panel encoder example](/assets/images/mini-lab/io-panel-encoder_bb.png){width=340}](/assets/images/mini-lab/io-panel-encoder_bb.png) <br> _Turn knob to view encoder signal output._ |
 
 ## Buttons
 
@@ -165,7 +165,7 @@ For Arduino use `#!arduino pinMode(8, INPUT_PULLUP)`.
 
 | Schematic | Experiment |
 | --- | --- |
-| [![IO Side panel button schematic](/assets/images/mini-lab/io-panel-button_sh.png)](/assets/images/mini-lab/io-panel-button_sh.png) | [![IO Side panel button example](/assets/images/mini-lab/io-panel-button_bb.png)](/assets/images/mini-lab/io-panel-button_bb.png) _Light up RGB color when button is pressed._ |
+| [![IO Side panel button schematic](/assets/images/mini-lab/io-panel-button_sh.png){width=250}](/assets/images/mini-lab/io-panel-button_sh.png) | [![IO Side panel button example](/assets/images/mini-lab/io-panel-button_bb.png){width=300}](/assets/images/mini-lab/io-panel-button_bb.png) <br> _Light up RGB color when button is pressed._ |
 
 ## RGB LED
 
@@ -190,7 +190,7 @@ Three color RGB LED. Can be used to mix specific color.
 
 | Schematic | Experiment |
 | --- | --- |
-| [![IO Side panel RGB schematic](/assets/images/mini-lab/io-panel-rgb_sh.png)](/assets/images/mini-lab/io-panel-rgb_sh.png) | [![IO Side panel RGB](/assets/images/mini-lab/io-panel-rgb_bb.png)](/assets/images/mini-lab/io-panel-rgb_bb.png) _Light up red color by wiring R to GND (⏚)._ |
+| [![IO Side panel RGB schematic](/assets/images/mini-lab/io-panel-rgb_sh.png){width=250}](/assets/images/mini-lab/io-panel-rgb_sh.png) | [![IO Side panel RGB](/assets/images/mini-lab/io-panel-rgb_bb.png){width=300}](/assets/images/mini-lab/io-panel-rgb_bb.png) <br> _Light up red color by wiring R to GND (⏚)._ |
 
 ## Relay
 
@@ -209,7 +209,7 @@ Mechanical high power switch. Can be used to control high current and voltage lo
 - Single relay, driven by a transistor. Relay latches when HIGH signal is provided to H11 connector. Activation state is show with LED4. Output changes on B1 terminals.  
 - N.O. - Normally Open (relay is latched, LED on).  
 - N.C. - Normally Closed (relay is not latched, LED off).  
-- **Be cautious if connecting 250V loads, as these high voltages are lethal.**
+- **Be cautious if connecting 250V loads, as these high voltages are dangerous.**
 
 **Power:**
 
@@ -217,7 +217,7 @@ Mechanical high power switch. Can be used to control high current and voltage lo
 
 | Schematic | Experiment |
 | --- | --- |
-| [![IO Side panel relay schematic](/assets/images/mini-lab/io-panel-relay_sh.png)](/assets/images/mini-lab/io-panel-relay_sh.png) | [![IO Side panel relay](/assets/images/mini-lab/io-panel-relay_bb.png)](/assets/images/mini-lab/io-panel-relay_bb.png) _Connect red wire to H11 to toggle relay. RGB color changes between red and green._ |
+| [![IO Side panel relay schematic](/assets/images/mini-lab/io-panel-relay_sh.png){width=250}](/assets/images/mini-lab/io-panel-relay_sh.png) | [![IO Side panel relay](/assets/images/mini-lab/io-panel-relay_bb.png){width=350}](/assets/images/mini-lab/io-panel-relay_bb.png) <br> _Connect red wire to H11 to toggle relay. RGB color changes between red and green._ |
 
 ## 3.5mm adapter
 
@@ -239,14 +239,10 @@ Ground, Right, Left is just most common for headphones.
 
 | Schematic | Visual |
 | --- | --- |
-| [![IO Side panel 3.5mm audio jack schematic](/assets/images/mini-lab/io-panel-audio_sh.png)](/assets/images/mini-lab/io-panel-audio_sh.png) | [![IO Side panel 3.5mm audio jack visual](/assets/images/mini-lab/io-panel-audio_bb.png)](/assets/images/mini-lab/io-panel-audio_bb.png) |
+| [![IO Side panel 3.5mm audio jack schematic](/assets/images/mini-lab/io-panel-audio_sh.png){width=250}](/assets/images/mini-lab/io-panel-audio_sh.png) | [![IO Side panel 3.5mm audio jack visual](/assets/images/mini-lab/io-panel-audio_bb.png){width=250}](/assets/images/mini-lab/io-panel-audio_bb.png) |
 
-## Datasheet
+**Legacy documentation of #1 I/O side panel:**
 
-Legacy side panel documentation.  
-Also includes assembly and mounting instructions.
+This page contains latest documentation of audio side panel. Link below is outdated and only specified for reference.
 
-<a href="https://totemmaker.net/wp-content/uploads/2018/04/io-side-panel-1.1.pdf" class="image fit">io-side-panel-1.1.pdf</a>
-<object style="width:100%; height:600px;" data="https://totemmaker.net/wp-content/uploads/2018/04/io-side-panel-1.1.pdf" type="application/pdf">
-    <embed src="https://totemmaker.net/wp-content/uploads/2018/04/io-side-panel-1.1.pdf" type="application/pdf" />
-</object>
+[Version 1.1 datasheet](https://totemmaker.net/wp-content/uploads/2018/04/io-side-panel-1.1.pdf) (legacy)  
