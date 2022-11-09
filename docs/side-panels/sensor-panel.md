@@ -212,12 +212,8 @@ Motor state depending on input signal:
 | --- | --- |
 | [![Sensor side panel DC-Motor schematic](/assets/images/mini-lab/sensor-panel-motor_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-motor_sh.png) | [![Sensor side panel DC-Motor experiment](/assets/images/mini-lab/sensor-panel-motor_bb.png){width=370}](/assets/images/mini-lab/sensor-panel-motor_bb.png) <br> _Press **FW** of **RW** button to spin motor. <br>Turn potentiometer to control speed._ |
 
-## Datasheet
+**Legacy documentation of #2 Sensor side panel:**
 
-Legacy side panel documentation.  
-Also includes assembly and mounting instructions.
+This page contains latest documentation of audio side panel. Link below is outdated and only specified for reference.
 
-<a href="https://totemmaker.net/wp-content/uploads/2018/04/sensor-side-panel-1.1.pdf" class="image fit">sensor-side-panel-1.1.pdf</a>
-<object style="width:100%; height:600px;" data="https://totemmaker.net/wp-content/uploads/2018/04/sensor-side-panel-1.1.pdf" type="application/pdf">
-    <embed src="https://totemmaker.net/wp-content/uploads/2018/04/sensor-side-panel-1.1.pdf" type="application/pdf" />
-</object>
+[Version 1.1 datasheet](https://totemmaker.net/wp-content/uploads/2018/04/sensor-side-panel-1.1.pdf) (legacy)  
