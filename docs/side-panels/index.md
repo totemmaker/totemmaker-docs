@@ -4,7 +4,7 @@
 
 While Mini Lab will work on its own, but you can easily expand it with side panels. A side panel is a collection of basic most commonly used electronics blocks that can be used together with Mini Lab to even further extends it’s abilities.
 
-Together with each side panels you’ll get a quick start guide on how to work with each of the module in the side panel together with code samples. While modules in side panels are indented to be self-contained and not rely on one another, this gives you a chance to experiment on integrating parts of it to build a connected system - as an example you could program it to control the DC motor by rotating the potentiometer and displaying the current value on the OLED screen or making a sound-activated relay switch.
+Together with each side panel you’ll get a quick start guide on how to work with each of the module in the side panel together with code samples. While modules in side panels are indented to be self-contained and not rely on one another, this gives you a chance to experiment on integrating parts of it to build a connected system - as an example you could program it to control the DC motor by rotating the potentiometer and displaying the current value on the OLED screen or making a sound-activated relay switch.
 
 | #1 I/O panel | #2 Sensor panel | #3 Audio panel |
 | :---: | :---: | :---: |

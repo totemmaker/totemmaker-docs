@@ -22,11 +22,11 @@
 
 This side panel is dedicated for experimenting with signal generation, allowing to visualize and hear it's output. It can generate different types of waveforms with configurable frequency. Integrated loudspeaker can be used to listen how signal affects the sound or use external source to play music. Also contains VU meter to visualize signal level in LED bar.
 
-_Note: previous side panel version (ver 3.5) contained XR2206 analog signal generator. In (ver 3.7) it has changed to digital AD9833 with addition of filter bench module. Image on the right is side panel ver 3.5._
+_Note: previous side panel version (ver 3.5) contained XR2206 analog signal generator. In (ver 3.7) it has changed to digital AD9833 with addition of filter bench module. Image on the right is older side panel ver 3.5._
 
 ## Power
 
-On the top of the board there is (POWER IN) pin header to supply power for side panel components. Some of them requires certain voltage to operate, but otherwise they’re fully isolated from one another, and can be used independently.
+On the top of the board there is (POWER IN) pin header to supply power to side panel components. Some of them requires certain voltage to operate, but otherwise they’re fully isolated from one another, and can be used independently.
 
 Side panel requires power (3.3V, 5V, 12V) for certain modules to work. It does not have its own voltage regulator so typically, regulated voltage has to be sourced from TotemDuino or LabBoard. Recommended to plug in all 4 wires as some modules use different voltages. 12V input can accept different voltages. Typically it should be connected to **VIN**.  
 [![Audio Side panel power](/assets/images/mini-lab/audio-panel-power_bb.png)](/assets/images/mini-lab/audio-panel-power_bb.png)
@@ -80,7 +80,7 @@ This is an AB class discrete audio amplifier module, capable of up to 1W output 
 
 Inbuilt speaker is enabled by connecting _SPEAKER ON/OFF_ jumper, amplified signal output can be connected with a _OUTPUT_ female connector.
 
-You can use the function generator as a signal source (described below) by just connecting a jumper cable between amplifier input and generator output. Another possible input source is using Totem side panel 1 microphone module.
+You can use the function generator as a signal source (described below) by just connecting a jumper cable between amplifier input and generator output. Another possible input source is using Totem side panel #1 [microphone module](/side-panels/sensor-panel/#microphone).
 
 | Schematic | Experiment |
 | --- | --- |
@@ -116,7 +116,7 @@ Input signal level sensitivity can be adjusted by potentiometer (trimpot). We su
 
 ## Function generator
 
-Function generator module able to output up to 1Mhz variable frequency signal with different waveform types. Can be used to play different sounds trough loudspeaker or drive some other circuits.  
+Function generator module able to output up to 1Mhz variable frequency signal with different waveform types. Can be used to play different sounds trough loudspeaker or to drive some other circuits.  
 _Select panel type matching yours:_
 
 === "Panel ver 3.5"
@@ -171,10 +171,13 @@ _Select panel type matching yours:_
 
     This module contains digital AD9833 chip capable to generate sine, triangle and square wave output signal up to 12.5 MHz frequency. Generated signal is buffered with an operation amplifier, giving the ability to control output signal amplitude. Note that circuit itself is only good for up to around 1Mhz. Higher frequency signals may be unstable or too weak.
 
-    Arduino [AD9833 library](https://github.com/Billwilliams1952/AD9833-Library-Arduino) can be used to control this chip from TotemDuino.  
-    LabBoard [AD9833 mode](/labboard/features/ad9833-control/) can be used to wire and control this chip directly.
+    LabBoard [AD9833 mode](/labboard/features/ad9833-control/) can be used to wire and control this chip directly.  
+    Arduino [MD_AD9833](https://github.com/MajicDesigns/MD_AD9833){target=_blank} library can be used to control this chip from TotemDuino.  
+    Arduino example: [Music player](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos/player){target=_blank}.  
+    Arduino example: [MIDI interface](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos/midiinterface){target=_blank}.  
+    Arduino example: [Minimal generator](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos/minimal_generator){target=_blank}.  
 
-    Output of the function generator can be wired to the input of audio amplifier, allowing you to hear the output of if with no extra parts. Additionally, filter bench module can be placed between those modules to also experiment with pi-filters, and its effect to the signal.
+    Output of the function generator can be wired to the input of audio amplifier, allowing you to hear the sound of if with no extra parts. Additionally, filter bench module can be placed between those modules to also experiment with pi-filters, and its effect to the signal.
 
     | Schematic | Experiment |
     | --- | --- |

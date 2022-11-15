@@ -26,21 +26,32 @@
 
 **Arduino examples:** [Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos){target=_blank}
 
-This side panel is a combination of sensors with a display and motor driver as a bonus. Can be used to detect sounds, room temperature and visualize data on display or alerting with buzzer. Motor driver allows to test them controlling manually or from TotemDuino.
+This side panel is a combination of sensors with display and motor driver as a bonus. Can be used to detect sound, room temperature, visualize data or alert with buzzer. Motor driver allows to control it manually or digitally using TotemDuino.
 
 ## Power
 
-On the top of the board there is (POWER IN) pin header to supply power for side panel components. Some of them requires certain voltage to operate, but otherwise they’re fully isolated from one another, and can be used independently.
+On the top of the board there is (POWER IN) pin header to supply power to side panel components. Some of them requires certain voltage to operate, but otherwise they’re fully isolated from one another, and can be used independently.
 
 **Power up side panel:**  
-Side panel requires power (3.3V, 5V) for certain modules to work. It does not have its own voltage regulator so typically, regulated voltage has to be sourced from LabBoard. Recommended to plug in all 3 wires as some modules use different voltages.  
+Side panel requires power (3.3V, 5V) for certain modules to work. It does not have its own voltage regulator so typically, regulated voltage has to be sourced from TotemDuino or LabBoard. Recommended to plug in all 3 wires as some modules use different voltages.  
 [![Sensor Side panel power](/assets/images/mini-lab/io-panel-power_bb.png)](/assets/images/mini-lab/io-panel-power_bb.png)
 
 ![Sensor panel Voltage selector visual](/assets/images/mini-lab/io-panel-voltage-selector_bb.png){ align=right }
 
 **Select logic voltage level:**  
-Side panel also contains logic level voltage (VCC) select for digital signals to work either at 3.3 or 5 Volt. Marked OBS! (Observe!).  
-By moving **JP7** jumper up or down - you can select between 3.3V and 5V. This is useful if you have some components that are 3.3 Volt only (could be damaged if used with 5V). In that case place jumper on 3.3V position and can use side panel pins safely. It’s important to have the same logic level as the controller board (e.g., TotemDuino), for best results. 
+Side panel contains logic level voltage (VCC) select for digital signals to work either at 3.3 or 5 Volt. Marked OBS! (Observe!).  
+By moving **JP7** jumper up or down - you can select between 3.3V and 5V. This is useful if you have some components that are 3.3 Volt only (could be damaged if used with 5V). In that case place jumper on 3.3V position and use side panel pins safely. It’s important to have the same logic level as the controller board (e.g., TotemDuino), for best results. 
+
+![Sensor Side panel voltage selector schematic](/assets/images/mini-lab/io-panel-voltage-selector_sh.png){ align=right width=170 }
+
+Places where selected voltage (VCC) is used:  
+
+- Display power and logic
+- Humidity sensor power and logic
+- NTC reference voltage
+- DC motor control buttons
+
+Microphone and buzzer modules are always using **+5v** to power their circuit.
 
 ## Microphone
 
@@ -51,6 +62,10 @@ Microphone module with integrated amplifier. Outputs analog audio signal in **0*
 **Pin header:**  
 
 - **pin 1, 2** - microphone signal output
+
+**Info:**
+
+- Arduino example: [Sound alarm](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/soundalarm){target=_blank}.
 
 **Power:**  
 
@@ -74,7 +89,8 @@ Monochrome I2C display to show text and simple graphics. Uses **SSD1306** driver
 
 **Info:**
 
-- Arduino library: [Adafruit SSD1306](https://www.arduino.cc/reference/en/libraries/adafruit-ssd1306/){target=_blank}.
+- Arduino library: [Adafruit SSD1306](https://github.com/adafruit/Adafruit_SSD1306){target=_blank}.
+- Arduino example: [Display test](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/displaytest){target=_blank}.
 - Integrated pull-up resistors for I2C communication.
 
 **Power:**
@@ -99,6 +115,7 @@ Digital temperature and humidity sensor **DHT11**. Uses **1-wire** protocol to c
 **Info:**
 
 - Arduino library: [DHT sensor library](https://github.com/adafruit/DHT-sensor-library){target=_blank}.
+- Arduino example: [Temperature and humidity read](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/humidity){target=_blank}.
 - Measures temperature in Celsius and humidity in percentage.
 
 **Power:**
@@ -111,7 +128,7 @@ Digital temperature and humidity sensor **DHT11**. Uses **1-wire** protocol to c
 
 ## NTC thermistor
 
-![Sensor side panel NNTC visual](/assets/images/mini-lab/sensor-panel-ntc_vi.png){ align=right }
+![Sensor side panel NTC visual](/assets/images/mini-lab/sensor-panel-ntc_vi.png){ align=right }
 
 Analog temperature sensor.
 
@@ -121,6 +138,7 @@ Analog temperature sensor.
 
 **Info:**
 
+- Arduino example: [NTC temperature read](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/ntc){target=_blank}.
 - Negative temperature coefficient (NTC) thermistor working in voltage divider configuration. **OUT** voltages goes down if temperature increases.
 - At room temperature (25 °C) has 10k resistance.
 
@@ -128,9 +146,9 @@ Analog temperature sensor.
 
 - Uses **VCC** for reference voltage.
 
-| Schematic |
-| --- |
-| [![Sensor side panel NTC schematic](/assets/images/mini-lab/sensor-panel-ntc_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-ntc_sh.png) |
+| Schematic | Experiment |
+| --- | --- |
+| [![Sensor side panel NTC schematic](/assets/images/mini-lab/sensor-panel-ntc_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-ntc_sh.png) | [![Sensor side panel NTC experiment](https://raw.githubusercontent.com/totemmaker/arduino-examples/master/mini-lab/sidepanel2_demos/ntc/ntc-wiring.png){width=370 style="height:180px; object-fit: cover; object-position: 0% 50%;"}](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png) |
 
 ## Buzzer
 
@@ -177,6 +195,10 @@ Supports two speed control types: manual with potentiometer and buttons or modul
 - **POWER IN 1, 2** - supply power for motor (18V max)
 - **K1 power in** - supply power for motor (screw terminal)
 - **K2 motor output** - motor output pins (screw terminal)
+
+**Info:**
+
+- Arduino example: [Speed and direction control](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/motor){target=_blank}.
 
 **Manual control mode:**
 
