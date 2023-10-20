@@ -1,4 +1,5 @@
 site_name: Totem Documentation
+site_url: https://docs.totemmaker.net/
 repo_url: https://github.com/totemmaker/TotemArduinoBoards
 repo_name: Totem Arduino Boards
 site_description: Documentation site for TotemMaker products and programming
@@ -12,33 +13,41 @@ theme:
   icon:
     repo: fontawesome/brands/github
   palette:
-    scheme: default
+    primary: custom
   features:
     - content.tabs.link   # Link content tabs by name
+    - content.code.copy   # Copy button for code blocks
     - navigation.expand   # Always expand navigation list
     - navigation.indexes  # Allow to specify index file for sections
     - navigation.top      # Add back to top button
     - navigation.tabs     # Render top level sections as tabs
     - navigation.sections # Render top level sections as groups
+    - navigation.footer   # Footer page navigation links
 
 extra_css:
   - stylesheets/extra.css
 
 extra:
   social:
+    - icon: fontawesome/brands/discord
+      link: https://forum.totemmaker.net
+    - icon: fontawesome/brands/discourse
+      link: https://forum.totemmaker.net
     - icon: fontawesome/brands/github
       link: https://github.com/totemmaker
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/totemmaker/
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/totem_maker/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@Totemmaker
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/Totemmaker
-    - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/channel/UCRnZOXe1bYzW8WgE3NQojFA
   analytics:
     provider: google
     property: UA-92600507-1
+
+copyright: © Copyright 2020-2023, Totem Technology, UAB
 
 markdown_extensions:
   - abbr       # Place tooltips on phrases
@@ -46,7 +55,9 @@ markdown_extensions:
   - admonition # Info / Warning text boxes
   - def_list   # Add tabbed definitions after :
   - md_in_html # Write Markdown inside of HTML
-  - pymdownx.snippets     # Include other files
+  - pymdownx.snippets:    # Include other files
+      auto_append:
+        - includes/abbreviations.md
   - pymdownx.details      # admonition collapse / expand
   - pymdownx.highlight    # Code blocks with syntax highlighting
   - pymdownx.inlinehilite # Inline code syntax highlighting
@@ -60,8 +71,8 @@ markdown_extensions:
   - pymdownx.tasklist:    # Generate task list with checkboxes
       custom_checkbox: true
   - pymdownx.emoji:       # Add emoji
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 plugins:
   - search
@@ -69,25 +80,31 @@ plugins:
       redirect_maps:
         tutorials/01.ArduinoSetup.md: setup/index.md
         tutorials/02.UseThirdParty.md: remote-control/arduino/index.md
-        tutorials/03.UseExamples.md: roboboard-x4/index.md
+        tutorials/03.UseExamples.md: roboboard/index.md
         tutorials/04.SetupController.md: remote-control/ps-controller.md
         tutorials/CustomAppButtons.md: remote-control/app/custom-function.md
-        tutorials/GettingStartedX4.md: roboboard-x4/getting-started.md
+        tutorials/GettingStartedX4.md: roboboard-x4/index.md
         tutorials/X4.md: roboboard-x4/index.md
-        API/index.md: remote-control/index.md
+        API/index.md: roboboard/api/index.md
         API/ModuleData.md: remote-control/arduino/ModuleData.md
         API/MotorDriver.md: remote-control/arduino/MotorDriver.md
         API/TotemModule.md: remote-control/arduino/TotemModule.md
         API/TotemRobot.md: remote-control/arduino/TotemRobot.md
         interfaces/index.md: remote-control/arduino/index.md
         interfaces/BLE.md: remote-control/arduino/index.md
+        mini-control-board-x3/index.md: mini-control-board/index.md
+        roboboard-x4/getting-started.md: roboboard-x4/index.md
 
 nav:
     - "Product list" : index.md
     - "Setup":
         - 'setup/index.md'
-        - 'Arduino IDE' : 'setup/arduino-ide.md'
-        - 'PlatformIO' : 'setup/platformio.md'
+        - "RoboBoard":
+            - 'Arduino IDE 2.1' : 'setup/arduino-ide-2.md'
+            - 'Arduino IDE 1.8' : 'setup/arduino-ide.md'
+            - 'PlatformIO' : 'setup/platformio.md'
+        - "TotemDuino":
+            - 'Arduino IDE' : 'totemduino/setup.md'
     - "Mini Lab":
         - 'mini-lab/index.md'
         - 'mini-lab/getting-started.md'
@@ -123,26 +140,30 @@ nav:
             - '#1 I/O panel' : 'side-panels/io-panel.md'
             - '#2 Sensor panel' : 'side-panels/sensor-panel.md'
             - '#3 Audio panel' : 'side-panels/audio-panel.md'
-    - "Mini Control Board X3":
-        - 'mini-control-board-x3/index.md'
-        - 'mini-control-board-x3/revisions.md'
-    - "RoboBoard X4":
-        - 'roboboard-x4/index.md'
-        - 'Getting started' : 'roboboard-x4/getting-started.md'
-        - 'Arduino API' : 'roboboard-x4/arduino-api.md'
-        - 'Qwiic' : 'roboboard-x4/qwiic.md'
-        - 'MEMS' : 'roboboard-x4/mems.md'
-        - 'GPIO' : 'roboboard-x4/gpio.md'
-        - 'Board' : 'roboboard-x4/board.md'
-        - 'X4.config' : 'roboboard-x4/config.md'
-        - 'X4.button' : 'roboboard-x4/button.md'
-        - 'X4.led' : 'roboboard-x4/led.md'
-        - 'X4.rgb' : 'roboboard-x4/rgb.md'
-        - 'X4.dc' : 'roboboard-x4/dc.md'
-        - 'X4.servo' : 'roboboard-x4/servo.md'
-        - 'X4.module' : 'roboboard-x4/module.md'
-        - 'X4.function' : 'roboboard-x4/function.md'
-    - "TBUS Modules":
+    - "Mini Control Board":
+        - 'mini-control-board/index.md'
+        - 'mini-control-board/revisions.md'
+    - "RoboBoard":
+        - 'roboboard/index.md'
+        - 'RoboBoard X3' : 'roboboard-x3/index.md'
+        - 'RoboBoard X4' : 'roboboard-x4/index.md'
+        - "API":
+            - 'roboboard/api/index.md'
+            - 'ESP32' : 'roboboard/api/esp32.md'
+            - 'GPIO / Qwiic' : 'roboboard/api/gpio-qwiic.md'
+            - 'TotemApp.' : 'roboboard/api/totemapp.md'
+        - "Motor control":
+            - 'Drivetrain.' : 'roboboard/api/drivetrain.md'
+            - 'Servo.' : 'roboboard/api/servo.md'
+            - 'DC.' : 'roboboard/api/dc.md'
+        - "Board control":
+            - 'Battery.' : 'roboboard/api/battery.md'
+            - 'Board.' : 'roboboard/api/board.md'
+            - 'Button.' : 'roboboard/api/button.md'
+            - 'LED.' : 'roboboard/api/led.md'
+            - 'RGB.' : 'roboboard/api/rgb.md'
+            - 'IMU.' : 'roboboard/api/imu.md'
+    - "Modules":
         - 'modules/index.md'
         - 'Programming' : 'modules/programming.md'
         - 'modules/03.md'
@@ -164,3 +185,4 @@ nav:
             - 'remote-control/app/control-robot.md'
             - 'remote-control/app/custom-function.md'
         - "PS3/PS4 controller" : remote-control/ps-controller.md
+    - 'support.md'
