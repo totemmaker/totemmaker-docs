@@ -6,9 +6,9 @@ hide:
 
 # Product list { style="display: none" }
 
-<blockquote style="float:right;margin-top:-30px;border-left:0">Technical support: <a href="https://forum.totemmaker.net">forum</a> or <a href="mailto:info@totemmaker.net">info@totemmaker.net</a></blockquote>
+<blockquote style="float:right;margin-top:-30px;border-left:0">Check our support page for more help: <a href="support/">Support</a></blockquote>
 
-## Development kits { style="margin-top: 0px" }
+## :tools: Development kits { style="margin-top: 0px" }
 
 <div class="grid-card-row">
   <a class="grid-card-column" href="mini-lab/">
@@ -44,14 +44,22 @@ hide:
   </a>
 </div>
 
-## Robot control boards
+## :robot: Robot control boards
 
 <div class="grid-card-row">
-  <a class="grid-card-column" href="mini-control-board-x3/">
+  <a class="grid-card-column" href="mini-control-board/">
     <div class="grid-card">
-      <img alt="Mini Control Board X3" src="/assets/images/photo/mini-board-x3-v.2.0-photo.jpg">
-      <h2>Mini Control Board X3</h2>
-      <p>Remote robot control board</p>
+      <img alt="Mini Control Board" src="/assets/images/photo/mini-board-x3-v1.5v.2.0-photo.jpg">
+      <h2>Mini Control Board</h2>
+      <p>Remote robot control board (legacy)</p>
+    </div>
+  </a>
+
+  <a class="grid-card-column" href="roboboard-x3/">
+    <div class="grid-card">
+      <img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.0-card.jpg">
+      <h2>RoboBoard X3</h2>
+      <p>Programmable robot control board</p>
     </div>
   </a>
 
@@ -66,45 +74,22 @@ hide:
   <a class="grid-card-column" href="modules/">
     <div class="grid-card">
       <img alt="TotemBUS modules" src="/assets/images/photo/tbus-module-11-photo.jpg">
-      <h2>TBUS Modules</h2>
-      <p>RoboBoard X4 expansion</p>
+      <h2>Totem Modules</h2>
+      <p>Extends RoboBoard functionality</p>
     </div>
    </a>
 </div>
 
-## Getting started
+## :information_source: Support
 
-### Install Arduino
+If you have questions or suggestions - do not hesitate to reach out to us!  
+For more information check [Support section](support.md).
 
-[![Arduino IDE](/assets/images/arduino-ide-image1.png){style="width: 562px; height: 90px; object-fit: cover; object-position: 0% 15%;"}](/setup/)
+_Technical, programming, engineering discussions and help:_
 
-Follow [Setup tutorial](/setup/) on how to install required tools for programming.  
+- :simple-discord: Totemmaker Discord [http://discord.totemmaker.net](http://discord.totemmaker.net){target="_blank"} <span style="-webkit-user-select: none;-ms-user-select: none;user-select: none;">(</span>https://discord.gg/Rc5bEnKrmG<span style="-webkit-user-select: none;-ms-user-select: none;user-select: none;">)</span>
+- :material-forum: Totemmaker forum [https://forum.totemmaker.net](https://forum.totemmaker.net){target="_blank"}
 
-### Program RoboBoard X4
+_Product purchase, shipping, warranty and general questions:_
 
-[![Module image](/assets/images/x4-v1.1-front.jpg){style="width: 562px; height: 202px; object-fit: cover; object-position: 0% 4%;"}](/roboboard-x4/)
-
-Check [RoboBoard X4 programming](/roboboard-x4/) and documentation to control all its features.  
-
-### Use Totem App
-
-[![iOS/Android app image](https://totemmaker.net/wp-content/uploads/2021/11/app_connect_0.jpg){style="width: 562px; height: 300px; object-fit: cover; object-position: 0% 0%;"}](/remote-control/app/)
-
-Control Totem robots remotely using [Totem App](remote-control/app). Also check for [other ways to interact with RoboBoard X4](/remote-control/).
-
-### Use TotemBUS modules
-
-[![Module image](/assets/images/x4-line-follower.jpg){style="width: 562px; height: 180px; object-fit: cover; object-position: 0% 90%;"}](/modules/)
-
-RoboBoard X4 allows to expand it's functionality by attaching TotemBUS supported modules. Read [Modules documentation](/modules/) to find all about it.
-
-### Use Qwiic modules
-
-[![X4 qwiic](/assets/images/x4-qwiic.jpg){style="width: 562px; height: 100px; object-fit: cover; object-position: 0% 55%;"}](roboboard-x4/qwiic/)
-
-RoboBoard X4 has a [Qwiic®](roboboard-x4/qwiic/) connector to plug in third-party modules. This allows to greatly expand things you can do with it, not limiting to Totem ecosystem.
-
-## Support
-
-Feel free to join our community forum: [https://forum.totemmaker.net](https://forum.totemmaker.net){target=_blank}.  
-You can post any question or share your experiences with Totem products.
+- :material-email: Totemmaker email <a href="mailto:info@totemmaker.net">info@totemmaker.net</a>
