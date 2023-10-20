@@ -23,5 +23,5 @@ _Or go to app store and search for “totemmaker”_
 
 ## Tutorials
 
-* [Connecting to robot using Totem App](control-robot)  
-* [Program custom X4 actions for Totem App](custom-function)  
+* [Connecting to robot using Totem App](control-robot.md)  
+* [Program custom RoboBoard actions for Totem App](custom-function.md)  

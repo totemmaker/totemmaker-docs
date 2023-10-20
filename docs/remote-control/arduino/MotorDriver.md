@@ -25,46 +25,7 @@ Supports up to 4 DC motors and 3 servo motors.
 | _none_ | [brakeRear(`power`)](#brakerearpower) | Set braking power to rear wheels |
 | _none_ | [brakeFront(`power`)](#brakefrontpower) | Set braking power to front wheels |
 | _none_ | [setModule(`number`, `serial`)](#setmodulenumber-serial) | Set module number and serial |
-| [`TotemModule`](/remote-control/arduino/TotemModule) | [getModule()](#totemmodule-getmodule) | Get TotemModule object |
-
-## Example
-
-```arduino
-#include <Totem.h>
-// Define use of class
-MotorDriver driver;
-// Arduino setup
-void setup() {
-  Totem.X4.begin();
-  // Configure 4 wheel robot
-  // Configure Front Left wheel to motorA with starting power of 10%
-  driver.addFrontLeft("motorA", 10, 100, true);
-  // Configure Front Right wheel to motorB with starting power of 10%
-  driver.addFrontRight("motorB", 10, 100);
-  // Configure Rear Left wheel to motorC with starting power of 10%
-  driver.addRearLeft("motorC", 10, 100, true);
-  // Configure Rear Right wheel to motorD with starting power of 10%
-  driver.addRearRight("motorD", 10, 100);
-  // Configure servo motor channel 0 to "servoA" command with limits [-90:90]
-  driver.addServo(0, "servoA", -90, 0, 90);
-  // Set turning intensity to 80%
-  driver.setTurnIntensity(80);
-}
-// Arduino loop
-void loop() {
-  // Drive forward at 60% power while turning right at 20% power
-  driver.move(20, 60);
-  driver.moveServo(0, -60); // Set servo to -60 position
-  delay(2000); // Wait 2 seconds
-  // Drive forward at 20% power while turning left at 70% power
-  driver.move(-70, 20);
-  delay(2000); // Wait 2 seconds
-  // Drive backwards at 50% power withour turning
-  driver.move(0, -50);
-  driver.moveServo(0, 60); // Set servo to 60 position
-  delay(2000); // Wait 2 seconds
-}
-```
+| [`TotemModule`](TotemModule.md) | [getModule()](#totemmodule-getmodule) | Get TotemModule object |
 
 ## API
 
@@ -235,7 +196,7 @@ driver.brakeFront(100); // Brake only front wheels at 100%
 
 #### setModule(`number`, `serial`) { data-toc-label='setModule()' }
 
-: MotorDriver contains [TotemModule](/remote-control/arduino/TotemModule) to write motor output values. This function allows to configure exact module to communicate with. By default it's set to 00 (all modules). Same as [setNumber(`number`)](/remote-control/arduino/TotemModule/#setnumbernumber) and [setSerial(`serial`)](/remote-control/arduino/TotemModule/#setserialserial).  
+: MotorDriver contains [TotemModule](TotemModule.md) to write motor output values. This function allows to configure exact module to communicate with. By default it's set to 00 (all modules). Same as [setNumber(`number`)](TotemModule.md#setnumbernumber) and [setSerial(`serial`)](TotemModule.md#setserialserial).  
 _Parameter:_  
 `number` - module number [`0`:`255`]. `0` - all modules.  
 `serial` - module serial [`0`:`32767`]. `0` - ignore serial.  
@@ -245,10 +206,10 @@ driver.setModule(04); // Send move() updates to 04 modules only
 driver.setModule(04, 21015); // Send move() updates to 04 module with serial 21015 only
 ```
 
-#### [`TotemModule`](/remote-control/arduino/TotemModule) getModule() { data-toc-label='getModule()' }
+#### [`TotemModule`](TotemModule.md) getModule() { data-toc-label='getModule()' }
 
-: MotorDriver contains [TotemModule](/remote-control/arduino/TotemModule) to write motor output values. This function returns it to use for other purposes. Allows to reuse already existing TotemModule instance without creating a new one.  
-_Returns:_ [TotemModule](/remote-control/arduino/TotemModule).  
+: MotorDriver contains [TotemModule](TotemModule.md) to write motor output values. This function returns it to use for other purposes. Allows to reuse already existing TotemModule instance without creating a new one.  
+_Returns:_ [TotemModule](TotemModule.md).  
 
 ```arduino
 int voltage = driver.getModule().readWait("battery").getInt(); // Read battery using returned TotemModule

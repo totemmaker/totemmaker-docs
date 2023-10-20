@@ -15,40 +15,6 @@ Object containing data received from module.
 | `bool` | [getData(`array`, `length`)](#getdataarray-length) | Read array pointer and data length |
 | `int`  | [getCmdHash()](#getcmdhash) | Get hash of received command string |
 
-## Example
-
-```arduino
-#include <Totem.h>
-// Declare that we are willing to communicate with RoboBoard X4
-TotemModule module(04);
-// Receiver function for result of read() function
-void onModuleData(ModuleData data) {
-  if (data.is("cfg/robot/name")) { // cfg/robot/name received
-    Serial.print("'cfg/robot/name' is ");
-    Serial.println(data.getString()); // Prints: 'cfg/robot/name' is Totem Robot
-  }
-  else if (data.is("version")) { // version received
-    Serial.print("'version' is");
-    Serial.println(data.getInt()); // Prints: 'version' is 100
-  }
-}
-// Arduino initialization function
-void setup() {
-  // put your setup code here, to run once:
-  Totem.X4.begin(); // Initialize RoboBoard X4
-  // Register module read() data receiver function
-  module.attachOnData(onModuleData);
-  // Read cfg/robot/name from module X4. Result will be passed to onModuleData
-  module.read("cfg/robot/name");
-  // Read firmware version from module X4. Result will be passed to onModuleData
-  module.read("version");
-}
-// Arduino loop function
-void loop() {
-  // put your main code here, to run repeatedly:
-}
-```
-
 ## API
 
 ### Functions
@@ -140,7 +106,7 @@ if (module.readWait("cfg/robot/name", data)) { // Read robot name
 
 #### getData(`array`, `length`)
 
-: Get pointer to data array and it's length.  
+: Get pointer to data array and its length.  
 Value is stored in passed parameters `array`, `length`.  
 _In case of printing received data, TotemBUS protocol always adds NULL terminator at the end of the data, so it's safe to use print and string manipulation functions._  
 _Returns:_ data stored in `array`, `length` [`true`:`false`]  

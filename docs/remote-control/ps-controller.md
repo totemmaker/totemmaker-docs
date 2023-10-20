@@ -5,8 +5,8 @@
 
 *[ESP32]: Espressif ESP32 microcontroller
 
-![PS3 Controller](/assets/images/ps3.png){style="width:48%;padding:20px;"}
-![PS4 Controller](/assets/images/ps4.png){style="width:48%;padding:20px;"}
+![PS3 Controller](../assets/images/ps3.png){style="width:48%;padding:20px;"}
+![PS4 Controller](../assets/images/ps4.png){style="width:48%;padding:20px;"}
 
 Totem robots can be controller using DUALSHOCK™3 and DUALSHOCK™4 wireless controllers.
 This tutorial contains set-up instructions required to use with Totem products.
@@ -14,13 +14,13 @@ This tutorial contains set-up instructions required to use with Totem products.
 ## Requirements
 
 * DUALSHOCK™ controller
-* [RoboBoard X4](/modules/04) or other [ESP32 based module](/remote-control/arduino)
+* [RoboBoard X4](../modules/04.md) or other [ESP32 based module](arduino/index.md)
 
 ## How it works
 
 Controller communicates directly with ESP32 MCU using Arduino libraries [PS3 Controller Host](https://github.com/jvpernis/esp32-ps3){target=_blank}, [PS4Controller](https://github.com/aed3/PS4-esp32){target=_blank}. They provide API to read controller buttons, control leds, vibration, etc.
 
-When ++"PS"++ button is pressed, controller tries to connect device with MAC address stored in it's memory. ESP32 presents itself with this address and accepts connection. For this reason, a setup of same MAC address for controller and ESP32 is required.
+When ++"PS"++ button is pressed, controller tries to connect device with MAC address stored in its memory. ESP32 presents itself with this address and accepts connection. For this reason, a setup of same MAC address for controller and ESP32 is required.
 
 ## Install library
 
@@ -60,21 +60,21 @@ This is required only once. If controller was connected to other device, this st
 Follow instructions to change controller address:
 
 === "Windows"
-    Download link: [SixaxisPairToolSetup-0.3.1.exe](/assets/files/sixaxis/SixaxisPairToolSetup-0.3.1.exe) – [Size: 25.6 MB]  
+    Download link: [SixaxisPairToolSetup-0.3.1.exe](../assets/files/sixaxis/SixaxisPairToolSetup-0.3.1.exe) – [Size: 25.6 MB]  
     Run downloaded file and install.  
 
 === "Mac OSX"
-    Download link: [sixpair](/assets/files/sixaxis/sixpair) - [Size: 9.4 KB]  
+    Download link: [sixpair](../assets/files/sixaxis/sixpair) - [Size: 9.4 KB]  
     This utility requires libusb, which can be downloaded from [http://www.ellert.se/twain-sane/](http://www.ellert.se/twain-sane/){target=_blank}. Choose the binary for your version of OSX.
 
 === "Linux"
-    Download link: [SixaxisPairTool](/assets/files/sixaxis/SixaxisPairTool) – [Size: 55.7 KB]  
+    Download link: [SixaxisPairTool](../assets/files/sixaxis/SixaxisPairTool) – [Size: 55.7 KB]  
 
     Required dependencies: qt5, libusb-1.0  
 
-    You will also need to install the following udev rule file under /etc/udev/rules.d/ to give the app access to the controller: [51-sixaxispairtool.rules](/assets/files/sixaxis/51-sixaxispairtool.rules)  
+    You will also need to install the following udev rule file under /etc/udev/rules.d/ to give the app access to the controller: [51-sixaxispairtool.rules](../assets/files/sixaxis/51-sixaxispairtool.rules)  
 
-![Sixaxis Pair Tool](/assets/images/sixaxispairtool.png)  
+![Sixaxis Pair Tool](../assets/images/sixaxispairtool.png)  
 
 1. Run SixaxisPairTool.  
 1. Connect controller to PC using USB cable.  

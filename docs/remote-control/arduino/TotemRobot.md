@@ -1,8 +1,6 @@
 # TotemRobot
 
-*[BLE]: Bluetooth Low Energy
-
-Object representing remote Totem robot connection over BLE. Received from [BLE interface](/interfaces/BLE/).
+Object representing remote Totem robot connection over BLE. Received from [`Totem.BLE`](index.md).
 
 ## Functions list
 
@@ -16,8 +14,8 @@ Object representing remote Totem robot connection over BLE. Received from [BLE i
 | `bool` | [isConnected()](#isconnected) | Check if connection is active |
 | `bool` | [connect()](#connect) | Connect to robot |
 | _none_ | [disconnect()](#disconnect) | Disconnect from robot |
-| _none_ | [attach](#attachtotemmodule)([`TotemModule`](/remote-control/arduino/TotemModule)) | Attach module to connection |
-| _none_ | [detach](#detachtotemmodule)([`TotemModule`](/remote-control/arduino/TotemModule)) | Detach module from connection |
+| _none_ | [attach](#attachtotemmodule)([`TotemModule`](TotemModule.md)) | Attach module to connection |
+| _none_ | [detach](#detachtotemmodule)([`TotemModule`](TotemModule.md)) | Detach module from connection |
 
 ## Example
 
@@ -81,7 +79,7 @@ void setup() {
 
 #### getColor()  { data-toc-label='getColor()' }
 
-: Get robot appearance color. Each robot can have different color to tell them apart easier. Also this color can be used for on board RGB LEDs.  
+: Get robot appearance color. Each robot can have different color to tell them apart easier. Also this color can be used for on board RGB lights.  
 _Returns:_ 24bit color code [`0x000000`:`0xFFFFFF`].
 
 ```arduino
@@ -146,10 +144,10 @@ void function() {
 }
 ```
 
-#### attach([`TotemModule`](/remote-control/arduino/TotemModule))
+#### attach([`TotemModule`](TotemModule.md))
 
-: Attach selected [`TotemModule`](/remote-control/arduino/TotemModule) to active BLE connection.  
-All initialized modules are automatically attached to active connection. This is required if connecting to more than one robot at the same time and to use separate [`TotemModule`](/remote-control/arduino/TotemModule) objects in multiple connections.
+: Attach selected [`TotemModule`](TotemModule.md) to active BLE connection.  
+All initialized modules are automatically attached to active connection. This is required if connecting to more than one robot at the same time and to use separate [`TotemModule`](TotemModule.md) objects in multiple connections.
 
 ```arduino
 TotemModule module(03);
@@ -160,9 +158,9 @@ void function() {
 }
 ```
 
-#### detach([`TotemModule`](/remote-control/arduino/TotemModule))
+#### detach([`TotemModule`](TotemModule.md))
 
-: Detach selected [`TotemModule`](/remote-control/arduino/TotemModule) from active BLE connection.  
+: Detach selected [`TotemModule`](TotemModule.md) from active BLE connection.  
 
 ```arduino
 TotemModule module(03);

@@ -16,7 +16,7 @@ Module instance object, providing to send and receive data from module.
 | `bool` | [write(`command`, `array`, `length`)](#writecommand-array-length) | Send command with data |
 | `bool` | [write(`command`, `int`, `int`, `int`, `int`)](#writecommand-int-int-int-int) | Send command with multiple values |
 | `bool` | [read(`command`)](#readcommand) | Non-blocking read from module |
-| [ModuleData](/remote-control/arduino/ModuleData) | [readWait(`command`)](#readwaitcommand) | Blocking inline read from module |
+| [ModuleData](ModuleData.md) | [readWait(`command`)](#readwaitcommand) | Blocking inline read from module |
 | `bool` | [readWait(`command`, `ModuleData`)](#readwaitcommand-moduledata) | Blocking read from module |
 | `bool` | [subscribe(`command`, `interval`)](#subscribecommand-interval) | Subscribe command read |
 | `bool` | [unsubscribe(`command`)](#unsubscribecommand) | Unsubscribe command read |
@@ -28,29 +28,6 @@ Module instance object, providing to send and receive data from module.
 | _none_ | [ping()](#ping) | Send ping request to module |
 | `int`  | [hashCmd(`command`)](#hashcmdcommand) | Encode command to integer |
 | `int`  | [hashModel(`model`)](#hashmodelmodel) | Encode robot model (type) to integer |
-
-## Example
-
-```arduino
-// Define use of Distance sensor [11]
-// This can be any module connected to RoboBoard X4 board
-TotemModule module(11);
-// Arduino setup
-void setup() {
-  Serial.begin(115200);
-  // Initialize RoboBoard X4
-  Totem.X4.begin();
-}
-// Arduino loop
-void loop() {
-  // Blink on-board led
-  module.write("indicate");
-  delay(500); // Wait 500ms
-  // Read distance
-  Serial.println(module.readWait("distance").getInt());
-  delay(500); // Wait 500ms
-}
-```
 
 ## API
 
@@ -73,7 +50,7 @@ TotemModule module(04); // Create object for module 04
 
 : Create object by specifying number and data receiver function.  
 `DataReceiver` is a user defined function to get all incoming data from the module.  
-Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](/remote-control/arduino/ModuleData) parameter. Also can be registered with function [attachOnData()](#attachondatadatareceiver).  
+Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](ModuleData.md) parameter. Also can be registered with function [attachOnData()](#attachondatadatareceiver).  
 _Parameter:_  
 `number` - module number [`0`:`255`]. `0` - all modules.  
 `DataReceiver` - data receiver function name `onModuleData`.  
@@ -221,11 +198,11 @@ void setup() {
 #### readWait(`command`) { data-toc-label='readWait(command)' }
 
 : Read command from module. This function sends a read request and waits for the result. It will block program execution until result is received or timeouts (100 milliseconds).  
-This function returns [`ModuleData`](/remote-control/arduino/ModuleData) to make inline read request.  
+This function returns [`ModuleData`](ModuleData.md) to make inline read request.  
 If read is failed, values will be set to NULL and 0.  
  _Parameter:_  
 `command` - module command string or hash.  
-_Returns:_  [`ModuleData`](/remote-control/arduino/ModuleData).
+_Returns:_  [`ModuleData`](ModuleData.md).
 
 ```arduino
 // Print robot name
@@ -238,13 +215,13 @@ Serial.print("Robot battery: ");
 Serial.println(voltage);
 ```
 
-#### readWait(`command`, [`ModuleData`](/remote-control/arduino/ModuleData)) { data-toc-label='readWait(command, data)' }
+#### readWait(`command`, [`ModuleData`](ModuleData.md)) { data-toc-label='readWait(command, data)' }
 
 : Read command from module. This function sends a read request and waits for the result. It will block program execution until result is received or timeouts (100 milliseconds).  
-If returned true - read operation was successful and [`ModuleData`](/remote-control/arduino/ModuleData) contains received data.  
+If returned true - read operation was successful and [`ModuleData`](ModuleData.md) contains received data.  
  _Parameter:_  
 `command` - module command string or hash.  
-[`ModuleData`](/remote-control/arduino/ModuleData) - received data.  
+[`ModuleData`](ModuleData.md) - received data.  
 _Returns:_  is requested data received [`true`:`false`].  
 
 ```arduino
@@ -304,7 +281,7 @@ module.unsubscribe("battery"); // Stop receiving "battery" on value change
 
 : Register module data receiver function.  
 `DataReceiver` is a user defined function to get all incoming data from the module.  
-Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](/remote-control/arduino/ModuleData) parameter.  
+Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](ModuleData.md) parameter.  
 _Note:_ A command has to be [subscribed](#bool-subscribecommand-interval) or [read](#bool-readcommand) to appear in receiver function.  
 _Parameter:_  
 `DataReceiver` - data receiver function name `onModuleData`.  
@@ -352,7 +329,6 @@ int serial = module.getSerial(); // Get module serial "2657"
 #### ping()
 
 : Sends a request for module to respond. If TotemModule object is initialized with number `0`, all modules will receive ping request.  
-Response will be received in function registered with [`attachOnModuleConnected()`](/interfaces/X4/#module-monitor).  
 This can be used to discover modules connected to TotemBUS system or check if they are still connected.  
 _Returns:_  request is sent [`true`:`false`].
 
@@ -380,7 +356,7 @@ module.write(commandHash);
 #### hashModel(`model`) { data-toc-label='hashModel(model)' }
 
 : Encode Totem robot model name to 16bit integer value.  
-Used with [`cfg/robot/model`](/modules/04/#cfgrobotmodel-int) and [getModel()](/remote-control/arduino/TotemRobot/#getmodel).  
+Used with [`cfg/robot/model`](../../modules/04.md#cfgrobotmodel-int) and [getModel()](TotemRobot.md#getmodel).  
 _Note:_ This command is `static`, so requires to be called trough a class name.  
 _Parameter:_  
 `command` - model name string.  
