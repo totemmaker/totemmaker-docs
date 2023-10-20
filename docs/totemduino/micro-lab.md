@@ -1,14 +1,14 @@
 # Micro Lab
 
-![Micro Lab kit](/assets/images/micro-lab-kit.jpg)
+![Micro Lab kit](../assets/images/micro-lab-kit.jpg)
 
-Totem Micro Lab is a standalone kit based on [TotemDuino](/totemduino/). Like it's bigger brother, Micro Lab has sturdy rack to comfortably hold everything together. With included breadboard, you can easy connect various components to TotemDuino. It can also be expanded with [Side Panels](/side-panels/).
+Totem Micro Lab is a standalone kit based on [TotemDuino](index.md). Like its bigger brother, Micro Lab has sturdy rack to comfortably hold everything together. With included breadboard, you can easy connect various components to TotemDuino. It can also be expanded with [Side Panels](../side-panels/index.md).
 
 ## Use with side panels
 
 Totem Micro Lab can be used with Side Panels - they give you access to various pre-built sensors, drivers, buttons and relays. Side Panels attach directly to the Micro Lab structure and simple breadboard wires are used for connections.
 
-![Micro Lab with side panel](/assets/images/micro-lab-side-panel.jpg)
+![Micro Lab with side panel](../assets/images/micro-lab-side-panel.jpg)
 
 ## Assembly guide
 

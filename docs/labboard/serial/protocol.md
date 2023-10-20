@@ -36,7 +36,7 @@ Read voltage of `VIN`, `±50V`, `±5V`, `±0.5V` pins and current of `SHUNT` pin
 | `LB:IN:AMP:` | `0` - `800` mA  | SHUNT pin current |
 
 `LB:IN:50V` and `LB:IN:05V` limits can vary a bit.  
-Read instructions how to setup [current measurement](/labboard/main-screen/#current-measurement).  
+Read instructions how to setup [current measurement](../main-screen.md#current-measurement).  
 **`-100000` is returned if measurement is invalid or over the limit.**  
 Channel overvoltage may invalidate measurements of other channels also.  
 
@@ -57,7 +57,7 @@ Set voltage to `VREG`, `DAC1`, `DAC2`, `DAC3` pins.
 
 Output configurable [Pulse-width modulation](https://en.wikipedia.org/wiki/Pulse-width_modulation){target="_blank"} to `TXD` pin.
 
-![Digital signal PWM image](/assets/images/digital-signal.jpg)
+![Digital signal PWM image](../../assets/images/digital-signal.jpg)
 
 | Command | Parameter | Description |
 | --- | --- | --- |

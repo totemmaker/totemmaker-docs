@@ -1,6 +1,6 @@
 # 5. I2C scanner
 
-![Mini Lab LabBoard I2C scan mode](/assets/images/mini-lab/labboard-i2c-scan-mode.png)
+![Mini Lab LabBoard I2C scan mode](../../assets/images/mini-lab/labboard-i2c-scan-mode.png)
 
 ## About
 
@@ -8,7 +8,7 @@ Find address of connected I2C device.
 
 ## Details
 
-![Mini Lab LabBoard SWD header](/assets/images/mini-lab/labboard-swd-header.png)
+![Mini Lab LabBoard SWD header](../../assets/images/mini-lab/labboard-swd-header.png)
 
 - Connect I2C device to **SCL** and **SDA** pins.
 - Displays HEX address of I2C device.
@@ -26,7 +26,7 @@ Exit mode:
 
 ## Example
 
-[![Mini Lab LabBoard I2C scan mode example](/assets/images/mini-lab/labboard-i2c-scan-mode-example.png)](/assets/images/mini-lab/labboard-i2c-scan-mode-example.png)  
+[![Mini Lab LabBoard I2C scan mode example](../../assets/images/mini-lab/labboard-i2c-scan-mode-example.png)](../../assets/images/mini-lab/labboard-i2c-scan-mode-example.png)  
 _Click image to make it larger._
 
 1. Connect I2C device to **3.3V** and **GND**.

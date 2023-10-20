@@ -1,6 +1,6 @@
 # 0. Setup
 
-![Mini Lab LabBoard menu display](/assets/images/mini-lab/labboard-menu-display.png)
+![Mini Lab LabBoard menu display](../../assets/images/mini-lab/labboard-menu-display.png)
 
 Menu to access various LabBoard configuration options.  
 These setting are stored in memory and used during LabBoard operation.  
@@ -47,7 +47,7 @@ Using ++"SET\+"++ and ++"SET\-"++ increase or decrease offset.
 
 ### 4. Auto calibration { #calibration }
 
-![Mini Lab LabBoard calibration wiring](/assets/images/mini-lab/labboard-calibration-wiring.png)
+![Mini Lab LabBoard calibration wiring](../../assets/images/mini-lab/labboard-calibration-wiring.png)
 
 This feature will calibrate ADC channels for more precise voltage measurements.  
 
@@ -67,7 +67,7 @@ Contains 3 different serial settings:
 
 - **Default baud rate:** selected default speed of serial mode `baud 57600`
 - **Communication direction:** selected value of endpoint device `Arduino` or `PC`
-- **Always on (background mode):** enable of disable [Always on serial mode](/labboard/features/serial-monitor/#always-on-background-mode)
+- **Always on (background mode):** enable of disable [Always on serial mode](serial-monitor.md#always-on-background-mode)
 
 Jump between settings by pressing ++"Middle SELECT"++ key.  
 Use ++"SET\+"++ and ++"SET\-"++ to change value.  
@@ -90,7 +90,7 @@ Factory reset option will reset all settings to default state. Calibration will 
 
 ### 8. Enter boot mode { #boot }
 
-![Mini Lab LabBoard boot wiring](/assets/images/mini-lab/labboard-boot-wiring.png)
+![Mini Lab LabBoard boot wiring](../../assets/images/mini-lab/labboard-boot-wiring.png)
 
 Enter system bootloader for firmware update.
 
@@ -98,4 +98,4 @@ Enter system bootloader for firmware update.
 
 1. Press and hold ++"Right SELECT"++ for 1s
 1. `boot   on` will be displayed
-1. Run firmware download. Follow [firmware update section](/labboard/firmware-update/)
+1. Run firmware download. Follow [firmware update section](../firmware-update.md)

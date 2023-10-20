@@ -1,9 +1,28 @@
 # Firmware update
 
 LabBoard firmware can be updated to the latest version in order to receive new features and improvements. This guide contains instructions for 3 different ways to perform this procedure - [Update over Arduino](#update-over-arduino) (recommended), [Update over UART](#update-over-uart), [Update over SWD](#update-over-swd).  
-_Note: [Factory reset](/labboard/features/setup/#reset) will be applied during firmware update._
+_Note: [Factory reset](features/setup.md#reset) will be applied during firmware update._
 
---8<-- "includes/select_labboard_revision.md"
+!!! check "Select board revision"
+    This tutorial differs between board revisions. Please select the one you have:
+    === "LabBoard v.2.1, v.2.2"
+        <table markdown="1">
+        <tr markdown="1">
+        <td markdown="1" style="vertical-align: middle">**v.2.1** :white_check_mark:</td>
+        <td markdown="1" style="vertical-align: middle">**v.2.2** :white_check_mark:</td>
+        <td markdown="1" style="vertical-align: middle">**v.2.3** :x:</td>
+        <td markdown="1">![Revision v.2.1 v.2.2 v.2.3](../assets/images/mini-lab/labboard-v21-v22-v23.png)</td>
+        </tr>
+        </table>
+    === "LabBoard v.2.3"
+        <table markdown="1">
+        <tr markdown="1">
+        <td markdown="1" style="vertical-align: middle">**v.2.1** :x:</td>
+        <td markdown="1" style="vertical-align: middle">**v.2.2** :x:</td>
+        <td markdown="1" style="vertical-align: middle">**v.2.3** :white_check_mark:</td>
+        <td markdown="1">![Revision v.2.1 v.2.2 v.2.3](../assets/images/mini-lab/labboard-v21-v22-v23.png)</td>
+        </tr>
+        </table>
 
 ## Check version
 
@@ -11,11 +30,12 @@ To get currently installed firmware version:
 
 1. Press any two keys at the same moment.  
 If menu (`1. COUNT`) not displayed - version `1.02` is installed.
-1. Select [`0. SEtUP`](/labboard/features/setup/) → [`6. UERSI`](/labboard/features/setup/#firmware).
+1. Select [`0. SEtUP`](features/setup.md) → [`6. UERSI`](features/setup.md#firmware).
 1. Current installed version will be displayed on screen (`UERSI 2.00`).
 
 _Menu system is only available from version 2.00._  
-Latest version can be found in [Releases section](https://github.com/totemmaker/labboard-firmware/releases){target=_blank}.
+[![GitHub release (with filter)](https://img.shields.io/github/v/release/totemmaker/labboard-firmware?label=latest%20version)
+](https://github.com/totemmaker/labboard-firmware/releases/latest){target=_blank}
 
 ## Update over Arduino
 
@@ -24,7 +44,7 @@ For smooth process - make sure to follow steps in order.
 
 ### Prepare TotemDuino
 
-[Download labboard_update.ino](https://github.com/totemmaker/labboard-firmware/releases/latest/download/labboard_update.ino){ .md-button .md-button--primary }  
+[:octicons-download-16: Download labboard_update.ino](https://github.com/totemmaker/labboard-firmware/releases/latest/download/labboard_update.ino){ .md-button .md-button--primary }  
 
 Upload **labboard_update.ino** to TotemDuino.
 
@@ -41,19 +61,19 @@ Upload **labboard_update.ino** to TotemDuino.
 
 Start LabBoard in boot mode:  
 :   Hold ++"SET\-"++ key and power on MiniLab (plug DC jack into TotemDuino).  
-    LabBoard won't turn on, meaning it is in boot mode.  
+    LabBoard won't turn on, meaning it's in boot mode.  
 
 === "LabBoard v.2.1, v.2.2"
     Connect wires to pins **D0** to LabBoard **TXD** and **D1** to LabBoard **DIG2**.  
-    ![Mini Lab LabBoard boot wiring](/assets/images/mini-lab/labboard-boot-wiring.png)
+    ![Mini Lab LabBoard boot wiring](../assets/images/mini-lab/labboard-boot-wiring.png)
     
 === "LabBoard v.2.3"
 
 1. Click TotemDuino reset button to start update.  
-    ![Mini Lab TotemDuino reset](/assets/images/mini-lab/totemduino-reset.png){width=80%}  
+    ![Mini Lab TotemDuino reset](../assets/images/mini-lab/totemduino-reset.png){width=80%}  
     _TX (<span style="color:red">red</span>) LED will start to blink._
 1. Wait for (<span style="color:mediumseagreen">green</span>) LED to turn on and LabBoard to display `CALIb run`.
-1. Firmware update is completed. Proceed to [calibration section](/labboard/features/setup/#calibration).  
+1. Firmware update is completed. Proceed to [calibration section](features/setup.md#calibration).  
 
 ### Troubleshot
 
@@ -81,7 +101,7 @@ In case (<span style="color:mediumseagreen">green</span>) LED is flashing at 0.5
 
 ## Update over UART
 
-![LabBoard UARt connected](/assets/images/mini-lab/labboard-uart.jpg)
+![LabBoard UARt connected](../assets/images/mini-lab/labboard-uart.jpg)
 
 STM32 has integrated bootloader capable of loading firmware using UART (Serial) peripheral. This requires application on PC side and USB to Serial converter to transfer data to MCU.  
 One application that is capable to do so - [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html){target=_blank}. Other applications can be used also.
@@ -96,7 +116,7 @@ One application that is capable to do so - [STM32CubeProgrammer](https://www.st.
             - **D1** to LabBoard **DIG2**
         1. Hold ++"SET-"++ button and plug in USB to TotemDuino (power on). LED ±0.5V should light up dimly.
 
-        [![TotemDuino firmware update wiring](/assets/images/mini-lab/labboard-firmware-v22-totemduino.png)](/assets/images/mini-lab/labboard-firmware-v22-totemduino.png)
+        [![TotemDuino firmware update wiring](../assets/images/mini-lab/labboard-firmware-v22-totemduino.png)](../assets/images/mini-lab/labboard-firmware-v22-totemduino.png)
 
     ??? summary "Connect over USB Serial"
         1. Unplug flat cable from LabBoard (or put TotemDuino in Reset: **RST** to **GND**).
@@ -107,7 +127,7 @@ One application that is capable to do so - [STM32CubeProgrammer](https://www.st.
         1. Connect **3.3V** to LabBoard **3.3V** if there is no external power to LabBoard.
         1. Hold ++"SET-"++ button and plug in Serial converter (power on). LED ±0.5V should light up dimly.
 
-        [![USB Serial firmware update wiring](/assets/images/mini-lab/labboard-firmware-v22-usb-serial.png)](/assets/images/mini-lab/labboard-firmware-v22-usb-serial.png)
+        [![USB Serial firmware update wiring](../assets/images/mini-lab/labboard-firmware-v22-usb-serial.png)](../assets/images/mini-lab/labboard-firmware-v22-usb-serial.png)
 
 === "LabBoard v.2.3"
     Wiring instructions:
@@ -121,25 +141,25 @@ One application that is capable to do so - [STM32CubeProgrammer](https://www.st.
         1. Connect **3.3V** to LabBoard **3.3V** if there is no external power to LabBoard.
         1. Hold ++"SET-"++ button and plug in Serial converter (power on). LED ±0.5V should light up dimly.
 
-        [![USB Serial firmware update wiring](/assets/images/mini-lab/labboard-firmware-v23-usb-serial.png)](/assets/images/mini-lab/labboard-firmware-v23-usb-serial.png)
+        [![USB Serial firmware update wiring](../assets/images/mini-lab/labboard-firmware-v23-usb-serial.png)](../assets/images/mini-lab/labboard-firmware-v23-usb-serial.png)
 
 In STM32 Cube Programmer application select UART with specified settings. Baudrate value can be different. Click ++"Connect"++ to establish connection.
 
-![STM32 Cube Programmer UART](/assets/images/stm32-cubeprog-uart.jpg)
+![STM32 Cube Programmer UART](../assets/images/stm32-cubeprog-uart.jpg)
 
 Download firmware in .hex or .bin format and flash (download) it to LabBoard.  
 Binary (.bin) file address - `0x08000000`.
 
-[Download LabBoard.hex](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.hex){ .md-button .md-button--primary } [Download LabBoard.bin](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.bin){ .md-button .md-button--primary }  
+[:octicons-download-16: Download LabBoard.hex](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.hex){ .md-button .md-button--primary } [Download LabBoard.bin](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.bin){ .md-button .md-button--primary }  
 
 ## Update over SWD
 
-![LabBoard SWD connected](/assets/images/mini-lab/labboard-swd.jpg)
+![LabBoard SWD connected](../assets/images/mini-lab/labboard-swd.jpg)
 
 SWD is a programming and debugging interface for ARM chips. A special hardware (ST-Link) and PC software is required to perform update using this method. One application that is capable to do so - [STM32CubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html){target=_blank}. Other applications can be used also.  
 Some ST-Link programmers has Mass storage feature where connected board opens as storage device, allowing to simply drag and drop firmware file and automatically flash it to LabBoard.
 
-![LabBoard SWD header](/assets/images/mini-lab/labboard-swd-header.png)
+![LabBoard SWD header](../assets/images/mini-lab/labboard-swd-header.png)
 
 Wiring instructions:
 
@@ -151,16 +171,16 @@ Wiring instructions:
         - ST-Link **NRST** to LabBoard **RST**
     1. Connect **3V3** to LabBoard **3.3V** if there is no external power to LabBoard.
 
-    [![SWD firmware update wiring](/assets/images/mini-lab/labboard-firmware-swd.png)](/assets/images/mini-lab/labboard-firmware-swd.png)
+    [![SWD firmware update wiring](../assets/images/mini-lab/labboard-firmware-swd.png)](../assets/images/mini-lab/labboard-firmware-swd.png)
 
 In STM32 Cube Programmer application select ST-LINK with specified settings and click ++"Connect"++. Connection should be established if wiring is correct and LabBoard has power.
 
-![STM32 Cube Programmer SWD](/assets/images/stm32-cubeprog-swd.jpg)
+![STM32 Cube Programmer SWD](../assets/images/stm32-cubeprog-swd.jpg)
 
 Download firmware in .hex or .bin format and flash (download) it to LabBoard.  
 Binary (.bin) file address - `0x08000000`.
 
-[Download LabBoard.hex](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.hex){ .md-button .md-button--primary } [Download LabBoard.bin](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.bin){ .md-button .md-button--primary }  
+[:octicons-download-16: Download LabBoard.hex](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.hex){ .md-button .md-button--primary } [:octicons-download-16: Download LabBoard.bin](https://github.com/totemmaker/labboard-firmware/releases/latest/download/LabBoard.bin){ .md-button .md-button--primary }  
 
 ## Downgrading
 

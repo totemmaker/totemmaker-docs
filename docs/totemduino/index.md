@@ -1,6 +1,6 @@
 # Overview
 
-![TotemDuino](/assets/images/mini-lab/totemduino-photo.jpg)
+![TotemDuino](../assets/images/mini-lab/totemduino-photo.jpg)
 
 TotemDuino expands upon the great Arduino UNO platform idea. While it is kept fully backwards compatible with Arduino, a lot of additional features are included as well, such as:
 
@@ -25,7 +25,7 @@ TotemDuino expands upon the great Arduino UNO platform idea. While it is kept fu
 
 ## Layout
 
-![TotemDuino layout](/assets/images/mini-lab/totemduino-info.png)
+![TotemDuino layout](../assets/images/mini-lab/totemduino-info.png)
 
 - <span style="color:#ea3323;font-weight:bold;background:lightGrey">Arduino pin headers</span> - programmable pin headers of ATmega328P processor. `D` - digital, `A` - analog, others - power supply. Layout is compatible with Arduino Uno form factor and shields.
 - <span style="color:#75fb4c;font-weight:bold;background:grey">LED</span> - LED on the right indicates if TotemDuino is powered on.  

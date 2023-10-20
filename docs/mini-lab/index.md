@@ -1,12 +1,12 @@
 # Overview
 
-[LabBoard]: /labboard/ "Totem LabBoard"
-[TotemDuino]: /totemduino/ "Totem TotemDuino"
+[LabBoard]: ../labboard/index.md "Totem LabBoard"
+[TotemDuino]: ../totemduino/index.md "Totem TotemDuino"
 
 !!! info "Check firmware version"
-    Documentation is written for the latest firmware version. Read [Firmware update](/labboard/firmware-update/) section to perform this procedure.
+    Documentation is written for the latest firmware version. Read [Firmware update](../labboard/firmware-update.md) section to perform this procedure.
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/mini-lab-side-panel-photo.jpg)
+![Mini Lab LabBoard photo](../assets/images/mini-lab/mini-lab-side-panel-photo.jpg)
 
 Totem Mini Lab contains all the necessities for starting your path in the world of electronics and programming. Using it, should be simple and fun! While building it, we tried to address and improve all the negative parts about prototyping - no longer you’ll have to deal with messy wiring, fragile connections and headaches of where to mount every separate part of your experiment.
 
@@ -33,9 +33,9 @@ In the Mini Lab you’ll find:
 
 Sold separately:
 
-- [I/O side panel](/side-panels/io-panel/) - a kit of buttons, switches and indicators
-- [Sensor side panel](/side-panels/sensor-panel/) - a kit of microphone, display, temperature sensor and DC motor controller
-- [Audio side panel](/side-panels/audio-panel/) - a kit of speaker and audio amplifiers
+- [I/O side panel](../side-panels/io-panel.md) - a kit of buttons, switches and indicators
+- [Sensor side panel](../side-panels/sensor-panel.md) - a kit of microphone, display, temperature sensor and DC motor controller
+- [Audio side panel](../side-panels/audio-panel.md) - a kit of speaker and audio amplifiers
 - [Side panel stand](https://totemmaker.net/product/side-panel-stand/){target=_blank} - structure for more stable side panel mounting or placing on the table
 
 ## Assembly guide

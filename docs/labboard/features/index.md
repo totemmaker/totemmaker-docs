@@ -1,6 +1,6 @@
 # Features
 
-![Mini Lab LabBoard menu](/assets/images/mini-lab/labboard-menu.png)
+![Mini Lab LabBoard menu](../../assets/images/mini-lab/labboard-menu.png)
 
 Starting with firmware version v2.00, LabBoard incorporates menu system to switch between different modes and change settings. This page describes how to navigate it.
 
@@ -11,7 +11,7 @@ Menu can be opened and controlled using LabBoard buttons:
 - **Any two key press** - menu open  
 - ++"SET\+"++ - menu scroll up  
 - ++"SET\-"++ - menu scroll down  
-- ++"Left SELECT"++ - menu go back or exit to [Main screen](/labboard/main-screen/)  
+- ++"Left SELECT"++ - menu go back or exit to [Main screen](../main-screen.md)  
 - ++"Right SELECT"++ - menu item select  
 - ++"Middle SELECT"++ - _not used_  
 
@@ -30,13 +30,13 @@ Menu can be opened and controlled using LabBoard buttons:
 
 ### Setup menu options
 
-1. `dISP` - [Display brightness](setup/#display)
-1. `dAC` - [DAC output manual adjust](setup/#dac-offset)
-1. `AdC` - [Voltage measure manual adjust](setup/#adc-offset)
-1. `CALIb` - [Auto calibration](setup/#calibration)
-1. `SERIAL` - [Default Serial mode baud rate](setup/#serial)
-1. `UERSI` - [Firmware version](setup/#firmware)
-1. `rESEt` - [Factory reset](setup/#reset)
-1. `boot` - [Enter boot mode](setup/#boot)
+1. `dISP` - [Display brightness](setup.md#display)
+1. `dAC` - [DAC output manual adjust](setup.md#dac-offset)
+1. `AdC` - [Voltage measure manual adjust](setup.md#adc-offset)
+1. `CALIb` - [Auto calibration](setup.md#calibration)
+1. `SERIAL` - [Default Serial mode baud rate](setup.md#serial)
+1. `UERSI` - [Firmware version](setup.md#firmware)
+1. `rESEt` - [Factory reset](setup.md#reset)
+1. `boot` - [Enter boot mode](setup.md#boot)
 
-For more details see [setup menu page](setup/)
+For more details see [setup menu page](setup.md)

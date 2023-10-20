@@ -1,6 +1,6 @@
 # Side panels
 
-![Side panel image](/assets/images/mini-lab/side-panel-title.png)
+![Side panel image](../assets/images/mini-lab/side-panel-title.png)
 
 While Mini Lab will work on its own, but you can easily expand it with side panels. A side panel is a collection of basic most commonly used electronics blocks that can be used together with Mini Lab to even further extends it’s abilities.
 
@@ -8,13 +8,13 @@ Together with each side panel you’ll get a quick start guide on how to work wi
 
 | #1 I/O panel | #2 Sensor panel | #3 Audio panel |
 | :---: | :---: | :---: |
-|[![I/O side panel photo](/assets/images/mini-lab/io-side-panel-sketch.svg)](io-panel/) | [![Sensor side panel photo](/assets/images/mini-lab/sensor-side-panel-sketch.svg)](sensor-panel/) | [![Audio side panel photo](/assets/images/mini-lab/audio-side-panel-sketch.svg)](audio-panel/) |
+|[![I/O side panel photo](../assets/images/mini-lab/io-side-panel-sketch.svg)](io-panel.md) | [![Sensor side panel photo](../assets/images/mini-lab/sensor-side-panel-sketch.svg)](sensor-panel.md) | [![Audio side panel photo](../assets/images/mini-lab/audio-side-panel-sketch.svg)](audio-panel.md) |
 
 ## Mounting
 
 Panel mounting to side of Mini Lab frame.
 
-![Side panel mounting](/assets/images/mini-lab/side-panel-mounting.jpg){width=500}
+![Side panel mounting](../assets/images/mini-lab/side-panel-mounting.jpg){width=500}
 
 ## Stand assembly
 

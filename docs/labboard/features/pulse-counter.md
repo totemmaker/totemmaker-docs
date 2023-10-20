@@ -1,6 +1,6 @@
 # 1. Pulse counter
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-pulse-count-mode.png)
+![Mini Lab LabBoard photo](../../assets/images/mini-lab/labboard-pulse-count-mode.png)
 
 ## About
 
@@ -33,16 +33,16 @@ Switch between detection edge (does not change pull-up):
 Enter mode:
 
 - Select Menu > `1. COUNt`.
-- (_deprecated_) In [Main screen](/labboard/main-screen/) hold ++"SET\+"++  for 3 seconds.
+- (_deprecated_) In [Main screen](../main-screen.md) hold ++"SET\+"++  for 3 seconds.
 
 Exit mode:
 
 - Open menu and select other mode.
-- (_deprecated_) Press ++"SET\+"++ to exit to [Main screen](/labboard/main-screen/).
+- (_deprecated_) Press ++"SET\+"++ to exit to [Main screen](../main-screen.md).
 
 ## Example
 
-![Mini Lab LabBoard pulse counter example](/assets/images/mini-lab/labboard-pulse-counter-example.png)
+![Mini Lab LabBoard pulse counter example](../../assets/images/mini-lab/labboard-pulse-counter-example.png)
 
 1. Connect **D9** digital pin to **DIG1** pulse counter input.
 1. Enter pulse counter mode by selecting Menu > `1. COUNt`.

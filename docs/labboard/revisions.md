@@ -2,7 +2,7 @@
 
 Version of hardware changes. Visible above Totem logo.  
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-v2.2-photo.jpg)
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-v2.2-photo.jpg)
 
 ## v.2.3
 

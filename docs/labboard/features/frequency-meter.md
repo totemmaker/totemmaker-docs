@@ -1,6 +1,6 @@
 # 2. Frequency meter
 
-![Mini Lab LabBoard frequency meter mode](/assets/images/mini-lab/labboard-frequency-meter-mode.png)
+![Mini Lab LabBoard frequency meter mode](../../assets/images/mini-lab/labboard-frequency-meter-mode.png)
 
 ## About
 
@@ -24,16 +24,16 @@ _It is not directly tied to input pin. Only for visual representation_.
 Enter mode:
 
 - Select Menu > `2. FREq`.
-- (_deprecated_) In [Main screen](/labboard/main-screen/) hold ++"SET\-"++  for 3 seconds.
+- (_deprecated_) In [Main screen](../main-screen.md) hold ++"SET\-"++  for 3 seconds.
 
 Exit mode:
 
 - Open menu and select other mode.
-- (_deprecated_) Press ++"SET\-"++ to exit to [Main screen](/labboard/main-screen/).
+- (_deprecated_) Press ++"SET\-"++ to exit to [Main screen](../main-screen.md).
 
 ## Example
 
-![Mini Lab LabBoard frequency meter mode example](/assets/images/mini-lab/labboard-frequency-meter-mode-example.png)
+![Mini Lab LabBoard frequency meter mode example](../../assets/images/mini-lab/labboard-frequency-meter-mode-example.png)
 
 1. Connect **D9** digital pin to **DIG1** frequency meter input.
 1. Enter frequency meter mode by selecting Menu > `2. FREq`.

@@ -2,13 +2,13 @@
 
 *[but works with Arduino 5V logic]: In 5V logic to change from LOW to HIGH only ~2.7 Volt is required. So 3.3V is enough to trigger and safe to use.
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-pulse-generator-mode.png)
+![Mini Lab LabBoard photo](../../assets/images/mini-lab/labboard-pulse-generator-mode.png)
 
 ## About
 
 Mode used to generate rectangular waveform with configurable frequency and duty cycle. Can work in infinite mode or output burst of preset number of pulses.
 
-![Digital signal PWM image](/assets/images/digital-signal.jpg)
+![Digital signal PWM image](../../assets/images/digital-signal.jpg)
 
 ## Details
 
@@ -38,7 +38,7 @@ Numerical value can be entered using button combination:
 - ++"SET\+"++, ++"SET\-"++ - change selected digit.
 - ++"Right SELECT"++ - jump to next parameter.  
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-pulse-generator-mode-entry1.png)
+![Mini Lab LabBoard photo](../../assets/images/mini-lab/labboard-pulse-generator-mode-entry1.png)
 
 ### Frequency configuration
 
@@ -89,7 +89,7 @@ Example waveform of 3 pulse output: \_\_\_|⎺|\_\_|⎺|\_\_|⎺|\_\_\_
 
 ### Control screen
 
-![Mini Lab LabBoard generator control screen](/assets/images/mini-lab/labboard-pulse-generator-mode-entry5.png)
+![Mini Lab LabBoard generator control screen](../../assets/images/mini-lab/labboard-pulse-generator-mode-entry5.png)
 
 - ++"Left SELECT"++ - start/stop infinite series of pulse generation with current settings. Once active, this is indicated by series of square symbols.
 - ++"Middle SELECT"++ - start/stop finite generation of pulses, making number of pulses entered in pulse count (`cnt`). Once finished, indicate value goes back to a single underscore symbol. When active - incrementing percent of pulses emitted, until end.
@@ -98,7 +98,7 @@ Example waveform of 3 pulse output: \_\_\_|⎺|\_\_|⎺|\_\_|⎺|\_\_\_
 Enter mode:
 
 - Select Menu > `3. PULSE`.
-- (_deprecated_) In [Main screen](/labboard/main-screen/) hold ++"Left SELECT"++ for 3 seconds.
+- (_deprecated_) In [Main screen](../main-screen.md) hold ++"Left SELECT"++ for 3 seconds.
 
 Exit mode:
 
@@ -106,7 +106,7 @@ Exit mode:
 
 ## Example
 
-![Mini Lab LabBoard generator example LED](/assets/images/mini-lab/labboard-pulse-generator-mode-example.png)
+![Mini Lab LabBoard generator example LED](../../assets/images/mini-lab/labboard-pulse-generator-mode-example.png)
 
 1. Enter pulse generation mode, select continuous pulse mode with following parameters:  
 Frequency = 100Hz  

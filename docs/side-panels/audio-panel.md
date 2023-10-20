@@ -2,7 +2,7 @@
 
 <blockquote style="text-align:right;margin-top:-20px;margin-right:14px;border-left:0;line-height:0;font-size:9pt;">Click image to jump to specific module</blockquote>
 
-![Audio side panel photo](/assets/images/mini-lab/audio-side-panel-sketch.svg){ align=right style="height:750px" usemap="#panel_modules" }
+![Audio side panel photo](../assets/images/mini-lab/audio-side-panel-sketch.svg){ align=right style="height:750px" usemap="#panel_modules" }
 
 <map name="panel_modules">
   <area shape="rect" coords="0,0,250,40" alt="Power" href="#power">
@@ -20,7 +20,7 @@
 
 **Arduino examples:** [Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos){target=_blank}
 
-This side panel is dedicated for experimenting with signal generation, allowing to visualize and hear it's output. It can generate different types of waveforms with configurable frequency. Integrated loudspeaker can be used to listen how signal affects the sound or use external source to play music. Also contains VU meter to visualize signal level in LED bar.
+This side panel is dedicated for experimenting with signal generation, allowing to visualize and hear its output. It can generate different types of waveforms with configurable frequency. Integrated loudspeaker can be used to listen how signal affects the sound or use external source to play music. Also contains VU meter to visualize signal level in LED bar.
 
 _Note: previous side panel version (ver 3.5) contained XR2206 analog signal generator. In (ver 3.7) it has changed to digital AD9833 with addition of filter bench module. Image on the right is older side panel ver 3.5._
 
@@ -29,7 +29,7 @@ _Note: previous side panel version (ver 3.5) contained XR2206 analog signal gene
 On the top of the board there is (POWER IN) pin header to supply power to side panel components. Some of them requires certain voltage to operate, but otherwise they’re fully isolated from one another, and can be used independently.
 
 Side panel requires power (3.3V, 5V, 12V) for certain modules to work. It does not have its own voltage regulator so typically, regulated voltage has to be sourced from TotemDuino or LabBoard. Recommended to plug in all 4 wires as some modules use different voltages. 12V input can accept different voltages. Typically it should be connected to **VIN**.  
-[![Audio Side panel power](/assets/images/mini-lab/audio-panel-power_bb.png)](/assets/images/mini-lab/audio-panel-power_bb.png)
+[![Audio Side panel power](../assets/images/mini-lab/audio-panel-power_bb.png)](../assets/images/mini-lab/audio-panel-power_bb.png)
 
 Older side panel (ver 3.5) had voltage selector. This was removed in later version 3.7, as it can work with any voltage level.
 
@@ -39,7 +39,7 @@ Contains audio amplifier to boost signal strength from **INPUT** pin. Amplified 
 _Select panel type matching yours:_
 
 === "Panel ver 3.5"
-    ![Audio side panel v3.5 speaker visual](/assets/images/mini-lab/audio-panel-speaker_vi_3.5.png){ align=right width=400 }
+    ![Audio side panel v3.5 speaker visual](../assets/images/mini-lab/audio-panel-speaker_vi_3.5.png){ align=right width=400 }
 
     **Control:**  
 
@@ -57,7 +57,7 @@ _Select panel type matching yours:_
     - **Screw term. 2** - GND
 
 === "Panel ver 3.7"
-    ![Audio side panel v3.7 speaker visual](/assets/images/mini-lab/audio-panel-speaker_vi_3.7.png){ align=right width=400 }
+    ![Audio side panel v3.7 speaker visual](../assets/images/mini-lab/audio-panel-speaker_vi_3.7.png){ align=right width=400 }
 
     **Control:**  
 
@@ -80,17 +80,17 @@ This is an AB class discrete audio amplifier module, capable of up to 1W output 
 
 Inbuilt speaker is enabled by connecting _SPEAKER ON/OFF_ jumper, amplified signal output can be connected with a _OUTPUT_ female connector.
 
-You can use the function generator as a signal source (described below) by just connecting a jumper cable between amplifier input and generator output. Another possible input source is using Totem side panel #1 [microphone module](/side-panels/sensor-panel/#microphone).
+You can use the function generator as a signal source (described below) by just connecting a jumper cable between amplifier input and generator output. Another possible input source is using Totem side panel #1 [microphone module](../side-panels/sensor-panel.md#microphone).
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Audio side panel speaker schematic](/assets/images/mini-lab/audio-panel-speaker_sh.png){width=250}](/assets/images/mini-lab/audio-panel-speaker_sh.png) | [![Audio side panel speaker and generator experiment](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png){width=370 style="height:150px; object-fit: cover; object-position: 0% 5%;"}](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png) <br> _Play generated signal trough loudspeaker._ |
+| [![Audio side panel speaker schematic](../assets/images/mini-lab/audio-panel-speaker_sh.png){width=250}](../assets/images/mini-lab/audio-panel-speaker_sh.png) | [![Audio side panel speaker and generator experiment](../assets/images/mini-lab/audio-panel-generator-experiment_vi.png){width=370 style="height:150px; object-fit: cover; object-position: 0% 5%;"}](../assets/images/mini-lab/audio-panel-generator-experiment_vi.png) <br> _Play generated signal trough loudspeaker._ |
 
 ## VU Meter
 
 LED bar to visualize input signal Volumetric Unit (VU).
 
-![Audio side panel VU meter visual](/assets/images/mini-lab/audio-panel-vu-meter_vi.png){ align=right width=400 }
+![Audio side panel VU meter visual](../assets/images/mini-lab/audio-panel-vu-meter_vi.png){ align=right width=400 }
 
 **Control:**  
 
@@ -112,7 +112,7 @@ Input signal level sensitivity can be adjusted by potentiometer (trimpot). We su
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Audio side panel VU meter schematic](/assets/images/mini-lab/audio-panel-vu-meter_sh.png){width=250}](/assets/images/mini-lab/audio-panel-vu-meter_sh.png) | [![Audio side panel speaker and generator experiment](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png){width=370 style="height:150px; object-fit: cover; object-position: 0% 5%;"}](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png) <br> _Wire signal generator and visualize it's intensity._ |
+| [![Audio side panel VU meter schematic](../assets/images/mini-lab/audio-panel-vu-meter_sh.png){width=250}](../assets/images/mini-lab/audio-panel-vu-meter_sh.png) | [![Audio side panel speaker and generator experiment](../assets/images/mini-lab/audio-panel-generator-experiment_vi.png){width=370 style="height:150px; object-fit: cover; object-position: 0% 5%;"}](../assets/images/mini-lab/audio-panel-generator-experiment_vi.png) <br> _Wire signal generator and visualize its intensity._ |
 
 ## Function generator
 
@@ -120,7 +120,7 @@ Function generator module able to output up to 1Mhz variable frequency signal wi
 _Select panel type matching yours:_
 
 === "Panel ver 3.5"
-    ![Audio side panel function generator visual](/assets/images/mini-lab/audio-panel-generator_xr2206_vi.png){ align=right width=400 }
+    ![Audio side panel function generator visual](../assets/images/mini-lab/audio-panel-generator_xr2206_vi.png){ align=right width=400 }
 
     **Control:**  
 
@@ -148,10 +148,10 @@ _Select panel type matching yours:_
 
     | Schematic | Experiment |
     | --- | --- |
-    | [![Audio side panel function generator schematic](/assets/images/mini-lab/audio-panel-generator_xr2206_sh.png){width=250}](/assets/images/mini-lab/audio-panel-generator_xr2206_sh.png) | [![Audio side panel speaker and generator experiment](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png){width=370 style="height:230px; object-fit: cover; object-position: 0% 5%;"}](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png) <br> _Play generated signal trough loudspeaker._ |
+    | [![Audio side panel function generator schematic](../assets/images/mini-lab/audio-panel-generator_xr2206_sh.png){width=250}](../assets/images/mini-lab/audio-panel-generator_xr2206_sh.png) | [![Audio side panel speaker and generator experiment](../assets/images/mini-lab/audio-panel-generator-experiment_vi.png){width=370 style="height:230px; object-fit: cover; object-position: 0% 5%;"}](../assets/images/mini-lab/audio-panel-generator-experiment_vi.png) <br> _Play generated signal trough loudspeaker._ |
 
 === "Panel ver 3.7"
-    ![Audio side panel function generator visual](/assets/images/mini-lab/audio-panel-generator_ad9833_vi.png){ align=right width=400 }
+    ![Audio side panel function generator visual](../assets/images/mini-lab/audio-panel-generator_ad9833_vi.png){ align=right width=400 }
 
     **Control:**  
 
@@ -171,7 +171,7 @@ _Select panel type matching yours:_
 
     This module contains digital AD9833 chip capable to generate sine, triangle and square wave output signal up to 12.5 MHz frequency. Generated signal is buffered with an operation amplifier, giving the ability to control output signal amplitude. Note that circuit itself is only good for up to around 1Mhz. Higher frequency signals may be unstable or too weak.
 
-    LabBoard [AD9833 mode](/labboard/features/ad9833-control/) can be used to wire and control this chip directly.  
+    LabBoard [AD9833 mode](../labboard/features/ad9833-control.md) can be used to wire and control this chip directly.  
     Arduino [MD_AD9833](https://github.com/MajicDesigns/MD_AD9833){target=_blank} library can be used to control this chip from TotemDuino.  
     Arduino example: [Music player](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos/player){target=_blank}.  
     Arduino example: [MIDI interface](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos/midiinterface){target=_blank}.  
@@ -181,11 +181,11 @@ _Select panel type matching yours:_
 
     | Schematic | Experiment |
     | --- | --- |
-    | [![Audio side panel function generator schematic](/assets/images/mini-lab/audio-panel-generator_ad9833_sh.png){width=250}](/assets/images/mini-lab/audio-panel-generator_ad9833_sh.png) | [![AD9833 mode](/assets/images/mini-lab/audio-side-panel-v37.png){width=370}](/labboard/features/ad9833-control/) |
+    | [![Audio side panel function generator schematic](../assets/images/mini-lab/audio-panel-generator_ad9833_sh.png){width=250}](../assets/images/mini-lab/audio-panel-generator_ad9833_sh.png) | [![AD9833 mode](../assets/images/mini-lab/audio-side-panel-v37.png){width=370}](../labboard/features/ad9833-control.md) |
 
 ## Filter Bench
 
-![Audio side panel filter bench visual](/assets/images/mini-lab/audio-panel-filter-bench_vi.png){ align=right width=400 }
+![Audio side panel filter bench visual](../assets/images/mini-lab/audio-panel-filter-bench_vi.png){ align=right width=400 }
 
 _Only available in later panel ver 3.7._
 
@@ -193,7 +193,7 @@ This is a simple framework for experimenting with pi-type filters. It allows you
 
 | Schematic |
 | --- |
-| [![Audio side panel filter bench schematic](/assets/images/mini-lab/audio-panel-filter-bench_sh.png){width=250}](/assets/images/mini-lab/audio-panel-filter-bench_sh.png) |
+| [![Audio side panel filter bench schematic](../assets/images/mini-lab/audio-panel-filter-bench_sh.png){width=250}](../assets/images/mini-lab/audio-panel-filter-bench_sh.png) |
 
 **Legacy documentation of #3 Audio side panel:**
 

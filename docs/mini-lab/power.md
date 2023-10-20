@@ -1,6 +1,6 @@
 # Power scheme
 
-![Mini Lab power scheme](/assets/images/mini-lab/mini-lab-power-scheme.png)
+![Mini Lab power scheme](../assets/images/mini-lab/mini-lab-power-scheme.png)
 
 Mini Lab comes with a 15 V, 2 Amp external power supply (older units with 12V). Internally, supply voltage is regulated into several voltages needed to run various parts of the system. Each of these can be used during measurements or experiments, as they do have easily accessible pins that equipment can be connected to.
 

@@ -1,6 +1,6 @@
 # 6. DHT11 monitor
 
-![Mini Lab LabBoard DHT11 mode](/assets/images/mini-lab/labboard-dht11-mode.png)
+![Mini Lab LabBoard DHT11 mode](../../assets/images/mini-lab/labboard-dht11-mode.png)
 
 ## About
 
@@ -24,7 +24,7 @@ Exit mode:
 
 ## Example
 
-[![Mini Lab LabBoard DHT11 mode example](/assets/images/mini-lab/labboard-dht11-mode-example.png)](/assets/images/mini-lab/labboard-dht11-mode-example.png)  
+[![Mini Lab LabBoard DHT11 mode example](../../assets/images/mini-lab/labboard-dht11-mode-example.png)](../../assets/images/mini-lab/labboard-dht11-mode-example.png)  
 _Click image to make it larger._
 
 1. Enter DHT11 mode by selecting Menu > `6. dHt11`.

@@ -2,7 +2,7 @@
 
 <blockquote style="text-align:right;margin-top:-20px;margin-right:14px;border-left:0;line-height:0;font-size:9pt;">Click image to jump to specific module</blockquote>
 
-![Sensor side panel photo](/assets/images/mini-lab/sensor-side-panel-sketch.svg){ align=right style="height:750px" usemap="#panel_modules" }
+![Sensor side panel photo](../assets/images/mini-lab/sensor-side-panel-sketch.svg){ align=right style="height:750px" usemap="#panel_modules" }
 
 <map name="panel_modules">
   <area shape="rect" coords="0,0,250,40" alt="Power" href="#power">
@@ -34,15 +34,15 @@ On the top of the board there is (POWER IN) pin header to supply power to side p
 
 **Power up side panel:**  
 Side panel requires power (3.3V, 5V) for certain modules to work. It does not have its own voltage regulator so typically, regulated voltage has to be sourced from TotemDuino or LabBoard. Recommended to plug in all 3 wires as some modules use different voltages.  
-[![Sensor Side panel power](/assets/images/mini-lab/io-panel-power_bb.png)](/assets/images/mini-lab/io-panel-power_bb.png)
+[![Sensor Side panel power](../assets/images/mini-lab/io-panel-power_bb.png)](../assets/images/mini-lab/io-panel-power_bb.png)
 
-![Sensor panel Voltage selector visual](/assets/images/mini-lab/io-panel-voltage-selector_bb.png){ align=right }
+![Sensor panel Voltage selector visual](../assets/images/mini-lab/io-panel-voltage-selector_bb.png){ align=right }
 
 **Select logic voltage level:**  
 Side panel contains logic level voltage (VCC) select for digital signals to work either at 3.3 or 5 Volt. Marked OBS! (Observe!).  
 By moving **JP7** jumper up or down - you can select between 3.3V and 5V. This is useful if you have some components that are 3.3 Volt only (could be damaged if used with 5V). In that case place jumper on 3.3V position and use side panel pins safely. It’s important to have the same logic level as the controller board (e.g., TotemDuino), for best results. 
 
-![Sensor Side panel voltage selector schematic](/assets/images/mini-lab/io-panel-voltage-selector_sh.png){ align=right width=170 }
+![Sensor Side panel voltage selector schematic](../assets/images/mini-lab/io-panel-voltage-selector_sh.png){ align=right width=170 }
 
 Places where selected voltage (VCC) is used:  
 
@@ -55,7 +55,7 @@ Microphone and buzzer modules are always using **+5v** to power their circuit.
 
 ## Microphone
 
-![Sensor side panel microphone visual](/assets/images/mini-lab/sensor-panel-mic_vi.png){ align=right }
+![Sensor side panel microphone visual](../assets/images/mini-lab/sensor-panel-mic_vi.png){ align=right }
 
 Microphone module with integrated amplifier. Outputs analog audio signal in **0**..**5V** range.
 
@@ -73,12 +73,12 @@ Microphone module with integrated amplifier. Outputs analog audio signal in **0*
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Sensor side panel microphone schematic](/assets/images/mini-lab/sensor-panel-mic_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-mic_sh.png) | [![TotemDuino sound alarm example](/assets/images/mini-lab/sensor-panel-mic_bb.png){width=370}](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/soundalarm) <br> _Read microphone using TotemDuino._ |
+| [![Sensor side panel microphone schematic](../assets/images/mini-lab/sensor-panel-mic_sh.png){width=250}](../assets/images/mini-lab/sensor-panel-mic_sh.png) | [![TotemDuino sound alarm example](../assets/images/mini-lab/sensor-panel-mic_bb.png){width=370}](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/soundalarm) <br> _Read microphone using TotemDuino._ |
 
 
 ## Display
 
-![Sensor side panel display visual](/assets/images/mini-lab/sensor-panel-display_vi.png){ align=right }
+![Sensor side panel display visual](../assets/images/mini-lab/sensor-panel-display_vi.png){ align=right }
 
 Monochrome I2C display to show text and simple graphics. Uses **SSD1306** driver with **0x3C** I2C address.
 
@@ -99,12 +99,12 @@ Monochrome I2C display to show text and simple graphics. Uses **SSD1306** driver
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Sensor side panel display schematic](/assets/images/mini-lab/sensor-panel-display_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-display_sh.png) | [![TotemDuino display example](/assets/images/mini-lab/sensor-panel-display_bb.png){width=370}](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/displaytest) <br> _Control display using TotemDuino._ |
+| [![Sensor side panel display schematic](../assets/images/mini-lab/sensor-panel-display_sh.png){width=250}](../assets/images/mini-lab/sensor-panel-display_sh.png) | [![TotemDuino display example](../assets/images/mini-lab/sensor-panel-display_bb.png){width=370}](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos/displaytest) <br> _Control display using TotemDuino._ |
 
 
 ## Humidity sensor
 
-![Sensor side panel humidity visual](/assets/images/mini-lab/sensor-panel-humidity_vi.png){ align=right }
+![Sensor side panel humidity visual](../assets/images/mini-lab/sensor-panel-humidity_vi.png){ align=right }
 
 Digital temperature and humidity sensor **DHT11**. Uses **1-wire** protocol to communicate with a microcontroller.
 
@@ -124,11 +124,11 @@ Digital temperature and humidity sensor **DHT11**. Uses **1-wire** protocol to c
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Sensor side panel DHT11 schematic](/assets/images/mini-lab/sensor-panel-dht11_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-dht11_sh.png) | [![LabBoard DHT11 sensor monitor](/assets/images/mini-lab/labboard-dht11-mode-example.png){width=370}](/labboard/features/dht11-monitor/) <br> _Read measurements using LabBoard._ |
+| [![Sensor side panel DHT11 schematic](../assets/images/mini-lab/sensor-panel-dht11_sh.png){width=250}](../assets/images/mini-lab/sensor-panel-dht11_sh.png) | [![LabBoard DHT11 sensor monitor](../assets/images/mini-lab/labboard-dht11-mode-example.png){width=370}](../labboard/features/dht11-monitor.md) <br> _Read measurements using LabBoard._ |
 
 ## NTC thermistor
 
-![Sensor side panel NTC visual](/assets/images/mini-lab/sensor-panel-ntc_vi.png){ align=right }
+![Sensor side panel NTC visual](../assets/images/mini-lab/sensor-panel-ntc_vi.png){ align=right }
 
 Analog temperature sensor.
 
@@ -148,11 +148,11 @@ Analog temperature sensor.
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Sensor side panel NTC schematic](/assets/images/mini-lab/sensor-panel-ntc_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-ntc_sh.png) | [![Sensor side panel NTC experiment](https://raw.githubusercontent.com/totemmaker/arduino-examples/master/mini-lab/sidepanel2_demos/ntc/ntc-wiring.png){width=370 style="height:180px; object-fit: cover; object-position: 0% 50%;"}](/assets/images/mini-lab/audio-panel-generator-experiment_vi.png) |
+| [![Sensor side panel NTC schematic](../assets/images/mini-lab/sensor-panel-ntc_sh.png){width=250}](../assets/images/mini-lab/sensor-panel-ntc_sh.png) | [![Sensor side panel NTC experiment](https://raw.githubusercontent.com/totemmaker/arduino-examples/master/mini-lab/sidepanel2_demos/ntc/ntc-wiring.png){width=370 style="height:180px; object-fit: cover; object-position: 0% 50%;"}](../assets/images/mini-lab/audio-panel-generator-experiment_vi.png) |
 
 ## Buzzer
 
-![Sensor side panel buzzer visual](/assets/images/mini-lab/sensor-panel-buzzer_vi.png){ align=right }
+![Sensor side panel buzzer visual](../assets/images/mini-lab/sensor-panel-buzzer_vi.png){ align=right }
 
 Piezo speaker to produce beeping sounds.
 
@@ -163,7 +163,7 @@ Piezo speaker to produce beeping sounds.
 **Info:**
 
 - Buzzer type: **active**.
-- Can't be used with `#! tone()` function to generate different frequencies. For that case - **passive** buzzer is required or use [Audio side panel](/side-panels/audio-panel/).
+- Can't be used with `#! tone()` function to generate different frequencies. For that case - **passive** buzzer is required or use [Audio side panel](audio-panel.md).
 
 **Power:**
 
@@ -171,11 +171,11 @@ Piezo speaker to produce beeping sounds.
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Sensor side panel buzzer schematic](/assets/images/mini-lab/sensor-panel-buzzer_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-buzzer_sh.png) | [![Sensor side panel buzzer experiment](/assets/images/mini-lab/sensor-panel-buzzer_bb.png){width=300}](/assets/images/mini-lab/sensor-panel-buzzer_bb.png) <br> _Turn on buzzer by connecting VCC to H7._ |
+| [![Sensor side panel buzzer schematic](../assets/images/mini-lab/sensor-panel-buzzer_sh.png){width=250}](../assets/images/mini-lab/sensor-panel-buzzer_sh.png) | [![Sensor side panel buzzer experiment](../assets/images/mini-lab/sensor-panel-buzzer_bb.png){width=300}](../assets/images/mini-lab/sensor-panel-buzzer_bb.png) <br> _Turn on buzzer by connecting VCC to H7._ |
 
 ## DC motor driver
 
-![Sensor side panel H-bridge visual](/assets/images/mini-lab/sensor-panel-motor_vi.png){ align=right width=290 }
+![Sensor side panel H-bridge visual](../assets/images/mini-lab/sensor-panel-motor_vi.png){ align=right width=290 }
 
 DC motor driver with **BD6220F** chip.  
 Supports two speed control types: manual with potentiometer and buttons or modulated signal input.
@@ -214,7 +214,7 @@ Place **JP2** to **PWM CONTROL**. In this mode motor speed and direction is cont
 Wire motor to screw terminals. Supply power for motor trough **POWER IN** (or screw terminal).  
 Supply PWM signal to **PWM IN FW** pin to spin motor forward. Control speed with duty cycle.  
 Supply PWM signal to **PWM IN RW** pin to spin motor reverse. Control speed with duty cycle.  
-May use LabBoard [Pulse generator](/labboard/features/pulse-generator/) mode to supply control signal. Wire **TXD** (typically set 100Hz and adjust duty cycle to change speed).
+May use LabBoard [Pulse generator](../labboard/features/pulse-generator.md) mode to supply control signal. Wire **TXD** (typically set 100Hz and adjust duty cycle to change speed).
 
 Motor state depending on input signal:  
 
@@ -232,7 +232,7 @@ Motor state depending on input signal:
 
 | Schematic | Experiment |
 | --- | --- |
-| [![Sensor side panel DC-Motor schematic](/assets/images/mini-lab/sensor-panel-motor_sh.png){width=250}](/assets/images/mini-lab/sensor-panel-motor_sh.png) | [![Sensor side panel DC-Motor experiment](/assets/images/mini-lab/sensor-panel-motor_bb.png){width=370}](/assets/images/mini-lab/sensor-panel-motor_bb.png) <br> _Press **FW** of **RW** button to spin motor. <br>Turn potentiometer to control speed._ |
+| [![Sensor side panel DC-Motor schematic](../assets/images/mini-lab/sensor-panel-motor_sh.png){width=250}](../assets/images/mini-lab/sensor-panel-motor_sh.png) | [![Sensor side panel DC-Motor experiment](../assets/images/mini-lab/sensor-panel-motor_bb.png){width=370}](../assets/images/mini-lab/sensor-panel-motor_bb.png) <br> _Press **FW** of **RW** button to spin motor. <br>Turn potentiometer to control speed._ |
 
 **Legacy documentation of #2 Sensor side panel:**
 

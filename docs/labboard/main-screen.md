@@ -1,10 +1,10 @@
 # Main screen
 
-![Mini Lab LabBoard main mode](/assets/images/mini-lab/labboard-main-mode.png)
+![Mini Lab LabBoard main mode](../assets/images/mini-lab/labboard-main-mode.png)
 
 ## About
 
-Main "home" screen of LabBoard contains most of it's functionality. Display and buttons are divided into 3 separate features working in parallel.
+Main "home" screen of LabBoard contains most of its functionality. Display and buttons are divided into 3 separate features working in parallel.
 
 ## Details
 
@@ -19,7 +19,7 @@ Main "home" screen of LabBoard contains most of it's functionality. Display and 
 
 ### Voltage measurement
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-voltage.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-voltage.png){style="width:70%"}
 
 LabBoard has a 3 channel voltage measurement module. Each has a pre-set measurement range:
 
@@ -32,11 +32,11 @@ Left display is used in the LabBoard for showing currently measured voltage. Act
 Display shows value in millivolts when using ± 0.5 V channel, otherwise the output is in Volts.  
 `---` is displayed if measured voltage is out of range.  
 **Blinking display indicates that currently measured voltage is negative.**  
-_If measurements are incorrect - perform [Calibration](/labboard/features/setup/#calibration) or fine tune with [ADC manual offset](/labboard/features/setup/#adc-offset)._
+_If measurements are incorrect - perform [Calibration](features/setup.md#calibration) or fine tune with [ADC manual offset](features/setup.md#adc-offset)._
 
 **Example:**
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-voltage-example.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-voltage-example.png){style="width:70%"}
 
 1. Connect the **± 5V** input with a **+3.3 V** output.
 2. Press ++"Left SELECT"++ button until the **±5V** input LED lights up.
@@ -46,7 +46,7 @@ _If measurements are incorrect - perform [Calibration](/labboard/features/setup/
 
 ### DAC output
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-dac.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-dac.png){style="width:70%"}
 
 Inbuilt 3 channel Digital to Analog Converter (DAC) allows you to output any voltage in the 0..3.25 Volt range, at up to 15 mA current. This is useful for experimenting with comparators or operational amplifiers, as they need various reference or input voltages.
 
@@ -62,7 +62,7 @@ All other inactive channels will still keep the same preset voltage until it’s
 
 **Example:**
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-dac-example.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-dac-example.png){style="width:70%"}
 
 1. Connect the **DAC1** output to the ± 5 V voltage measuring channel input.
 1. Using ++"Left SELECT"++ button switch the measure channel to ± 5 volts.
@@ -81,7 +81,7 @@ This mode is only for observation and does not contain any more features.
 
 ### VREG output
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-vreg.png)
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-vreg.png)
 
 LabBoard has a built-in variable voltage output module, capable of providing up to **VIN** - 1V at up to 500 mA. **VIN** is the supply voltage for the Mini Lab. Typically output voltage can be adjusted between 3 and 14 Volts.
 
@@ -97,7 +97,7 @@ _Hold button down for fast increment._
 
 **Example:**
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-vreg-example.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-vreg-example.png){style="width:70%"}
 
 1. Connect **VREG** together with **± 50V** input.
 2. Set the **VREG** voltage to some value.
@@ -105,13 +105,13 @@ _Hold button down for fast increment._
 
 ### Current measurement
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-current.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-current.png){style="width:70%"}
 
 LabBoard has a current measurement module for up to 800 mAmps. Rightmost display is used for showing current measurement result, when the **mAmp** mode is selected. As the current sensor reuses the same hardware as used in voltage measurement module - you need to connect the signal from the shunt resistor with **± 0.5V** channel.
 
 **Example:**
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-current-example.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-current-example.png){style="width:70%"}
 
 1. Connect **SHUNT** and **± 0.5V** input together.
 1. Connect any external circuit (in this example a 100 Ohm resistor is used), powering it from the LabBoard **+5V** output, but instead of connecting negative end to ground, connect it to **SHUNT GND** pin.
@@ -120,7 +120,7 @@ LabBoard has a current measurement module for up to 800 mAmps. Rightmost display
 
 ## Digital input
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-digital.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-digital.png){style="width:70%"}
 
 LabBoard has a two channel digital input module, meant to indicate the current logic state of the **DIG1** and **DIG2** pins with an LED. Default (unconnected) logic level is LOW.
 
@@ -128,7 +128,7 @@ LabBoard has a two channel digital input module, meant to indicate the current l
 
 **Example:**
 
-![Mini Lab LabBoard photo](/assets/images/mini-lab/labboard-main-mode-digital-example.png){style="width:70%"}
+![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-main-mode-digital-example.png){style="width:70%"}
 
 1. Connect **DIG1** input with **+5V** output
 2. Observe that **DIG1 LED** follows the state of the input by lighting up.
