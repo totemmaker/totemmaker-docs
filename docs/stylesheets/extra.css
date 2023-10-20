@@ -12,6 +12,9 @@
 
   /* Footer */
   --md-footer-bg-color: #0593bd;
+
+  /* Mark */
+  --md-typeset-mark-color: #42959a26;
 }
 
 h4:not(.apidec) {
@@ -43,7 +46,7 @@ h4.apidec .headerlink {
   -ms-user-select: none; /* Internet Explorer/Edge */
 }
 
-h4.apidec .board {
+h4.apidec .object {
   color:#00979c;
 }
 h4.apidec .group {
@@ -69,6 +72,13 @@ h4.apidec .function {
   box-sizing: border-box;
   float: left;
   width: 25%;
+  padding: 0 10px;
+}
+
+.grid-card-column-3 {
+  box-sizing: border-box;
+  float: left;
+  width: 33%;
   padding: 0 10px;
 }
 
@@ -103,7 +113,7 @@ h4.apidec .function {
   font-weight: 400;
   color: #222;
   width: 100%;
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin: 10px;
 }
 
