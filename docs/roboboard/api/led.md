@@ -7,10 +7,6 @@ _RoboBoard X3 does not have dedicated LED. It is emulated trough RGB A._
 <p style="clear: both;">Control interface for changing LED state and blinking.<br>
 Can be used with internal RoboBoard LED or <a href="#external-gpio-led">external one connected to GPIO</a>.</p>
 
-<!--
-Control RoboBoard status LED. By default it indicates state of X4 boot (is on if success, error if blinking). After X4 is started - this LED can be used for any custom scenario.  
--->
-
 ***
 
 ## Code snippets

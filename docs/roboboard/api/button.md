@@ -8,12 +8,6 @@ _BOOT - user button. Also may be used to manually enter ESP32 bootloader._
 <p style="clear: both;">Button control interface to read its state and events.<br>
 Can be used with internal RoboBoard button or <a href="#external-gpio-button">external one connected to GPIO</a>.</p>
 
-<!--
-Read state of physical button. Marked as `BOOT` in X3 and `BUTTON` in X4. Can be used to run certain actions on press.
-_Note: Reset (RTS) is for physical processor restart and its state can't be read._  
-_Button BOOT is also used to enter ESP32 bootloader during power on._  
--->
-
 ## Code snippets
 
 ```c++ title="State read"
