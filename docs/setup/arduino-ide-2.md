@@ -1,3 +1,7 @@
+---
+icon: simple/arduino
+---
+
 # Setup Arduino IDE 2.2
 
 ![Arduino IDE](../assets/images/arduino-ide2-large.png)

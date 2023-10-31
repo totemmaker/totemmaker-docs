@@ -1,3 +1,7 @@
+---
+icon: simple/arduino
+---
+
 # Setup Arduino IDE 1.8
 
 ![Arduino IDE](../assets/images/arduino-ide-large.png)

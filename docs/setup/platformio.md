@@ -1,3 +1,7 @@
+---
+icon: simple/platformio
+---
+
 # Setup PlatformIO
 
 ![PlatformIO](../assets/images/platformio-ide-large.png)

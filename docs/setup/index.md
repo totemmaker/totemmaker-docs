@@ -1,7 +1,3 @@
----
-icon: simple/arduino
----
-
 # Arduino development
 
 Totem RoboBoard can be programmed using Arduino development environment. Based on C++ language with hundreds of libraries available - it makes a good candidate to enter world of embedded systems programming.  
