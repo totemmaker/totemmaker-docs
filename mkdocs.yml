@@ -106,6 +106,7 @@ nav:
             - 'Arduino IDE 2.1' : 'setup/arduino-ide-2.md'
             - 'Arduino IDE 1.8' : 'setup/arduino-ide.md'
             - 'PlatformIO' : 'setup/platformio.md'
+            - 'ESP-IDF' : 'setup/esp-idf-cmd.md'
         - "TotemDuino":
             - 'Arduino IDE' : 'totemduino/setup.md'
     - "Mini Lab":
