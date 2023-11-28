@@ -30,7 +30,7 @@ extra_css:
 extra:
   social:
     - icon: fontawesome/brands/discord
-      link: https://forum.totemmaker.net
+      link: http://discord.totemmaker.net
     - icon: fontawesome/brands/discourse
       link: https://forum.totemmaker.net
     - icon: fontawesome/brands/github
