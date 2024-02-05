@@ -11,8 +11,9 @@
 
 - `Servo.A` - control port A
 - `Servo.B` - control port B
-- `Servo.C` - control port C <code style="background:lightBlue">X4 only</code>
-- `Servo[0]` - control port A [`1`-B, `2`-C] _(invalid indexes will be ignored)_  
+- `Servo.C` - control port C
+- `Servo.D` - control port C <code style="background:lightBlue">X3 only</code>
+- `Servo[0]` - control port A [`1`-B, `2`-C, `3`-D] _(invalid indexes will be ignored)_  
 - `Servo` - control all ports _("get" functions are not available in this case)_  
 
 Configured for standard **180 degree** servo motors, with pulse duration between **500μs-2500μs** and **period of 20ms (50Hz)**. These parameters can be [customized](#configuration).  

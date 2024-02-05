@@ -12,7 +12,7 @@ Totem RoboBoard is a family of ESP32 based Arduino development boards that combi
 
 | <center>RoboBoard X3</center> | <center>RoboBoard X4</center> |
 | --- | --- |
-| [![RoboBoard X3](../assets/images/roboboard/roboboard-x3-top.jpg)](../roboboard-x3/index.md) | [![RoboBoard X4](../assets/images/x4-v1.1-front.jpg)](../roboboard-x4/index.md) |
+| [![RoboBoard X3](../assets/images/roboboard/roboboard-x3-v3.1-top.jpg)](../roboboard-x3/index.md) | [![RoboBoard X4](../assets/images/x4-v1.1-front.jpg)](../roboboard-x4/index.md) |
 
 ## :mobile_phone: Connect with smartphone
 
@@ -192,7 +192,7 @@ For more information read [`Board` > Board settings](api/board.md#board-settings
 
 ## :material-compare: Boards comparison
 
-| | [RoboBoard X3 (v3.0)](../roboboard-x3/index.md) | [RoboBoard X4 (v1.1)](../roboboard-x4/index.md) |
+| | [RoboBoard X3 (v3.1)](../roboboard-x3/index.md) | [RoboBoard X4 (v1.1)](../roboboard-x4/index.md) |
 | - | - | - |
 | Battery | 3.7V (250mAh) (2Amps) | 11.1V (2200mAh) (6Amps) |
 | Battery size (mm) | 32 x 16 x 7 | 70 × 55 x 18 (0.12kg) |
@@ -200,18 +200,18 @@ For more information read [`Board` > Board settings](api/board.md#board-settings
 | Battery info | voltage, current, charging | voltage |
 | IMU | Accelerometer, Gyroscope | Accelerometer, Gyroscope |
 | RGB | 4 LED | 4 LED |
-| GPIO | 3 pins + (2 servo SIG)<br>`IO26` `IO32` `IO33` `SIGA` `SIGB` | 4 pins<br>`GPIOA` `GPIOB` `GPIOC` `GPIOD` |
+| GPIO | 3 pins + (4 servo SIG) _(rev v3.0-2 SIG)_<br>`IO26` `IO32` `IO33`<br>`SIGA` `SIGB` `SIGC` `SIGD` | 4 pins<br>`GPIOA` `GPIOB` `GPIOC` `GPIOD` |
 | Status | charging RGB | status LED (Prog.), charging LED |
 | Buttons | Reset, Boot (Prog.) | Reset, Button (Prog.) |
-| Drivers | 4 DC and 2 Servo motors | 4 DC and 3 Servo motors |
+| Drivers | 4 x DC brushless motors<br>4 x Servo motors _(rev v3.0-2 motors)_ | 4 x DC brushless motors<br>3 x Servo motors |
 | DC port | 3.7V (1 Amp) | 11.1V (1 Amp) |
 | Servo port | 3.7V (2 Amps) | 5V (6 Amps) |
-| GPIO/Qwiic port | 3.3V (0.5 Amp) | 3.3V (2 Amps) |
+| GPIO/Qwiic port | 3.3V (0.8 Amp) _(rev v3.0-0.5A)_ | 3.3V (2 Amps) |
 | MCU | ESP32 (240Mhz, dual-core) | ESP32 (240Mhz, dual-core) |
 | Storage | 320KB SRAM, 8MB Flash | 320KB SRAM, 8MB Flash |
 | Radio | WiFi, Bluetooth Classic / LE | WiFi, Bluetooth Classic / LE |
 | Charging | USB-C (5V) | DC input (15V) |
-| Connectors | USB-C, Qwiic | miniUSB, Qwiic, TotemBUS |
+| Connectors | USB-C, Qwiic | miniUSB, Qwiic, TBUS |
 | Size (mm) | 65 x 25 x 8 | 70 x 50 x 14 |
 
 _\* Peak amperage provided. May be lower if other peripherals are draining current._

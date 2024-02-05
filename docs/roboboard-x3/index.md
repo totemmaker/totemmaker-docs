@@ -4,27 +4,32 @@ A programmable controller, designed for small to medium sized robots with strict
 This tiny package features components that are essential for robotic applications: battery input, charging, motor drivers, modules and sensors extensions, orientation sensor, powerful processor, wireless connectivity, software support and more.  
 To start programming [install Arduino](../setup/index.md) and check [RoboBoard API](../roboboard/api/index.md) section.
 
+Find at: [:shopping_cart: Totemmaker.net store → RoboBoard X3](https://totemmaker.net/product/roboboard-x3-programmable-robot-development-board/){target="_blank"}  
+
+_Note: older revision v3.0 has only 2 servo ports. Check [Revision changelog](#revision-changelog)._
+
 ## Feature list
 
 <blockquote style="text-align:right;margin-top:-20px;margin-right:14px;border-left:0;line-height:0;font-size:9pt;">Click orange box to jump to explanation</blockquote>
 
-![Board image map](../assets/images/roboboard/roboboard-x3-map.jpg){ align=right style="height:600px" usemap="#board_features" }
+![Board image map](../assets/images/roboboard/roboboard-x3-v3.1-map.jpg){ align=right style="height:600px" usemap="#board_features" }
 
 <map name="board_features">
-  <area shape="rect" coords="82,0,169,58" title="Battery input" href="#battery-input">
-  <area shape="rect" coords="162,68,276,143" title="Servo motor port A" href="#servo-motor-ports">
-  <area shape="rect" coords="162,151,276,226" title="Servo motor port B" href="#servo-motor-ports">
-  <area shape="rect" coords="139,249,203,313" title="ESP32" href="#esp32">
+  <area shape="rect" coords="82,0,169,60" title="Battery input" href="#battery-input">
+  <area shape="rect" coords="162,60,288,138" title="Servo motor ports C-A" href="#servo-motor-ports">
+  <area shape="rect" coords="162,151,288,226" title="Servo motor ports D-B" href="#servo-motor-ports">
+  <area shape="rect" coords="132,249,199,313" title="ESP32" href="#esp32">
+  <area shape="rect" coords="85,258,125,320" title="IMU" href="#imu-sensor">
   <area shape="rect" coords="178,330,240,547" title="DC motor ports" href="#dc-motor-ports">
-  <area shape="rect" coords="117,333,165,522" title="Motor drivers" href="#motor-drivers">
-  <area shape="rect" coords="19,26,63,104" title="RGB LED D" href="#rgb-lights">
-  <area shape="rect" coords="19,214,63,256" title="RGB LED C" href="#rgb-lights">
+  <area shape="rect" coords="113,325,165,522" title="Motor drivers" href="#motor-drivers">
+  <area shape="rect" coords="18,65,63,110" title="RGB LED D" href="#rgb-lights">
+  <area shape="rect" coords="18,210,63,250" title="RGB LED C" href="#rgb-lights">
   <area shape="rect" coords="19,349,63,391" title="RGB LED B" href="#rgb-lights">
   <area shape="rect" coords="19,489,63,531" title="RGB LED A" href="#rgb-lights">
   <area shape="rect" coords="12,111,63,173" title="Qwiic port" href="#qwiic-port">
   <area shape="rect" coords="0,260,75,346" title="USB-C port" href="#usb-c-input">
-  <area shape="rect" coords="24,395,72,480" title="GPIO pins" href="#gpio-pins">
-  <area shape="rect" coords="61,536,95,582" title="GPIO pins" href="#gpio-pins">
+  <area shape="rect" coords="18,420,70,485" title="GPIO port" href="#gpio">
+  <area shape="rect" coords="61,536,95,582" title="GPIO pins" href="#gpio">
   <area shape="rect" coords="74,391,107,442" title="Reset button" href="#buttons">
   <area shape="rect" coords="74,458,107,523" title="Boot button" href="#buttons">
   <area shape="rect" coords="99,537,173,599" title="On/Off switch" href="#onoff-switch">
@@ -33,14 +38,14 @@ To start programming [install Arduino](../setup/index.md) and check [RoboBoard A
 **Processor:**  
 • ESP32 chip (ESP32-D0WD)  
 • Dual-core 240Mhz (Xtensa LX6)  
-• 320KB SRAM , 8MB flash  
+• 320KB SRAM, 8MB flash  
 • Bluetooth (classic and BLE)  
 • Wi-Fi  
 
 **Board features:**  
-• 2 Servo motor ports (3.7 Volt)  
+• 4 Servo motor ports (3.7 Volt)  
 • 4 DC motor ports (3.7 Volt)  
-• 3 GPIO pins + (2 servo SIG)  
+• 3 GPIO pins + (4 servo SIG)  
 • 2 LDO regulators  
 • 4 RGB lights  
 • IMU sensor (accel and gyro)  
@@ -49,6 +54,7 @@ To start programming [install Arduino](../setup/index.md) and check [RoboBoard A
 • Battery input, integrated charger  
 • Qwiic (STEMMA QT compatible)  
 • USB-C _(power, data, charging)_  
+• GPIO connector  
 
 **Power:**  
 • USB-C: 5V  
@@ -71,11 +77,14 @@ For more ESP32 specific details read [ESP32 section](../roboboard/api/esp32.md/)
 
 ![RoboBoard X3 Qwiic port](../assets/images/roboboard/roboboard-x3-qwiic.jpg)
 
-**Pinout:**  
+**Wires:**  
 • Black = **GND**  
 • Red = <span style="color:red">3.3V</span>  
 • Blue = <span style="color:blue">SDA</span>  
 • Yellow = <span style="color:#FFC300">SCL</span>  
+
+**Cable:** standard "Qwiic cable". Can be found in local electronics store.  
+**Connector:** SM04B-SRSS-TB 4-pin  
 
 A connection system to attach third-party I2C modules. This allows to choose from many available sensors and other interface devices. Small and sturdy connector eliminates need for soldering and enables plug-and-play style modular systems. Each module comes with it's own Arduino library (supplied by manufacturer).
 
@@ -164,22 +173,24 @@ void loop() {
 }
 ```
 
-### :material-electric-switch: GPIO pins
+### :material-electric-switch: GPIO
 
-![RoboBoard X3 GPIO](../assets/images/roboboard/roboboard-x3-gpio.jpg)
+![RoboBoard X3 GPIO](../assets/images/roboboard/roboboard-x3-v3.1-gpio.jpg)
 
-Pins for external IO and communications (UART, I2C, SPI, ...):
+Board contains in total 7 programmable GPIO pins:
 
-- **IO26** - GPIO pin `26`
-- **IO32** - GPIO pin `32`
-- **IO33** - GPIO pin `33`
-- **GND** - Ground pin
-- **3V3** - 3.3 Volt output pin.
-- **SIGA** - Servo pin can be used as GPIO pin `25`
-- **SIGB** - Servo pin can be used as GPIO pin `14`
+- **IO26** - trough hole pin (requires soldering)
+- **IO32**, **IO33** - left (yellow) connector and back side of the board
+- **SIGA**, **SIGB**, **SIGC**, **SIGD** - servo control pins (S) (when motor is not used)
+
+Yellow connector has multiple uses:
+
+- Connect I2C modules (Qwiic). Mapped to Arduino `Wire1` object.
+- Connect [jumper cable wire](../assets/images/photo/roboboard-x3-v3.1-gpio-wires.jpg){target=_blank} to access `3V3`, `GND`, `IO32`, `IO33` pins.
 
 _**3V3** is powered by second LDO converter and can be switched on/off with [`Board.setEnable3V3()`](../roboboard/api/board.md#setEnable3V3). Read [Power circuit](#power-circuit) section for more details._  
-_SIGA and SIGB pins contain 120 Ohm resistor._  
+
+For more information read [GPIO / Qwiic section](../roboboard/api/gpio-qwiic.md#arduino-pin-names).
 
 ```arduino
 void setup() {
@@ -190,27 +201,6 @@ void setup() {
 }
 void loop() { }
 ```
-
-For space constrains and low profile - pin headers are not soldered to pads. This makes a bit harder to connect various electronics to GPIO pins. Recommended ways to do so:
-
-- Solder wires directly to pads
-- Solder pin header and plug wires with jumper cables
-- Pass wire trough hole and tighten it to the edge of the board
-
-For more information read [GPIO / Qwiic section](../roboboard/api/gpio-qwiic.md).
-
-**Arduino pin mapping table:**
-
-Names and pin numbers that may be used in Arduino environment to program RoboBoard X3.  
-_SPI can be mapped to any pin. Only default definitions are specified._
-
-| Name | Number | [SPI](https://www.arduino.cc/reference/en/language/functions/communication/spi/){target="_blank"} | [Analog](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/adc.html){target="_blank"} | [DAC](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/dac.html){target="_blank"} | [Touch](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/touch.html){target="_blank"} |
-| - | - | - | - | - | - |
-| **IO26** | 26 | MOSI | A0 | DAC2 | T0 |
-| **IO32** | 32 | MISO | A1 | - | T1 |
-| **IO33** | 33 | SCK | A2 | - | - |
-| _SIGA_ | 25 | - | - | DAC1 | - |
-| _SIGB_ | 14 | SS | - | - | T2 |
 
 ## Motor drivers
 
@@ -228,7 +218,9 @@ Integrated drivers allows to connect motors directly to the board, eliminating t
 • Red = <span style="color:red">VCC</span>  
 • Brown = <span style="color:brown">GND</span>  
 
-Individual (SIG, VCC, GND pin) headers for connecting standard (3 wire) servo motors and other electronics. Ports are marked with letters A, B for controlling up to 2 motors.  
+**Connector:** 0.1″ (2.54 mm) male pin header  
+
+Individual (SIG, VCC, GND pin) headers for connecting standard (3 wire) servo motors and other electronics. Ports are marked with letters A, B, C, D for controlling up to 4 motors.  
 VCC pin is connected to the battery and voltage is dependent on State Of Charge (2.8-4.2V).
 
 By default, API is configured for **180 degree** servo motors, with pulse duration between **500μs-2500μs** and **period of 20ms (50Hz)**. These parameters can be [customized](../roboboard/api/servo.md#configuration).
@@ -239,7 +231,9 @@ For more information read [`Servo`](../roboboard/api/servo.md) section.
 
 ![RoboBoard X3 DC motor ports](../assets/images/roboboard/roboboard-x3-dc.jpg)
 
-Individual JST-PH headers for connecting brushed DC motors. Ports are marked with letters A, B, C, D for controlling up to 4 motors.
+**Connector:** JST-PH 2-pin  
+
+Connectors for 3-6V brushed DC motors. Ports are marked with letters A, B, C, D for controlling up to 4 motors.
 Power comes straight from the battery (trough H-bridge motor driver) and peak voltage is dependent on State Of Charge (2.8-4.2V).  
 Motor power is controller using 20kHz PWM signal. This parameter can be [customized](../roboboard/api/dc.md#configure).
 
@@ -252,8 +246,8 @@ _Note: motor wire colors (red, black) does not indicate polarity (+, -). Swappin
 Board contains built-in electronics for power distribution and control. It takes care of battery charging and provides power for all the components:
 
 - `BATT` (2 Amps) - used by `DC motor ports`, `Servo motor VCC`. Vary between 2.8-5 V
-- `3.3V main` (500 mAmps) - used by `ESP32`, `IMU`
-- `3.3V periph` (500 mAmps) - used by `RGB lights`, `GPIO 3V3`, `Qwiic port`
+- `3.3V main` (0.8 Amp) - used by `ESP32`, `IMU`, `RGB lights`
+- `3.3V periph` (0.8 Amp) - used by `GPIO 3V3`, `Qwiic port`
 
 Board contains separate 3.3V LDO voltage regulators for ESP32 and other peripherals. `3.3V periph` one can be turned on/off with function [`Board.setEnable3V3()`](../roboboard/api/board.md#setEnable3V3) for power saving applications, conveniently disabling all attached Qwiic modules.
 
@@ -281,7 +275,10 @@ RoboBoard X3 USB-C 5V input is used for multiple purposes once it's plugged in:
 - [`BATT` power rail](#power-circuit) overrides battery and becomes 5V (sourced from USB).  
   DC motor and Servo VCC pins will output 5V.
 
-Keep in mind that PC USB port provides only 0.5 Amps and it's not enough for powering motors. For powering board from USB-C only (without a battery) - use devices that provides more than 0.5A current (e.g. power banks and phone chargers).
+Keep in mind that PC USB port provides only 0.5 Amps and it's not enough for powering motors. For powering board from USB-C only (without a battery) - use devices that provides more than 0.5A current (e.g. power banks and phone chargers).  
+
+**Serial converter:** CH340C  
+**Connector:** USB-C (Type-C)  
 
 ### :material-battery-high: Battery input
 
@@ -289,8 +286,9 @@ Keep in mind that PC USB port provides only 0.5 Amps and it's not enough for pow
 
 Battery input for 1S rechargeable Lithium battery to supply power to the board. When connected it powers [`BATT` rail](#power-circuit). Voltage may vary between 2.8-4.2 V, depending on battery State Of Charge.
 
-Input: 2.8-4.2 V **rechargeable** Lithium battery, JST-PH connector.  
-Higher capacity cells (like 18650) can be also used.  
+**Input voltage**: 2.8-4.2 Volts  
+**Battery type:** 1S 3.7V Lithium (**rechargeable**) or 18650 cell. Under-voltage protection required  
+**Connector:** JST-PH 2-pin  
 
 :warning: Important notices:
 
@@ -323,15 +321,32 @@ This switch is overridden (always ON) if USB-C cable is plugged in.
 
 **Mechanical drawing (dimensions):**
 
-[![RoboBoard X3 v3.0 mechanical drawing](../assets/images/RoboBoard_X3_v3.0-mechanical-drawing.png)](../assets/images/RoboBoard_X3_v3.0-mechanical-drawing.png){target="_blank"}
+[![RoboBoard X3 v3.1 mechanical drawing](../assets/images/RoboBoard%20X3%20v3.1%20drawing.png)](../assets/images/RoboBoard%20X3%20v3.1%20drawing.png){target="_blank"}
+
+[RoboBoard X3 v3.0 drawing.png](../assets/images/RoboBoard%20X3%20v3.0%20drawing.png){target="_blank"}  
+[RoboBoard X3 v3.1 drawing.png](../assets/images/RoboBoard%20X3%20v3.1%20drawing.png){target="_blank"}
 
 **Schematic:**
 
-[RoboBoard_X3_v3.0-schematic.pdf](../assets/images/RoboBoard_X3_v3.0-schematic.pdf){target="_blank"}
+[RoboBoard X3 v3.0 schematic.pdf](../assets/images/RoboBoard%20X3%20v3.0%20schematic.pdf){target="_blank"}  
+[RoboBoard X3 v3.1 schematic.pdf](../assets/images/RoboBoard%20X3%20v3.1%20schematic.pdf){target="_blank"}
 
 ## Revision changelog
 
 We are always looking to improve our products. Any physical change (components, layout) is indicated with board revision number (printed on top). Each revision may have different features or functionality.
+
+### v3.1
+
+Manufactured from 2024-Q1.
+
+- Added 2 servo ports (total 4)
+- Added additional Qwiic connector in place of GPIO
+- Added stronger LDO regulators (0.8 Amp)
+- Added RGB strip extension pins
+- Qwiic won't be powered in charging mode
+- Easier to press buttons
+- RGB connected to MCU LDO (always powered)
+- Silkscreen changes
 
 ### v3.0
 

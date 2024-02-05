@@ -34,15 +34,75 @@ void loop() {
 }
 ```
 
-![RoboBoard X3 GPIO](../../assets/images/roboboard/roboboard-x3-gpio.jpg){style="height:130px"}
-![RoboBoard X4 GPIO](../../assets/images/module_04_gpio.png){style="height:130px"}
+## Arduino pin names
 
-_RoboBoard X3 pins are named **IO26**, **IO32**, **IO33**, SIGA, SIGB.  
-RoboBoard X4 pins are named **GPIOA**, **GPIOB**, **GPIOC**, **GPIOD**.  
-Additional GND (Ground) and VCC (3.3V) pins available.  
-Instructions are the same for both boards._
+=== "RoboBoard X4"
+    ![RoboBoard X4 GPIO](../../assets/images/module_04_gpio.png){style="height:130px"}  
+    **Arduino pins:** GPIOA, GPIOB, GPIOC, GPIOD.  
+    **VCC:** 3.3V output (2A max), **GND:** Ground pin.  
 
-***
+    | Name | Pin | Exclusive function |
+    | - | - | - |
+    | **GPIOA** | 14 | `MOSI`, Analog, Touch |
+    | **GPIOB** | 23 | `MISO` |
+    | **GPIOC** | 25 | `SCK`, Analog, DAC |
+    | **GPIOD** | 26 | `SS`, Analog, DAC |
+    | - | 21 | `SDA` |
+    | - | 22 | `SCL` |
+
+    - GPIOB does not support [`analogRead()`](https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/){target=_blank}!  
+    - SPI can be mapped to any pin (`MOSI`, `MISO`, `SCK`, `SS` only shows default mapping).
+    - All pin definitions can be found in [pins_arduino.h](https://github.com/totemmaker/TotemArduinoBoards/blob/master/variants/roboboard_x4/pins_arduino.h){target=_blank} file.
+
+=== "RoboBoard X3 v3.1"
+    ![RoboBoard X3 v3.1 GPIO](../../assets/images/roboboard/roboboard-x3-v3.1-gpio.jpg){style="height:130px"}  
+    **Arduino pins:** IO26, IO32, IO33.  
+    **Servo pins:** SIGA, SIGB, SIGC, SIGD.  
+    **3V3:** 3.3V output (0.8A max), **GND:** Ground pin.  
+    **Qwiic port right:** Control Qwiic I2C modules over `Wire` object. I2C pins `SDA`, `SCL`.  
+    **Yellow port left:** Control Qwiic I2C modules over `Wire1` object. I2C pins `SDA1`, `SCL1`.  
+    Or access pins IO32, IO33, 3V3, GND using ["Qwiic jumper cable"](../../assets/images/photo/roboboard-x3-v3.1-gpio-wires.jpg){target=_blank}.  
+
+    | Name | Pin | Exclusive function |
+    | - | - | - |
+    | **IO26** | 26 | Analog, Touch, DAC, `MOSI` |
+    | **IO32** | 32 | Analog, Touch, `SCL1`, `MISO` |
+    | **IO33** | 33 | Analog, Touch, `SDA1`, `SCK` |
+    | - | 15 | `SDA` |
+    | - | 5 | `SCL` |
+    | _SIGA_ | 25 | DAC |
+    | _SIGB_ | 14 | Touch, `SS` |
+    | _SIGC_ | 16 | Touch |
+    | _SIGD_ | 17 | - |
+    
+    - Output power **3V3** can be turned off with function [`Board.setEnable3V3()`](board.md/#setEnable3V3).
+    - SIGx pins can be used when motor is not connected. Contains 120 Ohm resistor!
+    - Left yellow port does not have pull-up resistors!
+    - SPI can be mapped to any pin (`MOSI`, `MISO`, `SCK`, `SS` only shows default mapping).
+    - All pin definitions can be found in [pins_arduino.h](https://github.com/totemmaker/TotemArduinoBoards/blob/master/variants/roboboard_x3/pins_arduino.h){target=_blank} file.
+
+=== "RoboBoard X3 v3.0"
+    ![RoboBoard X3 v3.0 GPIO](../../assets/images/roboboard/roboboard-x3-gpio.jpg){style="height:130px"}  
+    **Arduino pins:** IO26, IO32, IO33.  
+    **Servo pins:** SIGA, SIGB.  
+    **3V3:** 3.3V (0.5A max), **GND:** Ground pin.  
+    **Qwiic port right:** Control Qwiic I2C modules over `Wire` object. I2C pins `SDA`, `SCL`.  
+
+    | Name | Pin | Exclusive function |
+    | - | - | - |
+    | **IO26** | 26 | Analog, Touch, DAC, `MOSI` |
+    | **IO32** | 32 | Analog, Touch, `SCL1`, `MISO` |
+    | **IO33** | 33 | Analog, Touch, `SDA1`, `SCK` |
+    | - | 15 | `SDA` |
+    | - | 5 | `SCL` |
+    | _SIGA_ | 25 | DAC |
+    | _SIGB_ | 14 | Touch, `SS` |
+
+    - Output power **3V3** can be turned off with function [`Board.setEnable3V3()`](board.md/#setEnable3V3).
+    - SIGx pins can be used when motor is not connected. Contains 120 Ohm resistor!
+    - SPI can be mapped to any pin (`MOSI`, `MISO`, `SCK`, `SS` only shows default mapping).
+    - All pin definitions can be found in [pins_arduino.h](https://github.com/totemmaker/TotemArduinoBoards/blob/master/variants/roboboard_x3/pins_arduino.h){target=_blank} file.
+
 
 ## Using I2C
 
@@ -232,35 +292,6 @@ GPIO pins can be used with multiple peripherals. Each one has its own advantages
 _Used internally for TotemBUS._  
 [examples](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/ESP32/examples/TWAI){target="_blank"}
 
-## Arduino pin names
-
-These definitions (A0, DAC2, ...) can be used in Arduino code instead of pin name or number.  
-Empty field (-) means pin does not have that functionality.  
-SPI can be mapped to any pin. Only default definitions are specified.
-
-=== "RoboBoard X3"
-    Pin definitions of RoboBoard X3 (v3.0) board.
-
-    | Name | Number | [SPI](https://www.arduino.cc/reference/en/language/functions/communication/spi/){target="_blank"} | [Analog](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/adc.html){target="_blank"} | [DAC](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/dac.html){target="_blank"} | [Touch](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/touch.html){target="_blank"} |
-    | - | - | - | - | - | - |
-    | **IO26** | 26 | MOSI | A0 | DAC2 | T0 |
-    | **IO32** | 32 | MISO | A1 | - | T1 |
-    | **IO33** | 33 | SCK | A2 | - | - |
-    | _SIGA_ | 25 | - | - | DAC1 | - |
-    | _SIGB_ | 14 | SS | - | - | T2 |
-
-    _Note: SIG pins are only available if motor is not connected._
-
-=== "RoboBoard X4"
-    Pin definitions of RoboBoard X4 (v1.1) board.
-
-    | Name | Number | [SPI](https://www.arduino.cc/reference/en/language/functions/communication/spi/){target="_blank"} | [Analog](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/adc.html){target="_blank"} | [DAC](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/dac.html){target="_blank"} | [Touch](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/touch.html){target="_blank"} |
-    | - | - | - | - | - | - |
-    | **GPIOA** | 14 | MOSI | A0 | - | T0 |
-    | **GPIOB** | 23 | MISO | - | - | - |
-    | **GPIOC** | 25 | SCK | A2 | DAC1 | - |
-    | **GPIOD** | 26 | SS | A3 | DAC2 | - |
-
 ## Qwiic port
 
 ![RoboBoard X3 Qwiic port](../../assets/images/roboboard/roboboard-x3-qwiic.jpg)
@@ -271,16 +302,33 @@ This port is compatible with SparkFun Qwiic and Adafruit STEMMA QT modules.
 
 ### Connector
 
-It uses 4-pin SM04B-SRSS-TB connector with I2C communication and 3.3V power line. Modules usually contain 2 connectors for joining multiple of them (daisy-chaining).  
+Standard "Qwiic" connector with I2C communication and 3.3V power line. Modules usually contain 2 connectors for joining multiple of them (daisy-chaining).  
 Single RoboBoard Qwiic port can host multiple modules.
 
-![Qwiic connector](../../assets/images/x4-1.1-back-desc.jpg){style="width: 350px; height: 80px; object-fit: cover; object-position: 0% 68%;"}
+=== "RoboBoard X4"
+    ![Qwiic connector](../../assets/images/x4-1.1-back-desc.jpg){style="width: 350px; height: 80px; object-fit: cover; object-position: 0% 68%;"}
 
-**Wire color pinout:**  
+    Standard I2C Qwiic port. Controlled with `Wire` object. I2C pins `SDA`, `SCL`.
+=== "RoboBoard X3 v3.1"
+    ![X3 v3.1 JST ports](../../assets/images/roboboard/roboboard-x3-v3.1-jst-ports.jpg){width=600px}
+
+    Contains 2 distinctive ports:  
+    • **Qwiic** - standard I2C Qwiic port. Controlled with `Wire` object. I2C pins `SDA`, `SCL`.  
+    • **GPIO** - optional I2C port. Controlled with `Wire1` object. I2C pins `SDA1`, `SCL1`.  
+    _"GPIO" does not have pull-up resistors!_.
+=== "RoboBoard X3 v3.0"
+    ![X3 v3.0 JST port](../../assets/images/roboboard/roboboard-x3-v3.1-jst-ports.jpg){style="width: 300px; height: 127px; object-fit: cover; object-position: 100% 0%;"}
+
+    Standard I2C Qwiic port. Controlled with `Wire` object. I2C pins `SDA`, `SCL`.
+
+**Wires:**  
 • Black = **GND**  
 • Red = <span style="color:red">3.3V</span>  
 • Blue = <span style="color:blue">SDA</span>  
 • Yellow = <span style="color:#FFC300">SCL</span>  
+
+**Cable:** standard "Qwiic cable". Can be found in local electronics store.  
+**Connector:** SM04B-SRSS-TB 4-pin  
 
 ### Installing modules
 
@@ -358,10 +406,12 @@ A list of ESP32 pins that are assigned to specific functions inside RoboBoard. O
     | 2 | MOTORD_INB | DC motor port D pin 1 |
     | 25 | SERVOA_IN | Servo motor port A (SIG) |
     | 14 | SERVOB_IN | Servo motor port B (SIG) |
+    | 16 | SERVOC_IN | Servo motor port C (SIG) |
+    | 17 | SERVOD_IN | Servo motor port D (SIG) |
     | 0 | BUTTON | BOOT button |
     | 13 | RGB | RGB light strip data pin |
     | 27 | 3V3_EN | Peripheral 3.3V LDO enable pin |
-    | 34 | BATTERY_FULL | State of battery charging (if full) |
+    | 34 | VERSION_DETECT | Detect board revision |
     | 35 | BATTERY_CHARGE | State of battery charging (if charging) |
     | 36 | BATTERY_CURRENT | Battery current measurement |
     | 37 | BATTERY_VOLTAGE | Battery voltage measurement |

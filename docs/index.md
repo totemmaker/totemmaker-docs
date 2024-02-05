@@ -57,7 +57,7 @@ hide:
 
   <a class="grid-card-column" href="roboboard-x3/">
     <div class="grid-card">
-      <img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.0-card.jpg">
+      <img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.1-card.jpg">
       <h2>RoboBoard X3</h2>
       <p>Programmable robot control board</p>
     </div>

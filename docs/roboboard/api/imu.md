@@ -242,7 +242,7 @@ Will return exact value configured in sensor.
 
 Each RoboBoard contains different IMU sensor. See table below for part number and I2C address. These parameters can be also acquired dynamically using `IMU.getName()` and `IMU.getI2CAddr()` functions.
 
-| RoboBoard X3 v3.0 | RoboBoard X4 v1.0 | RoboBoard X4 v1.1 |
+| RoboBoard X3 v3.x | RoboBoard X4 v1.0 | RoboBoard X4 v1.1 |
 | :-: | :-: | :-: |
 | QMI8658 | LSM6DS3 | ICM-20689 |
 | 0x6B | 0x6A | 0x68 |
