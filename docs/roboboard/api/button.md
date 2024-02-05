@@ -8,17 +8,6 @@ _BOOT - user button. Also may be used to manually enter ESP32 bootloader._
 <p style="clear: both;">Button control interface to read its state and events.<br>
 Can be used with internal RoboBoard button or <a href="#external-gpio-button">external one connected to GPIO</a>.</p>
 
-!!! bug "API bug"
-    Button API does not work on RoboBoard X4. This issue will be fixed in next release.  
-    At the moment use this code as workaround:  
-    ```c++
-    IOButton button(BUTTON_BUILTIN); // Create "button" object
-    void setup() {
-      button.waitClick(); // use "button" instead of "Button"
-    }
-    void loop() { }
-    ```
-
 ## Code snippets
 
 ```c++ title="State read"

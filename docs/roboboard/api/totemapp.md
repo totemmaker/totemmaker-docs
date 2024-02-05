@@ -135,7 +135,7 @@ void loop() {
 
 ## :material-playlist-edit: Override commands
 
-Functionality allowing to intercept commands sent by Totem App. Typically button press will apply motor power directly (e.g. `/0/dc/powerA` → `DC.A.power()`). Any action will be presented in `bool appOverride(int cmd, int value)` function, providing `value` and ability to choose either block or allow RoboBoard to process this command.
+Functionality allowing to intercept commands sent by Totem App. Typically button press will apply motor power directly (e.g. `/0/dc/powerA` → `DC.A.spin()`). Any action will be presented in `bool appOverride(int cmd, int value)` function, providing `value` and ability to choose either block or allow RoboBoard to process this command.
 
 Can be used to intercept standard "Model" controls and make your own drive logic or actions.
 
