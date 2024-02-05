@@ -4,7 +4,7 @@ A more powerful programmable controller, designed for medium to larger sized rob
 This compact package features components that are essential for robotic applications: battery input, charging, motor drivers, modules and sensors extensions, orientation sensor, powerful processor, wireless connectivity, software support and more.  
 To start programming [install Arduino](../setup/index.md) and check [RoboBoard API](../roboboard/api/index.md) section.
 
-[:shopping_cart: Find at Totemmaker.net store](https://totemmaker.net/product/roboboard-x4-power-adapter-battery/){target="_blank"}  
+Find at: [:shopping_cart: Totemmaker.net store → RoboBoard X4](https://totemmaker.net/product/roboboard-x4-power-adapter-battery/){target="_blank"}  
 
 ## Details
 
@@ -13,8 +13,8 @@ To start programming [install Arduino](../setup/index.md) and check [RoboBoard A
 ![Board image map](../assets/images/roboboard/roboboard-x4-v1.1-map.jpg){ align=right style="width:400px" usemap="#board_features" }
 
 <map name="board_features">
-  <area shape="rect" coords="67,10,121,40" title="TotemBUS" href="#totembus">
-  <area shape="rect" coords="278,10,333,40" title="TotemBUS" href="#totembus">
+  <area shape="rect" coords="67,10,121,40" title="TBUS connector (CAN)" href="#totembus">
+  <area shape="rect" coords="278,10,333,40" title="TBUS connector (CAN)" href="#totembus">
   <area shape="rect" coords="25,57,56,97" title="Reset button" href="#buttons">
   <area shape="rect" coords="160,29,256,163" title="Processor" href="#esp32">
   <area shape="rect" coords="332,66,386,111" title="USB" href="#usb-port">
@@ -53,7 +53,7 @@ To start programming [install Arduino](../setup/index.md) and check [RoboBoard A
 • DC power input  
 • Battery input, integrated charger  
 • Qwiic port (STEMMA QT compatible)  
-• TotemBUS (attach [Totem modules](../modules/index.md))  
+• TBUS (CAN bus)  
 • USB _(data only, no power)_  
 
 **Power:**  
@@ -77,39 +77,61 @@ For more ESP32 specific details read [ESP32 section](../roboboard/api/esp32.md/)
 
 ![X4 qwiic](../assets/images/x4-qwiic.jpg){width=300px}
 
-**Pinout:**  
+**Wires:**  
 • Black = **GND**  
 • Red = <span style="color:red">3.3V</span>  
 • Blue = <span style="color:blue">SDA</span>  
 • Yellow = <span style="color:#FFC300">SCL</span>  
+
+**Cable:** standard "Qwiic cable". Can be found in local electronics store.  
+**Connector:** SM04B-SRSS-TB 4-pin  
 
 A connection system to attach third-party I2C modules. This allows to choose from many available sensors and other interface devices. Small and sturdy connector eliminates need for soldering and enables plug-and-play style modular systems. Each module comes with its own Arduino library (supplied by manufacturer).
 
 This port is compatible with SparkFun Qwiic and Adafruit STEMMA QT modules.  
 For using Qwiic modules with RoboBoard read [GPIO / Qwiic section](../roboboard/api/gpio-qwiic.md#qwiic-port).  
 
-### :material-ev-plug-type2: TotemBUS
+### :material-ev-plug-type2: TBUS (CAN bus) { #totembus }
 
-![X4 qwiic](../assets/images/x4-line-follower.jpg){width=60%}
+![X4 TBUS (CAN) connectors](../assets/images/roboboard/roboboard-x4-tbus.jpg){width=50%}
 
-Totem BUS connectors allows to expand X4 functionality by attaching Totem modules and control them using Arduino code. Each module is identified by its number in a white square. For reference of each module check [Modules information](../modules/index.md).  
-Modules can be connected in any order and daisy-chained. Connector provides power and communication.  
+**Wires:** CAN-H, CAN-L, GND, [`5V`](#power-circuit) (out), [`BATT`](#power-circuit) (~12V), N.C. ([pinout](../roboboard/api/can.md))   
+**Cable:** [:shopping_cart: Totemmaker.net store → TOTEMBUS CABLE](https://totemmaker.net/product/totembus-cable-connects-modules-to-totembus-network/){target=_blank}  
+**Connector:** Micro-MaTch 6-pin  
+
+TBUS (TotemBUS) connectors with dual purpose: Plug into CAN bus networks or attach [X4 extension modules](../modules/index.md). Both are interconnected and used for daisy-chaining.
+
+For more information read [CAN](../roboboard/api/can.md) section.
 
 ```arduino
-TotemModule11 module; // Define connected module
 void setup() {
-  // Call function to change distance sensor RGB color to green
-  module.rgb.color(0, 255, 0);
+  // Start CAN peripheral at 500kbps
+  CAN.begin(500);
 }
-void loop() { }
+void loop() {
+  // Wait for CAN packet receive. 300ms timeout
+  if (CAN.readPacketWait(300)) {
+    // Get received packet
+    auto packet = CAN.getPacket();
+    // packet.id, packet.data, packet.len, packet.ext, packet.rtr
+  }
+  // Send CAN packets
+  uint8_t data[8] = {1,2,3,4,5,6,7,8};
+  CAN.writePacketExt(0x112233, data, 8); // Extended
+  CAN.writePacketStd(0x1AB, data, 8);    // Standard
+}
+
 ```
 
 ### :material-usb-port: USB port
 
 ![RoboBoard USB port](../assets/images/roboboard/roboboard-x4-usb.jpg)
 
-miniUSB connector is present for Serial Monitor and Arduino firmware upload.  
-Board cannot be powered from USB alone! It requires either [Power](#power-input) or [Battery](#battery-input) input.
+USB connector is present for Serial Monitor and Arduino firmware upload.  
+Board <u>cannot</u> be powered from USB alone! It requires either [Power](#power-input) or [Battery](#battery-input) input.  
+
+**Serial converter:** CP2102N  
+**Connector:** miniUSB  
 
 ### :material-rotate-orbit: IMU sensor
 
@@ -221,6 +243,8 @@ Pins for external IO and communications (UART, I2C, SPI, ...):
 - **GPIOD** - GPIO pin `26`
 - **GND** - Ground pin
 
+**Connector:** 0.1″ (2.54 mm) female pin header  
+
 ```arduino
 void setup() {
   pinMode(GPIOA, OUTPUT); // Configure pin to output
@@ -231,19 +255,7 @@ void setup() {
 void loop() { }
 ```
 
-For more information read [GPIO / Qwiic section](../roboboard/api/gpio-qwiic.md).
-
-**Arduino pin mapping table:**
-
-Names and pin numbers that may be used in Arduino environment to program RoboBoard X4.  
-_SPI can be mapped to any pin. Only default definitions are specified._
-
-| Name | Number | [SPI](https://www.arduino.cc/reference/en/language/functions/communication/spi/){target="_blank"} | [Analog](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/adc.html){target="_blank"} | [DAC](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/dac.html){target="_blank"} | [Touch](https://docs.espressif.com/projects/arduino-esp32/en/latest/api/touch.html){target="_blank"} |
-| - | - | - | - | - | - |
-| **GPIOA** | 14 | MOSI | A0 | - | T0 |
-| **GPIOB** | 23 | MISO | - | - | - |
-| **GPIOC** | 25 | SCK | A2 | DAC1 | - |
-| **GPIOD** | 26 | SS | A3 | DAC2 | - |
+For more information read [GPIO / Qwiic section](../roboboard/api/gpio-qwiic.md#arduino-pin-names).
 
 ## Motor drivers
 
@@ -261,6 +273,8 @@ Integrated drivers allows to connect motors directly to the board, eliminating t
 • (+) Red = <span style="color:red">VCC</span>  
 • (S) Orange = <span style="color:orange">Signal</span> (PWM)  
 
+**Connector:** 0.1″ (2.54 mm) male pin header  
+
 Individual channels for connecting standard (3 wire) servo motors and other electronics. Pins are marked with letters A, B, C for controlling up to 3 motors with regulated 5 Volt output.
 
 By default, API is configured for **180 degree** servo motors, with pulse duration between **500μs-2500μs** and **period of 20ms (50Hz)**. These parameters can be [customized](../roboboard/api/servo.md#configuration).
@@ -271,7 +285,9 @@ For more information read [`Servo`](../roboboard/api/servo.md) section.
 
 ![RoboBoard DC motor port](../assets/images/roboboard/roboboard-x4-dc.jpg){width=60%}
 
-Individual JST-PH headers for connecting 12V brushed DC motors. Ports are marked with letters A, B, C, D for controlling up to 4 motors.
+**Connector:** JST-PH 2-pin  
+
+Connectors for 12V brushed DC motors. Ports are marked with letters A, B, C, D for controlling up to 4 motors.
 Power comes straight from the battery (trough H-bridge motor driver) and peak voltage is dependent on State Of Charge (8.4-12.6V).  
 Motor power is controller using 50Hz PWM signal. This parameter can be [customized](../roboboard/api/dc.md#configure).
 
@@ -288,8 +304,8 @@ _Note: motor wire colors (red, black) does not indicate polarity (+, -). Swappin
 
 Board contains built-in electronics for power distribution and control. It takes care of battery charging and provides power for all the components:
 
-- `BATT` (6 Amps) - used by `DC motor ports`, `TotemBUS BATT pin`. Vary between 8.4-15 V
-- `5V` (6 Amps) - used by `Servo motor +`, `RGB lights`, `TotemBUS 5V pin`
+- `BATT` (6 Amps) - used by `DC motor ports`, `CAN bus BATT pin`. Vary between 8.4-15 V
+- `5V` (6 Amps) - used by `Servo motor +`, `RGB lights`, `CAN bus 5V pin`
 - `3.3V` (2 Amps) - used by `ESP32`, `co-processor`, `IMU`, `GPIO VCC`, `Qwiic port`
 
 _USB port is for data only and does not power `5V` or `3.3V` rails. Either battery or DC adapter is required to program and power up the board._
@@ -311,7 +327,8 @@ _Note: Sometimes LED can start blinking when battery is charged._
 
 DC barrel-jack input to supply power for board and and battery charging. When connected it starts charging the battery (if not full) and powers `BATT` rail (overrides battery). In this case `BATT` will become 15V and DC motors will spin a little faster. If board starts to consume more than 2 Amps, missing energy will be topped off from the battery.
 
-Input: 15V, 5.5/2.0mm center-positive connector.
+**Input voltage**: 15 Volts  
+**Connector:** barrel jack 5.5/2.0mm center-positive  
 
 **Recommended to use only supplied DC power adapter:** [30W, 15V, 2A power adapter](https://totemmaker.net/product/15v-2a-power-adapter/){target="_blank"}  
 
@@ -319,9 +336,11 @@ Input: 15V, 5.5/2.0mm center-positive connector.
 
 ![RoboBoard battery input](../assets/images/roboboard/roboboard-x4-battery.jpg)
 
-Battery input for 3S rechargeable Lithium battery to supply power to the board. When connected it powers [`BATT` rail](#power-circuit). Voltage may vary between 8.4-12.6 V, depending on battery State Of Charge.
+Battery input for board power and charging. When connected it powers [`BATT` rail](#power-circuit). Voltage may vary between 8.4-12.6 V, depending on battery State Of Charge.
 
-Input: 8.4-12.6 V **rechargeable** Lithium battery, JST-VH connector.  
+**Input voltage**: 8.4-12.6 Volts  
+**Battery type:** 3S 11.1V Lithium (**rechargeable**). Under-voltage protection required  
+**Connector:** JST-VH 2-pin  
 
 :warning: Important notices:
 
@@ -353,7 +372,7 @@ Battery can still be charged while switch is set to OFF position.
 
 **Mechanical drawing (dimensions):**
 
-[![RoboBoard X4 v1.1 mechanical drawing](../assets/images/RoboBoard_X4_v1.1-mechanical-drawing.png)](../assets/images/RoboBoard_X4_v1.1-mechanical-drawing.png){target="_blank"}
+[![RoboBoard X4 v1.1 mechanical drawing](../assets/images/RoboBoard%20X4%20v1.1%20drawing.png)](../assets/images/RoboBoard%20X4%20v1.1%20drawing.png){target="_blank"}
 
 ## Revision changelog
 

@@ -113,9 +113,9 @@ void setup() {
 }
 void loop() {
   // Try to find any module on the TotemBUS
-  if (TotemModule::find()) {
+  if (TotemX4Module::find()) {
     // Print found module
-    Serial.printf("Found. Number: %d, Serial: %d\n", TotemModule::foundNumber, TotemModule::foundSerial);
+    Serial.printf("Found. Number: %d, Serial: %d\n", TotemX4Module::foundNumber, TotemX4Module::foundSerial);
   }
   else {
     Serial.println("Not found");
@@ -126,21 +126,21 @@ void loop() {
 
 ***
 
-#### `found` TotemModule::find(`number`, `serial`) { #TotemModule.find data-toc-label='find()' }
+#### `found` TotemX4Module::find(`number`, `serial`) { #TotemX4Module.find data-toc-label='find()' }
 : Try to find module on TotemBUS network.  
 Available request types:  
 • all modules  
 • modules matching specified number  
 • module matching specified number and serial  
-Result can be acquired with `TotemModule::foundNumber` and `TotemModule::foundSerial`.  
+Result can be acquired with `TotemX4Module::foundNumber` and `TotemX4Module::foundSerial`.  
 **Parameter:**  
 `number` - module number [`0`:`255`]. `0` - all modules  
 `serial` - module serial [`0`:`32767`]. `0` - ignore serial  
 **Returns:**
 `found` - `true` if module has been found
 
-#### (`number`) TotemModule::foundNumber { #TotemModule.foundNumber data-toc-label='foundNumber' }
+#### (`number`) TotemX4Module::foundNumber { #TotemX4Module.foundNumber data-toc-label='foundNumber' }
 : Get found module number.  
 
-#### (`serial`) TotemModule::foundSerial { #TotemModule.foundSerial data-toc-label='foundSerial' }
+#### (`serial`) TotemX4Module::foundSerial { #TotemX4Module.foundSerial data-toc-label='foundSerial' }
 : Get found module serial.  

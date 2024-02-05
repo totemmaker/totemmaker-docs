@@ -156,6 +156,7 @@ nav:
             - 'ESP32' : 'roboboard/api/esp32.md'
             - 'GPIO / Qwiic' : 'roboboard/api/gpio-qwiic.md'
             - 'TotemApp.' : 'roboboard/api/totemapp.md'
+            - 'CAN. (X4)' : 'roboboard/api/can.md'
         - "Motor control":
             - 'Drivetrain.' : 'roboboard/api/drivetrain.md'
             - 'Servo.' : 'roboboard/api/servo.md'
