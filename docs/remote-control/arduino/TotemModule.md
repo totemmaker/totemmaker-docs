@@ -157,7 +157,7 @@ module.write("cfg/robot/name", data, sizeof(data)); // Set robot name from data 
 
 #### write(`command`, `int`, `int`, `int`, `int`) { data-toc-label='write(command, int, int, int, int)' }
 
-: Write four 8bit values to command. These values are merged into one 32bit value and forwarded to [write(command, int)](#bool-writecommand-int). Also accepts 3 int parameters.  
+: Write four 8bit values to command. These values are merged into one 32bit value and forwarded to [write(command, int)](#writecommand-int). Also accepts 3 int parameters.  
 _Parameter:_  
 `command` - module command string or hash.  
 `int` - 8bit value 1.  
@@ -282,7 +282,7 @@ module.unsubscribe("battery"); // Stop receiving "battery" on value change
 : Register module data receiver function.  
 `DataReceiver` is a user defined function to get all incoming data from the module.  
 Format: `#!arduino void onModuleData(ModuleData data)`. Received data is stored in [`ModuleData`](ModuleData.md) parameter.  
-_Note:_ A command has to be [subscribed](#bool-subscribecommand-interval) or [read](#bool-readcommand) to appear in receiver function.  
+_Note:_ A command has to be [subscribed](#subscribecommand-interval) or [read](#readcommand) to appear in receiver function.  
 _Parameter:_  
 `DataReceiver` - data receiver function name `onModuleData`.  
 
@@ -356,7 +356,7 @@ module.write(commandHash);
 #### hashModel(`model`) { data-toc-label='hashModel(model)' }
 
 : Encode Totem robot model name to 16bit integer value.  
-Used with [`cfg/robot/model`](../../modules/04.md#cfgrobotmodel-int) and [getModel()](TotemRobot.md#getmodel).  
+Used with [`cfg/robot/model`](../../modules/04.md#cfgrobotmodel-model) and [getModel()](TotemRobot.md#getmodel).  
 _Note:_ This command is `static`, so requires to be called trough a class name.  
 _Parameter:_  
 `command` - model name string.  
@@ -371,7 +371,7 @@ module.write("cfg/robot/model", modelHash);
 
 ## Wait functions
 
-Simple [write](#bool-writecommand) functions sends data without any acknowledgement and only returns false if command is failed to send. The reasons of failure could be:  
+Simple [write](#writecommand) functions sends data without any acknowledgement and only returns false if command is failed to send. The reasons of failure could be:  
 
 * `module` object is not connected to any interface to send command over.
 * Module number is larger than 255, or serial is larger than 32767.  
@@ -387,7 +387,7 @@ This allows to reach high communication speed, but doesn't guarantee that module
 * Sending invalid data to "command" (e.g. sending int when command expects a string).
 * "command" failed to perform a task it suppose to do.
 
-Same rules applies to [subscribe](#bool-subscribecommand-interval) and [unsubscribe](#bool-unsubscribecommand) functions.  
+Same rules applies to [subscribe](#subscribecommand-interval) and [unsubscribe](#unsubscribecommand) functions.  
 Usage examples:
 
 ```arduino

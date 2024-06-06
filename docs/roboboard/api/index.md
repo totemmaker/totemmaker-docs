@@ -16,7 +16,7 @@ Software package is divided into parts:
 
 - **Arduino API** - official Arduino programming functions [Arduino Reference](https://www.arduino.cc/reference/){target="_blank"}.  
 Universal across all Arduino boards. Used by third-party Arduino libraries.  
-- **ESP32 API** - processor [specific functions](#cpu) and additional [esp32-hal drivers](#hal-drivers).  
+- **ESP32 API** - processor specific functions and additional [esp32-hal drivers](#hal-drivers).  
 Ties ESP32 with Arduino framework and provides extended peripheral functionality.  
 - **ESP-IDF** - official [Espressif development framework](https://github.com/espressif/esp-idf){target="_blank"} contains all [ESP32 drivers](https://github.com/espressif/esp-idf/tree/master/components){target="_blank"}.  
 Layer between hardware and software. Provides all required tools and drivers for ESP32.  

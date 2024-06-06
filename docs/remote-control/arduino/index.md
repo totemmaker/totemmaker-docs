@@ -77,7 +77,7 @@ void setup() {
 #### ([`TotemRobot`](TotemRobot.md)) Totem.BLE.findRobot(`RobotReceiver`) { #findRobot-result data-toc-label='findRobot(result)' }
 
 : Start searching for available Totem robots over Bluetooth Low Energy. This function will block until connection to any robot is established.  
-On successful connection find process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopfind).  
+On successful connection find process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopFind).  
 `RobotReceiver` is a user defined function to get all discovered robots.  
 Format: `#!arduino void onFoundRobot(TotemRobot robot)`. Robot information can be accessed trough [`TotemRobot`](TotemRobot.md) parameter.
 By calling `robot .`[`connect()`](TotemRobot.md#connect) user can decide which robot to select.  
@@ -102,7 +102,7 @@ void function() {
 #### Totem.BLE.findRobotNoBlock(`RobotReceiver`)  { #findRobotNoBlock-result data-toc-label='findRobotNoBlock(result)' }
 
 : Start searching for available Totem robots over Bluetooth Low Energy. This function does not block main program execution. All connection process will be done in background.  
-After connection is established, this process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopfind).  
+After connection is established, this process will be stopped. Additionally it can be stopped with call to [stopFind()](#stopFind).  
 `RobotReceiver` is a user defined function to get all discovered robots.  
 Format: `#!arduino void onFoundRobot(TotemRobot robot)`. Robot information can be accessed trough [`TotemRobot`](TotemRobot.md) parameter.
 By calling `robot .`[`connect()`](TotemRobot.md#connect) user can decide which robot to select.  
@@ -123,7 +123,7 @@ void function() {
 
 #### (`bool`) Totem.BLE.isFinding() { #isFinding data-toc-label='isFinding()' }
 
-: Check if [findRobot()](#findrobot) or [findRobotNoBlock()](#findrobotnoblock) was called and process is active.  
+: Check if [findRobot()](#findRobot) or [findRobotNoBlock()](#findRobotNoBlock) was called and process is active.  
 _Returns:_ discovery process is active [`true`:`false`].
 
 ```arduino
@@ -137,7 +137,7 @@ void function() {
 
 #### Totem.BLE.stopFind() { #stopFind data-toc-label='stopFind()' }
 
-: Stop searching for robot and unblock [findRobot()](#findrobot). Only used when required to stop this process manually. After connection, the search process is stopped automatically and calling this function is not required.  
+: Stop searching for robot and unblock [findRobot()](#findRobot). Only used when required to stop this process manually. After connection, the search process is stopped automatically and calling this function is not required.  
 
 ```arduino
 void function() {
@@ -147,7 +147,7 @@ void function() {
 
 #### Totem.BLE.attachOnConnect(`RobotReceiver`) { #attachOnConnect-result data-toc-label='attachOnConnect(result)' }
 
-: Register function that will be called when [findRobot()](#findrobot) process connects to a robot. This is handy when using non-blocking find process and we don't know when connection is established.  
+: Register function that will be called when [findRobot()](#findRobot) process connects to a robot. This is handy when using non-blocking find process and we don't know when connection is established.  
 `RobotReceiver` is a user defined function to connected robot event.  
 Format: `#!arduino void onConnectedRobot(TotemRobot robot)`. Robot information can be accessed trough [`TotemRobot`](TotemRobot.md) parameter.  
 _Parameter:_

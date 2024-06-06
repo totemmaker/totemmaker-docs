@@ -10,7 +10,7 @@ Object representing remote Totem robot connection over BLE. Received from [`Tote
 | [`String`](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} | [getAddress()](#getaddress) | Get robot MAC address |
 | `int` | [getModel()](#getmodel) | Get robot model (type) hash |
 | `int` | [getColor()](#getcolor) | Get robot appearance color |
-| `int` | [getNumber()](#getNumber) | Get robot module number |
+| `int` | [getNumber()](#getnumber) | Get robot module number |
 | `bool` | [isConnected()](#isconnected) | Check if connection is active |
 | `bool` | [connect()](#connect) | Connect to robot |
 | _none_ | [disconnect()](#disconnect) | Disconnect from robot |
