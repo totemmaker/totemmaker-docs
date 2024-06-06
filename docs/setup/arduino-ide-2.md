@@ -33,6 +33,9 @@ Install `Totem Boards` extension to add support for Totem RoboBoard.
 
 _Full tutorial how to use board manager: [Using the Board Manager](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-board-manager){target="_blank"}._
 
+!!! tip "RoboBoard X4 (only)"
+    Update motor driver firmware to latest version. See [driver update](../roboboard-x4/index.md#driver-update) guide.
+
 ## Step 3. Compile and upload code
 
 ![Arduino IDE](../assets/images/arduino-ide2-board-select.png){style="width: 70%;"}  

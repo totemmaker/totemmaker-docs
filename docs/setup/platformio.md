@@ -49,6 +49,9 @@ Make sure to check [Quick Start](https://docs.platformio.org/en/latest/integrati
     ~ $
     ```
 
+!!! tip "RoboBoard X4 (only)"
+    Update motor driver firmware to latest version. See [driver update](../roboboard-x4/index.md#driver-update) guide.
+
 ## Step 3. Create project
 
 ![PlatformIO new project](../assets/images/platformio-new-project.png){style="width: 60%;"}

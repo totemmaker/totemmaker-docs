@@ -61,6 +61,8 @@ idf.py create-manifest
         path: roboboard_x4
         git: https://github.com/totemmaker/totem-bsp.git
     ```
+    !!! tip "RoboBoard X4"
+        Update motor driver firmware to latest version. See [driver update](../roboboard-x4/index.md#driver-update) guide.
 
 ## Step 3. Write firmware
 
