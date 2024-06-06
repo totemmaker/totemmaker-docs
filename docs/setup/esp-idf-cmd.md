@@ -94,7 +94,7 @@ Flash to board:
 idf.py flash monitor
 ```
 
-## Step 5. Using Arduino IDE
+## Step 5. Using ESP-IDF
 
 For more information read following topics:  
 
