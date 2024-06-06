@@ -38,9 +38,6 @@ DC.A.setInvert(true); // Invert spin direction
 ***
 
 Output ports are directly connected to battery trough motor driver and controlled using PWM modulation. Peak voltage is dependent on SOC of battery. This can vary between 8.4V - 12.6V (X4) and 2.8V - 4.2V (X3). The higher the voltage, the faster motor will spin.  
-PWM configuration:  
-**RoboBoard X3**: slow decay at 20kHz.  
-**RoboBoard X4**: fast decay at 50Hz (slow decay not available at the moment).  
 
 ## Functions
 
@@ -104,12 +101,12 @@ _Note: RoboBoard X4 has ports AB and CD tied together. By setting tone to `A`, p
 <span class="object">DC</span>.<span class="group">A</span>.<span class="function">tone</span>(<code>frequency</code>)
 <a class="headerlink" href="#tone" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="tone-duration">
-<span class="object">DC</span>.<span class="group">A</span>.<span class="function">tone</span>(<code>frequency</code>,<code>duration</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">DC</span>.<span class="group">A</span>.<span class="function">tone</span>(<code>frequency</code>,<code>duration</code>)
 <a class="headerlink" href="#tone-duration" title="Permanent link">¶</a></h4>
 : Start vibrating DC motor coil at specified frequency.  
 **Parameter:**  
 `frequency` - tone frequency [`0`:`20000`]Hz. `0` - stop.  
-`duration` - tone output duration [`0`:`65535`]ms. `0` - indefinitely (default). <code style="background:lightBlue">X4 only</code>  
+`duration` - tone output duration [`0`:`65535`]ms. `0` - indefinitely (default).  
 
 <h4 class="apidec" id="getTone">
 <code>number</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getTone</span>()
@@ -195,7 +192,7 @@ Used to prevent motor from free spinning.
 <h4 class="apidec" id="setFrequency">
 <span class="object">DC</span>.<span class="group">A</span>.<span class="function">setFrequency</span>(<code>frequency</code>)
 <a class="headerlink" href="#setFrequency" title="Permanent link">¶</a></h4>
-: Set motor PWM frequency. Default X3: 20kHz, X4: 50Hz.  
+: Set motor PWM frequency. Default: 20kHz.  
 Can be changed if certain application or motor requires so.  
 _Note: RoboBoard X4 ports AB and CD are tied together (setting A will affect B also)._  
 **Parameter:**  
@@ -212,12 +209,12 @@ _RoboBoard X4 default: [`10`:`100`]._
 `max` - maximum allowed percentage of power for the motor. Default: `100`  
 
 <h4 class="apidec" id="setFastDecay">
-<span class="object">DC</span>.<span class="group">A</span>.<span class="function">setFastDecay</span>(<code>state</code>) <code style="background:lightBlue">X3 only</code>
+<span class="object">DC</span>.<span class="group">A</span>.<span class="function">setFastDecay</span>(<code>state</code>)
 <a class="headerlink" href="#setFastDecay" title="Permanent link">¶</a></h4>
 : Set motor current dissipation speed (fast or slow). Changes motor behavior.  
 **Fast decay mode:** Motor free spins during speed change.  
 **Slow decay mode:** More linear speed control. Better torque at low speed.  
-_Note: RoboBoard X4 currently supports only fast decay mode._  
+_Note: RoboBoard X4 requires [driver version](../../roboboard-x4/index.md#driver-update) `1.60` or later._  
 **Parameter:**  
 `state` - `false`(slow decay), `true`(fast decay). Default: slow decay.  
 
@@ -269,7 +266,7 @@ void setup() {
 ```
 
 <h4 class="apidec" id="getFastDecay">
-<code>state</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getFastDecay</span>() <code style="background:lightBlue">X3 only</code>
+<code>state</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getFastDecay</span>()
 <a class="headerlink" href="#getFastDecay" title="Permanent link">¶</a></h4>
 : Get selected decay mode (fast or slow).  
 **Returns:**  

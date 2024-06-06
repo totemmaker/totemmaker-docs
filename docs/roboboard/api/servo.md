@@ -12,16 +12,11 @@
 - `Servo.A` - control port A
 - `Servo.B` - control port B
 - `Servo.C` - control port C
-- `Servo.D` - control port C <code style="background:lightBlue">X3 only</code>
+- `Servo.D` - control port D
 - `Servo[0]` - control port A [`1`-B, `2`-C, `3`-D] _(invalid indexes will be ignored)_  
 - `Servo` - control all ports _("get" functions are not available in this case)_  
 
-Configured for standard **180 degree** servo motors, with pulse duration between **500μs-2500μs** and **period of 20ms (50Hz)**. These parameters can be [customized](#configuration).  
-
 ***
-
-!!! info
-    Speed control (duration, RPM) is not yet implemented in RoboBoard X3
 
 ## Code snippets
 
@@ -43,7 +38,6 @@ Servo.A.setSpeedRPM(30); // Set arm speed to 30RPM
 Servo.A.setSpeedS60(0.17); // Set arm speed to 0.17s/60°
 Servo.A.setPeriod(20000); // Set period to 20000µs (50Hz)
 Servo.A.setTrim(-38, -7, 18); // Map pos to L: -38, C: -7, R: 18
-Servo.A.setRange(500, 2500); // Set pulse (µs) limits
 ```
 
 ***
@@ -78,7 +72,11 @@ Set correct parameters if you are using different type of motor:
 
 These values may be adjusted to match correct (calibrated) motor angle and pulses.  
 Function [`spinPulseRaw()`](#spinPulseRaw) can be used to find actual limits.  
-Can use [`SerialServoControl.ino`](https://github.com/totemmaker/TotemArduinoBoards/blob/master/libraries/TotemRB/examples/Servo/SerialServoControl/SerialServoControl.ino) example.  
+Can use [`SerialServoControl.ino`](https://github.com/totemmaker/TotemArduinoBoards/blob/master/libraries/TotemRB/examples/Servo/SerialServoControl/SerialServoControl.ino){target=_blank} example.  
+
+!!! tip
+    Some RoboBoard X3 kits contain motor with different microseconds range.  
+    Add this configuration line to make it work properly: `#!arduino Servo.A.setMotor(180, 650, 2350)`
 
 **Change spin direction**
 
@@ -110,47 +108,47 @@ Servo.A.spinPos(0); // [-100:100] (spins to -7)
 <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPos</span>(<code>position</code>)
 <a class="headerlink" href="#spinPos" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="spinPosDuration">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPosDuration</span>(<code>position</code>,<code>duration</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPosDuration</span>(<code>position</code>,<code>duration</code>)
 <a class="headerlink" href="#spinPosDuration" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="spinPosRPM">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPosRPM</span>(<code>position</code>,<code>speed</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPosRPM</span>(<code>position</code>,<code>speed</code>)
 <a class="headerlink" href="#spinPosRPM" title="Permanent link">¶</a></h4>
 : Move servo to position (%).  
 **Parameter:**  
 `position` - servo position [`-100`:`100`]%  
-`duration` - time duration for position to change time in ms <code style="background:lightBlue">X4 only</code>  
-`speed` - (float) motor speed in rounds per minute (RPM) units. <code style="background:lightBlue">X4 only</code>  
+`duration` - time duration for position to change time in ms  
+`speed` - motor speed in rounds per minute (RPM) units [`1`:`~60`].  
 
 <h4 class="apidec" id="spinAngle">
 <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinAngle</span>(<code>angle</code>)
 <a class="headerlink" href="#spinAngle" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="spinAngleDuration">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinAngleDuration</span>(<code>angle</code>,<code>duration</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinAngleDuration</span>(<code>angle</code>,<code>duration</code>)
 <a class="headerlink" href="#spinAngleDuration" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="spinAngleRPM">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinAngleRPM</span>(<code>angle</code>,<code>speed</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinAngleRPM</span>(<code>angle</code>,<code>speed</code>)
 <a class="headerlink" href="#spinAngleRPM" title="Permanent link">¶</a></h4>
 : Move servo to angle (°).  
 Note: maximum angle depends on [`setMotor()`](#setMotor) configuration.  
 **Parameter:**  
 `angle` - servo angle [`0`:`180`]°  
-`duration` - time duration for position to change time in ms <code style="background:lightBlue">X4 only</code>  
-`speed` - (float) motor speed in rounds per minute (RPM) units. <code style="background:lightBlue">X4 only</code>  
+`duration` - time duration for position to change time in ms  
+`speed` - motor speed in rounds per minute (RPM) units [`1`:`~60`]  
 
 <h4 class="apidec" id="spinPulse">
 <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPulse</span>(<code>pulse</code>)
 <a class="headerlink" href="#spinPulse" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="spinPulseDuration">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPulseDuration</span>(<code>pulse</code>,<code>duration</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPulseDuration</span>(<code>pulse</code>,<code>duration</code>)
 <a class="headerlink" href="#spinPulseDuration" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="spinPulseRPM">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPulseRPM</span>(<code>pulse</code>,<code>speed</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPulseRPM</span>(<code>pulse</code>,<code>speed</code>)
 <a class="headerlink" href="#spinPulseRPM" title="Permanent link">¶</a></h4>
 : Move servo to exact pulse (µs).  
 **Parameter:**  
 `pulse` - time [`500`:`2500`]µs (microseconds)  
-`duration` - time duration for position to change time in ms <code style="background:lightBlue">X4 only</code>  
-`speed` - (float) motor speed in rounds per minute (RPM) units. <code style="background:lightBlue">X4 only</code>  
+`duration` - time duration for position to change time in ms  
+`speed` - motor speed in rounds per minute (RPM) units [`1`:`~60`]  
 
 <h4 class="apidec" id="spinPulseRaw">
 <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinPulseRaw</span>(<code>pulse</code>)
@@ -222,27 +220,27 @@ Function [`spinPulseRaw()`](#spinPulseRaw) can be used to discover required valu
 ### :material-car-cruise-control: Spin speed
 
 <h4 class="apidec" id="setSpeedRPM">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">setSpeedRPM</span>(<code>speed</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">setSpeedRPM</span>(<code>speed</code>)
 <a class="headerlink" href="#setSpeedRPM" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="setSpeedS60">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">setSpeedS60</span>(<code>seconds</code>) <code style="background:lightBlue">X4 only</code>
+<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">setSpeedS60</span>(<code>seconds</code>)
 <a class="headerlink" href="#setSpeedS60" title="Permanent link">¶</a></h4>
 : Set constant servo speed (to slow it down).  
 Servo motors are capable ~60 RPM at top. Setting value `0` will use maximum motor speed.  
 **Parameter:**  
-`speed` - (float) motor speed in rounds per minute (RPM) units.  
+`speed` - motor speed in rounds per minute (RPM) units [`1`:`~60`].  
 `seconds` - (float) motor speed in seconds / 60 degree units (e.g. `0.16` = 62.5RPM).  
 _It is commonly found in servo motors description._  
 
 <h4 class="apidec" id="getSpeedRPM">
-<code>speed</code> <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">getSpeedRPM</span>() <code style="background:lightBlue">X4 only</code>
+<code>speed</code> <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">getSpeedRPM</span>()
 <a class="headerlink" href="#getSpeedRPM" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="getSpeedS60">
-<code>seconds</code> <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">getSpeedS60</span>() <code style="background:lightBlue">X4 only</code>
+<code>seconds</code> <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">getSpeedS60</span>()
 <a class="headerlink" href="#getSpeedS60" title="Permanent link">¶</a></h4>
 : Get configured servo speed.  
 **Returns:**  
-`speed` - (float) motor speed in rounds per minute (RPM) units.  
+`speed` - motor speed in rounds per minute (RPM) units [`1`:`~60`].  
 `seconds` - (float) motor speed in seconds / 60 degree units (e.g. `0.16` = 62.5RPM).  
 _It is commonly found in servo motors description._  
 
