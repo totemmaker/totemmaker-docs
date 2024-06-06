@@ -1,20 +1,12 @@
 # Using PS3/PS4 controller
 
-!!! warning
-    This guide is outdated and some steps may not work. Will be updated later
-
 *[ESP32]: Espressif ESP32 microcontroller
 
 ![PS3 Controller](../assets/images/ps3.png){style="width:48%;padding:20px;"}
 ![PS4 Controller](../assets/images/ps4.png){style="width:48%;padding:20px;"}
 
-Totem robots can be controller using DUALSHOCK™3 and DUALSHOCK™4 wireless controllers.
-This tutorial contains set-up instructions required to use with Totem products.
-
-## Requirements
-
-* DUALSHOCK™ controller
-* [RoboBoard X4](../modules/04.md) or other [ESP32 based module](arduino/index.md)
+Totem robots can be controller using PS3 or PS4 wireless controllers.
+This tutorial contains set-up instructions required to use with RoboBoard.
 
 ## How it works
 
@@ -27,33 +19,33 @@ When ++"PS"++ button is pressed, controller tries to connect device with MAC add
 A third party Arduino library is required to compile the code to use with controller.  
 Select install instructions depending on controller. Both of them can be installed also.  
 
-??? example "PS3 Controller Host - DUALSHOCK™3"
-    === "PlatformIO"
-        1. Click PlatformIO icon in sidebar.  
-        1. Select `Miscellaneous` → `New Terminal`.  
-        1. Run command inside terminal:  
-            `pio lib --global install https://github.com/jvpernis/esp32-ps3`  
-
+??? example "PS3 Controller Host (click to expand)"
     === "Arduino IDE"
         1. Select `Sketch` → `Include Library` → `Manage Libraries..`.  
         1. In search field type `PS3 Controller Host`.  
         1. Select library `PS3 Controller Host` from the list and click ++"Install"++.  
         1. Close the window when installation is finished.  
 
-??? example "PS4Controller - DUALSHOCK™4"
     === "PlatformIO"
         1. Click PlatformIO icon in sidebar.  
         1. Select `Miscellaneous` → `New Terminal`.  
         1. Run command inside terminal:  
-            `pio lib --global install https://github.com/aed3/PS4-esp32`  
+            `pio lib --global install https://github.com/jvpernis/esp32-ps3`  
 
+??? example "PS4Controller (click to expand)"
     === "Arduino IDE"
         1. Download file [PS4-esp32-master.zip](https://github.com/aed3/PS4-esp32/archive/master.zip).
         1. Select `Sketch` → `Include Library` → `Add .ZIP Library..`.  
         1. Select downloaded **PS4-esp32-master.zip** file.  
         1. Message _"Library added to your libraries"_ should appear.  
 
-## Configure controller
+    === "PlatformIO"
+        1. Click PlatformIO icon in sidebar.  
+        1. Select `Miscellaneous` → `New Terminal`.  
+        1. Run command inside terminal:  
+            `pio lib --global install https://github.com/aed3/PS4-esp32`  
+
+## Change MAC
 
 Stored MAC address can be changed with [Sixaxis Pairer Tool](https://github.com/user-none/sixaxispairer){target=_blank} using PC.  
 This is required only once. If controller was connected to other device, this step should be repeated.
@@ -79,22 +71,23 @@ Follow instructions to change controller address:
 1. Run SixaxisPairTool.  
 1. Connect controller to PC using USB cable.  
 1. SixaxisPairTool should detect connected controller and display current stored MAC address at "Current Master".
-1. In "Change Master" enter `01:02:03:04:05:06`
+1. In "Change Master" enter `00:02:03:04:05:06`
 1. Click ++"Update"++
-1. "Current Master" will change to "01:02:03:04:05:06"
+1. "Current Master" will change to "00:02:03:04:05:06"
 1. Address is set. Unplug controller and close the tool.  
 
 ## Run example code
 
-Totem library provides example code to connect and use controllers.  
+Interaction with controller features can be found inside library examples.
 
-Examples starting with "**Controller/PS3_**" are made for DUALSHOCK™3 controller.  
-Examples starting with "**Controller/PS4_**" are made for DUALSHOCK™4 controller.  
+To use controllers with RoboBoard and Totem robotic kits, check [Totem Arduino examples](https://github.com/totemmaker/arduino-examples){target=_blank}.
 
-Ensure that adddress entered in "Change Master" matches with one provided in `#!arduino PS4.begin("01:02:03:04:05:06")`.  
-Press ++"PS"++ button on the controller and after few seconds it should start working.  
+**Ensure that adddress entered in "Change Master" matches with one provided in `#!arduino PS4.begin("00:02:03:04:05:06")`.**  
+**Press ++"PS"++ button on the controller and after few seconds it should start working.**  
 
 !!! bug
-    Sometimes remote does not connect even if MAC address is correct. Erase ESP32 flash and upload it again to resolve issue.  
-    Select PlatformIO → esp32dev → Platform → Erase Flash  
-    or `esptool.py erase_flash`.
+    Sometimes remote does not connect even if MAC address is correct.  
+    Erase ESP32 flash and upload it again to resolve issue:  
+    Select Arduino IDE → `Tools` → `Erase All Flash Before Sketch Upload`.  
+    Select PlatformIO → Project Tasks → Platform → `Erase Flash`.  
+    Command line: `esptool.py erase_flash`.
