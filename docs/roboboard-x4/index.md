@@ -368,6 +368,43 @@ Upon power on - battery charge level ([if enabled](../roboboard/api/board.md#set
 Setting to OFF position shuts down all power rails (`BATT`, `5V`, `3.3V`).  
 Battery can still be charged while switch is set to OFF position.
 
+## Driver update
+
+RoboBoard contains additional processor for low-level control operations (motor, board, RGB). It works by communicating over UART and relieving some strain from ESP32. This processor is called "driver" and runs its own firmware.
+
+**Checking installed version:**  
+Run this Arduino code and view Serial Monitor. Latest version is mentioned in [Releases](https://github.com/totemmaker/TotemArduinoBoards/releases){target=_blank}.  
+```arduino
+void setup() {
+    Serial.begin(115200); // Setting baud to 115200
+}
+void loop() {
+  Serial.print("Driver: ");
+  Serial.println(Board.getDriverVersionStr());
+  delay(500);
+}
+```
+
+**Update to latest firmware:**
+
+1. Use [Arduino IDE](../setup/arduino-ide-2.md) and install latest [Totem Boards](../setup/arduino-ide-2.md#step-2-install-totem-boards). [![GitHub Release](https://img.shields.io/github/v/release/totemmaker/TotemArduinoBoards?style=plastic&label=latest)
+](https://github.com/totemmaker/TotemArduinoBoards/releases/latest){target=_blank}
+1. Power on RoboBoard X4 and connect to PC.
+1. Select `Tools` → `Board` → `Totem Boards` → `RoboBoard X4`.  
+  Select `Tools` → `Port`.  
+  Select `Tools` → `Programmer` → `Esptool`.  
+1. Click `Tools` → `Burn bootloader`.
+1. Update procedure will start. Wait for LED to light up and RGB lights go green.
+
+**Troubleshooting:**
+
+If LED starts blinking - there was update error. Try press RESET button and wait.  
+If LED still blinks, follow these steps:
+
+1. Open `Tools` → `Serial Monitor`.
+1. Select `115200 baud`.
+1. Wait for Serial output. Error will be displayed. Contact [support](../support.md) for further help.
+
 ## Schematics
 
 **Mechanical drawing (dimensions):**
