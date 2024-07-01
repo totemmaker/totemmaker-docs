@@ -10,7 +10,7 @@ If you have questions or suggestions - do not hesitate to reach out to us!
 
 _Technical, programming, engineering discussions and help:_
 
-- :simple-discord: Totemmaker Discord [http://discord.totemmaker.net](http://discord.totemmaker.net){target="_blank"} <span style="-webkit-user-select: none;-ms-user-select: none;user-select: none;">(</span>https://discord.gg/Rc5bEnKrmG<span style="-webkit-user-select: none;-ms-user-select: none;user-select: none;">)</span>
+- :fontawesome-brands-discord: Totemmaker Discord [http://discord.totemmaker.net](http://discord.totemmaker.net){target="_blank"} <span style="-webkit-user-select: none;-ms-user-select: none;user-select: none;">(</span>https://discord.gg/Rc5bEnKrmG<span style="-webkit-user-select: none;-ms-user-select: none;user-select: none;">)</span>
 - :material-forum: Totemmaker forum [https://forum.totemmaker.net](https://forum.totemmaker.net){target="_blank"}
 
 _Product purchase, shipping, warranty and general questions:_
@@ -27,11 +27,11 @@ Find latest news and releases in our community forum.
 
 Check our social media pages.
 
-- :simple-github: Github [https://github.com/totemmaker](https://github.com/totemmaker){target="_blank"}
-- :simple-facebook: Facebook [https://www.facebook.com/totemmaker](https://www.facebook.com/totemmaker){target="_blank"}
-- :simple-instagram: Instagram [https://www.instagram.com/totem_maker](https://www.instagram.com/totem_maker){target="_blank"}
-- :simple-youtube: YouTube [https://www.youtube.com/@Totemmaker](https://www.youtube.com/@Totemmaker){target="_blank"}
-- :simple-twitter: Twitter [https://twitter.com/Totemmaker](https://twitter.com/Totemmaker){target="_blank"}
+- :fontawesome-brands-github: Github [https://github.com/totemmaker](https://github.com/totemmaker){target="_blank"}
+- :fontawesome-brands-facebook: Facebook [https://www.facebook.com/totemmaker](https://www.facebook.com/totemmaker){target="_blank"}
+- :fontawesome-brands-instagram: Instagram [https://www.instagram.com/totem_maker](https://www.instagram.com/totem_maker){target="_blank"}
+- :fontawesome-brands-youtube: YouTube [https://www.youtube.com/@Totemmaker](https://www.youtube.com/@Totemmaker){target="_blank"}
+- :fontawesome-brands-twitter: Twitter [https://twitter.com/Totemmaker](https://twitter.com/Totemmaker){target="_blank"}
 
 ## Distributors
 
