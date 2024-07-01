@@ -51,7 +51,7 @@ Servo angle visualization:
 ### :material-tire: 4 DC motor channels
 
 3.7 Volt DC motor channels marked with letter A, B, C, D. Can be controlled individually.  
-Allows to control motor spin direction, power (speed) and braking (only [v2.0](revisions.md/#v20)). Brake feature can be enabled using [Totem App] (board settings).  
+Allows to control motor spin direction, power (speed) and braking (only [v2.0](#v20)). Brake feature can be enabled using [Totem App] (board settings).  
 Channels are connected to the battery and output voltage is controlled with PWM. The higher the voltage, the faster motor will spin. Maximum voltage may vary depending on battery state of charge (2.8V-4.2V).  
 Power values corresponds with percentage:  
 0% - (no power, 0.0V)  
@@ -84,7 +84,7 @@ Upon power on - battery charge level will be displayed. "Loading" animation will
 
 ![Mini Control Board v2.0 charging](../assets/images/x3-v2.0-charging.png)
 
-Board [v2.0](revisions.md/#v20) features built-in battery charger:
+Board [v2.0](#v20) features built-in battery charger:
 
 1. Plug-in USB-C cable ①
 1. :octicons-dot-fill-24:{ style="color: gold" } will blink while charging ②
@@ -100,10 +100,45 @@ Battery input for connecting 1S LiPo 3.7V battery.
 **Recommended to use only supplied battery.**  
 Specifications: LiPo, 3.7V, 250 mAh.
 
-## Revision changelog
-
-View [Revision changelog](revisions.md) section.
-
 ## Known behavior
 
-Board revision [v2.0](revisions.md/#v20) will enable DC channel C and D for a short period of time (25ms) during power on. This will result in slight robot wheel spin and doesn't indicate defective product or firmware. Most robotic kits use channels A and B.
+Board revision [v2.0](#v20) will enable DC channel C and D for a short period of time (25ms) during power on. This will result in slight robot wheel spin and doesn't indicate defective product or firmware. Most robotic kits use channels A and B.
+
+## Revision changelog
+
+We are always looking to improve our products. Any physical change (components, layout) is indicated with board revision number (printed on top). Each revision may have different features or functionality.
+
+_Discontinued in 2023-Q2 and replaced by [RoboBoard X3](../roboboard-x3/index.md#revision-changelog)._
+
+### v2.0
+
+![Mini Control Board v2.0](../assets/images/photo/x3-v2.0-photo.jpg)
+
+Manufactured from 2022-Q1.
+
+- Visual, design and layout
+- Rename to Mini Control Board
+- 12 red LED switched to 4 RGB
+- Switched MCU from nRF52 to ESP32
+- Improved battery connector
+- Integrated battery charger (USB-C)
+- Added on/off switch
+- Motor braking feature
+
+### v1.5
+
+![Mini Control Board v1.5](../assets/images/photo/x3-v1.5-photo.jpg)
+
+Also known as Totem X3-FBI or MiniTrooper board.
+
+- Layout changes
+- Shorter by 1.0 cm
+- Removed speaker (not good enough)
+
+### v1.4
+
+![Mini Control Board v1.4](../assets/images/photo/x3-v1.4-photo.jpg)
+
+Also known as Totem X3-FBI or MiniTrooper board.
+
+- First public release

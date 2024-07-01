@@ -95,12 +95,12 @@ plugins:
         API/TotemRobot.md: remote-control/arduino/TotemRobot.md
         interfaces/index.md: remote-control/arduino/index.md
         interfaces/BLE.md: remote-control/arduino/index.md
-        mini-control-board-x3/index.md: mini-control-board/index.md
+        mini-control-board-x3/index.md: modules/mini-control-board.md
+        mini-control-board/index.md: modules/mini-control-board.md
+        mini-control-board/revisions.md: modules/mini-control-board.md
         roboboard-x4/getting-started.md: roboboard-x4/index.md
         labboard/serial/api.md: modules/labboard.md
         labboard/serial/protocol.md: labboard/serial-protocol.md
-        mini-control-board/index.md: modules/mini-control-board.md
-        mini-control-board/revisions.md: modules/mini-control-board.md
 
 nav:
     - "Product list" : index.md

@@ -353,7 +353,7 @@ Manufactured from 2024-Q1.
 ![RoboBoard X3 v3.0 Top](../assets/images/roboboard/roboboard-x3-top.jpg){width="350px"}
 ![RoboBoard X3 v3.0 Bottom](../assets/images/roboboard/roboboard-x3-bottom.jpg){width="350px"}
 
-Manufactured from 2023-Q2. Replaces discontinued [Mini Control Board](../mini-control-board/revisions.md).
+Manufactured from 2023-Q2. Replaces discontinued [Mini Control Board](../modules/mini-control-board.md#revision-changelog).
 
 - Renamed to "RoboBoard X3"
 - Added Arduino programming
@@ -364,4 +364,4 @@ Manufactured from 2023-Q2. Replaces discontinued [Mini Control Board](../mini-co
 - Added battery current measurement
 - Backwards compatible with Mini Control Board
 
-For previous revisions check [Mini Control Board revisions](../mini-control-board/revisions.md).
+For previous revisions check [Mini Control Board revisions](../modules/mini-control-board.md#revision-changelog).
