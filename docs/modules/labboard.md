@@ -1,4 +1,4 @@
-# Serial API reference
+# LabBoard
 
 Programming code reference to control LabBoard from Arduino boards over [Serial protocol](../serial/protocol.md).  
 To setup serial communication - read [Serial setup](../features/serial-monitor.md) section.  

@@ -97,6 +97,8 @@ plugins:
         interfaces/BLE.md: remote-control/arduino/index.md
         mini-control-board-x3/index.md: mini-control-board/index.md
         roboboard-x4/getting-started.md: roboboard-x4/index.md
+        labboard/serial/api.md: modules/labboard.md
+        labboard/serial/protocol.md: labboard/serial-protocol.md
 
 nav:
     - "Product list" : index.md
@@ -132,10 +134,7 @@ nav:
                 - 'labboard/features/i2c-scanner.md'
                 - 'labboard/features/dht11-monitor.md'
                 - 'labboard/features/ad9833-control.md'
-            - "Serial control":
-                - 'Serial setup' : 'labboard/features/serial-monitor.md'
-                - 'labboard/serial/protocol.md'
-                - 'labboard/serial/api.md'
+            - 'labboard/serial-protocol.md'
             - 'labboard/schematics.md'
             - 'labboard/firmware-update.md'
             - 'labboard/revisions.md'
@@ -170,13 +169,16 @@ nav:
             - 'IMU.' : 'roboboard/api/imu.md'
     - "Modules":
         - 'modules/index.md'
-        - 'Programming' : 'modules/programming.md'
-        - 'modules/03.md'
-        - 'modules/04.md'
-        - 'modules/11.md'
-        - 'modules/14.md'
-        - 'modules/15.md'
-        - 'modules/22.md'
+        - 'Mini Lab':
+            - 'modules/labboard.md'
+        - 'X4 Modules':
+            - 'Programming' : 'modules/programming.md'
+            - 'modules/03.md'
+            - 'modules/04.md'
+            - 'modules/11.md'
+            - 'modules/14.md'
+            - 'modules/15.md'
+            - 'modules/22.md'
     - "Remote control":
         - 'remote-control/index.md'
         - "Arduino":
