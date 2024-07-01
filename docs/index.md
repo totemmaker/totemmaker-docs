@@ -8,76 +8,86 @@ hide:
 
 <blockquote style="float:right;margin-top:-30px;border-left:0">Check our support page for more help: <a href="support/">Support</a></blockquote>
 
-## :tools: Development kits { style="margin-top: 0px" }
+<div class="grid" style="grid-gap: 2.4rem;" markdown>
 
-<div class="grid-card-row">
-  <a class="grid-card-column" href="mini-lab/">
-    <div class="grid-card">
-      <img alt="Mini Lab kit" src="/assets/images/photo/mini-lab-photo.jpg">
-      <h2>Mini Lab</h2>
-      <p>Laboratory kit for learning electronics</p>
-    </div>
-  </a>
-
-  <a class="grid-card-column" href="labboard/">
-    <div class="grid-card">
-      <img alt="LabBoard" src="/assets/images/photo/labboard-v2.2-photo.jpg">
-      <h2>LabBoard</h2>
-      <p>TotemDuino expansion board</p>
-    </div>
-  </a>
-
-  <a class="grid-card-column" href="totemduino/">
-    <div class="grid-card">
-      <img alt="TotemDuino" src="/assets/images/photo/totemduino-photo.jpg">
-      <h2>TotemDuino</h2>
-      <p>Arduino development board</p>
-    </div>
-  </a>
-
-  <a class="grid-card-column" href="totemduino/micro-lab/">
-    <div class="grid-card">
-      <img alt="Micro Lab kit" src="/assets/images/photo/micro-lab-photo.jpg">
-      <h2>Micro Lab</h2>
-      <p>TotemDuino stand for easier prototyping</p>
-    </div>
-  </a>
+<div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr))">
+  <h2 id="robot-control-boards"><img alt="🛞" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6de.svg" title=":wheel:" /> Robot boards</h2>
+  <br />
+  <ul>
+  <li>
+    <a href="roboboard-x3/" style="color: inherit">
+    <p><img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.1-card.jpg" /></p>
+    <hr />
+    <p><strong>RoboBoard X3</strong><br />
+    Programmable robot control board</p>
+    </a>
+  </li>
+  <li>
+    <a href="roboboard-x4/" style="color: inherit">
+    <p><img alt="RoboBoard X4" src="/assets/images/photo/roboboard-x4-v1.1-photo.jpg" /></p>
+    <hr />
+    <p><strong>RoboBoard X4</strong><br />
+    Programmable robot control board</p>
+    </a>
+  </li>
+  <li>
+    <a href="modules/mini-control-board/" style="color: inherit">
+    <p><img alt="Mini Control Board" src="/assets/images/photo/mini-board-x3-v1.5v.2.0-photo.jpg" /></p>
+    <hr />
+    <p><strong>Mini Control Board</strong><br />
+    Remote control board (legacy)</p>
+    </a>
+  </li>
+  <li>
+    <a href="modules/" style="color: inherit">
+    <p><img alt="TotemBUS module" src="/assets/images/photo/tbus-module-11-photo.jpg" /></p>
+    <hr />
+    <p><strong>Totem Modules</strong><br />
+    Extends RoboBoard functionality</p>
+    </a>
+  </li>
+  </ul>
 </div>
 
-## :robot: Robot control boards
+<div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr))" markdown>
+<h2 id="development-kits" style="margin-top: 0px"><img alt="🛠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6e0.svg" title=":tools:" /> Development kits</h2>
+  <br />
+  <ul>
+  <li>
+    <a href="mini-lab/" style="color: inherit">
+    <p><img alt="Mini Lab kit" src="/assets/images/photo/mini-lab-photo.jpg" /></p>
+    <hr />
+    <p><strong>Mini Lab</strong><br />
+    Laboratory kit for learning</p>
+    </a>
+  </li>
+  <li>
+    <a href="totemduino/micro-lab/" style="color: inherit">
+    <p><img alt="Micro Lab kit" src="/assets/images/photo/micro-lab-photo.jpg" /></p>
+    <hr />
+    <p><strong>Micro Lab</strong><br />
+    TotemDuino stand for prototyping</p>
+    </a>
+  </li>
+  <li>
+    <a href="totemduino/" style="color: inherit">
+    <p><img alt="TotemDuino" src="/assets/images/photo/totemduino-photo.jpg" /></p>
+    <hr />
+    <p><strong>TotemDuino</strong><br />
+    Arduino development board</p>
+    </a>
+  </li>
+  <li>
+    <a href="labboard/" style="color: inherit">
+    <p><img alt="LabBoard" src="/assets/images/photo/labboard-v2.2-photo.jpg" /></p>
+    <hr />
+    <p><strong>LabBoard</strong><br />
+    TotemDuino expansion board</p>
+    </a>
+  </li>
+  </ul>
+</div>
 
-<div class="grid-card-row">
-  <a class="grid-card-column" href="modules/mini-control-board/">
-    <div class="grid-card">
-      <img alt="Mini Control Board" src="/assets/images/photo/mini-board-x3-v1.5v.2.0-photo.jpg">
-      <h2>Mini Control Board</h2>
-      <p>Remote robot control board (legacy)</p>
-    </div>
-  </a>
-
-  <a class="grid-card-column" href="roboboard-x3/">
-    <div class="grid-card">
-      <img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.1-card.jpg">
-      <h2>RoboBoard X3</h2>
-      <p>Programmable robot control board</p>
-    </div>
-  </a>
-
-  <a class="grid-card-column" href="roboboard-x4/">
-    <div class="grid-card">
-      <img alt="RoboBoard X4" src="/assets/images/photo/roboboard-x4-v1.1-photo.jpg">
-      <h2>RoboBoard X4</h2>
-      <p>Programmable robot control board</p>
-    </div>
-  </a>
-
-  <a class="grid-card-column" href="modules/">
-    <div class="grid-card">
-      <img alt="TotemBUS modules" src="/assets/images/photo/tbus-module-11-photo.jpg">
-      <h2>Totem Modules</h2>
-      <p>Extends RoboBoard functionality</p>
-    </div>
-   </a>
 </div>
 
 ## :information_source: Support
