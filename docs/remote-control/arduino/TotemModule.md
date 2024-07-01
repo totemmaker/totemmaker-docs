@@ -356,7 +356,7 @@ module.write(commandHash);
 #### hashModel(`model`) { data-toc-label='hashModel(model)' }
 
 : Encode Totem robot model name to 16bit integer value.  
-Used with [`cfg/robot/model`](../../modules/04.md#cfgrobotmodel-model) and [getModel()](TotemRobot.md#getmodel).  
+Used with [`cfg/robot/model`](../../modules/roboboard-x4.md#cfgrobotmodel-model) and [getModel()](TotemRobot.md#getmodel).  
 _Note:_ This command is `static`, so requires to be called trough a class name.  
 _Parameter:_  
 `command` - model name string.  

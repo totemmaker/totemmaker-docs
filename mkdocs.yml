@@ -101,6 +101,9 @@ plugins:
         roboboard-x4/getting-started.md: roboboard-x4/index.md
         labboard/serial/api.md: modules/labboard.md
         labboard/serial/protocol.md: labboard/serial-protocol.md
+        modules/programming.md: modules/legacy-x4/index.md
+        modules/03.md: modules/roboboard-x3.md
+        modules/04.md: modules/roboboard-x4.md
 
 nav:
     - "Product list" : index.md
@@ -170,12 +173,12 @@ nav:
         - 'modules/index.md'
         - 'BLE Modules':
             - 'modules/mini-control-board.md'
+            - 'modules/roboboard-x3.md'
+            - 'modules/roboboard-x4.md'
         - 'Mini Lab':
             - 'modules/labboard.md'
-        - 'X4 Modules':
-            - 'Programming' : 'modules/programming.md'
-            - 'modules/03.md'
-            - 'modules/04.md'
+        - 'X4 Modules (legacy)':
+            - 'modules/legacy-x4/index.md'
             - 'modules/11.md'
             - 'modules/14.md'
             - 'modules/15.md'
