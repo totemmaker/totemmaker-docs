@@ -1,7 +1,7 @@
 # LabBoard
 
-Programming code reference to control LabBoard from Arduino boards over [Serial protocol](../serial/protocol.md).  
-To setup serial communication - read [Serial setup](../features/serial-monitor.md) section.  
+Programming code reference to control LabBoard from Arduino boards over [Serial protocol](../labboard/serial-protocol.md).  
+To setup serial communication - read [Serial setup](../labboard/features/serial-monitor.md) section.  
 Functions are available using [Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"}.  
 Make sure `#!arduino Serial.begin(57600)` speed matches with the one selected in LabBoard.  
 
@@ -123,7 +123,7 @@ void loop() {
 
 Control LabBoard frequency generator on **TXD** pin.
 
-![Digital signal PWM image](../../assets/images/digital-signal.jpg)
+![Digital signal PWM image](../assets/images/digital-signal.jpg)
 
 <h4 class="apidec" id="txd.stop"><span class="object">LB</span>.<span class="group">txd</span>.<span class="function">stop</span>()<a class="headerlink" href="#txd.stop" title="Permanent link">¶</a></h4>
 : Stop signal generator on **TXD** pin.  
@@ -436,7 +436,7 @@ Control LabBoard stored settings.
     | 05V   | Calibration offset |
     | RST   | Write `1` to factory reset |
 
-    For more information read [Serial protocol - Configuration](protocol.md#configuration).
+    For more information read [Serial protocol - Configuration](../labboard/serial-protocol.md#configuration).
 
 <h4 class="apidec" id="config.set"><span class="object">LB</span>.<span class="group">config</span>.<span class="function">set</span>(<code>name</code>,<code>value</code>)<a class="headerlink" href="#config.set" title="Permanent link">¶</a></h4>
 : Write configuration (setting) value.  

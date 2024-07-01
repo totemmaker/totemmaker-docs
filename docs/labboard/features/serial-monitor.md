@@ -29,14 +29,14 @@
 !!! tip "Exit serial mode"
     To exit back to menu from serial mode - press both ++"SET\+"++ ++"SET\-"++ keys at the same time (instead of any two keys). This is done to allow freely use of LabBoard keys without interruption.
 
-Serial mode allows to communicate with LabBoard over serial (UART) and control its features. This interaction can read or write values using [Serial protocol](../serial/protocol.md) commands, enabling external LabBoard control from TotemDuino or PC. This can be used for debugging or as integral part of application (view and control). Multiple features are available:
+Serial mode allows to communicate with LabBoard over serial (UART) and control its features. This interaction can read or write values using [Serial protocol](../serial-protocol.md) commands, enabling external LabBoard control from TotemDuino or PC. This can be used for debugging or as integral part of application (view and control). Multiple features are available:
 
 - Read measurements
 - Set output voltage
 - Control signal generator
 - Interact with keys, LED and display
 - Print serial on display `#!arduino Serial.println("Arduino")`
-- Control LabBoard features over [Serial protocol](../serial/protocol.md)
+- Control LabBoard features over [Serial protocol](../serial-protocol.md)
 - Control LabBoard features with [Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"} from Arduino
 
 ## Main settings
@@ -50,8 +50,8 @@ There are multiple ways to use serial communication. When enabling serial mode, 
 ## Connect to Arduino
 
 Enables communication with Arduino boards over **D0** and **D1** pins.  
-[Serial protocol](../serial/protocol.md) commands can be sent using [Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/){target=_blank"}: `#!arduino Serial.println("LB:OUT:DAC1:500")`.  
-[Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"} provides convenient wrapper functions `#!arduino LB.volt.setDAC1(500)` to use within Arduino environment. Read [Serial API reference](../serial/api.md) for more information.  
+[Serial protocol](../serial-protocol.md) commands can be sent using [Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/){target=_blank"}: `#!arduino Serial.println("LB:OUT:DAC1:500")`.  
+[Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"} provides convenient wrapper functions `#!arduino LB.volt.setDAC1(500)` to use within Arduino environment. Read [Serial API reference](../../modules/labboard.md) for more information.  
 **Arduino examples:** [Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/labboard){target=_blank}
 
 === "LabBoard v.2.1, v.2.2"
@@ -126,7 +126,7 @@ _Must match the one set in `#!arduino Serial.begin(57600)`._
 ## Connect to PC
 
 Enables communication with external devices, capable to interpret serial data. This allows to connect data stream to PC over USB or use other device to communicate over TX and RX.  
-LabBoard control can be achieved using [Serial protocol](../serial/protocol.md) commands.  
+LabBoard control can be achieved using [Serial protocol](../serial-protocol.md) commands.  
 **Python examples:** [Github](https://github.com/totemmaker/python-examples/tree/master/mini-lab/labboard){target=_blank}
 
 === "LabBoard v.2.1, v.2.2"
@@ -280,7 +280,7 @@ This HELLO. 123.
 
 LabBoard will display only `HELLO. 123.`, because last new line symbol "\n" was sent by `#!arduino Serial.println(" 123.")`. "This" didn't fit as line of text is aligned to its end. Symbols '.' and ',' are converted to dot segment on display.
 
-It can be disabled with [LB.display.setMonitor(`false`)](../serial/api.md#display.setMonitor) function or `LB:DISP:MON:0`. Any data stream not recognized by [Serial protocol](../serial/protocol.md) will be skipped.
+It can be disabled with [LB.display.setMonitor(`false`)](../../modules/labboard.md#display.setMonitor) function or `LB:DISP:MON:0`. Any data stream not recognized by [Serial protocol](../serial-protocol.md) will be skipped.
 
 ## Always on (background) mode
 

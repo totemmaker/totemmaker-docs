@@ -4,7 +4,7 @@ Serial protocol to control LabBoard from Arduino or external device, like PC.
 Command must start with `LB` prefix, separated by `:`, ending with new line symbol `\n`.  
 Example: `#!arduino Serial.print("LB:OUT:DAC1:1500\n")` or `#!arduino Serial.println("LB:OUT:DAC1:1500")`  
 
-**Protocol:  **
+**Protocol:**  
 
 | Command | Description |
 | --- | --- |
@@ -16,7 +16,7 @@ Example: `#!arduino Serial.print("LB:OUT:DAC1:1500\n")` or `#!arduino Serial.pri
 | `LB:<group>:!` | Enable notify for all commands in group. `!0` - disable |
 | `LB:!` | Enable notify for all LabBoard commands. `!0` - disable |
 
-**Examples:  **
+**Examples:**  
 
 Calling `LB:OUT:DAC1:1500` will change DAC1 output to 1.5 Volts.  
 Calling `LB:OUT:DAC1:?` will return current value of DAC1 - `LB:OUT:DAC1:1500`.  
@@ -36,7 +36,7 @@ Read voltage of `VIN`, `±50V`, `±5V`, `±0.5V` pins and current of `SHUNT` pin
 | `LB:IN:AMP:` | `0` - `800` mA  | SHUNT pin current |
 
 `LB:IN:50V` and `LB:IN:05V` limits can vary a bit.  
-Read instructions how to setup [current measurement](../main-screen.md#current-measurement).  
+Read instructions how to setup [current measurement](main-screen.md#current-measurement).  
 **`-100000` is returned if measurement is invalid or over the limit.**  
 Channel overvoltage may invalidate measurements of other channels also.  
 
@@ -57,7 +57,7 @@ Set voltage to `VREG`, `DAC1`, `DAC2`, `DAC3` pins.
 
 Output configurable [Pulse-width modulation](https://en.wikipedia.org/wiki/Pulse-width_modulation){target="_blank"} to `TXD` pin.
 
-![Digital signal PWM image](../../assets/images/digital-signal.jpg)
+![Digital signal PWM image](../assets/images/digital-signal.jpg)
 
 | Command | Parameter | Description |
 | --- | --- | --- |

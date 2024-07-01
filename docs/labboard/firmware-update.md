@@ -1,7 +1,12 @@
 # Firmware update
 
-LabBoard firmware can be updated to the latest version in order to receive new features and improvements. This guide contains instructions for 3 different ways to perform this procedure - [Update over Arduino](#update-over-arduino) (recommended), [Update over UART](#update-over-uart), [Update over SWD](#update-over-swd).  
-_Note: [Factory reset](features/setup.md#reset) will be applied during firmware update._
+LabBoard firmware can be updated to the latest version in order to receive new features and improvements. Available update methods:
+
+- [Update over Arduino](#update-over-arduino) (recommended)
+- [Update over UART](#update-over-uart)
+- [Update over SWD](#update-over-swd)
+
+_Note: [Factory reset](features/setup.md#reset) will be applied during update._
 
 !!! check "Select board revision"
     This tutorial differs between board revisions. Please select the one you have:
