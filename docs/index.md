@@ -47,7 +47,7 @@ hide:
 ## :robot: Robot control boards
 
 <div class="grid-card-row">
-  <a class="grid-card-column" href="mini-control-board/">
+  <a class="grid-card-column" href="modules/mini-control-board/">
     <div class="grid-card">
       <img alt="Mini Control Board" src="/assets/images/photo/mini-board-x3-v1.5v.2.0-photo.jpg">
       <h2>Mini Control Board</h2>

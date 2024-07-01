@@ -99,6 +99,8 @@ plugins:
         roboboard-x4/getting-started.md: roboboard-x4/index.md
         labboard/serial/api.md: modules/labboard.md
         labboard/serial/protocol.md: labboard/serial-protocol.md
+        mini-control-board/index.md: modules/mini-control-board.md
+        mini-control-board/revisions.md: modules/mini-control-board.md
 
 nav:
     - "Product list" : index.md
@@ -143,9 +145,6 @@ nav:
             - '#1 I/O panel' : 'side-panels/io-panel.md'
             - '#2 Sensor panel' : 'side-panels/sensor-panel.md'
             - '#3 Audio panel' : 'side-panels/audio-panel.md'
-    - "Mini Control Board":
-        - 'mini-control-board/index.md'
-        - 'mini-control-board/revisions.md'
     - "RoboBoard":
         - 'roboboard/index.md'
         - 'RoboBoard X3' : 'roboboard-x3/index.md'
@@ -169,6 +168,8 @@ nav:
             - 'IMU.' : 'roboboard/api/imu.md'
     - "Modules":
         - 'modules/index.md'
+        - 'BLE Modules':
+            - 'modules/mini-control-board.md'
         - 'Mini Lab':
             - 'modules/labboard.md'
         - 'X4 Modules':
