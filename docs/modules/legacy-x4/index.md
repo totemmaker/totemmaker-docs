@@ -2,12 +2,15 @@
 
 A general tutorial common for all modules. For specific `features` and `functions` read module documentation.  
 
+Libraries `TotemModule11.h`, `TotemModule14.h`, `TotemModule15.h`, `TotemModule22.h` are shipped together with Totem Boards Arduino core and don't require Totem Library.
+
 ## Accessing specific module
 
 Module API can be accessed by declaring its class. It will work right away, without a need for initialization. Multiple instances can be created.  
 If module is not physically connected, all functions calls will be ignored.  
 
 ```arduino
+#include <TotemModule11.h>
 TotemModule11 module; // Declare use of distance sensor [11]
 TotemModule11 module2(25151); // Declare use of distance sensor [11] with serial 25151
 ```
@@ -29,6 +32,8 @@ module.rgb.color(0, 255, 0);
 ## Events
 
 ```arduino
+#include <TotemModule15.h>
+#include <TotemModule22.h>
 TotemModule15 mod15;
 TotemModule22 mod22;
 
@@ -78,6 +83,8 @@ Simple code example to show usage of Line Follower + Potentiometer modules and i
 • Knob B - controls RGB color  
 • Knob C - controls RGB color  
 ```arduino
+#include <TotemModule14.h>
+#include <TotemModule15.h>
 // Declare modules
 TotemModule14 line; // Line follower module
 TotemModule15 pot;  // Potentiometer module
@@ -108,6 +115,7 @@ void loop() {
 API to scan for TotemBUS modules. Can be used to get list of connected TotemBUS modules and their information (number and serial).  
 
 ```arduino
+#include <TotemModule11.h>
 void setup() {
   Serial.begin(115200);
 }
