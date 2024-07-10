@@ -83,6 +83,8 @@ monitor_filters = esp32_exception_decoder
 ; Required for Serial Monitor to work
 monitor_dtr = 0
 monitor_rts = 0
+; Enable require to use "totem" namespace with RoboBoard functions
+; build_flags = -DREQUIRE_TOTEM_PREFIX
 ```
 Save file and wait for loading to finish.  
 1. Inside `src/main.cpp` write Arduino code ant build a project.  

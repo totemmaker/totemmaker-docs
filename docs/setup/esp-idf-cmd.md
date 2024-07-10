@@ -75,12 +75,12 @@ void app_main(void)
     // Initialize board
     bsp_board_init();
     // Spin motor A at 100% power
-    bsp_cmd_write(BSP_DC_POWER, BSP_PORT_A, 100);
+    bsp_dc_spin(BSP_PORT_A, 100);
     // Spin servo A to 500us pulse
-    bsp_cmd_write(BSP_SERVO_PULSE, BSP_PORT_A, 500);
+    bsp_servo_spin(BSP_PORT_A, 500);
     // RoboBoard X4 LED on
-    // bsp_cmd_write(BSP_LED_STATE, 0, 1);
-    // bsp_cmd_write(BSP_RGB_COLOR, BSP_PORT_ALL, 0xFF00FF00);
+    // bsp_board_set_led(1);
+    // bsp_rgb_color(BSP_PORT_ALL, 0xFF00FF00);
 }
 ```
 
@@ -109,14 +109,13 @@ For more information read following topics:
 - RoboBoard X4
     - [roboboard_x4.h header file](https://github.com/totemmaker/totem-bsp/blob/master/roboboard_x4/include/bsp/roboboard_x4.h){target="_blank"} - RoboBoard X4 low-level API
     - [RoboBoard X4 imu.h](https://github.com/totemmaker/totem-bsp/blob/master/roboboard_x4/include/bsp/imu.h){target="_blank"} - RoboBoard X4 accelerometer & gyroscope API
-    - [RoboBoard X4 can.h](https://github.com/totemmaker/totem-bsp/blob/master/roboboard_x4/include/bsp/can.h){target="_blank"} - RoboBoard X4 CAN bus API
 - [ESP-IDF API Reference](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/index.html){target="_blank"} - ESP32 API Reference
 - [ESP-IDF API Guides](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/index.html){target="_blank"} - More details about ESP-IDF
 
 **Code examples:**
 
-- [RoboBoard X3](https://github.com/totemmaker/totem-bsp/blob/master/examples/x3_board/main/main.c){target="_blank"} - example of board feature control
-- [RoboBoard X4](https://github.com/totemmaker/totem-bsp/blob/master/examples/x4_board/main/main.c){target="_blank"} - example of board feature control
+- [RoboBoard X3](https://github.com/totemmaker/totem-bsp/tree/master/examples/x3_board/main){target="_blank"} - example of board feature control
+- [RoboBoard X4](https://github.com/totemmaker/totem-bsp/tree/master/examples/x4_board/main){target="_blank"} - example of board feature control
 
 !!! question
     **Visit :information_source: [Support page](../support.md) to find more information or help from our community.**

@@ -43,7 +43,7 @@ For more information about getting started with Arduino, read following topics:
 
 **User interface:**
 
-- [Arduino IDE 2.2](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2){target="_blank"} | [Arduino IDE 1.8](https://docs.arduino.cc/software/ide-v1/tutorials/Environment){target="_blank"} - walk around Arduino IDE UI
+- [Arduino IDE 2.3](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started-ide-v2){target="_blank"} | [Arduino IDE 1.8](https://docs.arduino.cc/software/ide-v1/tutorials/Environment){target="_blank"} - walk around Arduino IDE UI
 - [Install libraries IDE 2.2](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-installing-a-library){target="_blank"} | [Install libraries IDE 1.8](https://docs.arduino.cc/software/ide-v1/tutorials/installing-libraries){target="_blank"} - install third-party libraries
 - [Upload sketch IDE 2.2](https://docs.arduino.cc/software/ide-v2/tutorials/getting-started/ide-v2-uploading-a-sketch){target="_blank"} - upload compiled code to TotemDuino
 - [Autocomplete feature IDE 2.2](https://docs.arduino.cc/software/ide-v2/tutorials/ide-v2-autocomplete-feature){target="_blank"} - displays code suggestions while typing

@@ -2,7 +2,7 @@
 icon: simple/arduino
 ---
 
-# Setup Arduino IDE 2.2
+# Setup Arduino IDE 2.3
 
 ![Arduino IDE](../assets/images/arduino-ide2-large.png)
 Arduino IDE stands out with its simple design, allowing to write a code, compile a project and upload it to the RoboBoard. This is one of the reasons why it's so popular among beginners. Aside from basic functionality, it has thousands of third-party libraries and code examples to create a project even faster.  
@@ -61,16 +61,17 @@ _In case of RoboBoard X4 - make sure the battery or DC jack is connected and pow
 
 ## Step 4. Project settings
 
-![Arduino IDE settings](../assets/images/arduino-ide-settings.png)
+![Arduino IDE settings](../assets/images/arduino-ide-settings2.png)
 
 Menu option `Tools` contains Board settings that can change code build and upload parameters.
 
 - **Board** - board type selection
 - **Upload speed** - firmware upload speed. Use highest, unless upload errors occur
 - **Erase All Flash Before Sketch Upload** - fully erase ESP32 flash before new firmware upload
-- **Remote control** - makes RoboBoard discoverable by [Totem App](../remote-control/app/index.md) when selected
-- **Board status** - enable [RoboBoard status](../roboboard/api/board.md#setStatusRGB) with RGB lights and beeping
-- **Charging mode** - enable RoboBoard X3 [charging mode](../roboboard/api/board.md#setChargingMode)
+- **Remote Control** - makes RoboBoard discoverable by [Totem App](../remote-control/app/index.md) when selected
+- **Board Status** - enable [RoboBoard status](../roboboard/api/board.md#setStatusRGB) with RGB lights and beeping
+- **Charging Mode** - enable RoboBoard X3 [charging mode](../roboboard/api/board.md#setChargingMode)
+- **Totem Prefix** - append "totem::" prefix to every RoboBoard function [Totem Prefix](../roboboard/api/index.md#totem-prefix)
 - **Port** - USB port name RoboBoard is connected to (required for Serial Monitor and upload)
 
 ## Step 5. Using Arduino IDE
