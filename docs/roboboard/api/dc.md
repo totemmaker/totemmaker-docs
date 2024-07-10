@@ -1,3 +1,7 @@
+---
+icon: material/fan
+---
+
 # DC
 
 ![RoboBoard X3 DC motor ports](../../assets/images/roboboard/roboboard-x3-dc.jpg)
@@ -5,14 +9,11 @@
 _Note: motor wire colors (red, black) does not indicate polarity (+, -). Swapping wires only changes spin direction._
 
 Control interface for RoboBoard DC H-bridge motor drivers.  
-Can be accessed for each port individually:  
+May access specific port or all at once:  
 
-- `DC.A` - control port A
-- `DC.B` - control port B
-- `DC.C` - control port C
-- `DC.D` - control port D
+- `DC.A`, `DC.B`, `DC.C`, `DC.D` - control single port  
 - `DC[0]` - control port A [`1`-B, `2`-C, `3`-D] _(invalid indexes will be ignored)_  
-- `DC` - control all ports _("get" functions are not available in this case)_  
+- `DC` - control all ports _(some "get" functions are not available in this case)_  
 
 ***
 
@@ -24,11 +25,13 @@ DC.spin(-50); // Spin backward at 50% power
 DC.spin(0); // Stop spin
 DC.brake(); // Brake motor
 DC.coast(); // Free spin (no breaking and power)
+// Play tone on all motors
 DC.tone(5000); // Play 5kHz tone trough motor coils
+// Change ports PWM frequency
+DC.setFrequency(50); // Set PWM frequency to 50Hz
 // Brake DC port B
 DC[1].brake();
 // Configure DC A port
-DC.A.setFrequency(50); // Set PWM frequency to 50Hz
 DC.A.setRange(10, 90); // Set power range to [10% : 90%]
 DC.A.setAccelerationTime(300); // Set acceleration to 300ms
 DC.A.setDecelerationTime(150); // Set acceleration to 150ms
@@ -41,7 +44,7 @@ Output ports are directly connected to battery trough motor driver and controlle
 
 ## Functions
 
-Single DC motor port can be in 1 of 3 different states:
+DC motor can be in 1 of 3 different states:
 
 - **Spin** - spinning forward / backward at 0-100% of power
 - **Brake** - braking (stopping) at 0-100% of power
@@ -93,25 +96,23 @@ _Electric brake only. Does not hold wheel in place._
 !!! danger
     Do not use tone function for a long period of time. This may overheat the motors.
 
-Play tone (sound) by vibrating DC motor coil. Similar as Arduino [`tone()`](https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/){target="_blank"} function, but with motors. Outputs audible range up to 20kHz. At low frequencies motor may spin a little.
-
-_Note: RoboBoard X4 has ports AB and CD tied together. By setting tone to `A`, port `B` will start to output same tone also._
+Play tone (sound) by vibrating DC motor coil. Similar as Arduino [`tone()`](https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/){target="_blank"} function, but with motors. Outputs audible range up to 20kHz. At low frequencies motor may shake a little.
 
 <h4 class="apidec" id="tone">
-<span class="object">DC</span>.<span class="group">A</span>.<span class="function">tone</span>(<code>frequency</code>)
+<span class="object">DC</span>.<span class="function">tone</span>(<code>frequency</code>)
 <a class="headerlink" href="#tone" title="Permanent link">¶</a></h4>
 <h4 class="apidec" id="tone-duration">
-<span class="object">DC</span>.<span class="group">A</span>.<span class="function">tone</span>(<code>frequency</code>,<code>duration</code>)
+<span class="object">DC</span>.<span class="function">tone</span>(<code>frequency</code>,<code>duration</code>)
 <a class="headerlink" href="#tone-duration" title="Permanent link">¶</a></h4>
-: Start vibrating DC motor coil at specified frequency.  
+: Start vibrating all DC motors at specified frequency.  
 **Parameter:**  
 `frequency` - tone frequency [`0`:`20000`]Hz. `0` - stop.  
-`duration` - tone output duration [`0`:`65535`]ms. `0` - indefinitely (default).  
+`duration` - output duration [`0`:`65535`]ms. `0` - indefinitely (default).  
 
 <h4 class="apidec" id="getTone">
-<code>number</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getTone</span>()
+<code>number</code> <span class="object">DC</span>.<span class="function">getTone</span>()
 <a class="headerlink" href="#getTone" title="Permanent link">¶</a></h4>
-: Get current tone frequency applied to the motor.  
+: Get currently applied tone.  
 **Returns:**  
 `frequency` - tone frequency [`0`:`20000`]Hz.  
 
@@ -189,15 +190,6 @@ Used to prevent motor from free spinning.
 **Parameter:**  
 `power` - automatic brake power [`0`:`100`]% or [`false`:`true`].
 
-<h4 class="apidec" id="setFrequency">
-<span class="object">DC</span>.<span class="group">A</span>.<span class="function">setFrequency</span>(<code>frequency</code>)
-<a class="headerlink" href="#setFrequency" title="Permanent link">¶</a></h4>
-: Set motor PWM frequency. Default: 20kHz.  
-Can be changed if certain application or motor requires so.  
-_Note: RoboBoard X4 ports AB and CD are tied together (setting A will affect B also)._  
-**Parameter:**  
-`frequency` - PWM frequency [`1`:`65535`]Hz.  
-
 <h4 class="apidec" id="setRange">
 <span class="object">DC</span>.<span class="group">A</span>.<span class="function">setRange</span>(<code>min</code>,<code>max</code>)
 <a class="headerlink" href="#setRange" title="Permanent link">¶</a></h4>
@@ -209,14 +201,15 @@ _RoboBoard X4 default: [`10`:`100`]._
 `max` - maximum allowed percentage of power for the motor. Default: `100`  
 
 <h4 class="apidec" id="setFastDecay">
-<span class="object">DC</span>.<span class="group">A</span>.<span class="function">setFastDecay</span>(<code>state</code>)
+<span class="object">DC</span>.<span class="group">A</span>.<span class="function">setFastDecay</span>()
 <a class="headerlink" href="#setFastDecay" title="Permanent link">¶</a></h4>
-: Set motor current dissipation speed (fast or slow). Changes motor behavior.  
+<h4 class="apidec" id="setSlowDecay">
+<span class="object">DC</span>.<span class="group">A</span>.<span class="function">setSlowDecay</span>()
+<a class="headerlink" href="#setSlowDecay" title="Permanent link">¶</a></h4>
+: Set coil current dissipation speed (fast or slow). Changes motor behavior.  
 **Fast decay mode:** Motor free spins during speed change.  
 **Slow decay mode:** More linear speed control. Better torque at low speed.  
 _Note: RoboBoard X4 requires [driver version](../../roboboard-x4/index.md#driver-update) `1.60` or later._  
-**Parameter:**  
-`state` - `false`(slow decay), `true`(fast decay). Default: slow decay.  
 
 **Get settings:**
 
@@ -241,13 +234,6 @@ _Note: RoboBoard X4 requires [driver version](../../roboboard-x4/index.md#driver
 **Returns:**  
 `state` - braking power [`0`:`100`]%.  
 
-<h4 class="apidec" id="getFrequency">
-<code>number</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getFrequency</span>()
-<a class="headerlink" href="#getFrequency" title="Permanent link">¶</a></h4>
-: Get configured motor PWM frequency.  
-**Returns:**  
-`number` - PWM frequency [`1`:`65535`]Hz.  
-
 <h4 class="apidec" id="getRange">
 <code>Range</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getRange</span>()
 <a class="headerlink" href="#getRange" title="Permanent link">¶</a></h4>
@@ -268,6 +254,26 @@ void setup() {
 <h4 class="apidec" id="getFastDecay">
 <code>state</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getFastDecay</span>()
 <a class="headerlink" href="#getFastDecay" title="Permanent link">¶</a></h4>
+<h4 class="apidec" id="getSlowDecay">
+<code>state</code> <span class="object">DC</span>.<span class="group">A</span>.<span class="function">getSlowDecay</span>()
+<a class="headerlink" href="#getSlowDecay" title="Permanent link">¶</a></h4>
 : Get selected decay mode (fast or slow).  
 **Returns:**  
-`state` - `false`(slow decay), `true`(fast decay). Default: slow decay.  
+`state` - `true` if mode is selected.  
+
+**Configure PWM frequency:**
+
+<h4 class="apidec" id="setFrequency">
+<span class="object">DC</span>.<span class="function">setFrequency</span>(<code>frequency</code>)
+<a class="headerlink" href="#setFrequency" title="Permanent link">¶</a></h4>
+: Set DC ports PWM frequency. Default: 20kHz.  
+Can be changed if certain application or motor requires so.  
+**Parameter:**  
+`frequency` - PWM frequency [`1`:`65535`]Hz.  
+
+<h4 class="apidec" id="getFrequency">
+<code>number</code> <span class="object">DC</span>.<span class="function">getFrequency</span>()
+<a class="headerlink" href="#getFrequency" title="Permanent link">¶</a></h4>
+: Get configured DC ports PWM frequency.  
+**Returns:**  
+`number` - PWM frequency [`1`:`65535`]Hz.  

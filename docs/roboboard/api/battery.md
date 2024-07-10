@@ -1,3 +1,7 @@
+---
+icon: material/car-battery
+---
+
 # Battery
 
 ![RoboBoard X3 Servo motor ports](../../assets/images/roboboard/roboboard-x3-battery.jpg){width="70%"}

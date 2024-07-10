@@ -1,3 +1,7 @@
+---
+icon: material/rotate-orbit
+---
+
 # IMU
 
 ![RoboBoard IMU sensor](../../assets/images/roboboard/roboboard-orientation.png){style="margin-top:-90px"}

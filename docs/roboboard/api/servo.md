@@ -1,3 +1,7 @@
+---
+icon: material/format-rotate-90
+---
+
 # Servo
 
 ![RoboBoard X3 Servo motor ports](../../assets/images/roboboard/roboboard-x3-servo.jpg){align=left width="50%"}
@@ -7,14 +11,11 @@
 • Red = <span style="color:red">VCC</span>  
 • Brown = <span style="color:brown">GND</span>  
 
-<p style="clear: both;">Motor control interface for RoboBoard 3-pin SERVO ports.<br>Can be accessed for each port individually:</p>
+<p style="clear: both;">Motor control interface for RoboBoard 3-pin SERVO ports.<br>May access specific port or all at once:</p>
 
-- `Servo.A` - control port A
-- `Servo.B` - control port B
-- `Servo.C` - control port C
-- `Servo.D` - control port D
+- `Servo.A`, `Servo.B`, `Servo.C`, `Servo.D` - control single port  
 - `Servo[0]` - control port A [`1`-B, `2`-C, `3`-D] _(invalid indexes will be ignored)_  
-- `Servo` - control all ports _("get" functions are not available in this case)_  
+- `Servo` - control all ports _(some "get" functions are not available in this case)_  
 
 ***
 
@@ -36,8 +37,9 @@ Servo[1].stop();
 Servo.A.setInvert(true); // Invert spin direction
 Servo.A.setSpeedRPM(30); // Set arm speed to 30RPM
 Servo.A.setSpeedS60(0.17); // Set arm speed to 0.17s/60°
-Servo.A.setPeriod(20000); // Set period to 20000µs (50Hz)
 Servo.A.setTrim(-38, -7, 18); // Map pos to L: -38, C: -7, R: 18
+// Change all ports period
+Servo.setPeriod(20000); // Set period to 20000µs
 ```
 
 ***
@@ -129,7 +131,7 @@ Servo.A.spinPos(0); // [-100:100] (spins to -7)
 <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">spinAngleRPM</span>(<code>angle</code>,<code>speed</code>)
 <a class="headerlink" href="#spinAngleRPM" title="Permanent link">¶</a></h4>
 : Move servo to angle (°).  
-Note: maximum angle depends on [`setMotor()`](#setMotor) configuration.  
+_Note: maximum angle depends on [`setMotor()`](#setMotor) configuration._  
 **Parameter:**  
 `angle` - servo angle [`0`:`180`]°  
 `duration` - time duration for position to change time in ms  
@@ -333,13 +335,6 @@ _Other cases it will return `true` right away without blocking!_
 **Parameter:**  
 `state` - invert spin direction [`true`:`false`]  
 
-<h4 class="apidec" id="setPeriod">
-<span class="object">Servo</span>.<span class="group">A</span>.<span class="function">setPeriod</span>(<code>period</code>)
-<a class="headerlink" href="#setPeriod" title="Permanent link">¶</a></h4>
-: Set custom servo signal period (default 20000µs (20ms))  
-**Parameter:**  
-`period` - signal window time [`0`:`65535`]µs (microseconds)  
-
 <h4 class="apidec" id="setMotor">
 <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">setMotor</span>(<code>angle</code>,<code>usMin</code>,<code>usMax</code>)
 <a class="headerlink" href="#setMotor" title="Permanent link">¶</a></h4>
@@ -362,13 +357,6 @@ _Other cases it will return `true` right away without blocking!_
 : Check if motor spin direction is inverted (yes / no).  
 **Returns:**  
 `state` - yes / no [`true`:`false`].  
-
-<h4 class="apidec" id="getPeriod">
-<code>number</code> <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">getPeriod</span>()
-<a class="headerlink" href="#getPeriod" title="Permanent link">¶</a></h4>
-: Get configured servo signal period (default 20000µs (20ms)).  
-**Returns:**  
-`number` - signal window time [`0`:`65535`]µs (microseconds)  
 
 <h4 class="apidec" id="getMotor">
 <code>Params</code> <span class="object">Servo</span>.<span class="group">A</span>.<span class="function">getMotor</span>()
@@ -410,3 +398,26 @@ void setup() {
     Servo.A.getTrim().max;
 }
 ```
+
+<h4 class="apidec" id="getPortsCount">
+<code>number</code> <span class="object">Servo</span>.<span class="function">getPortsCount</span>()
+<a class="headerlink" href="#getPortsCount" title="Permanent link">¶</a></h4>
+: Get number of servo ports board has.  
+**Returns:**  
+`number` - servo ports count [`2`:`4`]  
+
+**Change PWM period:**
+
+<h4 class="apidec" id="setPeriod">
+<span class="object">Servo</span>.<span class="function">setPeriod</span>(<code>period</code>)
+<a class="headerlink" href="#setPeriod" title="Permanent link">¶</a></h4>
+: Set custom servo signal period (default 20000µs (50Hz)) (all ports)  
+**Parameter:**  
+`period` - signal window time [`0`:`65535`]µs (microseconds)  
+
+<h4 class="apidec" id="getPeriod">
+<code>number</code> <span class="object">Servo</span>.<span class="function">getPeriod</span>()
+<a class="headerlink" href="#getPeriod" title="Permanent link">¶</a></h4>
+: Get configured servo signal period (default 20000µs (50Hz)).  
+**Returns:**  
+`number` - signal window time [`0`:`65535`]µs (microseconds)  

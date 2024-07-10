@@ -1,10 +1,19 @@
 # RoboBoard X4
 
+!!! info "Motor driver firmware"
+    New driver firmware v1.60 is available. See [Release notes](https://github.com/totemmaker/TotemArduinoBoards/releases/latest){target=_blank} and [Driver update](#driver-update)
+
 A more powerful programmable controller, designed for medium to larger sized robots with high voltage motors and additional expansion options.  
 This compact package features components that are essential for robotic applications: battery input, charging, motor drivers, modules and sensors extensions, orientation sensor, powerful processor, wireless connectivity, software support and more.  
 To start programming [install Arduino](../setup/index.md) and check [RoboBoard API](../roboboard/api/index.md) section.
 
 Find at: [:shopping_cart: Totemmaker.net store → RoboBoard X4](https://totemmaker.net/product/roboboard-x4-power-adapter-battery/){target="_blank"}  
+
+<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr))">
+  <a href="/setup/" class="card" style="color: inherit"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.087 6.146c-.3 0-.607.017-.907.069-2.532.367-4.23 2.239-5.18 3.674-.95-1.435-2.648-3.307-5.18-3.674a6.49 6.49 0 0 0-.907-.069C2.648 6.146 0 8.77 0 12s2.656 5.854 5.913 5.854c.3 0 .607-.017.916-.069 2.531-.376 4.23-2.247 5.18-3.683.949 1.436 2.647 3.307 5.18 3.683.299.043.607.069.915.069C21.344 17.854 24 15.23 24 12s-2.656-5.854-5.913-5.854zM6.53 15.734a3.837 3.837 0 0 1-.625.043c-2.148 0-3.889-1.7-3.889-3.777 0-2.085 1.749-3.777 3.898-3.777.208 0 .416.017.624.043 2.39.35 3.847 2.768 4.347 3.734-.508.974-1.974 3.384-4.355 3.734zm11.558.043c-.208 0-.416-.017-.624-.043-2.39-.35-3.856-2.768-4.347-3.734.491-.966 1.957-3.384 4.347-3.734.208-.026.416-.043.624-.043 2.149 0 3.89 1.7 3.89 3.777 0 2.085-1.75 3.777-3.89 3.777zm1.65-4.404v1.134h-1.205v1.182h-1.156v-1.182H16.17v-1.134h1.206V10.19h1.156v1.183h1.206zM4.246 12.498H7.82v-1.125H4.245v1.125z"/></svg></span> Arduino setup</a>
+  <a href="/remote-control/app/control-robot/" class="card" style="color: inherit"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 0h8.5C13.216 0 14 .784 14 1.75v12.5A1.75 1.75 0 0 1 12.25 16h-8.5A1.75 1.75 0 0 1 2 14.25V1.75C2 .784 2.784 0 3.75 0ZM3.5 1.75v12.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25V1.75a.25.25 0 0 0-.25-.25h-8.5a.25.25 0 0 0-.25.25ZM8 13a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/></svg></span> Smartphone control</a>
+  <a href="https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemRB/examples" target="_blank" class="card" style="color: inherit"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 3a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2H3v2h1a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h2v-2H8v-5a2 2 0 0 0-2-2 2 2 0 0 0 2-2V5h2V3m6 0a2 2 0 0 1 2 2v4a2 2 0 0 0 2 2h1v2h-1a2 2 0 0 0-2 2v4a2 2 0 0 1-2 2h-2v-2h2v-5a2 2 0 0 1 2-2 2 2 0 0 1-2-2V5h-2V3h2Z"/></svg></span> Arduino examples</a>
+</div>
 
 ## Details
 
@@ -63,7 +72,7 @@ Find at: [:shopping_cart: Totemmaker.net store → RoboBoard X4](https://totemma
 **Dimensions:**  
 • [70 x 50 x 14 mm (L x W x H)](#schematics)  
 
-## :fontawesome-solid-microchip: ESP32
+## :material-chip: ESP32
 
 RoboBoard is powered by ESP32 - a capable SoC with rich peripherals and wireless connectivity. This combinations makes it perfect for robotic applications where motor driving and wireless control is required.
 
@@ -71,7 +80,7 @@ For a past few years ESP32 is one of the most popular microcontroller among make
 
 For more ESP32 specific details read [ESP32 section](../roboboard/api/esp32.md/).
 
-## Board features
+## :material-developer-board: Board features
 
 ### :simple-sparkfun: Qwiic port
 
@@ -170,7 +179,7 @@ LED.off(); // Turn LED Off
 ```
 For more details read [`LED`](../roboboard/api/led.md) section.
 
-### :traffic_light: RGB lights
+### :material-lightbulb-on: RGB lights
 
 ![Module X4 RGB led](../assets/images/module_04_rgb.png){width=60%}
 
@@ -277,11 +286,11 @@ Integrated drivers allows to connect motors directly to the board, eliminating t
 
 Individual channels for connecting standard (3 wire) servo motors and other electronics. Pins are marked with letters A, B, C for controlling up to 3 motors with regulated 5 Volt output.
 
-By default, API is configured for **180 degree** servo motors, with pulse duration between **500μs-2500μs** and **period of 20ms (50Hz)**. These parameters can be [customized](../roboboard/api/servo.md#configuration).
+By default, API is configured for **180 degree** servo motors, with pulse duration between **500μs-2500μs** and **period of 20ms (50Hz)**. These parameters can be [customized](../roboboard/api/servo.md#setPeriod).
 
 For more information read [`Servo`](../roboboard/api/servo.md) section.
 
-### :material-engine-outline: DC motor ports
+### :material-fan: DC motor ports
 
 ![RoboBoard DC motor port](../assets/images/roboboard/roboboard-x4-dc.jpg){width=60%}
 
@@ -289,7 +298,7 @@ For more information read [`Servo`](../roboboard/api/servo.md) section.
 
 Connectors for 12V brushed DC motors. Ports are marked with letters A, B, C, D for controlling up to 4 motors.
 Power comes straight from the battery (trough H-bridge motor driver) and peak voltage is dependent on State Of Charge (8.4-12.6V).  
-Motor power is controller using 50Hz PWM signal. This parameter can be [customized](../roboboard/api/dc.md#configure).
+Motor power is controller using 20kHz PWM signal ([driver v1.60 required](#driver-update)). This parameter can be [customized](../roboboard/api/dc.md#setFrequency).
 
 Board contains dual DRV8847S driver chips for total control of 4 individual motor ports.  
 Each driver is rated for 2 Amp peak and grouped into AB and CD ports. In case motor consumes too much current - a thermal protection will trigger when IC heats up over 150°C. After cool down - it turns back on. This may cause motor power off once a second.  
@@ -370,10 +379,10 @@ Battery can still be charged while switch is set to OFF position.
 
 ## Driver update
 
-RoboBoard contains additional processor for low-level control operations (motor, board, RGB). It works by communicating over UART and relieving some strain from ESP32. This processor is called "driver" and runs its own firmware.
+RoboBoard contains additional processor for low-level control operations (motor, board, RGB). It works by communicating over UART and relieving some strain from ESP32. This processor is called "motor driver" and runs its own firmware.
 
-**Checking installed version:**  
-Run this Arduino code and view Serial Monitor. Latest version is mentioned in [Releases](https://github.com/totemmaker/TotemArduinoBoards/releases){target=_blank}.  
+**View installed version:**  
+Run this Arduino code and open Serial Monitor. Latest version is mentioned in [Releases](https://github.com/totemmaker/TotemArduinoBoards/releases){target=_blank}.  
 ```arduino
 void setup() {
     Serial.begin(115200); // Setting baud to 115200
@@ -394,12 +403,13 @@ void loop() {
   Select `Tools` → `Port`.  
   Select `Tools` → `Programmer` → `Esptool`.  
 1. Click `Tools` → `Burn bootloader`.
-1. Update procedure will start. Wait for LED to light up and RGB lights go green.
+1. Update procedure will start. Wait for (red) LED to light up and RGB lights go green.
 
 **Troubleshooting:**
 
-If LED starts blinking - there was update error. Try press RESET button and wait.  
-If LED still blinks, follow these steps:
+If (green) RGB is blinking - firmware is already flashed.  
+If (red) LED starts blinking - there was update error. Try press RESET button and wait.  
+If (red) LED still blinks, follow these steps:
 
 1. Open `Tools` → `Serial Monitor`.
 1. Select `115200 baud`.

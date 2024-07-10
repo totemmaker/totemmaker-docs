@@ -1,3 +1,7 @@
+---
+icon: octicons/device-mobile-16
+---
+
 # TotemApp
 
 ![Totem App connect discover RoboBoard](../../assets/images/app_connect_discover.jpg){width=300px}

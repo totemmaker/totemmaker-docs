@@ -1,3 +1,7 @@
+---
+icon: material/gesture-tap-button
+---
+
 # Button
 
 ![RoboBoard X3 buttons](../../assets/images/roboboard/roboboard-x3-buttons.jpg){align=left width="30%"}

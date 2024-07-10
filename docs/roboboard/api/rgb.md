@@ -1,15 +1,16 @@
+---
+icon: material/lightbulb-on
+---
+
 # RGB
 
 ![RoboBoard X3 RGB light](../../assets/images/x3-v2.0-rgb.jpg)
 
 Control 4 individual RGB lights (A, B, C, D) located at the edge of RoboBoard. By default it shines "Totem" colors. Can be controlled from smartphone app to customize robot appearance or using API for different colors or animations.
 
-Ways to access specific LED:
+May access specific light or all at once:
 
-- `RGB.A` - control LED A
-- `RGB.B` - control LED B
-- `RGB.C` - control LED C
-- `RGB.D` - control LED D
+- `RGB.A`, `RGB.B`, `RGB.C`, `RGB.D` - control single light  
 - `RGB[0]` - control LED A [`1`-B, `2`-C, `3`-D] _(invalid indexes will be ignored)_  
 - `RGB` - control all LEDs  
 
@@ -113,19 +114,19 @@ Read [Color formats](#color-formats) for more details how color is represented w
 
 ### :material-wrench-cog: Configure
 
-<h4 class="apidec" id="setDim">
-<span class="object">RGB</span>.<span class="function">setDim</span>(<code>dimming</code>)
-<a class="headerlink" href="#setDim" title="Permanent link">¶</a></h4>
+<h4 class="apidec" id="setBrightness">
+<span class="object">RGB</span>.<span class="function">setBrightness</span>(<code>level</code>)
+<a class="headerlink" href="#setBrightness" title="Permanent link">¶</a></h4>
 : Limit maximum LED brightness. Default values: X3 - `128`. X4 - `255`.  
 **Parameter:**  
-`dimming` - [`0`:`255`] maximum brightness.
+`level` - [`0`:`255`] maximum brightness.
 
-<h4 class="apidec" id="getDim">
-<code>dimming</code> <span class="object">RGB</span>.<span class="function">getDim</span>()
-<a class="headerlink" href="#getDim" title="Permanent link">¶</a></h4>
+<h4 class="apidec" id="getBrightness">
+<code>level</code> <span class="object">RGB</span>.<span class="function">getBrightness</span>()
+<a class="headerlink" href="#getBrightness" title="Permanent link">¶</a></h4>
 : Get configured LED brightness.  
 **Returns:**  
-`dimming` - [`0`:`255`] maximum brightness.
+`level` - [`0`:`255`] maximum brightness.
 
 <h4 class="apidec" id="setEnable">
 <span class="object">RGB</span>.<span class="function">setEnable</span>(<code>state</code>)

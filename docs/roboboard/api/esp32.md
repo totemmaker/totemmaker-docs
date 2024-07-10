@@ -1,3 +1,7 @@
+---
+icon: material/chip
+---
+
 # ESP32
 
 ![ESP32](../../assets/images/roboboard/roboboard-x4-esp32.jpg)

@@ -10,9 +10,10 @@ Totem RoboBoard is a family of ESP32 based Arduino development boards that combi
 - Arduino programming with extended [RoboBoard API](api/index.md).
 - Remote control using [Totem App](#connect-with-smartphone).
 
-| <center>RoboBoard X3</center> | <center>RoboBoard X4</center> |
-| --- | --- |
-| [![RoboBoard X3](../assets/images/roboboard/roboboard-x3-v3.1-top.jpg)](../roboboard-x3/index.md) | [![RoboBoard X4](../assets/images/x4-v1.1-front.jpg)](../roboboard-x4/index.md) |
+<div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));" markdown>
+- **RoboBoard X3** <hr style="margin: 0.5em" /> [![RoboBoard X3](../assets/images/roboboard/roboboard-x3-v3.1-top.jpg){style="padding-top: 1.5em"}](../roboboard-x3/index.md)
+- **RoboBoard X4** <hr style="margin: 0.5em" /> [![RoboBoard X4](../assets/images/x4-v1.1-front.jpg)](../roboboard-x4/index.md)
+</div>
 
 ## :mobile_phone: Connect with smartphone
 

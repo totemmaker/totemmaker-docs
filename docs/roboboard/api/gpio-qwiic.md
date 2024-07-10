@@ -1,3 +1,7 @@
+---
+icon: simple/sparkfun
+---
+
 # GPIO / Qwiic
 
 [![RoboBoard X4 GPIO](../../assets/images/roboboard/roboboard-x4-gpio.png){width="500"}](../../assets/images/roboboard/roboboard-x4-gpio.png)

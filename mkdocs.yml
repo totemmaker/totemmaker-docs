@@ -47,7 +47,7 @@ extra:
     provider: google
     property: UA-92600507-1
 
-copyright: © Copyright 2020-2023, Totem Technology, UAB
+copyright: © Copyright 2020-2024, Totem Technology, UAB
 
 markdown_extensions:
   - abbr       # Place tooltips on phrases
@@ -110,7 +110,7 @@ nav:
     - "Setup":
         - 'setup/index.md'
         - "RoboBoard":
-            - 'Arduino IDE 2.1' : 'setup/arduino-ide-2.md'
+            - 'Arduino IDE 2.3' : 'setup/arduino-ide-2.md'
             - 'Arduino IDE 1.8' : 'setup/arduino-ide.md'
             - 'PlatformIO' : 'setup/platformio.md'
             - 'ESP-IDF' : 'setup/esp-idf-cmd.md'
@@ -152,7 +152,7 @@ nav:
         - 'roboboard/index.md'
         - 'RoboBoard X3' : 'roboboard-x3/index.md'
         - 'RoboBoard X4' : 'roboboard-x4/index.md'
-        - "API":
+        - "API Reference":
             - 'roboboard/api/index.md'
             - 'ESP32' : 'roboboard/api/esp32.md'
             - 'GPIO / Qwiic' : 'roboboard/api/gpio-qwiic.md'
@@ -163,9 +163,9 @@ nav:
             - 'Servo.' : 'roboboard/api/servo.md'
             - 'DC.' : 'roboboard/api/dc.md'
         - "Board control":
-            - 'Battery.' : 'roboboard/api/battery.md'
             - 'Board.' : 'roboboard/api/board.md'
             - 'Button.' : 'roboboard/api/button.md'
+            - 'Battery.' : 'roboboard/api/battery.md'
             - 'LED.' : 'roboboard/api/led.md'
             - 'RGB.' : 'roboboard/api/rgb.md'
             - 'IMU.' : 'roboboard/api/imu.md'

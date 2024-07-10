@@ -1,3 +1,7 @@
+---
+icon: material/led-on
+---
+
 # LED
 
 ![RoboBoard IMU sensor](../../assets/images/roboboard/roboboard-x4-led.jpg){align=left width=40%}

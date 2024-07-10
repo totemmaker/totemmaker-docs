@@ -1,3 +1,7 @@
+---
+icon: material/lan-connect
+---
+
 # CAN
 
 ![RoboBoard X4 CAN pinout](../../assets/images/roboboard/roboboard-x4-v1.x-CAN-pins.png){width=70%}
@@ -30,6 +34,15 @@ void loop() {
 ```
 
 For more example code check: [Examples → RoboBoard → CAN](https://github.com/totemmaker/TotemArduinoBoards/tree/master/libraries/TotemRB/examples/CAN){target=_blank}
+
+## Wiring
+
+<figure markdown="span">
+  [![CAN bus wiring](../../assets/images/roboboard/roboboard-x4-v1.x-CAN-wiring.jpg)](../../assets/images/roboboard/roboboard-x4-v1.x-CAN-wiring.jpg)
+  <figcaption>X4 wiring with 3 MCP2515 modules</figcaption>
+</figure>
+
+CAN bus network requires specific wiring with terminal resistors at each side of yellow and green wires. 120Ω resistor is already present inside X4. Additional one should be added to the last node in the network. May use resistors inside module (if available) or external one.
 
 ## GUI Monitor
 

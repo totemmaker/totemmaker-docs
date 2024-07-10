@@ -1,3 +1,7 @@
+---
+icon: material/developer-board
+---
+
 # Board
 
 Access RoboBoard specific features: settings storage, power, appearance, versions.

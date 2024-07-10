@@ -1,4 +1,4 @@
-# API
+# API Reference
 
 Application Programming Interface. A set of functions to control various board features.  
 It consists of standard ESP32 Arduino implementation with addition of Totem software for RoboBoard. This whole package allows to use it as standard Arduino development board with additional capabilities.
@@ -21,7 +21,7 @@ Ties ESP32 with Arduino framework and provides extended peripheral functionality
 - **ESP-IDF** - official [Espressif development framework](https://github.com/espressif/esp-idf){target="_blank"} contains all [ESP32 drivers](https://github.com/espressif/esp-idf/tree/master/components){target="_blank"}.  
 Layer between hardware and software. Provides all required tools and drivers for ESP32.  
 - **RoboBoard API** - additional RoboBoard functionality provided by Totemmaker.  
-Includes board control functions and other services.
+Includes board control functions [totem-bsp](https://github.com/totemmaker/totem-bsp){target=_blank} and other services.
 
 All software parts can be accessed from Arduino sketch, but mainly **Arduino API** and **RoboBoard API** is used.
 
@@ -39,6 +39,21 @@ Most of the code works the same on RoboBoard X3 and RoboBoard X4. In case it's r
 ```
 
 _Note: correct board must be selected in Arduino IDE Board menu._
+
+## Totem Prefix
+
+If there is a conflict between Totem API function names and some library, this option requires to use prefix (C++ namespace) with every totem function:
+
+- PlatformIO: In platformio.ini add: `build_flags = -DREQUIRE_TOTEM_PREFIX`
+- Arduino IDE: Select `Tools` → `Totem Prefix` → `totem::Board`
+
+```arduino
+void setup() {
+    totem::Board.getRevision();
+    totem::Battery.getVoltage();
+    totem::RGB.color(totem::Color::Red);
+}
+```
 
 ## Multithreading
 

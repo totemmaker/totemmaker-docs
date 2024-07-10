@@ -1,3 +1,7 @@
+---
+icon: material/car
+---
+
 # Drivetrain
 
 ![Drivetrain directions](../../assets/images/roboboard/roboboard-drivetrain-directions.png){style="height:300px;margin-top:-30px" align=right}
