@@ -15,7 +15,6 @@ TotemDuino expands upon the great Arduino UNO platform idea. While it is kept fu
 - 100% Arduino Uno compatible, works with Arduino shields
 - Works in Arduino IDE
 - 9-30 V DC or 5V USB supply power range
-- When powered from DC power adapter, can supply up to 1.5A of current at 5V.
 - Selectable 5V or 3.3V logic voltage
 - Noise immune design
 - Additional filtering for precise analog voltage measurements

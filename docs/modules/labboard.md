@@ -1,13 +1,13 @@
 # LabBoard
 
-Programming code reference to control LabBoard from Arduino boards over [Serial protocol](../labboard/serial-protocol.md).  
+Control LabBoard from TotemDuino over [Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"}.  
 To setup serial communication - read [Serial setup](../labboard/features/serial-monitor.md) section.  
-Functions are available using [Totem Library](https://github.com/totemmaker/TotemArduino){target="_blank"}.  
 Make sure `#!arduino Serial.begin(57600)` speed matches with the one selected in LabBoard.  
 
 Example code executed on TotemDuino:  
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
 }
@@ -42,7 +42,8 @@ Read voltage of LabBoard analog inputs.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
   LB.display.setMonitor(0); // Don't print "Serial.print" to LabBoard display.
@@ -103,7 +104,8 @@ Write voltage to LabBoard analog outputs.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
 }
@@ -172,7 +174,8 @@ Control LabBoard frequency generator on **TXD** pin.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
   LB.txd.setFrequency(2000); // Set frequency to 2kHz
@@ -218,7 +221,8 @@ Control LabBoard frequency monitor and counter on **DIG1** pin.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
   LB.txd.start(); // Enable signal monitor on DIG1 pin
@@ -246,7 +250,8 @@ Read digital state of LabBoard pins **DIG1** and **DIG2**.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
 }
@@ -300,7 +305,8 @@ Control LabBoard 7-segment display.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
 }
@@ -366,7 +372,8 @@ Control 11 available LabBoard LED. Each one can be individually turned on / off.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
 }
@@ -395,7 +402,8 @@ void loop() {
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
 }
@@ -450,7 +458,8 @@ Control LabBoard stored settings.
 ---
 
 ```arduino
-#include <Totem.h> // Includes LabBoard functions LB.*
+#include <TotemLabBoard.h>
+TotemLabBoard LB;
 void setup() {
   Serial.begin(57600); // Set baudrate to 57600
 }
