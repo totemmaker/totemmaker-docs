@@ -163,8 +163,6 @@ Full list of functionalities and libraries available in Arduino environment for 
 - [TotemModule14](../../modules/14.md) - TotemBUS Line Follower module `X4 only`{style="background:lightBlue"}
 - [TotemModule15](../../modules/15.md) - TotemBUS Potentiometer module `X4 only`{style="background:lightBlue"}
 - [TotemModule22](../../modules/22.md) - TotemBUS Environment sensor module `X4 only`{style="background:lightBlue"}
-- [TotemModule](../../remote-control/arduino/TotemModule.md) - TotemBUS module control object `X4 only`{style="background:lightBlue"}
-- [ModuleData](../../remote-control/arduino/ModuleData.md) - TotemBUS module data structure `X4 only`{style="background:lightBlue"}
 
 
 - [`addLoop(func)`](#addLoop) - function to create parallel `loop()` handler

@@ -1,63 +1,51 @@
-# TotemBUS modules
+# Totem modules
 
-![Totem line follow module 14](../assets/images/module_14.jpg){style="display: block;margin-left: auto;margin-right: auto;padding-bottom:20px"}
+A list of Totem products controllable with [Totem Arduino](https://github.com/totemmaker/TotemArduino){target=_blank} library.
 
-Functionality extension modules for RoboBoard X4. Each one has a set of features, that become available once module is connected over TotemBUS cable. It's an easy way to enrich your project without any tinkering or looking for compatible libraries. Each module has documented objective API code to control all its capabilities.  
+```arduino title="Totem Library headers"
+// Control over Bluetooth
+#include <TotemBLE.h>              // Discover Totem boards (scan)
+#include <TotemMiniControlBoard.h> // Connect Mini Control Board
+#include <TotemRoboBoardX3.h>      // Connect RoboBoard X3
+#include <TotemRoboBoardX4.h>      // Connect RoboBoard X4
+// Control over Serial
+#include <TotemLabBoard.h>         // Interface Mini Lab
+```
 
-## Module number
+<div class="grid cards" markdown>
 
-Every module has number [XX] printed in a white square to identify its type and to find documentation. Same number is used when writing the code.  
+-   :material-bluetooth:{ .lg .middle } **Bluetooth boards**
 
-## Module serial
+    ---
 
-There is unique serial identifier in case more than one module with the same number exists within TotemBUS network. A command can be sent to a specific module matching its serial number. It isn't visible anywhere on the board and must be acquired programmatically.  
+    Boards featuring remote control option over Bluetooth.
 
-## Module revision
+    [:octicons-arrow-right-24: BLE Modules](ble/index.md)
 
-Version tag (v1.0) identifies board revision. Each one may have some hardware changes or new functionality. Firmware is versioned separately.  
+-   :fontawesome-solid-flask:{ .lg .middle } **Mini Lab**
 
-## Connecting modules
+    ---
 
-![Totem module 15 connected](../assets/images/module_15_connected.jpg)
+    Monitor and control Mini Lab from TotemDuino over Serial.
 
-Modules are daisy-chain connectable with a 6 pin connector. It provides power and communication. Some modules (boards like X3 and X4) has BLE interface and can connect to TotemBUS network wirelessly instead of a physical cable. This is mostly used to control modules from a smartphone. Module is operational the second it's physically connected to TotemBUS network and powered on.
+    [:octicons-arrow-right-24: LabBoard](labboard.md)
 
-## Controlling modules
+-   :material-ev-plug-type2:{ .lg .middle } **X4 TBUS modules**
 
-![Totem module 14 car](../assets/images/module_14_car.jpg)
+    ---
 
-Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). Controller can also subscribe to data in order for module to start broadcasting it. The list of available functions can be found in documentation page for specific module.  
+    Control RoboBoard X4 extension modules over TBUS.
 
-## TotemBUS protocol
+    [:octicons-arrow-right-24: X4 modules](legacy-x4/index.md)
 
-![TotemBUS](../assets/images/totembus.jpg)
+</div>
 
-TotemBUS is our implemented communication protocol to control Totem modules over CAN bus network. It is designed to overcome limitations of similar systems and offer new ways of building robots. The key factors are fast response, low overhead, higher power and easy programming. Communication is peer-to-peer, so modules can respond any time, unlike I2C alternatives ([compare to Qwiic](#comparison-to-qwiic)). This gives more flexibility in module functionality and communication types.  
+## Install library
 
-This protocol utilizes advantages of CAN bus addressing. Each module has embedded number and serial that is sent over the network. Using this technique, single message can be sent to a specific module or group of them. Every device on the bus can see what is happening and intercept information.  
-As CAN bus itself is robust communication protocol, it can only transfer 8 bytes of data in single frame. Here comes TotemBUS protocol to wrap all module functionality and encode it to simple CAN frames. There are similar protocols available (e.g. CANopen), but our solution is designed for maximum efficiency in this use case.
+This functionality requires [Totem Arduino](https://github.com/totemmaker/TotemArduino){target=_blank} library. Install it before using in a project.  
 
-Modules accept string based messages (similar as MQTT) that are encoded to 32bit number, for communication efficiency. Each message can pass a variable length and format parameter. This saves a lot of bandwidth and increases response time. Protocol also implements reading (polling), broadcasting and subscription mechanism. This is used to remove some strain from host device and leave communication line less cluttered with only mandatory data sent.  
-
-## Comparison to Qwiic
-
-|    | TotemBUS | Qwiic |
-| :- | :------: | :----: |
-| **Connector** | 6-pin micro match  | 4-pin JST |
-| **Wire length** | 100M | 1M |
-| **Voltage** | 5V and 12V | 3.3V   |
-| **Current** | 1A | 226mA |
-| **BUS name** | CAN | I2C |
-| **BUS type** | peer-to-peer | master-slave |
-| **Speed**    | 500 kb/s | 100 kb/s or 400 kb/s* |
-| **Protocol** | TotemBUS | module specific |
-| **API** | included | library per module |
-| **Daisy-chain** | yes | yes |
-| **Data pooling** | yes | yes |
-| **Data braodcast** | yes | no |
-| **Events (interrupt)** | yes | no |
-| **X4 as slave** | yes | no |
-| **Use same modules** | yes | no** |
-
-\* &nbsp;Some modules can be configured with higher speed.  
-\** Identical modules on single line can be used only if they support I2C address change.  
+1. Select `Sketch` → `Include Library` → `Manage libraries..`  
+1. In search field type in `totem`.  
+1. Click ++"Install"++ and wait for it to complete.  
+1. Close Library Manager window.  
+![Arduino IDE Library install](../assets/images/arduino_ide_totem_install.gif)

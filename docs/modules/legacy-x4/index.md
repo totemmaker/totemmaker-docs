@@ -1,8 +1,35 @@
-# Module programming
+# X4 Modules
 
-A general tutorial common for all modules. For specific `features` and `functions` read module documentation.  
+Legacy TotemBUS modules for RoboBoard X4 v1.0 and v1.1 only.  
+_Note: "TotemModule" headers are included in [Totem Boards core](https://github.com/totemmaker/TotemArduinoBoards){target=_blank} and don't require [Totem Library](https://github.com/totemmaker/TotemArduino){target=_blank}._
 
-Libraries `TotemModule11.h`, `TotemModule14.h`, `TotemModule15.h`, `TotemModule22.h` are shipped together with Totem Boards Arduino core and don't require Totem Library.
+```arduino title="RoboBoard X4 module headers"
+// Control X4 Modules
+#include <TotemModule11.h>  // Control Distance module
+#include <TotemModule14.h>  // Control Line Follower module
+#include <TotemModule15.h>  // Control Potentiometer module
+#include <TotemModule22.h>  // Control Sensor module
+```
+
+## Connecting modules
+
+![Totem module 15 connected](../../assets/images/module_15_connected.jpg)
+
+- Each module is identified by number [XX] in a white square.
+- Unique serial identifier is available in case more than one module is used.
+- Modules can be daisy-chained with a 6 pin connector. It provides power and communication.
+- Module is operational the second it's physically connected to X4.
+
+## Controlling modules
+
+![Totem module 14 car](../../assets/images/module_14_car.jpg)
+
+Each module accepts a set of commands to control their specific capabilities (like reading sensor data, controlling lights or motors). Controller can also subscribe to data in order for module to start broadcasting it. The list of available functions can be found in documentation page for specific module.  
+
+- [11] [Distance module](../11.md)
+- [14] [Line follower module](../14.md)
+- [15] [Potentiometer module](../15.md)
+- [22] [Environment sensor](../22.md)
 
 ## Accessing specific module
 
@@ -70,11 +97,13 @@ _Code blocks shortly whem calling "get" function first time - to register an eve
 
 Using `addEvent` function is only useful if you need a callback when latest value update from module is received. Events are called only if value has changed compared to last one.
 
-#### module.addEvent(`function`) { #addEvent data-toc-label='addEvent()' }
+<h4 class="apidec" id="addEvent">
+<span class="object">module</span>.<span class="function">addEvent</span>(<code>function</code>)
+<a class="headerlink" href="#addEvent" title="Permanent link">¶</a></h4>
 : Register module event function. Will be called when new data is available.  
 Event data can be received simply by accessing `module`. Data is cached and won't initiate read request, but must be called inside registered function.  
 **Parameter:**  
-`function` - event function name (`distanceEvent`).  
+`function` - void moduleEvt(int evt)  
 
 ## Multiple modules example
 
@@ -134,7 +163,9 @@ void loop() {
 
 ***
 
-#### `found` TotemX4Module::find(`number`, `serial`) { #TotemX4Module.find data-toc-label='find()' }
+<h4 class="apidec" id="find">
+<code>found</code> <span class="object">TotemX4Module</span>::<span class="function">find</span>(<code>number</code>, <code>serial</code>)
+<a class="headerlink" href="#find" title="Permanent link">¶</a></h4>
 : Try to find module on TotemBUS network.  
 Available request types:  
 • all modules  
@@ -145,10 +176,14 @@ Result can be acquired with `TotemX4Module::foundNumber` and `TotemX4Module::fou
 `number` - module number [`0`:`255`]. `0` - all modules  
 `serial` - module serial [`0`:`32767`]. `0` - ignore serial  
 **Returns:**
-`found` - `true` if module has been found
+`found` - `true` if module has been found  
 
-#### (`number`) TotemX4Module::foundNumber { #TotemX4Module.foundNumber data-toc-label='foundNumber' }
-: Get found module number.  
+<h4 class="apidec" id="foundNumber">
+<span class="object">TotemX4Module</span>::<span class="function">foundNumber</span>
+<a class="headerlink" href="#foundNumber" title="Permanent link">¶</a></h4>
+: Found module number.  
 
-#### (`serial`) TotemX4Module::foundSerial { #TotemX4Module.foundSerial data-toc-label='foundSerial' }
-: Get found module serial.  
+<h4 class="apidec" id="foundSerial">
+<span class="object">TotemX4Module</span>::<span class="function">foundSerial</span>
+<a class="headerlink" href="#foundSerial" title="Permanent link">¶</a></h4>
+: Found module serial.  
