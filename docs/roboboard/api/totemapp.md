@@ -6,7 +6,7 @@ icon: octicons/device-mobile-16
 
 ![Totem App connect discover RoboBoard](../../assets/images/app_connect_discover.jpg){width=300px}
 
-`TotemApp.` object allows to interact with [Totem App](../../remote-control/app/index.md) and get connection events or value changes when button is pressed. Combination of app button editor and RoboBoard programming creates ability to make custom remote controls for particular robot or embedded application.  
+`TotemApp.` object allows to interact with [Totem App](../../remote-control/app/index.md), [TotemLibrary](../../modules/ble/index.md) and get connection events or value changes when button is pressed. Combination of app button editor and RoboBoard programming creates ability to make custom remote controls for particular robot or embedded application.  
 Available for Android and iOS.
 
 See guide [Custom functions](../../remote-control/app/custom-function.md) for more detail instructions on executing custom actions on app button press.
@@ -210,3 +210,97 @@ void loop() {
   // Empty
 }
 ```
+
+## Totem Library
+
+Exchange user defined data between RoboBoard and [Totem Arduino](../../modules/index.md#install-library) library.  
+It can be used to simulate Totem iOS/Android app and remotely control the board from any other ESP32 Arduino development board.
+
+<h4 class="apidec" id="addOnSend">
+<span class="object">TotemApp</span>.<span class="function">addOnSend</span>(<code>function</code>)
+<a class="headerlink" href="#addOnSend" title="Permanent link">¶</a></h4>
+: Register receive functions for remote [`sendValue`](../../modules/roboboard-x3.md#sendValue), [`sendString`](../../modules/roboboard-x3.md#sendString) in TotemArduino library.  
+It accepts value and string functions. Both can be added at the same time.  
+_Note: will be renamed to `TotemApp.addOnReceive()`._  
+**Parameter:**  
+`function` - `void onReceiveValue(int id, int value)`  
+`function` - `void onReceiveString(int id, String str)`  
+```arduino
+// Intercept value sent by sendValue() (from Totem Library)
+void onReceiveValue(int id, int value) {
+  
+}
+// Intercept string sent by sendString() (from Totem Library)
+void onReceiveString(int id, String string) {
+  
+}
+void setup() {
+  // Start Totem App service
+  TotemApp.begin();
+  // Register receive value handlers
+  TotemApp.addOnSend(onReceiveValue);
+  TotemApp.addOnSend(onReceiveString);
+}
+```
+
+<h4 class="apidec" id="addOnRead">
+<span class="object">TotemApp</span>.<span class="function">addOnRead</span>(<code>function</code>)
+<a class="headerlink" href="#addOnRead" title="Permanent link">¶</a></h4>
+: Register read handlers for remote [`readValue`](../../modules/roboboard-x3.md#readValue), [`readString`](../../modules/roboboard-x3.md#readString) in TotemArduino library.  
+It accepts value and string functions. Both can be added at the same time.  
+**Parameter:**  
+`function` - `int onReadValue(int id)`  
+`function` - `String onReadString(int id)`  
+```arduino
+// Return value requested by readValue() (from Totem Library)
+int onReadValue(int id) {
+  return 0;
+}
+// Return string requested by readString() (from Totem Library)
+String onReadString(int id) {
+  return "";
+}
+void setup() {
+  // Start Totem App service
+  TotemApp.begin();
+  // Register read value handlers
+  TotemApp.addOnRead(onReadValue);
+  TotemApp.addOnRead(onReadString);
+}
+```
+
+<h4 class="apidec" id="sendValue">
+<code>state</code> <span class="object">TotemApp</span>.<span class="function">sendValue</span>(<code>id</code>, <code>value</code>)
+<a class="headerlink" href="#sendValue" title="Permanent link">¶</a></h4>
+: Send 32-bit value to TotemArduino library. Receive using [`addOnReceive()`](../../modules/roboboard-x3.md#addOnReceive).  
+**Parameter:**  
+`id` - 32-bit identifier  
+`value` - 32-bit value  
+**Returns:**  
+`state` - send [`true`]-success, [`false`]-error
+
+!!! bug "Function sendString bug"
+    Calling `#!arduino TotemApp.sendString(10, "Message")` will send empty message. Temporary fix:  
+
+    - Wrap message into String() object `#!arduino TotemApp.sendString(10, String("Message"))`
+
+<h4 class="apidec" id="sendString">
+<code>state</code> <span class="object">TotemApp</span>.<span class="function">sendString</span>(<code>id</code>, <code>string</code>)
+<a class="headerlink" href="#sendString" title="Permanent link">¶</a></h4>
+: Send string (text) to TotemArduino library. Receive using [`addOnReceive()`](../../modules/roboboard-x3.md#addOnReceive).  
+**Parameter:**  
+`id` - 32-bit identifier  
+`string` - [String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/){target=_blank} object  
+**Returns:**  
+`state` - send [`true`]-success, [`false`]-error
+
+<h4 class="apidec" id="sendString">
+<code>state</code> <span class="object">TotemApp</span>.<span class="function">sendString</span>(<code>id</code>, <code>data</code>, <code>len</code>)
+<a class="headerlink" href="#sendString" title="Permanent link">¶</a></h4>
+: Send data array to TotemArduino library. Receive using [`addOnReceive()`](../../modules/roboboard-x3.md#addOnReceive).  
+**Parameter:**  
+`id` - 32-bit identifier  
+`data` - pointer to string or data array  
+`len` - data length  
+**Returns:**  
+`state` - send [`true`]-success, [`false`]-error
