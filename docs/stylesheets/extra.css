@@ -17,22 +17,6 @@
   --md-typeset-mark-color: #42959a26;
 }
 
-h4:not(.apidec) {
-  display: table;
-  margin: 6px 0;
-  font-size: 90%;
-  line-height: normal;
-  background: #e7f2fa;
-  color: #2980B9;
-  border-top: solid 3px #6ab0de;
-  padding: 6px;
-  position: relative;
-}
-
-h4:target:not(.apidec) {
-  scroll-margin-top: 70px !important;
-}
-
 h4.apidec {
   font-weight: 400;
   line-height: 1em;
