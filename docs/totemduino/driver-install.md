@@ -1,10 +1,14 @@
 # Driver install
 
-TotemDuino contains PL2303 USB to Serial chip that is no more supported in **Windows 11 OS**. This results in problems when trying to flash code sketch using Arduino. This tutorial will instruct on resolving this issue. ^^Other operating systems should work out of the box.^^
+[TotemDuino **v1.x**](index.md) contains PL2303 USB to Serial chip that is no more supported in **Windows 11**. This results in problems when trying to flash code sketch using Arduino. This tutorial will instruct on resolving this issue. ^^Other operating systems should work out of the box.^^
 
 ![Windows 11 driver issue](../assets/images/windows-11-driver-issue.jpg)
 
 _Driver status can be view in Windows → Device Manager application._
+
+!!! warning "Note"
+    This guide is **only** for **Windows 11** and older TotemDuino **v1.x** (PL2303) boards.  
+    ^^_Windows 10 or [TotemDuino **v2.0**](index.md) (CH340) doesn't need this driver._^^
 
 ## Install driver
 

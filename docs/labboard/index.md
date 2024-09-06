@@ -5,6 +5,7 @@
 
 ![Mini Lab LabBoard photo](../assets/images/mini-lab/labboard-v2.2-photo.jpg)
 
+[:material-cart: _TE-PR-1_](https://totemmaker.net/product/mini-lab-labboard/){target=_blank}  
 This board has a dual use - firstly it can be used as an expansion board to the TotemDuino system, offering easily accessible input and output connections, and secondly
 - it is a measuring and testing unit, containing multiple features.
 

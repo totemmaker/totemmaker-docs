@@ -24,7 +24,7 @@
 * [Piezo electric buzzer](#buzzer)
 * [DC motor driver](#dc-motor-driver)
 
-**Arduino examples:** [Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos){target=_blank}
+**Arduino examples:** [:simple-github: Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel2_demos){target=_blank} | [:material-cart: _TE-SP02-B_](https://totemmaker.net/product/sensor-side-panel-soldered-add-totem-mini-lab/){target=_blank}  
 
 This side panel is a combination of sensors with display and motor driver as a bonus. Can be used to detect sound, room temperature, visualize data or alert with buzzer. Motor driver allows to control it manually or digitally using TotemDuino.
 

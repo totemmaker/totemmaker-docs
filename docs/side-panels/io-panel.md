@@ -32,7 +32,7 @@
 * [1 Relay with LED indicator](#relay)
 * [1 3.5mm jack connector](#35mm-adapter)
 
-**Arduino examples:** [Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel1_demos){target=_blank}
+**Arduino examples:** [:simple-github: Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel1_demos){target=_blank} | [:material-cart: _TE-SP01-B_](https://totemmaker.net/product/input-output-side-panel-soldered-totem-mini-lab/){target=_blank}  
 
 This side panel is oriented to user input components. Various switches and buttons provides regulated control of connected circuits. This is useful to start some action (connect circuit), set specific configuration, regulate resistance or voltage. RGB LED can be conveniently used to display circuit state or to play around learning electronics.
 

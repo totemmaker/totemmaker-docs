@@ -1,7 +1,20 @@
 # Overview
 
-![TotemDuino](../assets/images/mini-lab/totemduino-photo.jpg)
+<div class="grid cards" markdown>
+-   **TotemDuino v2.0**
+    ![TotemDuino](../assets/images/products/electronics/totemduino-v2.0-strip.jpg){style="height:145px"}
+-   **TotemDuino v1.x**
+    ![TotemDuino](../assets/images/mini-lab/totemduino-photo.jpg)
+</div>
 
+!!! info "Revision v2.0"
+    New version is released with following improvements:
+
+    - Changed USB-Serial chip to CH340 (works with Windows 11)
+    - Added USB-C, Qwiic (I2C) connector, ICSP header
+    - Design update, power and serial LED
+
+[:material-cart: _TE-PR-2_](https://totemmaker.net/product/totemduino-arduino/){target=_blank}  
 TotemDuino expands upon the great Arduino UNO platform idea. While it is kept fully backwards compatible with Arduino, a lot of additional features are included as well, such as:
 
 * **Output protection** - comes with all of its output pins going into LabBoard protected against over-voltage or short-circuit conditions.
@@ -48,3 +61,4 @@ void loop() {
 - <span style="color:#969696;font-weight:bold;background:lightGrey">Flat cable</span> - port to connect TotemDuino with LabBoard. It routes power and all Arduino pin headers to LabBoard.
 - <span style="color:black;font-weight:bold;background:lightGrey">Serial header</span> - header of USB-Serial converter output. Not used.
 - <span style="color:white;font-weight:bold;background:grey">ICSP header</span> - standard pins for In Circuit Serial Programming. Not used and header is not soldered.
+- <span style="color:red;font-weight:bold;background:#f8f2d0">Qwiic connector</span> - Connect external I2C modules. Pull white switches to ON position in order to connect A4, A5 pins to connector (board v2.0 only).

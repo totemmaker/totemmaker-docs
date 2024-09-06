@@ -18,7 +18,7 @@
 * [Function generator](#function-generator)
 * [Filter bench](#filter-bench) _(v3.7)_
 
-**Arduino examples:** [Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos){target=_blank}
+**Arduino examples:** [:simple-github: Github](https://github.com/totemmaker/arduino-examples/tree/master/mini-lab/sidepanel3_demos){target=_blank} | [:material-cart: _TE-SP03-B_](https://totemmaker.net/product/side-panel-3-soldered-add-totem-mini-lab/){target=_blank}  
 
 This side panel is dedicated for experimenting with signal generation, allowing to visualize and hear its output. It can generate different types of waveforms with configurable frequency. Integrated loudspeaker can be used to listen how signal affects the sound or use external source to play music. Also contains VU meter to visualize signal level in LED bar.
 

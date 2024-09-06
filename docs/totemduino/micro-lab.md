@@ -2,6 +2,7 @@
 
 ![Micro Lab kit](../assets/images/micro-lab-kit.jpg)
 
+[:material-cart: _TKM-MCL1_](https://totemmaker.net/product/totemduino-microlab/){target=_blank}  
 Totem Micro Lab is a standalone kit based on [TotemDuino](index.md). Like its bigger brother, Micro Lab has sturdy rack to comfortably hold everything together. With included breadboard, you can easy connect various components to TotemDuino. It can also be expanded with [Side Panels](../side-panels/index.md).
 
 ## Use with side panels

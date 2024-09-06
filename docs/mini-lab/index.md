@@ -8,6 +8,7 @@
 
 ![Mini Lab LabBoard photo](../assets/images/mini-lab/mini-lab-side-panel-photo.jpg)
 
+[:material-cart: _TKM-ML1_](https://totemmaker.net/product/totem-mini-lab/){target=_blank}  
 Totem Mini Lab contains all the necessities for starting your path in the world of electronics and programming. Using it, should be simple and fun! While building it, we tried to address and improve all the negative parts about prototyping - no longer you’ll have to deal with messy wiring, fragile connections and headaches of where to mount every separate part of your experiment.
 
 Mini Lab is meant to be used together with Totem construction system which allows users to build solid workbenches with integrated breadboards, as well as available expansion boards which can expand the capabilities of the Mini Lab even further.
