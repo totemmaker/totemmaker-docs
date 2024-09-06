@@ -8,86 +8,58 @@ hide:
 
 <blockquote style="float:right;margin-top:-30px;border-left:0">Check our support page for more help: <a href="support/">Support</a></blockquote>
 
-<div class="grid" style="grid-gap: 2.4rem;" markdown>
+<style>
+a.cover {
+    padding:5px!important;
+    color:grey!important;
+    text-align:center!important;
+    font-weight:bold!important;
+    font-size:1.0em!important;
+    line-height:2.8;!important;
+}
+</style>
 
-<div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr))">
-  <h2 id="robot-control-boards"><img alt="🛞" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6de.svg" title=":wheel:" /> Robot boards</h2>
-  <br />
-  <ul>
-  <li>
-    <a href="roboboard-x3/" style="color: inherit">
-    <p><img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.1-card.jpg" /></p>
-    <hr />
-    <p><strong>RoboBoard X3</strong><br />
-    Programmable robot control board</p>
-    </a>
-  </li>
-  <li>
-    <a href="roboboard-x4/" style="color: inherit">
-    <p><img alt="RoboBoard X4" src="/assets/images/photo/roboboard-x4-v1.1-photo.jpg" /></p>
-    <hr />
-    <p><strong>RoboBoard X4</strong><br />
-    Programmable robot control board</p>
-    </a>
-  </li>
-  <li>
-    <a href="modules/mini-control-board/" style="color: inherit">
-    <p><img alt="Mini Control Board" src="/assets/images/photo/mini-board-x3-v1.5v.2.0-photo.jpg" /></p>
-    <hr />
-    <p><strong>Mini Control Board</strong><br />
-    Remote control board (legacy)</p>
-    </a>
-  </li>
-  <li>
-    <a href="modules/" style="color: inherit">
-    <p><img alt="TotemBUS module" src="/assets/images/photo/tbus-module-11-photo.jpg" /></p>
-    <hr />
-    <p><strong>Totem Modules</strong><br />
-    Extends RoboBoard functionality</p>
-    </a>
-  </li>
-  </ul>
+## :wireless: Control boards
+
+<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));max-width: 948px;">
+    <a href="roboboard-x3/" class="card cover">
+    <img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.1-card.jpg"><hr />RoboBoard X3</a>
+    <a href="roboboard-x4/" class="card cover">
+    <img alt="RoboBoard X4" src="/assets/images/photo/roboboard-x4-v1.1-photo.jpg"><hr />RoboBoard X4</a>
+    <a href="modules/mini-control-board/" class="card cover">
+    <img alt="Mini Control Board" src="/assets/images/photo/mini-board-x3-v1.5v.2.0-photo.jpg"><hr />Mini Control Board</a>
+    <a href="modules/" class="card cover">
+    <img alt="TotemBUS module" src="/assets/images/photo/tbus-module-11-photo.jpg"><hr />Totem Modules</a>
 </div>
 
-<div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr))" markdown>
-<h2 id="development-kits" style="margin-top: 0px"><img alt="🛠" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6e0.svg" title=":tools:" /> Development kits</h2>
-  <br />
-  <ul>
-  <li>
-    <a href="mini-lab/" style="color: inherit">
-    <p><img alt="Mini Lab kit" src="/assets/images/photo/mini-lab-photo.jpg" /></p>
-    <hr />
-    <p><strong>Mini Lab</strong><br />
-    Laboratory kit for learning</p>
-    </a>
-  </li>
-  <li>
-    <a href="totemduino/micro-lab/" style="color: inherit">
-    <p><img alt="Micro Lab kit" src="/assets/images/photo/micro-lab-photo.jpg" /></p>
-    <hr />
-    <p><strong>Micro Lab</strong><br />
-    TotemDuino stand for prototyping</p>
-    </a>
-  </li>
-  <li>
-    <a href="totemduino/" style="color: inherit">
-    <p><img alt="TotemDuino" src="/assets/images/photo/totemduino-photo.jpg" /></p>
-    <hr />
-    <p><strong>TotemDuino</strong><br />
-    Arduino development board</p>
-    </a>
-  </li>
-  <li>
-    <a href="labboard/" style="color: inherit">
-    <p><img alt="LabBoard" src="/assets/images/photo/labboard-v2.2-photo.jpg" /></p>
-    <hr />
-    <p><strong>LabBoard</strong><br />
-    TotemDuino expansion board</p>
-    </a>
-  </li>
-  </ul>
+## :tools: Development kits
+
+<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));;max-width: 1200px;">
+    <a href="mini-lab/" class="card cover">
+    <img alt="" src="/assets/images/products/kits/mini-lab.jpg"><hr />Mini Lab</a>
+    <a href="totemduino/micro-lab/" class="card cover">
+    <img alt="" src="/assets/images/products/kits/micro-lab.jpg"><hr />Micro Lab</a>
+    <a href="labboard/" class="card cover">
+    <img alt="" src="/assets/images/products/electronics/labboard.jpg"><hr />LabBoard</a>
+    <a href="totemduino/" class="card cover">
+    <img alt="" src="/assets/images/products/electronics/totemduino-v2.0.jpg"><hr />TotemDuino</a>
+    <a href="products/#mini-lab" class="card cover">
+    <img alt="" src="/assets/images/more.jpg"><hr />More</a>
 </div>
 
+## :wheel: Robotics kits
+
+<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));;max-width: 1200px;">
+    <a href="products/robotics-kits/#mini-trooper" class="card cover">
+    <img alt="" src="/assets/images/products/kits/mini-trooper.jpg"><hr />Mini Trooper</a>
+    <a href="products/robotics-kits/#robocar-chassis" class="card cover">
+    <img alt="" src="/assets/images/products/kits/robocar-chassis.jpg"><hr />RoboCar Chassis</a>
+    <a href="products/robotics-kits/#robotics-kit" class="card cover">
+    <img alt="" src="/assets/images/products/kits/robotics-kit.jpg"><hr />Robotics Kit</a>
+    <a href="products/robotics-kits/#4wd-car" class="card cover">
+    <img alt="" src="/assets/images/products/kits/4wd.jpg"><hr />4WD Car</a>
+    <a href="products/#robotic-kits" class="card cover">
+    <img alt="" src="/assets/images/more.jpg"><hr />More</a>
 </div>
 
 ## :information_source: Support

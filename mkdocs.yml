@@ -64,7 +64,10 @@ markdown_extensions:
   - pymdownx.superfences  # Nest blocks inside each other
   - pymdownx.keys         # Show keyboard keys
   - pymdownx.tabbed:      # Group content into tabs
-      alternate_style: true 
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.caret        # Add superscript with ^^text^^
   - pymdownx.mark         # Highlight text with ==text==
   - pymdownx.tilde        # Delete and subscript ~~text~~
@@ -189,6 +192,20 @@ nav:
             - 'modules/14.md'
             - 'modules/15.md'
             - 'modules/22.md'
+    - "Products":
+        - 'products/index.md'
+        - 'products/robotics-kits.md'
+        - 'Tools':
+            - 'products/screwdrivers.md'
+            - 'products/board-cutters.md'
+            - 'products/beam-cutters.md'
+        - 'Mechanics':
+            - 'products/mechanics/index.md'
+            - 'products/motors.md'
+            - 'products/beams.md'
+            - 'products/boards.md'
+            - 'products/brackets.md'
+            - 'products/fasteners.md'
     - "Remote control":
         - 'remote-control/index.md'
         - "Totem App":
