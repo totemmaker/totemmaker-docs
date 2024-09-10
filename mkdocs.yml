@@ -40,9 +40,9 @@ extra:
     - icon: fontawesome/brands/instagram
       link: https://www.instagram.com/totem_maker/
     - icon: fontawesome/brands/youtube
-      link: https://www.youtube.com/@Totemmaker
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/Totemmaker
+      link: https://www.youtube.com/totemmaker
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/totemmaker
   analytics:
     provider: google
     property: UA-92600507-1

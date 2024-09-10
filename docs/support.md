@@ -30,8 +30,8 @@ Check our social media pages.
 - :fontawesome-brands-github: Github [https://github.com/totemmaker](https://github.com/totemmaker){target="_blank"}
 - :fontawesome-brands-facebook: Facebook [https://www.facebook.com/totemmaker](https://www.facebook.com/totemmaker){target="_blank"}
 - :fontawesome-brands-instagram: Instagram [https://www.instagram.com/totem_maker](https://www.instagram.com/totem_maker){target="_blank"}
-- :fontawesome-brands-youtube: YouTube [https://www.youtube.com/@Totemmaker](https://www.youtube.com/@Totemmaker){target="_blank"}
-- :fontawesome-brands-twitter: Twitter [https://twitter.com/Totemmaker](https://twitter.com/Totemmaker){target="_blank"}
+- :fontawesome-brands-youtube: YouTube [https://www.youtube.com/totemmaker](https://www.youtube.com/totemmaker){target="_blank"}
+- :fontawesome-brands-x-twitter: [https://x.com/totemmaker](https://x.com/totemmaker){target="_blank"}
 
 ## Distributors
 
