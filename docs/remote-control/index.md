@@ -6,6 +6,7 @@ Totem products can be controlled remotely (wired and wireless) from other device
 
 Different ways to connect to X3 and X4 boards. Click on selected interface for more information.  
 
-* [Arduino](../modules/ble/index.md) - Control X3 and X4 from any ESP32 (BLE capable) product using Arduino.  
-* [Totem App](app/index.md) - Control X3, X4 and robots using mobile Totem App.  
-* [PS3/PS4 controller](ps-controller.md) - Control X4 using PS3 or PS4 remote controller.  
+* [Arduino](../modules/ble/index.md) - Control with any ESP32 (BLE capable) product using Arduino.  
+* [Totem App](app/index.md) - Control robots using mobile Totem App.  
+* [BBC Micro:bit](microbit.md) - Control robots remotely using BBC Micro:bit.  
+* [PS3/PS4 controller](ps-controller.md) - Control using PS3 or PS4 remote controller.  

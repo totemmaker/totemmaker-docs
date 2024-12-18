@@ -212,5 +212,6 @@ nav:
             - 'remote-control/app/index.md'
             - 'remote-control/app/control-robot.md'
             - 'remote-control/app/custom-function.md'
+        - "BBC micro:bit" : remote-control/microbit.md
         - "PS3/PS4 controller" : remote-control/ps-controller.md
     - 'support.md'

@@ -1,3 +1,7 @@
+---
+icon: simple/playstation
+---
+
 # Using PS3/PS4 controller
 
 *[ESP32]: Espressif ESP32 microcontroller
