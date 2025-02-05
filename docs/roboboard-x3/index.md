@@ -349,6 +349,7 @@ Manufactured from 2024-Q1.
 - Added additional JST-SH connector in place of GPIO
 - Added stronger LDO regulators (0.8 Amp)
 - Added RGB strip extension pins
+- Added battery current measurement
 - Qwiic won't be powered in charging mode
 - Easier to press buttons
 - RGB connected to MCU LDO (always powered)
@@ -367,7 +368,6 @@ Manufactured from 2023-Q2. Replaces discontinued [Mini Control Board](../modules
 - Added Qwiic port
 - Added Reset and Boot buttons
 - Added GPIO pins
-- Added battery current measurement
 - Backwards compatible with Mini Control Board
 
 For previous revisions check [Mini Control Board revisions](../modules/mini-control-board.md#revision-changelog).

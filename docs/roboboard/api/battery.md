@@ -57,7 +57,7 @@ Functions to read battery status.
 `voltage` - battery voltage (_float_).  
 
 <h4 class="apidec" id="getCurrent">
-<code>amps</code> <span class="object">Battery</span>.<span class="function">getCurrent</span>() <code style="background:lightBlue">X3 only</code>
+<code>amps</code> <span class="object">Battery</span>.<span class="function">getCurrent</span>() <code style="background:lightBlue">X3 v3.1 only</code>
 <a class="headerlink" href="#getCurrent" title="Permanent link">¶</a></h4>
 : Get battery current flow (Amps). `-`(discharging), `+`(charging).  
 **Returns:**  
