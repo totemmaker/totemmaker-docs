@@ -30,10 +30,10 @@ A few different applications are available. For beginners - [Arduino IDE 2.3](ar
     </a>
   </li>
   <li style="padding:0">
-    <a href="platformio/" style="color: inherit">
-      <img alt="PlatformIO" src="/assets/images/platformio-ide-small.png" />
+    <a href="pioarduino/" style="color: inherit">
+      <img alt="PIO Arduino" src="/assets/images/pioarduino-ide-small.png" />
       <div style="padding:0.5rem">
-        <h2 style="font-weight: 400;font-size: 1.4em;margin: 0;">PlatformIO</h2>
+        <h2 style="font-weight: 400;font-size: 1.4em;margin: 0;">PIO Arduino</h2>
         <hr style="margin: 0.5em 0;" />
         <p style="font-size: .7rem;">Visual Studio Code based</p>
         <p style="font-size: .7rem;">Modern editor, Autocomplete, Syntax highlight, Serial Monitor, Scripting, Function documentation</p>

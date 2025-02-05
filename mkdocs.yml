@@ -112,6 +112,7 @@ plugins:
         remote-control/arduino/MotorDriver.md: modules/ble/index.md
         remote-control/arduino/TotemModule.md: modules/ble/index.md
         remote-control/arduino/TotemRobot.md: modules/ble/index.md
+        setup/platformio.md: setup/pioarduino.md
 
 nav:
     - "Product list" : index.md
@@ -120,7 +121,7 @@ nav:
         - "RoboBoard":
             - 'Arduino IDE 2.3' : 'setup/arduino-ide-2.md'
             - 'Arduino IDE 1.8' : 'setup/arduino-ide.md'
-            - 'PlatformIO' : 'setup/platformio.md'
+            - 'PIO Arduino' : 'setup/pioarduino.md'
             - 'ESP-IDF' : 'setup/esp-idf-cmd.md'
         - "TotemDuino":
             - 'Arduino IDE' : 'totemduino/setup.md'
