@@ -29,6 +29,22 @@ A few different applications are available. For beginners - [Arduino IDE 2.3](ar
       </div>
     </a>
   </li>
+  </ul>
+</div>
+
+<div class="grid cards" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr))">
+  <ul>
+  <li style="padding:0">
+    <a href="arduino-cloud/" style="color: inherit">
+    <img alt="Arduino Cloud" src="/assets/images/arduino-cloud-small.png" />
+      <div style="padding:0.5rem">
+        <h2 style="font-weight: 400;font-size: 1.4em;margin: 0;">Arduino Cloud</h2>
+        <hr style="margin: 0.5em 0;" />
+        <p style="font-size: .7rem;">Arduino Web IDE</p>
+        <p style="font-size: .7rem;">Compile and upload code using web Browser</p>
+      </div>
+    </a>
+  </li>
   <li style="padding:0">
     <a href="pioarduino/" style="color: inherit">
       <img alt="PIO Arduino" src="/assets/images/pioarduino-ide-small.png" />
@@ -36,7 +52,7 @@ A few different applications are available. For beginners - [Arduino IDE 2.3](ar
         <h2 style="font-weight: 400;font-size: 1.4em;margin: 0;">PIO Arduino</h2>
         <hr style="margin: 0.5em 0;" />
         <p style="font-size: .7rem;">Visual Studio Code based</p>
-        <p style="font-size: .7rem;">Modern editor, Autocomplete, Syntax highlight, Serial Monitor, Scripting, Function documentation</p>
+        <p style="font-size: .7rem;">Modern editor with advanced features</p>
       </div>
     </a>
   </li>

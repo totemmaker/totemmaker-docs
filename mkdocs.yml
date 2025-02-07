@@ -119,6 +119,7 @@ nav:
     - "Setup":
         - 'setup/index.md'
         - "RoboBoard":
+            - 'Arduino Cloud' : 'setup/arduino-cloud.md'
             - 'Arduino IDE 2.3' : 'setup/arduino-ide-2.md'
             - 'Arduino IDE 1.8' : 'setup/arduino-ide.md'
             - 'PIO Arduino' : 'setup/pioarduino.md'

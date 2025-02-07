@@ -1,1 +1,1 @@
-Totemmaker documentation site [https://docs.totemmaker.net/](https://docs.totemmaker.net/)
+Totemmaker documentation site [https://docs.totemmaker.net/](https://totemmaker.github.io/totemmaker-docs)

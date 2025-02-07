@@ -62,7 +62,8 @@ void loop() {
   delay(500); // Wait 500ms
 }
 ```  
-_Code and configuration is the same for RoboBoard X3 and RoboBoard X4._
+_Code and configuration is the same for RoboBoard X3 and RoboBoard X4._  
+_`RoboBoard.h` is provided by [TotemRoboboard](https://github.com/totemmaker/TotemRoboboard){target=_blank} library._
 
 ## Step 3. Using PIO Arduino
 
