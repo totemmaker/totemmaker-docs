@@ -2,8 +2,9 @@
 
 Totem Robotics Kits contains all required parts to assemble model. Each one includes required tools, pre-cut parts and building instructions. Robots are based on programmable Totem [RoboBoard](../roboboard/index.md), enabling remote [:octicons-device-mobile-16: Smartphone control](../remote-control/app/index.md) and [:simple-arduino: Arduino programming](../setup/index.md).  
 
-[![Get on Google Play](../assets/images/get-on-google-play-badge.svg)](https://play.google.com/store/apps/details?id=lt.aldrea.karolis.totemandroid){target=_blank}
 [![Get on App Store](../assets/images/get-on-app-store-badge.svg)](https://itunes.apple.com/us/app/totemmaker/id1440494243?ls=1&amp;mt=8){target=_blank}
+
+[:simple-android: Download Android APK](../assets/files/TotemApp_v1.56.apk){ .md-button .md-button--primary target="_blank"}
 
 ## RoboBoard X3
 

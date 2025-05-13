@@ -9,10 +9,9 @@ Application looks a bit different between iOS and Android platforms, so images a
 
 Click on the image to download application for your device:  
 
-[![Get on Google Play](../../assets/images/get-on-google-play-badge.svg)](https://play.google.com/store/apps/details?id=lt.aldrea.karolis.totemandroid){target=_blank}
 [![Get on App Store](../../assets/images/get-on-app-store-badge.svg)](https://itunes.apple.com/us/app/totemmaker/id1440494243?ls=1&amp;mt=8){target=_blank}
 
-_Or go to app store and search for “totemmaker”_
+[:simple-android: Download Android APK](../../assets/files/TotemApp_v1.56.apk){ .md-button .md-button--primary target="_blank"}
 
 When starting application first time, a introduction tutorial may be shown. Read it to discover all the features available.  
 

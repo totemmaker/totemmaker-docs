@@ -4,12 +4,11 @@
 
 ## Download
 
-Mobile application created by TotemMaker to control Totem robots and boards. Available on app stores for Android and iOS:  
+Mobile application created by TotemMaker to control Totem robots and boards. Available for Android and iOS:  
 
-[![Get on Google Play](../../assets/images/get-on-google-play-badge.svg)](https://play.google.com/store/apps/details?id=lt.aldrea.karolis.totemandroid){target=_blank}
 [![Get on App Store](../../assets/images/get-on-app-store-badge.svg)](https://itunes.apple.com/us/app/totemmaker/id1440494243?ls=1&amp;mt=8){target=_blank}
 
-_Or go to app store and search for “totemmaker”_  
+[:simple-android: Download Android APK](../../assets/files/TotemApp_v1.56.apk){ .md-button .md-button--primary target="_blank"}
 
 ## Features
 

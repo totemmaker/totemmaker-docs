@@ -19,8 +19,9 @@ Totem RoboBoard is a family of ESP32 based Arduino development boards that combi
 
 ![Control buttons](https://totemmaker.net/wp-content/uploads/2021/11/app_connect_5.jpg){width=550px}
 
-[![Get on Google Play](../assets/images/get-on-google-play-badge.svg)](https://play.google.com/store/apps/details?id=lt.aldrea.karolis.totemandroid){target=_blank}
 [![Get on App Store](../assets/images/get-on-app-store-badge.svg)](https://itunes.apple.com/us/app/totemmaker/id1440494243?ls=1&amp;mt=8){target=_blank}
+
+[:simple-android: Download Android APK](../assets/files/TotemApp_v1.56.apk){ .md-button .md-button--primary target="_blank"}
 
 RoboBoard is designed to run in dual mode - Arduino sketch and/or remote control with smartphone app. This functionality is embedded inside Totem software and does not require any additional code or libraries. Can be useful if your robot or application requires some sort of remote control. In Totem App you can create [custom buttons and actions](#custom-functions).
 

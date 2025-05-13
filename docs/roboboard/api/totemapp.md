@@ -92,7 +92,7 @@ _Note: call to any other `TotemApp` function will enable this service internally
 ## :fontawesome-solid-mobile-screen-button: Receive events
 
 !!! warning
-    At the moment `evtFunction` is only available with Android version of [Totem App](https://play.google.com/store/apps/details?id=lt.aldrea.karolis.totemandroid){target="_blank"}.  
+    At the moment `evtFunction` is only available with Android version of [Totem App](../../remote-control/app/index.md).  
     Use [Override commands](#override-commands) as an alternative for iOS.
 
 <h4 class="apidec" id="addEvent">

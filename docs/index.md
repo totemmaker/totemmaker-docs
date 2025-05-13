@@ -21,7 +21,9 @@ a.cover {
 
 ## :wireless: Control boards
 
-<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));max-width: 948px;">
+<div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(min(100%, 6rem), 1fr));max-width: 1200px;">
+    <a href="remote-control/app/" class="card cover">
+    <img alt="Totem App" src="/assets/images/totem-app-card.jpg"><hr />Totem Mobile App</a>
     <a href="roboboard-x3/" class="card cover">
     <img alt="RoboBoard X3" src="/assets/images/photo/roboboard-x3-v3.1-card.jpg"><hr />RoboBoard X3</a>
     <a href="roboboard-x4/" class="card cover">
