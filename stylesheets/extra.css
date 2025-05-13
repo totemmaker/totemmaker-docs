@@ -1,0 +1,53 @@
+/* totem yellow: #ffd129; */
+/* totem green: #40b073; */
+/* totem blue: #0d91bf; */
+/* totem darkblue: #2e4d73; */
+
+:root > * {
+  /* Primary color shades */
+  --md-primary-fg-color: #40b073;
+
+  /* Accent color shades */
+  --md-accent-fg-color: #ffd129;
+
+  /* Footer */
+  --md-footer-bg-color: #0593bd;
+
+  /* Mark */
+  --md-typeset-mark-color: #42959a26;
+}
+
+h4.apidec {
+  font-weight: 400;
+  line-height: 1em;
+}
+
+h4.apidec .headerlink {
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+h4.apidec .object {
+  color:#00979c;
+}
+h4.apidec .group {
+  color:#00979c;
+}
+h4.apidec .function {
+  color:#d35400;
+}
+
+@media screen and (max-width: 543px) {
+  ul.md-tabs__list > li.md-tabs__item.item-secondary {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 377px) {
+  ul.md-tabs__list > li.md-tabs__item.item-primary {
+      display: none;
+  }
+}
